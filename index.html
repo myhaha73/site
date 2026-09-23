@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="robots" content="noindex, nofollow">
+    <title>Enrris stream — список фильмов</title>
+	<link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="tailwind.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="top" class="bg-[#0a0a0a] text-gray-200 min-h-screen">
+
+    <!-- ===== НАВИГАЦИЯ ===== -->
+<nav class="sticky top-0 z-[300] bg-[#0f0f0f]/95 backdrop-blur-md border-b border-[#222]">
+    <div class="max-w-[1400px] mx-auto px-3 sm:px-6 py-3">
+
+        <!-- Строка 1: лого + соцкнопки + (ссылки на xl+) -->
+        <div class="flex items-center justify-between gap-2 sm:gap-3">
+
+                        <!-- Логотип + текст -->
+            <a href="#top" title="Наверх"
+               onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+               class="inline-flex items-center gap-2 sm:gap-3 shrink-0 cursor-pointer">
+                <img src="avatar.png" alt=""
+                     class="w-14 h-14 sm:w-16 sm:h-16 xl:w-20 xl:h-20 rounded-full border-[3px] border-[#e5b95c] object-cover shadow-[0_0_20px_rgba(229,185,92,0.3)] hover:opacity-90 transition-all duration-300 hover:scale-110 shrink-0">
+                <span class="font-bold text-base sm:text-lg xl:text-2xl tracking-wide whitespace-nowrap">
+                    <span class="text-[#e5b95c]">Enrris</span>
+                    <span class="text-[#9146FF]">stream</span>
+                </span>
+            </a>
+
+            <!-- Ссылки навигации (только xl+) -->
+            <div class="hidden xl:flex gap-8 text-sm font-medium">
+                <a href="#catalog" class="text-gray-400 hover:text-[#e5b95c] transition-colors">Список</a>
+                <a href="#tabs-section" class="nav-tab-link text-gray-400 hover:text-[#e5b95c] transition-colors" data-target-tab="stats">Статистика</a>
+                <a href="#tabs-section" class="nav-tab-link text-gray-400 hover:text-[#e5b95c] transition-colors" data-target-tab="watchlist">Хочу посмотреть</a>
+            </div>
+
+            <!-- Соцкнопки: иконки на < xl, иконки+текст на xl+ -->
+            <div class="flex gap-1.5 sm:gap-2 xl:gap-3 shrink-0">
+
+                <!-- Twitch -->
+                <a href="https://www.twitch.tv/enrris" target="_blank"
+                   class="social-glow-btn btn-twitch w-10 h-10 xl:w-[130px] xl:h-12 rounded-xl bg-[#1a1a1a] border border-[#2a2a2a] text-xs text-gray-300 hover:border-[#9146FF] hover:text-white transition-all flex items-center justify-center gap-2">
+                    <img src="icons2/twitch.png" alt="" class="w-6 h-6 object-contain shrink-0">
+                    <span class="hidden xl:inline whitespace-nowrap">Twitch</span>
+                </a>
+
+                <!-- Telegram -->
+                <a href="https://t.me/ennonline" target="_blank"
+                   class="social-glow-btn btn-telegram w-10 h-10 xl:w-[130px] xl:h-12 rounded-xl bg-[#1a1a1a] border border-[#2a2a2a] text-xs text-gray-300 hover:border-[#229ED9] hover:text-white transition-all flex items-center justify-center gap-2">
+                    <img src="icons2/telegram.png" alt="" class="w-6 h-6 object-contain shrink-0">
+                    <span class="hidden xl:inline whitespace-nowrap">Telegram</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- Строка 2 (< xl): ссылки навигации -->
+        <div class="xl:hidden flex items-center justify-around gap-1 mt-2.5 pt-2.5 border-t border-[#1f1f1f] text-[11px] sm:text-sm font-medium">
+            <a href="#catalog" class="text-gray-400 hover:text-[#e5b95c] transition-colors">Список</a>
+            <a href="#tabs-section" class="nav-tab-link text-gray-400 hover:text-[#e5b95c] transition-colors" data-target-tab="stats">Статистика</a>
+            <a href="#tabs-section" class="nav-tab-link text-gray-400 hover:text-[#e5b95c] transition-colors" data-target-tab="watchlist">Хочу посмотреть</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ===== БАННЕР ===== -->
+<section class="max-w-[1400px] mx-auto px-4 sm:px-6 pt-6 sm:pt-8 pb-4">
+    <div class="relative h-[280px] sm:h-[360px] lg:h-[420px] rounded-2xl overflow-hidden border border-[#222] bg-[#111]">
+
+        <!-- Статичная надпись -->
+        <span class="absolute top-5 left-5 sm:top-12 sm:left-12 z-20 text-[#e5b95c] text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] pointer-events-none">
+            Последние 5 просмотров
+        </span>
+
+        <!-- Статичная кнопка -->
+        <a href="#catalog" class="absolute bottom-5 left-5 sm:bottom-12 sm:left-12 z-20 inline-flex items-center gap-2 bg-[#e5b95c] text-black px-4 py-2 sm:px-6 sm:py-3 rounded-lg text-sm sm:text-base font-bold w-fit hover:bg-[#f0c878] transition-colors">
+            Перейти к списку →
+        </a>
+
+        <!-- Слайд 1 -->
+        <div class="banner-slide absolute inset-0" data-slide="0">
+            <img src="last/1.jpg" alt="" class="banner-img">
+            <div class="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 via-30% to-transparent to-60%"></div>
+            <div class="relative h-full flex flex-col pt-14 sm:pt-20 pb-12 px-5 sm:px-12 max-w-[620px]">
+                <div>
+                    <h2 class="banner-title text-white text-xl sm:text-2xl lg:text-4xl font-bold mb-3 sm:mb-4 leading-tight"></h2>
+                    <div class="text-gray-400 text-xs sm:text-sm flex items-center gap-3 flex-wrap">
+                        <span class="banner-date"></span>
+                        <span class="banner-meta text-[#e5b95c]"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Слайды 2–5 — те же классы, что и в слайде 1 -->
+        <div class="banner-slide absolute inset-0 opacity-0 pointer-events-none" data-slide="1">
+            <img src="last/2.jpg" alt="" class="banner-img">
+            <div class="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 via-30% to-transparent to-60%"></div>
+            <div class="relative h-full flex flex-col pt-14 sm:pt-20 pb-12 px-5 sm:px-12 max-w-[620px]">
+                <div>
+                    <h2 class="banner-title text-white text-xl sm:text-2xl lg:text-4xl font-bold mb-3 sm:mb-4 leading-tight"></h2>
+                    <div class="text-gray-400 text-xs sm:text-sm flex items-center gap-3 flex-wrap">
+                        <span class="banner-date"></span>
+                        <span class="banner-meta text-[#e5b95c]"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="banner-slide absolute inset-0 opacity-0 pointer-events-none" data-slide="2">
+            <img src="last/3.jpg" alt="" class="banner-img">
+            <div class="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 via-30% to-transparent to-60%"></div>
+            <div class="relative h-full flex flex-col pt-14 sm:pt-20 pb-12 px-5 sm:px-12 max-w-[620px]">
+                <div>
+                    <h2 class="banner-title text-white text-xl sm:text-2xl lg:text-4xl font-bold mb-3 sm:mb-4 leading-tight"></h2>
+                    <div class="text-gray-400 text-xs sm:text-sm flex items-center gap-3 flex-wrap">
+                        <span class="banner-date"></span>
+                        <span class="banner-meta text-[#e5b95c]"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="banner-slide absolute inset-0 opacity-0 pointer-events-none" data-slide="3">
+            <img src="last/4.jpg" alt="" class="banner-img">
+            <div class="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 via-30% to-transparent to-60%"></div>
+            <div class="relative h-full flex flex-col pt-14 sm:pt-20 pb-12 px-5 sm:px-12 max-w-[620px]">
+                <div>
+                    <h2 class="banner-title text-white text-xl sm:text-2xl lg:text-4xl font-bold mb-3 sm:mb-4 leading-tight"></h2>
+                    <div class="text-gray-400 text-xs sm:text-sm flex items-center gap-3 flex-wrap">
+                        <span class="banner-date"></span>
+                        <span class="banner-meta text-[#e5b95c]"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="banner-slide absolute inset-0 opacity-0 pointer-events-none" data-slide="4">
+            <img src="last/5.jpg" alt="" class="banner-img">
+            <div class="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 via-30% to-transparent to-60%"></div>
+            <div class="relative h-full flex flex-col pt-14 sm:pt-20 pb-12 px-5 sm:px-12 max-w-[620px]">
+                <div>
+                    <h2 class="banner-title text-white text-xl sm:text-2xl lg:text-4xl font-bold mb-3 sm:mb-4 leading-tight"></h2>
+                    <div class="text-gray-400 text-xs sm:text-sm flex items-center gap-3 flex-wrap">
+                        <span class="banner-date"></span>
+                        <span class="banner-meta text-[#e5b95c]"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Точки-индикаторы -->
+        <div class="absolute bottom-4 right-4 sm:bottom-5 sm:right-6 flex gap-2 z-10">
+            <button class="banner-dot w-2.5 h-2.5 rounded-full bg-[#e5b95c] transition-all" data-dot="0"></button>
+            <button class="banner-dot w-2.5 h-2.5 rounded-full bg-white/20 transition-all" data-dot="1"></button>
+            <button class="banner-dot w-2.5 h-2.5 rounded-full bg-white/20 transition-all" data-dot="2"></button>
+            <button class="banner-dot w-2.5 h-2.5 rounded-full bg-white/20 transition-all" data-dot="3"></button>
+            <button class="banner-dot w-2.5 h-2.5 rounded-full bg-white/20 transition-all" data-dot="4"></button>
+        </div>
+
+    </div>
+</section>
+
+    <!-- ===== КАТАЛОГ / СПИСОК ===== -->
+<section id="catalog" class="max-w-[1400px] mx-auto px-4 sm:px-6 py-6 sm:py-8">
+    <div class="flex items-center justify-between gap-4 mb-6 flex-wrap">
+        <h2 class="text-white text-2xl sm:text-3xl font-bold shrink-0">Список</h2>
+        <span class="text-gray-500 text-sm shrink-0">Всего записей: <b class="text-[#e5b95c]" id="total-count">0</b></span>
+    </div>
+
+    <div class="rounded-2xl border border-[#222] bg-[#111] relative">
+
+        <!-- Sticky-панель с поиском -->
+        <div class="sticky sticky-search p-3 sm:p-4 border-b border-[#222] bg-[#141414] rounded-t-2xl">
+            <div class="relative w-full sm:w-[350px]">
+                <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+                <input
+                    type="text"
+                    id="search-input"
+                    placeholder="Поиск по названию..."
+                    class="w-full bg-[#0d0d0d] border border-[#2a2a2a] rounded-lg pl-9 pr-3 py-2 text-xs text-gray-200 placeholder-gray-500 outline-none focus:border-[#e5b95c]/60 transition-colors font-normal"
+                >
+            </div>
+        </div>
+
+        <!-- Таблица (только десктоп) -->
+        <table class="hidden md:table w-full table-fixed border-separate border-spacing-0">
+            <tr>
+    <th class="sticky sticky-th bg-[#161616] text-[#e5b95c] px-2 py-3 text-center border-b border-r border-[#222] font-semibold text-xs md:text-sm w-[36px] md:w-[40px] lg:w-[50px]">#</th>
+    <th class="sticky sticky-th bg-[#161616] text-[#e5b95c] px-2 md:px-3 py-3 text-center border-b border-r border-[#222] font-semibold text-xs md:text-sm">Название</th>
+    <th class="sticky sticky-th bg-[#161616] text-[#e5b95c] px-1 md:px-2 py-3 text-center border-b border-r border-[#222] font-semibold text-xs md:text-sm w-[100px] lg:w-[130px]">Зритель</th>
+    <th class="sticky sticky-th bg-[#161616] text-[#e5b95c] px-1 py-3 text-center border-b border-r border-[#222] font-semibold text-xs md:text-sm w-[92px] lg:w-[110px] whitespace-nowrap">Дата</th>
+    <th class="sticky sticky-th bg-[#161616] text-[#e5b95c] px-1 md:px-2 py-3 text-center border-b border-r border-[#222] font-semibold text-xs md:text-sm w-[92px] lg:w-[110px]">Оценка</th>
+    <th class="hidden lg:table-cell sticky sticky-th bg-[#161616] text-[#e5b95c] px-2 py-3 text-center border-b border-[#222] font-semibold text-sm lg:w-[180px] xl:w-[240px]">Комментарий</th>
+</tr>
+            <tbody id="table-body"></tbody>
+        </table>
+
+        <!-- Карточки (мобилка и планшет до md) -->
+        <div id="mobile-cards" class="md:hidden divide-y divide-[#1f1f1f]"></div>
+
+    </div>
+</section>
+
+<!-- ===== БЛОК С ВКЛАДКАМИ ===== -->
+<section id="tabs-section" class="max-w-[1400px] mx-auto px-4 sm:px-6 py-8">
+
+    <!-- Кнопки вкладок -->
+    <div class="flex items-center gap-2 sm:gap-3 mb-6 border-b border-[#222] pb-4 overflow-x-auto">
+        <button class="tab-btn active px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-[#1a1a1a] border border-[#e5b95c] text-[#e5b95c] font-bold text-xs sm:text-sm transition-all whitespace-nowrap" data-tab="stats">
+            Статистика
+        </button>
+        <button class="tab-btn px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-[#141414] border border-[#222] text-gray-400 hover:text-white font-bold text-xs sm:text-sm transition-all whitespace-nowrap" data-tab="watchlist">
+            Хочу посмотреть
+        </button>
+    </div>
+
+<!-- ===== ВКЛАДКА 1: СТАТИСТИКА ===== -->
+    <div id="tab-stats" class="tab-content min-h-[300px]">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 mb-6">
+
+            <div class="bg-[#141414] border border-[#222] rounded-xl px-3 sm:px-4 relative flex items-center justify-center hover:border-[#e5b95c]/40 transition-colors h-[72px] sm:h-[80px]">
+                <img src="icons2/film.png" alt="" class="absolute left-3 sm:left-10 w-8 sm:w-10 h-8 sm:h-10 object-contain">
+                <div class="flex flex-col items-center min-w-0 pl-10 sm:pl-12">
+                    <span class="text-[11px] sm:text-[13px] uppercase tracking-wider text-gray-500 font-bold">Фильмы</span>
+                    <b id="count-films" class="text-xl sm:text-2xl text-[#e5b95c]">0</b>
+                </div>
+            </div>
+
+            <div class="bg-[#141414] border border-[#222] rounded-xl px-3 sm:px-4 relative flex items-center justify-center hover:border-[#e5b95c]/40 transition-colors h-[72px] sm:h-[80px]">
+                <img src="icons2/serial.png" alt="" class="absolute left-3 sm:left-10 w-9 sm:w-12 h-9 sm:h-12 object-contain">
+                <div class="flex flex-col items-center min-w-0 pl-10 sm:pl-12">
+                    <span class="text-[11px] sm:text-[13px] uppercase tracking-wider text-gray-500 font-bold">Сериалы</span>
+                    <b id="count-series" class="text-xl sm:text-2xl text-[#e5b95c]">0</b>
+                </div>
+            </div>
+
+            <div class="bg-[#141414] border border-[#222] rounded-xl px-3 sm:px-4 relative flex items-center justify-center hover:border-[#e5b95c]/40 transition-colors h-[72px] sm:h-[80px]">
+                <img src="icons2/anime.png" alt="" class="absolute left-3 sm:left-10 w-8 sm:w-10 h-8 sm:h-10 object-contain">
+                <div class="flex flex-col items-center min-w-0 pl-10 sm:pl-12">
+                    <span class="text-[11px] sm:text-[13px] uppercase tracking-wider text-gray-500 font-bold">Аниме</span>
+                    <b id="count-anime" class="text-xl sm:text-2xl text-[#e5b95c]">0</b>
+                </div>
+            </div>
+
+            <div class="bg-[#141414] border border-[#222] rounded-xl px-3 sm:px-4 relative flex items-center justify-center hover:border-[#e5b95c]/40 transition-colors h-[72px] sm:h-[80px]">
+                <img src="icons2/mult.png" alt="" class="absolute left-3 sm:left-10 w-8 sm:w-10 h-8 sm:h-10 object-contain">
+                <div class="flex flex-col items-center min-w-0 pl-10 sm:pl-12">
+                    <span class="text-[11px] sm:text-[13px] uppercase tracking-wider text-gray-500 font-bold">Мультфильмы</span>
+                    <b id="count-mult" class="text-xl sm:text-2xl text-[#e5b95c]">0</b>
+                </div>
+            </div>
+
+            <div class="bg-[#141414] border-2 border-[#e5b95c] rounded-xl px-3 sm:px-4 relative flex items-center justify-center h-[72px] sm:h-[80px] col-span-2 md:col-span-1">
+                <img src="icons2/zakaz.png" alt="" class="absolute left-3 sm:left-10 w-8 sm:w-10 h-8 sm:h-10 object-contain">
+                <div class="flex flex-col items-center min-w-0 pl-10 sm:pl-12">
+                    <span class="text-[11px] sm:text-[13px] uppercase tracking-wider text-gray-500 font-bold">Заказные</span>
+                    <b id="count-ordered" class="text-xl sm:text-2xl text-[#e5b95c]">0</b>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Нижние 3 плашки -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+            <div class="bg-[#121212] border border-gray-800 rounded-xl p-5 flex flex-col items-center justify-center gap-2 text-center h-auto md:h-[200px]">
+                <img src="icons2/top.png" alt="" class="w-16 sm:w-20 h-16 sm:h-20 object-contain">
+                <h4 class="text-[16px] sm:text-[18px] uppercase tracking-wider text-gray-500 font-bold">Топ заказчик</h4>
+                <span id="top-ordered-name" class="text-base sm:text-lg font-bold text-[#e5b95c] leading-tight break-words">—</span>
+                <span class="text-xs text-gray-500">заказов: <b id="top-ordered-count" class="text-amber-500">0</b></span>
+            </div>
+
+            <div class="bg-[#121212] border border-gray-800 rounded-xl p-5 flex flex-col items-center justify-center gap-2 text-center h-auto md:h-[200px]">
+                <img src="icons2/shans.png" alt="" class="w-14 sm:w-16 h-14 sm:h-16 object-contain">
+                <h4 class="text-[16px] sm:text-[18px] uppercase tracking-wider text-gray-500 font-bold">Везунчик</h4>
+                <span id="top-lucky-name" class="text-base sm:text-lg font-bold text-[#e5b95c] leading-tight break-words">—</span>
+                <span class="text-xs text-gray-500">рулеток: <b id="top-lucky-count" class="text-amber-500">0</b></span>
+            </div>
+
+            <div class="bg-[#121212] border border-gray-800 rounded-xl p-5 flex flex-col items-center justify-center gap-2 text-center h-auto md:h-[200px]">
+                <img src="icons2/genre.png" alt="" class="w-16 sm:w-20 h-16 sm:h-20 object-contain">
+                <h4 class="text-[16px] sm:text-[18px] uppercase tracking-wider text-gray-500 font-bold">Топ 3 жанра</h4>
+                <div id="top-genres-list" class="flex flex-col gap-0.5 text-sm w-full"></div>
+            </div>
+
+        </div>
+    </div>
+
+<!-- Вкладка 2: Хочу посмотреть -->
+<div id="tab-watchlist" class="tab-content hidden min-h-[300px]">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 lg:gap-4 max-w-[1200px] mx-auto">
+
+        <!-- Фильм 1 -->
+        <a href="https://www.kinopoisk.ru/film/4541746/" target="_blank"
+           class="group bg-[#121212] border border-gray-800 rounded-xl overflow-hidden hover:border-[#e5b95c]/50 transition-all duration-300 hover:-translate-y-1">
+            <div class="aspect-[2/3] bg-[#0d0d0d] overflow-hidden">
+                <span class="text-gray-700 text-3xl">🎬</span>
+            </div>
+            <div class="p-2 text-center">
+                <p class="text-gray-200 text-sm font-semibold leading-tight group-hover:text-[#e5b95c] transition-colors">
+                    Название фильма
+                </p>
+            </div>
+        </a>
+
+        <!-- Фильм 2 -->
+        <a href="https://www.kinopoisk.ru/film/0000000/" target="_blank"
+           class="group bg-[#121212] border border-gray-800 rounded-xl overflow-hidden hover:border-[#e5b95c]/50 transition-all duration-300 hover:-translate-y-1">
+            <div class="aspect-[2/3] bg-[#0d0d0d] overflow-hidden">
+                <span class="text-gray-700 text-3xl">🎬</span>
+            </div>
+            <div class="p-2 text-center">
+                <p class="text-gray-200 text-sm font-semibold leading-tight group-hover:text-[#e5b95c] transition-colors">
+                    Название фильма
+                </p>
+            </div>
+        </a>
+
+        <!-- Фильм 3 -->
+        <a href="https://www.kinopoisk.ru/film/0000000/" target="_blank"
+           class="group bg-[#121212] border border-gray-800 rounded-xl overflow-hidden hover:border-[#e5b95c]/50 transition-all duration-300 hover:-translate-y-1">
+            <div class="aspect-[2/3] bg-[#0d0d0d] overflow-hidden">
+                <span class="text-gray-700 text-3xl">🎬</span>
+            </div>
+            <div class="p-2 text-center">
+                <p class="text-gray-200 text-sm font-semibold leading-tight group-hover:text-[#e5b95c] transition-colors">
+                    Название фильма
+                </p>
+            </div>
+        </a>
+
+        <!-- Фильм 4 -->
+        <a href="https://www.kinopoisk.ru/film/0000000/" target="_blank"
+           class="group bg-[#121212] border border-gray-800 rounded-xl overflow-hidden hover:border-[#e5b95c]/50 transition-all duration-300 hover:-translate-y-1">
+            <div class="aspect-[2/3] bg-[#0d0d0d] overflow-hidden">
+                <span class="text-gray-700 text-3xl">🎬</span>
+            </div>
+            <div class="p-2 text-center">
+                <p class="text-gray-200 text-sm font-semibold leading-tight group-hover:text-[#e5b95c] transition-colors">
+                    Название фильма
+                </p>
+            </div>
+        </a>
+
+        <!-- Фильм 5 -->
+        <a href="https://www.kinopoisk.ru/film/0000000/" target="_blank"
+           class="group bg-[#121212] border border-gray-800 rounded-xl overflow-hidden hover:border-[#e5b95c]/50 transition-all duration-300 hover:-translate-y-1">
+            <div class="aspect-[2/3] bg-[#0d0d0d] overflow-hidden">
+                <span class="text-gray-700 text-3xl">🎬</span>
+            </div>
+            <div class="p-2 text-center">
+                <p class="text-gray-200 text-sm font-semibold leading-tight group-hover:text-[#e5b95c] transition-colors">
+                    Название фильма
+                </p>
+            </div>
+        </a>
+
+        <!-- Фильм 6 -->
+        <a href="https://www.kinopoisk.ru/film/0000000/" target="_blank"
+           class="group bg-[#121212] border border-gray-800 rounded-xl overflow-hidden hover:border-[#e5b95c]/50 transition-all duration-300 hover:-translate-y-1">
+            <div class="aspect-[2/3] bg-[#0d0d0d] overflow-hidden">
+                <span class="text-gray-700 text-3xl">🎬</span>
+            </div>
+            <div class="p-2 text-center">
+                <p class="text-gray-200 text-sm font-semibold leading-tight group-hover:text-[#e5b95c] transition-colors">
+                    Название фильма
+                </p>
+            </div>
+        </a>	
+    </div>
+</div>
+</section>
+
+    <!-- ===== БЛОК С ЦИТАТОЙ ===== -->
+    <section class="max-w-[1400px] mx-auto px-4 sm:px-6 py-8">
+        <div class="border-t border-[#222] pt-8">
+            <div id="quote-block" class="max-w-[1300px] mx-auto text-center">
+                <!-- Сюда JavaScript вставляет случайную цитату -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ПОДВАЛ ===== -->
+    <footer class="border-t border-[#222] mt-4">
+        <div class="max-w-[1400px] mx-auto px-4 py-4 text-center">
+            <p class="text-gray-600 text-[10px] sm:text-[11px] leading-relaxed max-w-[1000px] mx-auto">
+                Данный ресурс является информационным. Все названия, постеры, логотипы и иные материалы принадлежат их правообладателям и используются исключительно в информационных целях.
+            </p>
+        </div>
+    </footer>
+	
+     <!-- ===== КНОПКА НАВЕРХ ===== -->
+    <a href="#top"
+       onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+       aria-label="Наверх"
+       class="fixed bottom-4 right-4 sm:bottom-20 sm:right-50 z-[200] w-10 h-10 rounded-full bg-[#1a1a1a]/80 border border-[#2a2a2a] text-gray-300 hover:text-[#e5b95c] hover:border-[#e5b95c]/40 transition-all duration-300 flex items-center justify-center backdrop-blur-sm opacity-60 hover:opacity-100 cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+        </svg>
+    </a>
+
+    <script src="script.js"></script>
+	<script data-goatcounter="https://myhahawk.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

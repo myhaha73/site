@@ -1,0 +1,180 @@
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    font-family: 'Segoe UI', -apple-system, sans-serif;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* ===== БАННЕР: плавное перетекание слайдов ===== */
+.banner-slide {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.banner-slide.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Медленный зум постеров (эффект "кен-бёрнс") */
+.banner-slide img:first-child {
+    transform: scale(1);
+    transition: transform 6s ease-out;
+}
+
+.banner-slide.active img:first-child {
+    transform: scale(1.08);
+}
+
+/* Текст внутри слайда плавно выезжает */
+.banner-slide > div:last-child {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.9s ease 0.3s, transform 0.9s ease 0.3s;
+}
+
+.banner-slide.active > div:last-child {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Точки-индикаторы */
+.banner-dot {
+    transition: all 0.4s ease;
+}
+
+.banner-dot.active {
+    background-color: #e5b95c;
+    width: 24px;
+}
+
+/* Картинка в баннере с плавным исчезанием слева */
+.banner-img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 70%;
+    object-fit: cover;
+    /* Маска: левый край прозрачный, к 30% ширины становится полностью непрозрачным */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%);
+    mask-image: linear-gradient(to right, transparent 0%, black 30%);
+}
+
+/* ===== СВЕЧЕНИЕ И МЕРЦАНИЕ КНОПОК ===== */
+.social-glow-btn {
+    animation: pulse-glow 12s infinite ease-in-out;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Цвета свечения — интенсивность уменьшена вдвое */
+.btn-twitch {
+    --glow-color: rgba(145, 70, 255, 0.18);
+    --glow-bright: rgba(145, 70, 255, 0.45);
+    box-shadow: 0 0 4px var(--glow-color);
+}
+
+.btn-telegram {
+    --glow-color: rgba(34, 158, 217, 0.18);
+    --glow-bright: rgba(34, 158, 217, 0.45);
+    box-shadow: 0 0 4px var(--glow-color);
+}
+
+.btn-order {
+    --glow-color: rgba(229, 185, 92, 0.18);
+    --glow-bright: rgba(229, 185, 92, 0.48);
+    box-shadow: 0 0 4px var(--glow-color);
+}
+
+/* Сдвиг: Twitch в 3с, Telegram в 6с, Заказать в 9с. Цикл = 12с */
+.btn-twitch    { animation-delay: 3s; }
+.btn-telegram  { animation-delay: 6s; }
+.btn-order     { animation-delay: 9s; }
+
+/* Усиление при наведении — тоже вдвое слабее */
+.btn-twitch:hover,
+.btn-telegram:hover,
+.btn-order:hover {
+    box-shadow:
+        0 0 8px var(--glow-bright),
+        0 0 12px var(--glow-color);
+}
+
+/* Вспышка в начале цикла, затем длинное затухание */
+@keyframes pulse-glow {
+    0% {
+        box-shadow:
+            0 0 22px var(--glow-bright),
+            0 0 36px var(--glow-color);
+    }
+    20% {
+        box-shadow: 0 0 8px var(--glow-color);
+    }
+    100% {
+        box-shadow: 0 0 8px var(--glow-color);
+    }
+}
+
+/* ===== ВКЛАДКИ В РАСКРЫТОЙ СТРОКЕ ФИЛЬМА ===== */
+.detail-tab-btn {
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #888;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.detail-tab-btn:hover {
+    color: #ccc;
+    background: #1a1a1a;
+}
+
+.detail-tab-btn.active {
+    color: #e5b95c;
+    background: #1a1a1a;
+    border-color: #2a2a2a;
+}
+
+/* ===== МОБИЛЬНАЯ И ДЕСКТОПНАЯ АДАПТАЦИЯ ===== */
+
+/* Плавный скролл глючит на мобилке — отключаем только там */
+@media (max-width: 1023px) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* На больших мониторах (QHD и выше) немного расширяем контент */
+@media (min-width: 2000px) {
+    .max-w-\[1400px\] {
+        max-width: 1600px;
+    }
+}
+
+/* ===== ДИНАМИЧЕСКИЕ ОТСТУПЫ ДЛЯ STICKY ===== */
+:root {
+    --nav-height: 100px;
+    --search-height: 64px;
+}
+
+.sticky-search {
+    top: var(--nav-height);
+    z-index: 110;
+}
+
+.sticky-th {
+    top: calc(var(--nav-height) + var(--search-height) - 3px);
+    z-index: 100;
+}
