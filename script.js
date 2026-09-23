@@ -408,7826 +408,2374 @@ const genresById = {
 // Слова "мультфильм" и "аниме" исключаем — они дублируют колонку "Тип"
 const EXCLUDE_GENRES = ['мультфильм', 'аниме', 'фильм', 'сериал'];
 
-
 // ===== РЕЙТИНГИ КИНОПОИСКА (из ratings.json) =====
 const kinopoiskRatings = {
-  "1071384": 7.6,
-  "1103803": 6.5,
-  "4445150": 8.7,
-  "1032606": 8.1,
-  "8124": 8.3,
-  "104901": 5.9,
-  "5558": 7.7,
-  "1012421": 6.6,
-  "841681": 7.1,
-  "707483": 6.2,
-  "689": 8.3,
-  "688": 8.2,
-  "322": 8.3,
-  "8408": 8.0,
-  "48356": 7.9,
-  "89515": 7.9,
-  "276762": 7.9,
-  "407636": 8.2,
-  "4686248": 8.1,
-  "1164520": 7.0,
-  "817167": 6.4,
-  "938643": 7.1,
-  "823616": 7.2,
-  "409600": 7.5,
-  "5304403": 8.0,
-  "1188248": 7.9,
-  "4414587": 7.3,
-  "258687": 8.7,
-  "361": 8.7,
-  "588": 7.2,
-  "462682": 8.1,
-  "47018": 7.1,
-  "410": 7.6,
-  "5167": 8.2,
-  "328": 8.6,
-  "839954": 7.3,
-  "3561": 8.3,
-  "5059": 8.1,
-  "1047883": 7.7,
-  "5930": 7.2,
-  "277328": 7.6,
-  "78871": 7.2,
-  "397667": 8.6,
-  "102128": 7.7,
-  "577488": 7.7,
-  "195434": 7.8,
-  "4476885": 7.6,
-  "5305583": 8.0,
-  "681831": 8.5,
-  "824954": 7.9,
-  "5401195": 8.7,
-  "963343": 8.2,
-  "4374": 8.4,
-  "63991": 8.2,
-  "2053": 7.7,
-  "401177": 6.7,
-  "762738": 7.0,
-  "885658": 7.2,
-  "1009536": 7.1,
-  "1267348": 7.6,
-  "5002282": 8.3,
-  "61237": 8.0,
-  "411924": 7.5,
-  "838": 7.8,
-  "2898": 7.4,
-  "1212316": 6.1,
-  "889091": 6.5,
-  "395": 8.2,
-  "323": 7.2,
-  "102510": 6.9,
-  "280826": 6.6,
-  "395066": 7.1,
-  "298": 7.6,
-  "462358": 7.7,
-  "462754": 6.5,
-  "1228069": 7.9,
-  "197863": 7.7,
-  "462360": 7.6,
-  "961715": 7.4,
-  "1008444": 7.3,
-  "405608": 7.6,
-  "102151": 7.4,
-  "690593": 7.2,
-  "1008445": 7.4,
-  "1309570": 8.0,
-  "11637": 7.3,
-  "801": 7.6,
-  "81288": 7.6,
-  "395787": 8.2,
-  "1388894": 6.4,
-  "3908": 7.7,
-  "2928": 7.7,
-  "472386": 6.7,
-  "584405": 7.7,
-  "4852097": 7.5,
-  "925669": 7.7,
-  "258941": 7.1,
-  "160946": 6.7,
-  "843859": 6.5,
-  "263531": 7.9,
-  "462762": 7.4,
-  "595938": 7.2,
-  "676266": 7.3,
-  "689066": 7.9,
-  "841263": 7.8,
-  "679830": 7.3,
-  "195496": 7.1,
-  "822708": 7.4,
-  "623250": 6.7,
-  "822709": 7.7,
-  "843649": 8.1,
-  "843650": 8.0,
-  "1044280": 8.1,
-  "935940": 7.0,
-  "1203039": 7.8,
-  "835877": 7.1,
-  "184432": 7.1,
-  "342": 8.7,
-  "462649": 7.7,
-  "976636": 7.8,
-  "1228236": 6.3,
-  "47237": 7.9,
-  "111543": 8.5,
-  "437410": 8.2,
-  "252667": 6.9,
-  "770631": 6.8,
-  "1721": 7.8,
-  "833": 7.0,
-  "1387021": 7.8,
-  "590286": 7.2,
-  "4368595": 6.7,
-  "1381125": 8.2,
-  "1402067": 6.4,
-  "575613": 6.8,
-  "842673": 6.2,
-  "727913": 7.9,
-  "15527": 6.1,
-  "309": 7.9,
-  "507": 8.0,
-  "102474": 6.8,
-  "444": 8.4,
-  "933307": 8.0,
-  "1245501": 7.1,
-  "843463": 6.9,
-  "5429853": 6.6,
-  "104938": 8.3,
-  "517988": 7.3,
-  "930534": 7.1,
-  "817969": 6.9,
-  "507440": 7.0,
-  "464484": 7.8,
-  "63732": 6.7,
-  "992500": 7.1,
-  "468581": 7.3,
-  "602373": 7.5,
-  "6174": 7.1,
-  "5437609": 7.0,
-  "94225": 7.8,
-  "462240": 6.5,
-  "655435": 7.0,
-  "467972": 6.9,
-  "607737": 7.3,
-  "484878": 7.7,
-  "6303": 7.9,
-  "839823": 7.2,
-  "1379512": 6.7,
-  "10355286": 7.0,
-  "4541542": 6.7,
-  "5599850": 5.4,
-  "5001443": 6.8,
-  "930000": 6.7,
-  "999563": 6.9,
-  "893245": 7.6,
-  "503853": 7.0,
-  "725190": 8.4,
-  "409372": 7.6,
-  "870": 7.6,
-  "5273": 8.0,
-  "4484": 7.8,
-  "6589797": 6.1,
-  "14346": 7.3,
-  "81522": 7.6
+    "1071384": 7.6,
+    "1103803": 6.5,
+    "4445150": 8.7,
+    "1032606": 8.1,
+    "8124": 8.3,
+    "104901": 5.9,
+    "5558": 7.7,
+    "1012421": 6.6,
+    "841681": 7.1,
+    "707483": 6.2,
+    "689": 8.3,
+    "688": 8.2,
+    "322": 8.3,
+    "8408": 8.0,
+    "48356": 7.9,
+    "89515": 7.9,
+    "276762": 7.9,
+    "407636": 8.2,
+    "4686248": 8.1,
+    "1164520": 7.0,
+    "817167": 6.4,
+    "938643": 7.1,
+    "823616": 7.2,
+    "409600": 7.5,
+    "5304403": 8.0,
+    "1188248": 7.9,
+    "4414587": 7.3,
+    "258687": 8.7,
+    "361": 8.7,
+    "588": 7.2,
+    "462682": 8.1,
+    "47018": 7.1,
+    "410": 7.6,
+    "5167": 8.2,
+    "328": 8.6,
+    "839954": 7.3,
+    "3561": 8.3,
+    "5059": 8.1,
+    "1047883": 7.7,
+    "5930": 7.2,
+    "277328": 7.6,
+    "78871": 7.2,
+    "397667": 8.6,
+    "102128": 7.7,
+    "577488": 7.7,
+    "195434": 7.8,
+    "4476885": 7.6,
+    "5305583": 8.0,
+    "681831": 8.5,
+    "824954": 7.9,
+    "5401195": 8.7,
+    "963343": 8.2,
+    "4374": 8.4,
+    "63991": 8.2,
+    "2053": 7.7,
+    "401177": 6.7,
+    "762738": 7.0,
+    "885658": 7.2,
+    "1009536": 7.1,
+    "1267348": 7.6,
+    "5002282": 8.3,
+    "61237": 8.0,
+    "411924": 7.5,
+    "838": 7.8,
+    "2898": 7.4,
+    "1212316": 6.1,
+    "889091": 6.5,
+    "395": 8.2,
+    "323": 7.2,
+    "102510": 6.9,
+    "280826": 6.6,
+    "395066": 7.1,
+    "298": 7.6,
+    "462358": 7.7,
+    "462754": 6.5,
+    "1228069": 7.9,
+    "197863": 7.7,
+    "462360": 7.6,
+    "961715": 7.4,
+    "1008444": 7.3,
+    "405608": 7.6,
+    "102151": 7.4,
+    "690593": 7.2,
+    "1008445": 7.4,
+    "1309570": 8.0,
+    "11637": 7.3,
+    "801": 7.6,
+    "81288": 7.6,
+    "395787": 8.2,
+    "1388894": 6.4,
+    "3908": 7.7,
+    "2928": 7.7,
+    "472386": 6.7,
+    "584405": 7.7,
+    "4852097": 7.5,
+    "925669": 7.7,
+    "258941": 7.1,
+    "160946": 6.7,
+    "843859": 6.5,
+    "263531": 7.9,
+    "462762": 7.4,
+    "595938": 7.2,
+    "676266": 7.3,
+    "689066": 7.9,
+    "841263": 7.8,
+    "679830": 7.3,
+    "195496": 7.1,
+    "822708": 7.4,
+    "623250": 6.7,
+    "822709": 7.7,
+    "843649": 8.1,
+    "843650": 8.0,
+    "1044280": 8.1,
+    "935940": 7.0,
+    "1203039": 7.8,
+    "835877": 7.1,
+    "184432": 7.1,
+    "342": 8.7,
+    "462649": 7.7,
+    "976636": 7.8,
+    "1228236": 6.3,
+    "47237": 7.9,
+    "111543": 8.5,
+    "437410": 8.2,
+    "252667": 6.9,
+    "770631": 6.8,
+    "1721": 7.8,
+    "833": 7.0,
+    "1387021": 7.8,
+    "590286": 7.2,
+    "4368595": 6.7,
+    "1381125": 8.2,
+    "1402067": 6.4,
+    "575613": 6.8,
+    "842673": 6.2,
+    "727913": 7.9,
+    "15527": 6.1,
+    "309": 7.9,
+    "507": 8.0,
+    "102474": 6.8,
+    "444": 8.4,
+    "933307": 8.0,
+    "1245501": 7.1,
+    "843463": 6.9,
+    "5429853": 6.6,
+    "104938": 8.3,
+    "517988": 7.3,
+    "930534": 7.1,
+    "817969": 6.9,
+    "507440": 7.0,
+    "464484": 7.8,
+    "63732": 6.7,
+    "992500": 7.1,
+    "468581": 7.3,
+    "602373": 7.5,
+    "6174": 7.1,
+    "5437609": 7.0,
+    "94225": 7.8,
+    "462240": 6.5,
+    "655435": 7.0,
+    "467972": 6.9,
+    "607737": 7.3,
+    "484878": 7.7,
+    "6303": 7.9,
+    "839823": 7.2,
+    "1379512": 6.7,
+    "10355286": 7.0,
+    "4541542": 6.7,
+    "5599850": 5.4,
+    "5001443": 6.8,
+    "930000": 6.7,
+    "999563": 6.9,
+    "893245": 7.6,
+    "503853": 7.0,
+    "725190": 8.4,
+    "409372": 7.6,
+    "870": 7.6,
+    "5273": 8.0,
+    "4484": 7.8,
+    "6589797": 6.1,
+    "14346": 7.3,
+    "81522": 7.6
 };
 
 // ===== АКТЁРЫ (из actors.json) =====
 const actorsById = {
   "1071384": [
-    {
-      "name": "Джессика Барден",
-      "role": "Alyssa"
-    },
-    {
-      "name": "Алекс Лоутер",
-      "role": "James"
-    },
-    {
-      "name": "Стив Орам",
-      "role": "Phil"
-    },
-    {
-      "name": "Кристин Боттомли",
-      "role": "Gwen"
-    },
-    {
-      "name": "Наоми Аки",
-      "role": "Bonnie"
-    },
-    {
-      "name": "Джонатан Арис",
-      "role": "Professor Clive Koch"
-    },
-    {
-      "name": "Вунми Мосаку",
-      "role": "DC Teri Darego"
-    },
-    {
-      "name": "Джемма Уилан",
-      "role": "DC Eunice Noon"
-    },
-    {
-      "name": "Джош Дилан",
-      "role": "Todd"
-    },
-    {
-      "name": "Навин Чоудхри",
-      "role": "Tony"
-    }
+    { "name": "Джессика Барден", "role": "Alyssa" },
+    { "name": "Алекс Лоутер", "role": "James" },
+    { "name": "Стив Орам", "role": "Phil" },
+    { "name": "Кристин Боттомли", "role": "Gwen" },
+    { "name": "Наоми Аки", "role": "Bonnie" },
+    { "name": "Джонатан Арис", "role": "Professor Clive Koch" },
+    { "name": "Вунми Мосаку", "role": "DC Teri Darego" },
+    { "name": "Джемма Уилан", "role": "DC Eunice Noon" },
+    { "name": "Джош Дилан", "role": "Todd" },
+    { "name": "Навин Чоудхри", "role": "Tony" }
   ],
   "1103803": [
-    {
-      "name": "Кеннет Брана",
-      "role": "Hercule Poirot"
-    },
-    {
-      "name": "Галь Гадот",
-      "role": "Linnet Ridgeway"
-    },
-    {
-      "name": "Арми Хаммер",
-      "role": "Simon Doyle"
-    },
-    {
-      "name": "Эмма Маки",
-      "role": "Jacqueline de Bellefort"
-    },
-    {
-      "name": "Летиша Райт",
-      "role": "Rosalie Otterbourne"
-    },
-    {
-      "name": "Софи Оконедо",
-      "role": "Salome Otterbourne"
-    },
-    {
-      "name": "Том Бейтман",
-      "role": "Bouc"
-    },
-    {
-      "name": "Аннетт Бенинг",
-      "role": "Euphemia Bouc"
-    },
-    {
-      "name": "Роуз Лесли",
-      "role": "Louise Bourget"
-    },
-    {
-      "name": "Майкл Раус",
-      "role": "Private Laurin"
-    }
+    { "name": "Кеннет Брана", "role": "Hercule Poirot" },
+    { "name": "Галь Гадот", "role": "Linnet Ridgeway" },
+    { "name": "Арми Хаммер", "role": "Simon Doyle" },
+    { "name": "Эмма Маки", "role": "Jacqueline de Bellefort" },
+    { "name": "Летиша Райт", "role": "Rosalie Otterbourne" },
+    { "name": "Софи Оконедо", "role": "Salome Otterbourne" },
+    { "name": "Том Бейтман", "role": "Bouc" },
+    { "name": "Аннетт Бенинг", "role": "Euphemia Bouc" },
+    { "name": "Роуз Лесли", "role": "Louise Bourget" },
+    { "name": "Майкл Раус", "role": "Private Laurin" }
   ],
   "4445150": [
-    {
-      "name": "Хейли Стайнфелд",
-      "role": "Vi, озвучка"
-    },
-    {
-      "name": "Кевин Алехандро",
-      "role": "Jayce / Workshop Owner"
-    },
-    {
-      "name": "Джейсон Спайсэк",
-      "role": "Silco / Pim"
-    },
-    {
-      "name": "Токс Олагундойе",
-      "role": "Mel Medarda / Mel"
-    },
-    {
-      "name": "Джейби Бланк",
-      "role": "Vander / Warwick / Bolbok"
-    },
-    {
-      "name": "Гарри Ллойд",
-      "role": "Viktor"
-    },
-    {
-      "name": "Миа Синклер Дженнесс",
-      "role": "Powder"
-    },
-    {
-      "name": "Артур Ортис",
-      "role": "дополнительные голоса"
-    },
-    {
-      "name": "Элла Пернелл",
-      "role": "Jinx / Older Powder"
-    },
-    {
-      "name": "Кэти Льюнг",
-      "role": "Caitlyn"
-    }
+    { "name": "Хейли Стайнфелд", "role": "Vi, озвучка" },
+    { "name": "Кевин Алехандро", "role": "Jayce / Workshop Owner" },
+    { "name": "Джейсон Спайсэк", "role": "Silco / Pim" },
+    { "name": "Токс Олагундойе", "role": "Mel Medarda / Mel" },
+    { "name": "Джейби Бланк", "role": "Vander / Warwick / Bolbok" },
+    { "name": "Гарри Ллойд", "role": "Viktor" },
+    { "name": "Миа Синклер Дженнесс", "role": "Powder" },
+    { "name": "Артур Ортис", "role": "дополнительные голоса" },
+    { "name": "Элла Пернелл", "role": "Jinx / Older Powder" },
+    { "name": "Кэти Льюнг", "role": "Caitlyn" }
   ],
   "1032606": [
-    {
-      "name": "Луис Хофман",
-      "role": "Jonas Kahnwald"
-    },
-    {
-      "name": "Каролина Эйхгорн",
-      "role": "Charlotte Doppler / Adult Charlotte Doppler"
-    },
-    {
-      "name": "Лиза Викари",
-      "role": "Martha Nielsen"
-    },
-    {
-      "name": "Майя Шёне",
-      "role": "Hannah Kahnwald / Adult Hannah Kahnwald"
-    },
-    {
-      "name": "Йёрдис Трибель",
-      "role": "Katharina Nielsen / Adult Katharina Nielsen"
-    },
-    {
-      "name": "Штефан Кампвирт",
-      "role": "Peter Doppler / Adult Peter Doppler"
-    },
-    {
-      "name": "Андреас Пичман",
-      "role": "The Stranger / Stranger"
-    },
-    {
-      "name": "Пауль Лукс",
-      "role": "Bartosz Tiedemann / Young Bartosz Tiedemann"
-    },
-    {
-      "name": "Кристиан Хатчерсон",
-      "role": "Magnus Nielson"
-    },
-    {
-      "name": "Мориц Ян",
-      "role": "Magnus Nielsen / Young Magnus Nielsen"
-    }
+    { "name": "Луис Хофман", "role": "Jonas Kahnwald" },
+    { "name": "Каролина Эйхгорн", "role": "Charlotte Doppler / Adult Charlotte Doppler" },
+    { "name": "Лиза Викари", "role": "Martha Nielsen" },
+    { "name": "Майя Шёне", "role": "Hannah Kahnwald / Adult Hannah Kahnwald" },
+    { "name": "Йёрдис Трибель", "role": "Katharina Nielsen / Adult Katharina Nielsen" },
+    { "name": "Штефан Кампвирт", "role": "Peter Doppler / Adult Peter Doppler" },
+    { "name": "Андреас Пичман", "role": "The Stranger / Stranger" },
+    { "name": "Пауль Лукс", "role": "Bartosz Tiedemann / Young Bartosz Tiedemann" },
+    { "name": "Кристиан Хатчерсон", "role": "Magnus Nielson" },
+    { "name": "Мориц Ян", "role": "Magnus Nielsen / Young Magnus Nielsen" }
   ],
   "8124": [
-    {
-      "name": "Маколей Калкин",
-      "role": "Kevin McCallister"
-    },
-    {
-      "name": "Джо Пеши",
-      "role": "Harry"
-    },
-    {
-      "name": "Дэниел Стерн",
-      "role": "Marv"
-    },
-    {
-      "name": "Кэтрин О’Хара",
-      "role": "Kate McCallister"
-    },
-    {
-      "name": "Джон Хёрд",
-      "role": "Peter McCallister"
-    },
-    {
-      "name": "Робертс Блоссом",
-      "role": "Marley"
-    },
-    {
-      "name": "Джерри Бэммен",
-      "role": "Uncle Frank McCallister"
-    },
-    {
-      "name": "Девин Рэтрей",
-      "role": "Buzz McCallister"
-    },
-    {
-      "name": "Джон Кэнди",
-      "role": "Gus Polinski"
-    },
-    {
-      "name": "Киран Калкин",
-      "role": "Fuller McCallister"
-    }
+    { "name": "Маколей Калкин", "role": "Kevin McCallister" },
+    { "name": "Джо Пеши", "role": "Harry" },
+    { "name": "Дэниел Стерн", "role": "Marv" },
+    { "name": "Кэтрин О’Хара", "role": "Kate McCallister" },
+    { "name": "Джон Хёрд", "role": "Peter McCallister" },
+    { "name": "Робертс Блоссом", "role": "Marley" },
+    { "name": "Джерри Бэммен", "role": "Uncle Frank McCallister" },
+    { "name": "Девин Рэтрей", "role": "Buzz McCallister" },
+    { "name": "Джон Кэнди", "role": "Gus Polinski" },
+    { "name": "Киран Калкин", "role": "Fuller McCallister" }
   ],
   "104901": [
-    {
-      "name": "Тимоти Олифант",
-      "role": "Agent 47"
-    },
-    {
-      "name": "Дюгрей Скотт",
-      "role": "Mike Whittier"
-    },
-    {
-      "name": "Ольга Куриленко",
-      "role": "Nika Boronina"
-    },
-    {
-      "name": "Роберт Неппер",
-      "role": "Yuri Marklov"
-    },
-    {
-      "name": "Ульрих Томсен",
-      "role": "Mikhail Belicoff"
-    },
-    {
-      "name": "Генри Иэн Кьюсик",
-      "role": "Udre Belicoff"
-    },
-    {
-      "name": "Михаэль Оффей",
-      "role": "Jenkins"
-    },
-    {
-      "name": "Кристиан Эриксон",
-      "role": "General Kormarov"
-    },
-    {
-      "name": "Эрик Эбуане",
-      "role": "Bwana Ovie"
-    },
-    {
-      "name": "Джо Шеридан",
-      "role": "Captain Gudnayev"
-    }
+    { "name": "Тимоти Олифант", "role": "Agent 47" },
+    { "name": "Дюгрей Скотт", "role": "Mike Whittier" },
+    { "name": "Ольга Куриленко", "role": "Nika Boronina" },
+    { "name": "Роберт Неппер", "role": "Yuri Marklov" },
+    { "name": "Ульрих Томсен", "role": "Mikhail Belicoff" },
+    { "name": "Генри Иэн Кьюсик", "role": "Udre Belicoff" },
+    { "name": "Михаэль Оффей", "role": "Jenkins" },
+    { "name": "Кристиан Эриксон", "role": "General Kormarov" },
+    { "name": "Эрик Эбуане", "role": "Bwana Ovie" },
+    { "name": "Джо Шеридан", "role": "Captain Gudnayev" }
   ],
   "5558": [
-    {
-      "name": "Мэтт Дэймон",
-      "role": "Tom Ripley"
-    },
-    {
-      "name": "Джуд Лоу",
-      "role": "Dickie Greenleaf"
-    },
-    {
-      "name": "Гвинет Пэлтроу",
-      "role": "Marge Sherwood"
-    },
-    {
-      "name": "Филип Сеймур Хоффман",
-      "role": "Freddie Miles"
-    },
-    {
-      "name": "Кейт Бланшетт",
-      "role": "Meredith Logue"
-    },
-    {
-      "name": "Джек Девенпорт",
-      "role": "Peter Smith-Kingsley"
-    },
-    {
-      "name": "Джеймс Ребхорн",
-      "role": "Herbert Greenleaf"
-    },
-    {
-      "name": "Серджо Рубини",
-      "role": "Inspector Roverini"
-    },
-    {
-      "name": "Филип Бейкер Холл",
-      "role": "Alvin MacCarron"
-    },
-    {
-      "name": "Селия Уэстон",
-      "role": "Aunt Joan"
-    }
+    { "name": "Мэтт Дэймон", "role": "Tom Ripley" },
+    { "name": "Джуд Лоу", "role": "Dickie Greenleaf" },
+    { "name": "Гвинет Пэлтроу", "role": "Marge Sherwood" },
+    { "name": "Филип Сеймур Хоффман", "role": "Freddie Miles" },
+    { "name": "Кейт Бланшетт", "role": "Meredith Logue" },
+    { "name": "Джек Девенпорт", "role": "Peter Smith-Kingsley" },
+    { "name": "Джеймс Ребхорн", "role": "Herbert Greenleaf" },
+    { "name": "Серджо Рубини", "role": "Inspector Roverini" },
+    { "name": "Филип Бейкер Холл", "role": "Alvin MacCarron" },
+    { "name": "Селия Уэстон", "role": "Aunt Joan" }
   ],
   "1012421": [
-    {
-      "name": "Джессика Рот",
-      "role": "Tree Gelbman"
-    },
-    {
-      "name": "Израэль Бруссар",
-      "role": "Carter Davis"
-    },
-    {
-      "name": "Руби Модин",
-      "role": "Lori Spengler"
-    },
-    {
-      "name": "Чарльз Эйткин",
-      "role": "Gregory Butler"
-    },
-    {
-      "name": "Лаура Клифтон",
-      "role": "Stephanie Butler"
-    },
-    {
-      "name": "Джейсон Бэйл",
-      "role": "David Gelbman"
-    },
-    {
-      "name": "Роб Мелло",
-      "role": "John Tombs"
-    },
-    {
-      "name": "Рэйчел Мэттьюз",
-      "role": "Danielle Bouseman"
-    },
-    {
-      "name": "Рэмси Андерсон",
-      "role": "Keith Lumbly"
-    },
-    {
-      "name": "Брэйди Льюис",
-      "role": "Frat Brother"
-    }
+    { "name": "Джессика Рот", "role": "Tree Gelbman" },
+    { "name": "Израэль Бруссар", "role": "Carter Davis" },
+    { "name": "Руби Модин", "role": "Lori Spengler" },
+    { "name": "Чарльз Эйткин", "role": "Gregory Butler" },
+    { "name": "Лаура Клифтон", "role": "Stephanie Butler" },
+    { "name": "Джейсон Бэйл", "role": "David Gelbman" },
+    { "name": "Роб Мелло", "role": "John Tombs" },
+    { "name": "Рэйчел Мэттьюз", "role": "Danielle Bouseman" },
+    { "name": "Рэмси Андерсон", "role": "Keith Lumbly" },
+    { "name": "Брэйди Льюис", "role": "Frat Brother" }
   ],
   "841681": [
-    {
-      "name": "Нацуки Ханаэ",
-      "role": "Kaneki Ken, озвучка"
-    },
-    {
-      "name": "Сора Амамия",
-      "role": "Kirishima, Touka, озвучка"
-    },
-    {
-      "name": "Синтаро Асанума",
-      "role": "Nishiki Nishio, озвучка"
-    },
-    {
-      "name": "Мамору Мияно",
-      "role": "Shuu Tsukiyama, озвучка"
-    },
-    {
-      "name": "Трина Нисимура",
-      "role": "Misato Gori, озвучка"
-    },
-    {
-      "name": "Сумирэ Морохоси",
-      "role": "Hinami Fueguchi, озвучка"
-    },
-    {
-      "name": "Такахиро Сакурай",
-      "role": "Uta, озвучка"
-    },
-    {
-      "name": "Риэ Кугимия",
-      "role": "Suzuya Juuzou, озвучка"
-    },
-    {
-      "name": "Рэина Уэда",
-      "role": "Taguchi (Nurse), озвучка"
-    },
-    {
-      "name": "Кана Ханадзава",
-      "role": "Rize Kamishiro, озвучка"
-    }
+    { "name": "Нацуки Ханаэ", "role": "Kaneki Ken, озвучка" },
+    { "name": "Сора Амамия", "role": "Kirishima, Touka, озвучка" },
+    { "name": "Синтаро Асанума", "role": "Nishiki Nishio, озвучка" },
+    { "name": "Мамору Мияно", "role": "Shuu Tsukiyama, озвучка" },
+    { "name": "Трина Нисимура", "role": "Misato Gori, озвучка" },
+    { "name": "Сумирэ Морохоси", "role": "Hinami Fueguchi, озвучка" },
+    { "name": "Такахиро Сакурай", "role": "Uta, озвучка" },
+    { "name": "Риэ Кугимия", "role": "Suzuya Juuzou, озвучка" },
+    { "name": "Рэина Уэда", "role": "Taguchi (Nurse), озвучка" },
+    { "name": "Кана Ханадзава", "role": "Rize Kamishiro, озвучка" }
   ],
   "707483": [
-    {
-      "name": "Эрик Бана",
-      "role": "Sarchie"
-    },
-    {
-      "name": "Эдгар Рамирес",
-      "role": "Mendoza"
-    },
-    {
-      "name": "Оливия Манн",
-      "role": "Jen"
-    },
-    {
-      "name": "Крис Кой",
-      "role": "Jimmy"
-    },
-    {
-      "name": "Дориан Миссик",
-      "role": "Gordon"
-    },
-    {
-      "name": "Шон Харрис",
-      "role": "Santino"
-    },
-    {
-      "name": "Джоэл Макхэйл",
-      "role": "Butler"
-    },
-    {
-      "name": "Майк Хьюстон",
-      "role": "Nadler"
-    },
-    {
-      "name": "Лулу Уилсон",
-      "role": "Christina"
-    },
-    {
-      "name": "Оливия Хортон",
-      "role": "Jane"
-    }
+    { "name": "Эрик Бана", "role": "Sarchie" },
+    { "name": "Эдгар Рамирес", "role": "Mendoza" },
+    { "name": "Оливия Манн", "role": "Jen" },
+    { "name": "Крис Кой", "role": "Jimmy" },
+    { "name": "Дориан Миссик", "role": "Gordon" },
+    { "name": "Шон Харрис", "role": "Santino" },
+    { "name": "Джоэл Макхэйл", "role": "Butler" },
+    { "name": "Майк Хьюстон", "role": "Nadler" },
+    { "name": "Лулу Уилсон", "role": "Christina" },
+    { "name": "Оливия Хортон", "role": "Jane" }
   ],
   "689": [
-    {
-      "name": "Дэниэл Рэдклифф",
-      "role": "Harry Potter"
-    },
-    {
-      "name": "Руперт Гринт",
-      "role": "Ron Weasley"
-    },
-    {
-      "name": "Эмма Уотсон",
-      "role": "Hermione Granger"
-    },
-    {
-      "name": "Ричард Харрис",
-      "role": "Albus Dumbledore"
-    },
-    {
-      "name": "Алан Рикман",
-      "role": "Professor Snape"
-    },
-    {
-      "name": "Мэгги Смит",
-      "role": "Professor McGonagall"
-    },
-    {
-      "name": "Робби Колтрейн",
-      "role": "Hagrid"
-    },
-    {
-      "name": "Том Фелтон",
-      "role": "Draco Malfoy"
-    },
-    {
-      "name": "Мэттью Льюис",
-      "role": "Neville Longbottom"
-    },
-    {
-      "name": "Иэн Харт",
-      "role": "Professor Quirrell"
-    }
+    { "name": "Дэниэл Рэдклифф", "role": "Harry Potter" },
+    { "name": "Руперт Гринт", "role": "Ron Weasley" },
+    { "name": "Эмма Уотсон", "role": "Hermione Granger" },
+    { "name": "Ричард Харрис", "role": "Albus Dumbledore" },
+    { "name": "Алан Рикман", "role": "Professor Snape" },
+    { "name": "Мэгги Смит", "role": "Professor McGonagall" },
+    { "name": "Робби Колтрейн", "role": "Hagrid" },
+    { "name": "Том Фелтон", "role": "Draco Malfoy" },
+    { "name": "Мэттью Льюис", "role": "Neville Longbottom" },
+    { "name": "Иэн Харт", "role": "Professor Quirrell" }
   ],
   "688": [
-    {
-      "name": "Дэниэл Рэдклифф",
-      "role": "Harry Potter"
-    },
-    {
-      "name": "Руперт Гринт",
-      "role": "Ron Weasley"
-    },
-    {
-      "name": "Эмма Уотсон",
-      "role": "Hermione Granger"
-    },
-    {
-      "name": "Том Фелтон",
-      "role": "Draco Malfoy"
-    },
-    {
-      "name": "Кеннет Брана",
-      "role": "Gilderoy Lockhart"
-    },
-    {
-      "name": "Бонни Райт",
-      "role": "Ginny Weasley"
-    },
-    {
-      "name": "Алан Рикман",
-      "role": "Professor Snape"
-    },
-    {
-      "name": "Ричард Харрис",
-      "role": "Albus Dumbledore"
-    },
-    {
-      "name": "Мэгги Смит",
-      "role": "Professor McGonagall (в титрах: Dame Maggie Smith)"
-    },
-    {
-      "name": "Робби Колтрейн",
-      "role": "Hagrid The Giant"
-    }
+    { "name": "Дэниэл Рэдклифф", "role": "Harry Potter" },
+    { "name": "Руперт Гринт", "role": "Ron Weasley" },
+    { "name": "Эмма Уотсон", "role": "Hermione Granger" },
+    { "name": "Том Фелтон", "role": "Draco Malfoy" },
+    { "name": "Кеннет Брана", "role": "Gilderoy Lockhart" },
+    { "name": "Бонни Райт", "role": "Ginny Weasley" },
+    { "name": "Алан Рикман", "role": "Professor Snape" },
+    { "name": "Ричард Харрис", "role": "Albus Dumbledore" },
+    { "name": "Мэгги Смит", "role": "Professor McGonagall (в титрах: Dame Maggie Smith)" },
+    { "name": "Робби Колтрейн", "role": "Hagrid The Giant" }
   ],
   "322": [
-    {
-      "name": "Дэниэл Рэдклифф",
-      "role": "Harry Potter"
-    },
-    {
-      "name": "Руперт Гринт",
-      "role": "Ron Weasley"
-    },
-    {
-      "name": "Эмма Уотсон",
-      "role": "Hermione Granger"
-    },
-    {
-      "name": "Дэвид Тьюлис",
-      "role": "Professor Lupin"
-    },
-    {
-      "name": "Робби Колтрейн",
-      "role": "Rubeus Hagrid"
-    },
-    {
-      "name": "Гари Олдман",
-      "role": "Sirius Black"
-    },
-    {
-      "name": "Майкл Гэмбон",
-      "role": "Albus Dumbledore"
-    },
-    {
-      "name": "Алан Рикман",
-      "role": "Professor Severus Snape"
-    },
-    {
-      "name": "Том Фелтон",
-      "role": "Draco Malfoy"
-    },
-    {
-      "name": "Тимоти Сполл",
-      "role": "Peter Pettigrew"
-    }
+    { "name": "Дэниэл Рэдклифф", "role": "Harry Potter" },
+    { "name": "Руперт Гринт", "role": "Ron Weasley" },
+    { "name": "Эмма Уотсон", "role": "Hermione Granger" },
+    { "name": "Дэвид Тьюлис", "role": "Professor Lupin" },
+    { "name": "Робби Колтрейн", "role": "Rubeus Hagrid" },
+    { "name": "Гари Олдман", "role": "Sirius Black" },
+    { "name": "Майкл Гэмбон", "role": "Albus Dumbledore" },
+    { "name": "Алан Рикман", "role": "Professor Severus Snape" },
+    { "name": "Том Фелтон", "role": "Draco Malfoy" },
+    { "name": "Тимоти Сполл", "role": "Peter Pettigrew" }
   ],
   "8408": [
-    {
-      "name": "Дэниэл Рэдклифф",
-      "role": "Harry Potter"
-    },
-    {
-      "name": "Руперт Гринт",
-      "role": "Ron Weasley"
-    },
-    {
-      "name": "Эмма Уотсон",
-      "role": "Hermione Granger"
-    },
-    {
-      "name": "Брендан Глисон",
-      "role": "Alastor «MadEye» Moody"
-    },
-    {
-      "name": "Алан Рикман",
-      "role": "Severus Snape"
-    },
-    {
-      "name": "Майкл Гэмбон",
-      "role": "Albus Dumbledore"
-    },
-    {
-      "name": "Рэйф Файнс",
-      "role": "Lord Voldemort"
-    },
-    {
-      "name": "Роберт Паттинсон",
-      "role": "Cedric Diggory"
-    },
-    {
-      "name": "Робби Колтрейн",
-      "role": "Rubeus Hagrid"
-    },
-    {
-      "name": "Мэгги Смит",
-      "role": "Minerva McGonagall"
-    }
+    { "name": "Дэниэл Рэдклифф", "role": "Harry Potter" },
+    { "name": "Руперт Гринт", "role": "Ron Weasley" },
+    { "name": "Эмма Уотсон", "role": "Hermione Granger" },
+    { "name": "Брендан Глисон", "role": "Alastor «MadEye» Moody" },
+    { "name": "Алан Рикман", "role": "Severus Snape" },
+    { "name": "Майкл Гэмбон", "role": "Albus Dumbledore" },
+    { "name": "Рэйф Файнс", "role": "Lord Voldemort" },
+    { "name": "Роберт Паттинсон", "role": "Cedric Diggory" },
+    { "name": "Робби Колтрейн", "role": "Rubeus Hagrid" },
+    { "name": "Мэгги Смит", "role": "Minerva McGonagall" }
   ],
   "48356": [
-    {
-      "name": "Дэниэл Рэдклифф",
-      "role": "Harry Potter"
-    },
-    {
-      "name": "Руперт Гринт",
-      "role": "Ron Weasley"
-    },
-    {
-      "name": "Эмма Уотсон",
-      "role": "Hermione Granger"
-    },
-    {
-      "name": "Гари Олдман",
-      "role": "Sirius Black"
-    },
-    {
-      "name": "Рэйф Файнс",
-      "role": "Lord Voldemort"
-    },
-    {
-      "name": "Майкл Гэмбон",
-      "role": "Albus Dumbledore"
-    },
-    {
-      "name": "Том Фелтон",
-      "role": "Draco Malfoy"
-    },
-    {
-      "name": "Имелда Стонтон",
-      "role": "Dolores Umbridge"
-    },
-    {
-      "name": "Эванна Линч",
-      "role": "Luna Lovegood"
-    },
-    {
-      "name": "Алан Рикман",
-      "role": "Severus Snape"
-    }
+    { "name": "Дэниэл Рэдклифф", "role": "Harry Potter" },
+    { "name": "Руперт Гринт", "role": "Ron Weasley" },
+    { "name": "Эмма Уотсон", "role": "Hermione Granger" },
+    { "name": "Гари Олдман", "role": "Sirius Black" },
+    { "name": "Рэйф Файнс", "role": "Lord Voldemort" },
+    { "name": "Майкл Гэмбон", "role": "Albus Dumbledore" },
+    { "name": "Том Фелтон", "role": "Draco Malfoy" },
+    { "name": "Имелда Стонтон", "role": "Dolores Umbridge" },
+    { "name": "Эванна Линч", "role": "Luna Lovegood" },
+    { "name": "Алан Рикман", "role": "Severus Snape" }
   ],
   "89515": [
-    {
-      "name": "Дэниэл Рэдклифф",
-      "role": "Harry Potter"
-    },
-    {
-      "name": "Руперт Гринт",
-      "role": "Ron Weasley"
-    },
-    {
-      "name": "Эмма Уотсон",
-      "role": "Hermione Granger"
-    },
-    {
-      "name": "Майкл Гэмбон",
-      "role": "Professor Albus Dumbledore"
-    },
-    {
-      "name": "Джим Бродбент",
-      "role": "Professor Horace Slughorn"
-    },
-    {
-      "name": "Бонни Райт",
-      "role": "Ginny Weasley"
-    },
-    {
-      "name": "Хелена Бонем Картер",
-      "role": "Bellatrix Lestrange"
-    },
-    {
-      "name": "Алан Рикман",
-      "role": "Professor Severus Snape"
-    },
-    {
-      "name": "Том Фелтон",
-      "role": "Draco Malfoy"
-    },
-    {
-      "name": "Эванна Линч",
-      "role": "Luna Lovegood"
-    }
+    { "name": "Дэниэл Рэдклифф", "role": "Harry Potter" },
+    { "name": "Руперт Гринт", "role": "Ron Weasley" },
+    { "name": "Эмма Уотсон", "role": "Hermione Granger" },
+    { "name": "Майкл Гэмбон", "role": "Professor Albus Dumbledore" },
+    { "name": "Джим Бродбент", "role": "Professor Horace Slughorn" },
+    { "name": "Бонни Райт", "role": "Ginny Weasley" },
+    { "name": "Хелена Бонем Картер", "role": "Bellatrix Lestrange" },
+    { "name": "Алан Рикман", "role": "Professor Severus Snape" },
+    { "name": "Том Фелтон", "role": "Draco Malfoy" },
+    { "name": "Эванна Линч", "role": "Luna Lovegood" }
   ],
   "276762": [
-    {
-      "name": "Дэниэл Рэдклифф",
-      "role": "Harry Potter"
-    },
-    {
-      "name": "Руперт Гринт",
-      "role": "Ron Weasley"
-    },
-    {
-      "name": "Эмма Уотсон",
-      "role": "Hermione Granger"
-    },
-    {
-      "name": "Том Фелтон",
-      "role": "Draco Malfoy"
-    },
-    {
-      "name": "Бонни Райт",
-      "role": "Ginny Weasley"
-    },
-    {
-      "name": "Алан Рикман",
-      "role": "Professor Severus Snape"
-    },
-    {
-      "name": "Рэйф Файнс",
-      "role": "Lord Voldemort"
-    },
-    {
-      "name": "Хелена Бонем Картер",
-      "role": "Bellatrix Lestrange"
-    },
-    {
-      "name": "Майкл Гэмбон",
-      "role": "Professor Albus Dumbledore"
-    },
-    {
-      "name": "Брендан Глисон",
-      "role": "Alastor «Mad-Eye» Moody"
-    }
+    { "name": "Дэниэл Рэдклифф", "role": "Harry Potter" },
+    { "name": "Руперт Гринт", "role": "Ron Weasley" },
+    { "name": "Эмма Уотсон", "role": "Hermione Granger" },
+    { "name": "Том Фелтон", "role": "Draco Malfoy" },
+    { "name": "Бонни Райт", "role": "Ginny Weasley" },
+    { "name": "Алан Рикман", "role": "Professor Severus Snape" },
+    { "name": "Рэйф Файнс", "role": "Lord Voldemort" },
+    { "name": "Хелена Бонем Картер", "role": "Bellatrix Lestrange" },
+    { "name": "Майкл Гэмбон", "role": "Professor Albus Dumbledore" },
+    { "name": "Брендан Глисон", "role": "Alastor «Mad-Eye» Moody" }
   ],
   "407636": [
-    {
-      "name": "Дэниэл Рэдклифф",
-      "role": "Harry Potter"
-    },
-    {
-      "name": "Руперт Гринт",
-      "role": "Ron Weasley"
-    },
-    {
-      "name": "Эмма Уотсон",
-      "role": "Hermione Granger"
-    },
-    {
-      "name": "Хелена Бонем Картер",
-      "role": "Bellatrix Lestrange"
-    },
-    {
-      "name": "Робби Колтрейн",
-      "role": "Rubeus Hagrid"
-    },
-    {
-      "name": "Уорвик Дэвис",
-      "role": "Griphook / Professor Filius Flitwick"
-    },
-    {
-      "name": "Рэйф Файнс",
-      "role": "Lord Voldemort"
-    },
-    {
-      "name": "Майкл Гэмбон",
-      "role": "Professor Albus Dumbledore"
-    },
-    {
-      "name": "Джон Хёрт",
-      "role": "Ollivander"
-    },
-    {
-      "name": "Джейсон Айзекс",
-      "role": "Lucius Malfoy"
-    }
+    { "name": "Дэниэл Рэдклифф", "role": "Harry Potter" },
+    { "name": "Руперт Гринт", "role": "Ron Weasley" },
+    { "name": "Эмма Уотсон", "role": "Hermione Granger" },
+    { "name": "Хелена Бонем Картер", "role": "Bellatrix Lestrange" },
+    { "name": "Робби Колтрейн", "role": "Rubeus Hagrid" },
+    { "name": "Уорвик Дэвис", "role": "Griphook / Professor Filius Flitwick" },
+    { "name": "Рэйф Файнс", "role": "Lord Voldemort" },
+    { "name": "Майкл Гэмбон", "role": "Professor Albus Dumbledore" },
+    { "name": "Джон Хёрт", "role": "Ollivander" },
+    { "name": "Джейсон Айзекс", "role": "Lucius Malfoy" }
   ],
   "4686248": [
-    {
-      "name": "Такуя Эгути",
-      "role": "Loid Forger / Twilight, озвучка"
-    },
-    {
-      "name": "Саори Хаями",
-      "role": "Yor Forger / Thorn Princess, озвучка"
-    },
-    {
-      "name": "Ацуми Танэдзаки",
-      "role": "Anya Forger, озвучка"
-    },
-    {
-      "name": "Хана Сато",
-      "role": "Emile Elman / Tailor Shop Clerk / Eden Academy Examinee / Forgers' Neighbor (Neighbour 2) / Eden Academy Gutter Student / Wife of Colonel Zacharis, озвучка"
-    },
-    {
-      "name": "Хироки Гото",
-      "role": "Brennan / Eden Academy Teacher / Orphanage Owner / Bondman Anime Narrator / WISE Officer / Jack Glooman (George's Father, George no Chichi) / WISE Agency Member, озвучка"
-    },
-    {
-      "name": "Эмико Такэути",
-      "role": "Tailor Shop Proprietress / Eden Academy Student / Class 4 Student / Nurse / Forgers' Neighbor (Neighbour 1) / Eden Academy Applicant, озвучка"
-    },
-    {
-      "name": "Таисукэ Накано",
-      "role": "Bondman / Babol (Bobol, Bobble), озвучка"
-    },
-    {
-      "name": "Мирэи Кумагаи",
-      "role": "Yuri Briar (child) / Sharon / Class 4 Student / Eden Academy Student / Adoption Fair Staff / Animal Shelter Staff, озвучка"
-    },
-    {
-      "name": "Кацунори Окаи",
-      "role": "WISE Staff / Brennan's Man in Black / Eden Academy Teachers / Enemy Organization Agent / Politician's Audience / Becky's Driver / Jeebs (Jeeves) / Announcer / Colonel Erik Zacharis / Doctor / Project Apple Researcher / State Security Service Agent (National Security Officer), озвучка"
-    },
-    {
-      "name": "Масафуми Кобатакэ",
-      "role": "Central Bank CEO / Edgar's Subordinates / Section Chief Burns / Pool Instructor B / Art Smuggler / Politician's Audience / Waiter / Kurt / Barkeep (Barmaster) / Bartender / Doctor / Doorkeeper / National Security Officer (State Security Service Officer) / Project Apple Researcher / Tennis Club Member (Campbelldon Guest) / Eden Academy Security Guard, озвучка"
-    }
+    { "name": "Такуя Эгути", "role": "Loid Forger / Twilight, озвучка" },
+    { "name": "Саори Хаями", "role": "Yor Forger / Thorn Princess, озвучка" },
+    { "name": "Ацуми Танэдзаки", "role": "Anya Forger, озвучка" },
+    { "name": "Хана Сато", "role": "Emile Elman / Tailor Shop Clerk / Eden Academy Examinee / Forgers' Neighbor (Neighbour 2) / Eden Academy Gutter Student / Wife of Colonel Zacharis, озвучка" },
+    { "name": "Хироки Гото", "role": "Brennan / Eden Academy Teacher / Orphanage Owner / Bondman Anime Narrator / WISE Officer / Jack Glooman (George's Father, George no Chichi) / WISE Agency Member, озвучка" },
+    { "name": "Эмико Такэути", "role": "Tailor Shop Proprietress / Eden Academy Student / Class 4 Student / Nurse / Forgers' Neighbor (Neighbour 1) / Eden Academy Applicant, озвучка" },
+    { "name": "Таисукэ Накано", "role": "Bondman / Babol (Bobol, Bobble), озвучка" },
+    { "name": "Мирэи Кумагаи", "role": "Yuri Briar (child) / Sharon / Class 4 Student / Eden Academy Student / Adoption Fair Staff / Animal Shelter Staff, озвучка" },
+    { "name": "Кацунори Окаи", "role": "WISE Staff / Brennan's Man in Black / Eden Academy Teachers / Enemy Organization Agent / Politician's Audience / Becky's Driver / Jeebs (Jeeves) / Announcer / Colonel Erik Zacharis / Doctor / Project Apple Researcher / State Security Service Agent (National Security Officer), озвучка" },
+    { "name": "Масафуми Кобатакэ", "role": "Central Bank CEO / Edgar's Subordinates / Section Chief Burns / Pool Instructor B / Art Smuggler / Politician's Audience / Waiter / Kurt / Barkeep (Barmaster) / Bartender / Doctor / Doorkeeper / National Security Officer (State Security Service Officer) / Project Apple Researcher / Tennis Club Member (Campbelldon Guest) / Eden Academy Security Guard, озвучка" }
   ],
   "1164520": [
-    {
-      "name": "Джерард Батлер",
-      "role": "John Garrity"
-    },
-    {
-      "name": "Морена Баккарин",
-      "role": "Allison Garrity"
-    },
-    {
-      "name": "Дэвид Денман",
-      "role": "Ralph Vento"
-    },
-    {
-      "name": "Хоуп Дэвис",
-      "role": "Judy Vento"
-    },
-    {
-      "name": "Роджер Дэйл Флойд",
-      "role": "Nathan Garrity"
-    },
-    {
-      "name": "Эндрю Бэчелор",
-      "role": "Colin (в титрах: Andrew Byron Bachelor)"
-    },
-    {
-      "name": "Меррин Данги",
-      "role": "Major Breen"
-    },
-    {
-      "name": "Холт Маккэллани",
-      "role": "Twin Otter Pilot"
-    },
-    {
-      "name": "Скотт Гленн",
-      "role": "Dale"
-    },
-    {
-      "name": "Рендал Гонсалес",
-      "role": "Bobby"
-    }
+    { "name": "Джерард Батлер", "role": "John Garrity" },
+    { "name": "Морена Баккарин", "role": "Allison Garrity" },
+    { "name": "Дэвид Денман", "role": "Ralph Vento" },
+    { "name": "Хоуп Дэвис", "role": "Judy Vento" },
+    { "name": "Роджер Дэйл Флойд", "role": "Nathan Garrity" },
+    { "name": "Эндрю Бэчелор", "role": "Colin (в титрах: Andrew Byron Bachelor)" },
+    { "name": "Меррин Данги", "role": "Major Breen" },
+    { "name": "Холт Маккэллани", "role": "Twin Otter Pilot" },
+    { "name": "Скотт Гленн", "role": "Dale" },
+    { "name": "Рендал Гонсалес", "role": "Bobby" }
   ],
   "817167": [
-    {
-      "name": "Джейк Джилленхол",
-      "role": "Dalton"
-    },
-    {
-      "name": "Даниэла Мелшиор",
-      "role": "Ellie"
-    },
-    {
-      "name": "Билли Магнуссен",
-      "role": "Ben Brandt"
-    },
-    {
-      "name": "Конор Макгрегор",
-      "role": "Knox"
-    },
-    {
-      "name": "Гбемисола Икумело",
-      "role": "—"
-    },
-    {
-      "name": "Джессика Уильямс",
-      "role": "Frankie"
-    },
-    {
-      "name": "Жоакин де Алмейда",
-      "role": "Sheriff"
-    },
-    {
-      "name": "Б.К. Кэннон",
-      "role": "Laura"
-    },
-    {
-      "name": "Лукас Гейдж",
-      "role": "Billy"
-    },
-    {
-      "name": "Дж.Д. Пардо",
-      "role": "Dell"
-    }
+    { "name": "Джейк Джилленхол", "role": "Dalton" },
+    { "name": "Даниэла Мелшиор", "role": "Ellie" },
+    { "name": "Билли Магнуссен", "role": "Ben Brandt" },
+    { "name": "Конор Макгрегор", "role": "Knox" },
+    { "name": "Гбемисола Икумело", "role": "—" },
+    { "name": "Джессика Уильямс", "role": "Frankie" },
+    { "name": "Жоакин де Алмейда", "role": "Sheriff" },
+    { "name": "Б.К. Кэннон", "role": "Laura" },
+    { "name": "Лукас Гейдж", "role": "Billy" },
+    { "name": "Дж.Д. Пардо", "role": "Dell" }
   ],
   "938643": [
-    {
-      "name": "Дженнифер Лоуренс",
-      "role": "Mother"
-    },
-    {
-      "name": "Хавьер Бардем",
-      "role": "Him"
-    },
-    {
-      "name": "Эд Харрис",
-      "role": "Man"
-    },
-    {
-      "name": "Мишель Пфайффер",
-      "role": "Woman"
-    },
-    {
-      "name": "Донал Глисон",
-      "role": "Oldest Son"
-    },
-    {
-      "name": "Брин Глисон",
-      "role": "Younger Brother"
-    },
-    {
-      "name": "Кристен Уиг",
-      "role": "Herald"
-    },
-    {
-      "name": "Джован Адепо",
-      "role": "Cupbearer"
-    },
-    {
-      "name": "Аманда Чиу",
-      "role": "Damsel"
-    },
-    {
-      "name": "Патриша Саммерсетт",
-      "role": "Consoler"
-    }
+    { "name": "Дженнифер Лоуренс", "role": "Mother" },
+    { "name": "Хавьер Бардем", "role": "Him" },
+    { "name": "Эд Харрис", "role": "Man" },
+    { "name": "Мишель Пфайффер", "role": "Woman" },
+    { "name": "Донал Глисон", "role": "Oldest Son" },
+    { "name": "Брин Глисон", "role": "Younger Brother" },
+    { "name": "Кристен Уиг", "role": "Herald" },
+    { "name": "Джован Адепо", "role": "Cupbearer" },
+    { "name": "Аманда Чиу", "role": "Damsel" },
+    { "name": "Патриша Саммерсетт", "role": "Consoler" }
   ],
   "823616": [
-    {
-      "name": "Том Хэнкс",
-      "role": "Finch"
-    },
-    {
-      "name": "Donat Balaj",
-      "role": "Joe"
-    },
-    {
-      "name": "Калеб Лэндри Джонс",
-      "role": "Jeff"
-    },
-    {
-      "name": "Скит Ульрих",
-      "role": "Sam"
-    },
-    {
-      "name": "Шеймус",
-      "role": "Goodyear"
-    },
-    {
-      "name": "Мари Уэйдженман",
-      "role": "Daughter (Flashback)"
-    },
-    {
-      "name": "Самира Уайли",
-      "role": "—"
-    },
-    {
-      "name": "Лора Каннингэм",
-      "role": "Mother (Flashback) (в титрах: Lora Cunningham)"
-    },
-    {
-      "name": "Christopher Farrar",
-      "role": "Jimmy"
-    },
-    {
-      "name": "Алексис Рабен",
-      "role": "Ina"
-    }
+    { "name": "Том Хэнкс", "role": "Finch" },
+    { "name": "Donat Balaj", "role": "Joe" },
+    { "name": "Калеб Лэндри Джонс", "role": "Jeff" },
+    { "name": "Скит Ульрих", "role": "Sam" },
+    { "name": "Шеймус", "role": "Goodyear" },
+    { "name": "Мари Уэйдженман", "role": "Daughter (Flashback)" },
+    { "name": "Самира Уайли", "role": "—" },
+    { "name": "Лора Каннингэм", "role": "Mother (Flashback) (в титрах: Lora Cunningham)" },
+    { "name": "Christopher Farrar", "role": "Jimmy" },
+    { "name": "Алексис Рабен", "role": "Ina" }
   ],
   "409600": [
-    {
-      "name": "Бенедикт Камбербэтч",
-      "role": "Dr. Stephen Strange"
-    },
-    {
-      "name": "Тильда Суинтон",
-      "role": "The Ancient One"
-    },
-    {
-      "name": "Мадс Миккельсен",
-      "role": "Kaecilius"
-    },
-    {
-      "name": "Чиветель Эджиофор",
-      "role": "Mordo"
-    },
-    {
-      "name": "Рэйчел Макадамс",
-      "role": "Dr. Christine Palmer"
-    },
-    {
-      "name": "Бенедикт Вонг",
-      "role": "Wong"
-    },
-    {
-      "name": "Майкл Стулбарг",
-      "role": "Dr. Nicodemus West"
-    },
-    {
-      "name": "Бенджамин Брэтт",
-      "role": "Jonathan Pangborn"
-    },
-    {
-      "name": "Скотт Эдкинс",
-      "role": "Lucian / Strong Zealot"
-    },
-    {
-      "name": "Зара Питиан",
-      "role": "Brunette Zealot"
-    }
+    { "name": "Бенедикт Камбербэтч", "role": "Dr. Stephen Strange" },
+    { "name": "Тильда Суинтон", "role": "The Ancient One" },
+    { "name": "Мадс Миккельсен", "role": "Kaecilius" },
+    { "name": "Чиветель Эджиофор", "role": "Mordo" },
+    { "name": "Рэйчел Макадамс", "role": "Dr. Christine Palmer" },
+    { "name": "Бенедикт Вонг", "role": "Wong" },
+    { "name": "Майкл Стулбарг", "role": "Dr. Nicodemus West" },
+    { "name": "Бенджамин Брэтт", "role": "Jonathan Pangborn" },
+    { "name": "Скотт Эдкинс", "role": "Lucian / Strong Zealot" },
+    { "name": "Зара Питиан", "role": "Brunette Zealot" }
   ],
   "5304403": [
-    {
-      "name": "Леон Кемстач",
-      "role": "Андрей Васильев / Пальто"
-    },
-    {
-      "name": "Рузиль Минекаев",
-      "role": "Марат Суворов / Адидас-младший"
-    },
-    {
-      "name": "Иван Янковский",
-      "role": "Вова Суворов / Адидас"
-    },
-    {
-      "name": "Анастасия Красовская",
-      "role": "Ирина Сергеевна"
-    },
-    {
-      "name": "Юлия Александрова",
-      "role": "Светлана Михайловна, мама Андрея"
-    },
-    {
-      "name": "Слава Копейкин",
-      "role": "Валера Туркин / Турбо"
-    },
-    {
-      "name": "Лев Зулькарнаев",
-      "role": "Вахит Зималетдинов / Зима"
-    },
-    {
-      "name": "Никита Кологривый",
-      "role": "Кащей"
-    },
-    {
-      "name": "Сергей Бурунов",
-      "role": "Кирилл Суворов"
-    },
-    {
-      "name": "Антон Васильев",
-      "role": "Ильдар Юнусович"
-    }
+    { "name": "Леон Кемстач", "role": "Андрей Васильев / Пальто" },
+    { "name": "Рузиль Минекаев", "role": "Марат Суворов / Адидас-младший" },
+    { "name": "Иван Янковский", "role": "Вова Суворов / Адидас" },
+    { "name": "Анастасия Красовская", "role": "Ирина Сергеевна" },
+    { "name": "Юлия Александрова", "role": "Светлана Михайловна, мама Андрея" },
+    { "name": "Слава Копейкин", "role": "Валера Туркин / Турбо" },
+    { "name": "Лев Зулькарнаев", "role": "Вахит Зималетдинов / Зима" },
+    { "name": "Никита Кологривый", "role": "Кащей" },
+    { "name": "Сергей Бурунов", "role": "Кирилл Суворов" },
+    { "name": "Антон Васильев", "role": "Ильдар Юнусович" }
   ],
   "1188248": [
-    {
-      "name": "Юра Борисов",
-      "role": "Калашников"
-    },
-    {
-      "name": "Ольга Лерман",
-      "role": "Катя"
-    },
-    {
-      "name": "Артур Смольянинов",
-      "role": "инженер капитан Лютый"
-    },
-    {
-      "name": "Эльдар Калимулин",
-      "role": "Зайцев"
-    },
-    {
-      "name": "Виталий Хаев",
-      "role": "генерал-майор Курбаткин"
-    },
-    {
-      "name": "Валерий Баринов",
-      "role": "генерал-майор Дегтярев"
-    },
-    {
-      "name": "Анатолий Лобоцкий",
-      "role": "полковник Глухов"
-    },
-    {
-      "name": "Алексей Вертков",
-      "role": "капитан госбезопасности Лобов"
-    },
-    {
-      "name": "Дмитрий Богдан",
-      "role": "инженер-майор Судаев"
-    },
-    {
-      "name": "Максим Битюков",
-      "role": "Казаков"
-    }
+    { "name": "Юра Борисов", "role": "Калашников" },
+    { "name": "Ольга Лерман", "role": "Катя" },
+    { "name": "Артур Смольянинов", "role": "инженер капитан Лютый" },
+    { "name": "Эльдар Калимулин", "role": "Зайцев" },
+    { "name": "Виталий Хаев", "role": "генерал-майор Курбаткин" },
+    { "name": "Валерий Баринов", "role": "генерал-майор Дегтярев" },
+    { "name": "Анатолий Лобоцкий", "role": "полковник Глухов" },
+    { "name": "Алексей Вертков", "role": "капитан госбезопасности Лобов" },
+    { "name": "Дмитрий Богдан", "role": "инженер-майор Судаев" },
+    { "name": "Максим Битюков", "role": "Казаков" }
   ],
   "4414587": [
-    {
-      "name": "Генри Кавилл",
-      "role": "Gus March-Phillips"
-    },
-    {
-      "name": "Алан Ричсон",
-      "role": "Anders Lassen"
-    },
-    {
-      "name": "Рори Киннер",
-      "role": "Churchill"
-    },
-    {
-      "name": "Генри Голдинг",
-      "role": "Freddy Alvarez"
-    },
-    {
-      "name": "Фредди Фокс",
-      "role": "Ian Fleming"
-    },
-    {
-      "name": "Эйса Гонсалес",
-      "role": "Marjorie Stewart"
-    },
-    {
-      "name": "Алекс Петтифер",
-      "role": "Geoffrey Appleyard"
-    },
-    {
-      "name": "Хиро Файнс Тиффин",
-      "role": "Henry Hayes"
-    },
-    {
-      "name": "Тиль Швайгер",
-      "role": "Heinrich Luhr"
-    },
-    {
-      "name": "Кэри Элвес",
-      "role": "Brigadier Gubbins «M»"
-    }
+    { "name": "Генри Кавилл", "role": "Gus March-Phillips" },
+    { "name": "Алан Ричсон", "role": "Anders Lassen" },
+    { "name": "Рори Киннер", "role": "Churchill" },
+    { "name": "Генри Голдинг", "role": "Freddy Alvarez" },
+    { "name": "Фредди Фокс", "role": "Ian Fleming" },
+    { "name": "Эйса Гонсалес", "role": "Marjorie Stewart" },
+    { "name": "Алекс Петтифер", "role": "Geoffrey Appleyard" },
+    { "name": "Хиро Файнс Тиффин", "role": "Henry Hayes" },
+    { "name": "Тиль Швайгер", "role": "Heinrich Luhr" },
+    { "name": "Кэри Элвес", "role": "Brigadier Gubbins «M»" }
   ],
   "258687": [
-    {
-      "name": "Мэттью Макконахи",
-      "role": "Cooper"
-    },
-    {
-      "name": "Энн Хэтэуэй",
-      "role": "Brand"
-    },
-    {
-      "name": "Джессика Честейн",
-      "role": "Murph"
-    },
-    {
-      "name": "Маккензи Фой",
-      "role": "Murph"
-    },
-    {
-      "name": "Майкл Кейн",
-      "role": "Professor Brand"
-    },
-    {
-      "name": "Дэвид Джеси",
-      "role": "Romilly"
-    },
-    {
-      "name": "Уэс Бентли",
-      "role": "Doyle"
-    },
-    {
-      "name": "Кейси Аффлек",
-      "role": "Tom"
-    },
-    {
-      "name": "Джон Литгоу",
-      "role": "Donald"
-    },
-    {
-      "name": "Мэтт Дэймон",
-      "role": "Mann"
-    }
+    { "name": "Мэттью Макконахи", "role": "Cooper" },
+    { "name": "Энн Хэтэуэй", "role": "Brand" },
+    { "name": "Джессика Честейн", "role": "Murph" },
+    { "name": "Маккензи Фой", "role": "Murph" },
+    { "name": "Майкл Кейн", "role": "Professor Brand" },
+    { "name": "Дэвид Джеси", "role": "Romilly" },
+    { "name": "Уэс Бентли", "role": "Doyle" },
+    { "name": "Кейси Аффлек", "role": "Tom" },
+    { "name": "Джон Литгоу", "role": "Donald" },
+    { "name": "Мэтт Дэймон", "role": "Mann" }
   ],
   "361": [
-    {
-      "name": "Эдвард Нортон",
-      "role": "рассказчик"
-    },
-    {
-      "name": "Брэд Питт",
-      "role": "Tyler Durden"
-    },
-    {
-      "name": "Хелена Бонем Картер",
-      "role": "Marla Singer"
-    },
-    {
-      "name": "Мит Лоаф",
-      "role": "Robert Paulsen (в титрах: Meat Loaf Aday)"
-    },
-    {
-      "name": "Зэк Гренье",
-      "role": "Richard Chesler (Regional Manager)"
-    },
-    {
-      "name": "Холт Маккэллани",
-      "role": "The Mechanic"
-    },
-    {
-      "name": "Джаред Лето",
-      "role": "Angel Face"
-    },
-    {
-      "name": "Эйон Бэйли",
-      "role": "Ricky"
-    },
-    {
-      "name": "Ричмонд Аркетт",
-      "role": "Intern at Hospital"
-    },
-    {
-      "name": "Дэвид Эндрюс",
-      "role": "Thomas at Remaining Men Together"
-    }
+    { "name": "Эдвард Нортон", "role": "рассказчик" },
+    { "name": "Брэд Питт", "role": "Tyler Durden" },
+    { "name": "Хелена Бонем Картер", "role": "Marla Singer" },
+    { "name": "Мит Лоаф", "role": "Robert Paulsen (в титрах: Meat Loaf Aday)" },
+    { "name": "Зэк Гренье", "role": "Richard Chesler (Regional Manager)" },
+    { "name": "Холт Маккэллани", "role": "The Mechanic" },
+    { "name": "Джаред Лето", "role": "Angel Face" },
+    { "name": "Эйон Бэйли", "role": "Ricky" },
+    { "name": "Ричмонд Аркетт", "role": "Intern at Hospital" },
+    { "name": "Дэвид Эндрюс", "role": "Thomas at Remaining Men Together" }
   ],
   "588": [
-    {
-      "name": "Кристиан Бэйл",
-      "role": "Patrick Bateman"
-    },
-    {
-      "name": "Уиллем Дефо",
-      "role": "Donald Kimball"
-    },
-    {
-      "name": "Джош Лукас",
-      "role": "Craig McDermott"
-    },
-    {
-      "name": "Риз Уизерспун",
-      "role": "Evelyn Williams"
-    },
-    {
-      "name": "Кэра Сеймур",
-      "role": "Christie"
-    },
-    {
-      "name": "Джастин Теру",
-      "role": "Timothy Bryce"
-    },
-    {
-      "name": "Джаред Лето",
-      "role": "Paul Allen"
-    },
-    {
-      "name": "Хлоя Севиньи",
-      "role": "Jean"
-    },
-    {
-      "name": "Саманта Мэтис",
-      "role": "Courtney Rawlinson"
-    },
-    {
-      "name": "Мэтт Росс",
-      "role": "Luis Carruthers"
-    }
+    { "name": "Кристиан Бэйл", "role": "Patrick Bateman" },
+    { "name": "Уиллем Дефо", "role": "Donald Kimball" },
+    { "name": "Джош Лукас", "role": "Craig McDermott" },
+    { "name": "Риз Уизерспун", "role": "Evelyn Williams" },
+    { "name": "Кэра Сеймур", "role": "Christie" },
+    { "name": "Джастин Теру", "role": "Timothy Bryce" },
+    { "name": "Джаред Лето", "role": "Paul Allen" },
+    { "name": "Хлоя Севиньи", "role": "Jean" },
+    { "name": "Саманта Мэтис", "role": "Courtney Rawlinson" },
+    { "name": "Мэтт Росс", "role": "Luis Carruthers" }
   ],
   "462682": [
-    {
-      "name": "Леонардо ДиКаприо",
-      "role": "Jordan Belfort"
-    },
-    {
-      "name": "Джона Хилл",
-      "role": "Donnie Azoff"
-    },
-    {
-      "name": "Марго Робби",
-      "role": "Naomi Lapaglia"
-    },
-    {
-      "name": "Кайл Чендлер",
-      "role": "Agent Patrick Denham"
-    },
-    {
-      "name": "Роб Райнер",
-      "role": "Max Belfort"
-    },
-    {
-      "name": "П.Дж. Бирн",
-      "role": "Nicky Koskoff ('Rugrat')"
-    },
-    {
-      "name": "Джон Бернтал",
-      "role": "Brad"
-    },
-    {
-      "name": "Кристин Милиоти",
-      "role": "Teresa Petrillo"
-    },
-    {
-      "name": "Жан Дюжарден",
-      "role": "Jean Jacques Saurel"
-    },
-    {
-      "name": "Мэттью Макконахи",
-      "role": "Mark Hanna"
-    }
+    { "name": "Леонардо ДиКаприо", "role": "Jordan Belfort" },
+    { "name": "Джона Хилл", "role": "Donnie Azoff" },
+    { "name": "Марго Робби", "role": "Naomi Lapaglia" },
+    { "name": "Кайл Чендлер", "role": "Agent Patrick Denham" },
+    { "name": "Роб Райнер", "role": "Max Belfort" },
+    { "name": "П.Дж. Бирн", "role": "Nicky Koskoff ('Rugrat')" },
+    { "name": "Джон Бернтал", "role": "Brad" },
+    { "name": "Кристин Милиоти", "role": "Teresa Petrillo" },
+    { "name": "Жан Дюжарден", "role": "Jean Jacques Saurel" },
+    { "name": "Мэттью Макконахи", "role": "Mark Hanna" }
   ],
   "47018": [
-    {
-      "name": "Брайс Даллас Ховард",
-      "role": "Ivy Walker"
-    },
-    {
-      "name": "Хоакин Феникс",
-      "role": "Lucius Hunt"
-    },
-    {
-      "name": "Эдриан Броуди",
-      "role": "Noah Percy"
-    },
-    {
-      "name": "Уильям Хёрт",
-      "role": "Edward Walker"
-    },
-    {
-      "name": "Сигурни Уивер",
-      "role": "Alice Hunt"
-    },
-    {
-      "name": "Брендан Глисон",
-      "role": "August Nicholson"
-    },
-    {
-      "name": "Черри Джонс",
-      "role": "Mrs. Clack"
-    },
-    {
-      "name": "Селия Уэстон",
-      "role": "Vivian Percy"
-    },
-    {
-      "name": "Джон Кристофер Джонс",
-      "role": "Robert Percy"
-    },
-    {
-      "name": "Фрэнк Коллисон",
-      "role": "Victor"
-    }
+    { "name": "Брайс Даллас Ховард", "role": "Ivy Walker" },
+    { "name": "Хоакин Феникс", "role": "Lucius Hunt" },
+    { "name": "Эдриан Броуди", "role": "Noah Percy" },
+    { "name": "Уильям Хёрт", "role": "Edward Walker" },
+    { "name": "Сигурни Уивер", "role": "Alice Hunt" },
+    { "name": "Брендан Глисон", "role": "August Nicholson" },
+    { "name": "Черри Джонс", "role": "Mrs. Clack" },
+    { "name": "Селия Уэстон", "role": "Vivian Percy" },
+    { "name": "Джон Кристофер Джонс", "role": "Robert Percy" },
+    { "name": "Фрэнк Коллисон", "role": "Victor" }
   ],
   "410": [
-    {
-      "name": "Джейк Джилленхол",
-      "role": "Donnie Darko"
-    },
-    {
-      "name": "Джена Мэлоун",
-      "role": "Gretchen Ross"
-    },
-    {
-      "name": "Мэгги Джилленхол",
-      "role": "Elizabeth Darko"
-    },
-    {
-      "name": "Мэри Макдоннелл",
-      "role": "Rose Darko"
-    },
-    {
-      "name": "Холмс Осборн",
-      "role": "Eddie Darko"
-    },
-    {
-      "name": "Патрик Суэйзи",
-      "role": "Jim Cunningham"
-    },
-    {
-      "name": "Ноа Уайли",
-      "role": "Prof. Kenneth Monnitoff"
-    },
-    {
-      "name": "Дрю Бэрримор",
-      "role": "Karen Pomeroy"
-    },
-    {
-      "name": "Джеймс Дювал",
-      "role": "Frank"
-    },
-    {
-      "name": "Кэтрин Росс",
-      "role": "Dr. Lilian Thurman"
-    }
+    { "name": "Джейк Джилленхол", "role": "Donnie Darko" },
+    { "name": "Джена Мэлоун", "role": "Gretchen Ross" },
+    { "name": "Мэгги Джилленхол", "role": "Elizabeth Darko" },
+    { "name": "Мэри Макдоннелл", "role": "Rose Darko" },
+    { "name": "Холмс Осборн", "role": "Eddie Darko" },
+    { "name": "Патрик Суэйзи", "role": "Jim Cunningham" },
+    { "name": "Ноа Уайли", "role": "Prof. Kenneth Monnitoff" },
+    { "name": "Дрю Бэрримор", "role": "Karen Pomeroy" },
+    { "name": "Джеймс Дювал", "role": "Frank" },
+    { "name": "Кэтрин Росс", "role": "Dr. Lilian Thurman" }
   ],
   "5167": [
-    {
-      "name": "Эштон Кутчер",
-      "role": "Evan"
-    },
-    {
-      "name": "Эми Смарт",
-      "role": "Kayleigh"
-    },
-    {
-      "name": "Элден Хенсон",
-      "role": "Lenny"
-    },
-    {
-      "name": "Уильям Ли Скотт",
-      "role": "Tommy"
-    },
-    {
-      "name": "Джон Патрик Амедори",
-      "role": "Evan at 13"
-    },
-    {
-      "name": "Кевин Шмидт",
-      "role": "Lenny at 13"
-    },
-    {
-      "name": "Ирина Горовая",
-      "role": "Kayleigh at 13 (в титрах: Irene Gorovaia)"
-    },
-    {
-      "name": "Джесси Джеймс",
-      "role": "Tommy at 13"
-    },
-    {
-      "name": "Мелора Уолтерс",
-      "role": "Andrea"
-    },
-    {
-      "name": "Эрик Столц",
-      "role": "Mr. Miller"
-    }
+    { "name": "Эштон Кутчер", "role": "Evan" },
+    { "name": "Эми Смарт", "role": "Kayleigh" },
+    { "name": "Элден Хенсон", "role": "Lenny" },
+    { "name": "Уильям Ли Скотт", "role": "Tommy" },
+    { "name": "Джон Патрик Амедори", "role": "Evan at 13" },
+    { "name": "Кевин Шмидт", "role": "Lenny at 13" },
+    { "name": "Ирина Горовая", "role": "Kayleigh at 13 (в титрах: Irene Gorovaia)" },
+    { "name": "Джесси Джеймс", "role": "Tommy at 13" },
+    { "name": "Мелора Уолтерс", "role": "Andrea" },
+    { "name": "Эрик Столц", "role": "Mr. Miller" }
   ],
   "328": [
-    {
-      "name": "Элайджа Вуд",
-      "role": "Frodo"
-    },
-    {
-      "name": "Иэн Маккеллен",
-      "role": "Gandalf"
-    },
-    {
-      "name": "Шон Эстин",
-      "role": "Sam"
-    },
-    {
-      "name": "Вигго Мортенсен",
-      "role": "Aragorn"
-    },
-    {
-      "name": "Билли Бойд",
-      "role": "Pippin"
-    },
-    {
-      "name": "Доминик Монахэн",
-      "role": "Merry"
-    },
-    {
-      "name": "Джон Рис-Дэвис",
-      "role": "Gimli"
-    },
-    {
-      "name": "Орландо Блум",
-      "role": "Legolas"
-    },
-    {
-      "name": "Шон Бин",
-      "role": "Boromir"
-    },
-    {
-      "name": "Иэн Холм",
-      "role": "Bilbo"
-    }
+    { "name": "Элайджа Вуд", "role": "Frodo" },
+    { "name": "Иэн Маккеллен", "role": "Gandalf" },
+    { "name": "Шон Эстин", "role": "Sam" },
+    { "name": "Вигго Мортенсен", "role": "Aragorn" },
+    { "name": "Билли Бойд", "role": "Pippin" },
+    { "name": "Доминик Монахэн", "role": "Merry" },
+    { "name": "Джон Рис-Дэвис", "role": "Gimli" },
+    { "name": "Орландо Блум", "role": "Legolas" },
+    { "name": "Шон Бин", "role": "Boromir" },
+    { "name": "Иэн Холм", "role": "Bilbo" }
   ],
   "839954": [
-    {
-      "name": "Том Харди",
-      "role": "Reggie Kray / Ron Kray"
-    },
-    {
-      "name": "Эмили Браунинг",
-      "role": "Frances Shea"
-    },
-    {
-      "name": "Дэвид Тьюлис",
-      "role": "Leslie Payne"
-    },
-    {
-      "name": "Даффи",
-      "role": "Timi Yuro"
-    },
-    {
-      "name": "Кристофер Экклстон",
-      "role": "Nipper Read"
-    },
-    {
-      "name": "Чазз Пальминтери",
-      "role": "Angelo Bruno"
-    },
-    {
-      "name": "Пол Андерсон",
-      "role": "Albert Donoghue"
-    },
-    {
-      "name": "Джошуа Хилл",
-      "role": "Constable Scott"
-    },
-    {
-      "name": "Колин Морган",
-      "role": "Frank Shea"
-    },
-    {
-      "name": "Тара Фитцджеральд",
-      "role": "Mrs Shea"
-    }
+    { "name": "Том Харди", "role": "Reggie Kray / Ron Kray" },
+    { "name": "Эмили Браунинг", "role": "Frances Shea" },
+    { "name": "Дэвид Тьюлис", "role": "Leslie Payne" },
+    { "name": "Даффи", "role": "Timi Yuro" },
+    { "name": "Кристофер Экклстон", "role": "Nipper Read" },
+    { "name": "Чазз Пальминтери", "role": "Angelo Bruno" },
+    { "name": "Пол Андерсон", "role": "Albert Donoghue" },
+    { "name": "Джошуа Хилл", "role": "Constable Scott" },
+    { "name": "Колин Морган", "role": "Frank Shea" },
+    { "name": "Тара Фитцджеральд", "role": "Mrs Shea" }
   ],
   "3561": [
-    {
-      "name": "Райан Гослинг",
-      "role": "Noah"
-    },
-    {
-      "name": "Рэйчел Макадамс",
-      "role": "Allie"
-    },
-    {
-      "name": "Джеймс Гарнер",
-      "role": "Duke"
-    },
-    {
-      "name": "Джина Роулендс",
-      "role": "Allie Calhoun"
-    },
-    {
-      "name": "Сэм Шепард",
-      "role": "Frank Calhoun"
-    },
-    {
-      "name": "Джоан Аллен",
-      "role": "Anne Hamilton"
-    },
-    {
-      "name": "Дэвид Торнтон",
-      "role": "John Hamilton"
-    },
-    {
-      "name": "Джеймс Марсден",
-      "role": "Lon Hammond"
-    },
-    {
-      "name": "Кевин Коннолли",
-      "role": "Fin"
-    },
-    {
-      "name": "Тим Айви",
-      "role": "Rower"
-    }
+    { "name": "Райан Гослинг", "role": "Noah" },
+    { "name": "Рэйчел Макадамс", "role": "Allie" },
+    { "name": "Джеймс Гарнер", "role": "Duke" },
+    { "name": "Джина Роулендс", "role": "Allie Calhoun" },
+    { "name": "Сэм Шепард", "role": "Frank Calhoun" },
+    { "name": "Джоан Аллен", "role": "Anne Hamilton" },
+    { "name": "Дэвид Торнтон", "role": "John Hamilton" },
+    { "name": "Джеймс Марсден", "role": "Lon Hammond" },
+    { "name": "Кевин Коннолли", "role": "Fin" },
+    { "name": "Тим Айви", "role": "Rower" }
   ],
   "5059": [
-    {
-      "name": "Брэд Питт",
-      "role": "Joe Black / Young Man in Coffee Shop"
-    },
-    {
-      "name": "Энтони Хопкинс",
-      "role": "William Parrish"
-    },
-    {
-      "name": "Клэр Форлани",
-      "role": "Susan Parrish"
-    },
-    {
-      "name": "Джейк Уэбер",
-      "role": "Drew"
-    },
-    {
-      "name": "Марша Гэй Харден",
-      "role": "Allison"
-    },
-    {
-      "name": "Джеффри Тэмбор",
-      "role": "Quince"
-    },
-    {
-      "name": "Дэвид С. Ховард",
-      "role": "Eddie Sloane"
-    },
-    {
-      "name": "Луис Келли-Миллер",
-      "role": "Jamaican Woman"
-    },
-    {
-      "name": "Мэрилуиз Бёрк",
-      "role": "Lillian"
-    },
-    {
-      "name": "Джун Скуибб",
-      "role": "Helen"
-    }
+    { "name": "Брэд Питт", "role": "Joe Black / Young Man in Coffee Shop" },
+    { "name": "Энтони Хопкинс", "role": "William Parrish" },
+    { "name": "Клэр Форлани", "role": "Susan Parrish" },
+    { "name": "Джейк Уэбер", "role": "Drew" },
+    { "name": "Марша Гэй Харден", "role": "Allison" },
+    { "name": "Джеффри Тэмбор", "role": "Quince" },
+    { "name": "Дэвид С. Ховард", "role": "Eddie Sloane" },
+    { "name": "Луис Келли-Миллер", "role": "Jamaican Woman" },
+    { "name": "Мэрилуиз Бёрк", "role": "Lillian" },
+    { "name": "Джун Скуибб", "role": "Helen" }
   ],
   "1047883": [
-    {
-      "name": "Леонардо ДиКаприо",
-      "role": "Rick Dalton"
-    },
-    {
-      "name": "Брэд Питт",
-      "role": "Cliff Booth"
-    },
-    {
-      "name": "Марго Робби",
-      "role": "Sharon Tate"
-    },
-    {
-      "name": "Эмиль Хирш",
-      "role": "Jay Sebring"
-    },
-    {
-      "name": "Маргарет Куолли",
-      "role": "Pussycat"
-    },
-    {
-      "name": "Тимоти Олифант",
-      "role": "James Stacy"
-    },
-    {
-      "name": "Джулия Баттерз",
-      "role": "Trudi Fraser"
-    },
-    {
-      "name": "Остин Батлер",
-      "role": "Tex Watson"
-    },
-    {
-      "name": "Дакота Фаннинг",
-      "role": "Squeaky Fromme"
-    },
-    {
-      "name": "Брюс Дерн",
-      "role": "George Spahn"
-    }
+    { "name": "Леонардо ДиКаприо", "role": "Rick Dalton" },
+    { "name": "Брэд Питт", "role": "Cliff Booth" },
+    { "name": "Марго Робби", "role": "Sharon Tate" },
+    { "name": "Эмиль Хирш", "role": "Jay Sebring" },
+    { "name": "Маргарет Куолли", "role": "Pussycat" },
+    { "name": "Тимоти Олифант", "role": "James Stacy" },
+    { "name": "Джулия Баттерз", "role": "Trudi Fraser" },
+    { "name": "Остин Батлер", "role": "Tex Watson" },
+    { "name": "Дакота Фаннинг", "role": "Squeaky Fromme" },
+    { "name": "Брюс Дерн", "role": "George Spahn" }
   ],
   "5930": [
-    {
-      "name": "Билл Мюррей",
-      "role": "Bob Harris"
-    },
-    {
-      "name": "Скарлетт Йоханссон",
-      "role": "Charlotte"
-    },
-    {
-      "name": "Джованни Рибизи",
-      "role": "John"
-    },
-    {
-      "name": "Анна Фэрис",
-      "role": "Kelly"
-    },
-    {
-      "name": "Акико Такэсита",
-      "role": "Ms. Kawasaki"
-    },
-    {
-      "name": "Кадзуёси Минамимагоэ",
-      "role": "Press Agent"
-    },
-    {
-      "name": "Кадзуко Сибата",
-      "role": "Press Agent"
-    },
-    {
-      "name": "Такэ",
-      "role": "Press Agent"
-    },
-    {
-      "name": "Рюитиро Баба",
-      "role": "Concierge"
-    },
-    {
-      "name": "Акира Ямагути",
-      "role": "Bellboy"
-    }
+    { "name": "Билл Мюррей", "role": "Bob Harris" },
+    { "name": "Скарлетт Йоханссон", "role": "Charlotte" },
+    { "name": "Джованни Рибизи", "role": "John" },
+    { "name": "Анна Фэрис", "role": "Kelly" },
+    { "name": "Акико Такэсита", "role": "Ms. Kawasaki" },
+    { "name": "Кадзуёси Минамимагоэ", "role": "Press Agent" },
+    { "name": "Кадзуко Сибата", "role": "Press Agent" },
+    { "name": "Такэ", "role": "Press Agent" },
+    { "name": "Рюитиро Баба", "role": "Concierge" },
+    { "name": "Акира Ямагути", "role": "Bellboy" }
   ],
   "277328": [
-    {
-      "name": "Трэвис Фиммел",
-      "role": "Anduin Lothar"
-    },
-    {
-      "name": "Пола Пэттон",
-      "role": "Garona"
-    },
-    {
-      "name": "Бен Фостер",
-      "role": "Medivh"
-    },
-    {
-      "name": "Доминик Купер",
-      "role": "Llane Wrynn"
-    },
-    {
-      "name": "Тоби Кеббелл",
-      "role": "Durotan / Antonidas"
-    },
-    {
-      "name": "Бен Шнетцер",
-      "role": "Khadgar"
-    },
-    {
-      "name": "Роберт Казински",
-      "role": "Orgrim"
-    },
-    {
-      "name": "Клэнси Браун",
-      "role": "Blackhand"
-    },
-    {
-      "name": "Дэниэл У",
-      "role": "Gul'dan"
-    },
-    {
-      "name": "Рут Негга",
-      "role": "Lady Taria"
-    }
+    { "name": "Трэвис Фиммел", "role": "Anduin Lothar" },
+    { "name": "Пола Пэттон", "role": "Garona" },
+    { "name": "Бен Фостер", "role": "Medivh" },
+    { "name": "Доминик Купер", "role": "Llane Wrynn" },
+    { "name": "Тоби Кеббелл", "role": "Durotan / Antonidas" },
+    { "name": "Бен Шнетцер", "role": "Khadgar" },
+    { "name": "Роберт Казински", "role": "Orgrim" },
+    { "name": "Клэнси Браун", "role": "Blackhand" },
+    { "name": "Дэниэл У", "role": "Gul'dan" },
+    { "name": "Рут Негга", "role": "Lady Taria" }
   ],
   "78871": [
-    {
-      "name": "Рада Митчелл",
-      "role": "Rose Da Silva"
-    },
-    {
-      "name": "Джоделль Ферланд",
-      "role": "Sharon / Alessa"
-    },
-    {
-      "name": "Лори Холден",
-      "role": "Cybil Bennett"
-    },
-    {
-      "name": "Шон Бин",
-      "role": "Christopher Da Silva"
-    },
-    {
-      "name": "Дебора Кара Ангер",
-      "role": "Dahlia Gillespie"
-    },
-    {
-      "name": "Ким Коутс",
-      "role": "Officer Thomas Gucci"
-    },
-    {
-      "name": "Таня Аллен",
-      "role": "Anna"
-    },
-    {
-      "name": "Элис Криге",
-      "role": "Christabella"
-    },
-    {
-      "name": "Коллин Уильямс",
-      "role": "Archivist"
-    },
-    {
-      "name": "Рон Гэбриел",
-      "role": "Old Mechanic"
-    }
+    { "name": "Рада Митчелл", "role": "Rose Da Silva" },
+    { "name": "Джоделль Ферланд", "role": "Sharon / Alessa" },
+    { "name": "Лори Холден", "role": "Cybil Bennett" },
+    { "name": "Шон Бин", "role": "Christopher Da Silva" },
+    { "name": "Дебора Кара Ангер", "role": "Dahlia Gillespie" },
+    { "name": "Ким Коутс", "role": "Officer Thomas Gucci" },
+    { "name": "Таня Аллен", "role": "Anna" },
+    { "name": "Элис Криге", "role": "Christabella" },
+    { "name": "Коллин Уильямс", "role": "Archivist" },
+    { "name": "Рон Гэбриел", "role": "Old Mechanic" }
   ],
   "397667": [
-    {
-      "name": "Леонардо ДиКаприо",
-      "role": "Teddy Daniels"
-    },
-    {
-      "name": "Марк Руффало",
-      "role": "Chuck Aule"
-    },
-    {
-      "name": "Бен Кингсли",
-      "role": "Dr. Cawley"
-    },
-    {
-      "name": "Макс фон Сюдов",
-      "role": "Dr. Naehring"
-    },
-    {
-      "name": "Мишель Уильямс",
-      "role": "Dolores"
-    },
-    {
-      "name": "Эмили Мортимер",
-      "role": "Rachel 1"
-    },
-    {
-      "name": "Патриша Кларксон",
-      "role": "Rachel 2"
-    },
-    {
-      "name": "Джеки Эрл Хейли",
-      "role": "George Noyce"
-    },
-    {
-      "name": "Тед Левайн",
-      "role": "Warden"
-    },
-    {
-      "name": "Джон Кэрролл Линч",
-      "role": "Deputy Warden McPherson"
-    }
+    { "name": "Леонардо ДиКаприо", "role": "Teddy Daniels" },
+    { "name": "Марк Руффало", "role": "Chuck Aule" },
+    { "name": "Бен Кингсли", "role": "Dr. Cawley" },
+    { "name": "Макс фон Сюдов", "role": "Dr. Naehring" },
+    { "name": "Мишель Уильямс", "role": "Dolores" },
+    { "name": "Эмили Мортимер", "role": "Rachel 1" },
+    { "name": "Патриша Кларксон", "role": "Rachel 2" },
+    { "name": "Джеки Эрл Хейли", "role": "George Noyce" },
+    { "name": "Тед Левайн", "role": "Warden" },
+    { "name": "Джон Кэрролл Линч", "role": "Deputy Warden McPherson" }
   ],
   "102128": [
-    {
-      "name": "Рэйчел Макадамс",
-      "role": "Clare"
-    },
-    {
-      "name": "Эрик Бана",
-      "role": "Henry"
-    },
-    {
-      "name": "Арлисс Ховард",
-      "role": "Richard DeTamble"
-    },
-    {
-      "name": "Рон Ливингстон",
-      "role": "Gomez"
-    },
-    {
-      "name": "Стивен Тоболовски",
-      "role": "Dr. Kendrick"
-    },
-    {
-      "name": "Мишель Нолден",
-      "role": "Annette DeTamble"
-    },
-    {
-      "name": "Джейн МакЛин",
-      "role": "Charisse (в титрах: Jane McLean)"
-    },
-    {
-      "name": "Хейли МакКанн",
-      "role": "Alba at Nine and Ten"
-    },
-    {
-      "name": "Бруклин Пру",
-      "role": "Clare at Six and Eight"
-    },
-    {
-      "name": "Татум МакКанн",
-      "role": "Alba at Four and Five"
-    }
+    { "name": "Рэйчел Макадамс", "role": "Clare" },
+    { "name": "Эрик Бана", "role": "Henry" },
+    { "name": "Арлисс Ховард", "role": "Richard DeTamble" },
+    { "name": "Рон Ливингстон", "role": "Gomez" },
+    { "name": "Стивен Тоболовски", "role": "Dr. Kendrick" },
+    { "name": "Мишель Нолден", "role": "Annette DeTamble" },
+    { "name": "Джейн МакЛин", "role": "Charisse (в титрах: Jane McLean)" },
+    { "name": "Хейли МакКанн", "role": "Alba at Nine and Ten" },
+    { "name": "Бруклин Пру", "role": "Clare at Six and Eight" },
+    { "name": "Татум МакКанн", "role": "Alba at Four and Five" }
   ],
   "577488": [
-    {
-      "name": "Хоакин Феникс",
-      "role": "Theodore"
-    },
-    {
-      "name": "Скарлетт Йоханссон",
-      "role": "Samantha, озвучка"
-    },
-    {
-      "name": "Эми Адамс",
-      "role": "Amy"
-    },
-    {
-      "name": "Руни Мара",
-      "role": "Catherine"
-    },
-    {
-      "name": "Крис Пратт",
-      "role": "Paul"
-    },
-    {
-      "name": "Оливия Уайлд",
-      "role": "Blind Date"
-    },
-    {
-      "name": "Мэтт Летчер",
-      "role": "Charles"
-    },
-    {
-      "name": "Кристен Уиг",
-      "role": "SexyKitten, озвучка"
-    },
-    {
-      "name": "Порша Даблдэй",
-      "role": "Surrogate Date Isabella"
-    },
-    {
-      "name": "Лаура Кай Чен",
-      "role": "Tatiana"
-    }
+    { "name": "Хоакин Феникс", "role": "Theodore" },
+    { "name": "Скарлетт Йоханссон", "role": "Samantha, озвучка" },
+    { "name": "Эми Адамс", "role": "Amy" },
+    { "name": "Руни Мара", "role": "Catherine" },
+    { "name": "Крис Пратт", "role": "Paul" },
+    { "name": "Оливия Уайлд", "role": "Blind Date" },
+    { "name": "Мэтт Летчер", "role": "Charles" },
+    { "name": "Кристен Уиг", "role": "SexyKitten, озвучка" },
+    { "name": "Порша Даблдэй", "role": "Surrogate Date Isabella" },
+    { "name": "Лаура Кай Чен", "role": "Tatiana" }
   ],
   "195434": [
-    {
-      "name": "Томми Ли Джонс",
-      "role": "Ed Tom Bell"
-    },
-    {
-      "name": "Джош Бролин",
-      "role": "Llewelyn Moss"
-    },
-    {
-      "name": "Хавьер Бардем",
-      "role": "Anton Chigurh"
-    },
-    {
-      "name": "Келли Макдоналд",
-      "role": "Carla Jean Moss"
-    },
-    {
-      "name": "Вуди Харрельсон",
-      "role": "Carson Wells"
-    },
-    {
-      "name": "Бет Грант",
-      "role": "Carla Jean's Mother"
-    },
-    {
-      "name": "Гаррет Диллахант",
-      "role": "Wendell"
-    },
-    {
-      "name": "Тесс Харпер",
-      "role": "Loretta Bell"
-    },
-    {
-      "name": "Барри Корбин",
-      "role": "Ellis"
-    },
-    {
-      "name": "Стивен Рут",
-      "role": "Man Who Hires Wells"
-    }
+    { "name": "Томми Ли Джонс", "role": "Ed Tom Bell" },
+    { "name": "Джош Бролин", "role": "Llewelyn Moss" },
+    { "name": "Хавьер Бардем", "role": "Anton Chigurh" },
+    { "name": "Келли Макдоналд", "role": "Carla Jean Moss" },
+    { "name": "Вуди Харрельсон", "role": "Carson Wells" },
+    { "name": "Бет Грант", "role": "Carla Jean's Mother" },
+    { "name": "Гаррет Диллахант", "role": "Wendell" },
+    { "name": "Тесс Харпер", "role": "Loretta Bell" },
+    { "name": "Барри Корбин", "role": "Ellis" },
+    { "name": "Стивен Рут", "role": "Man Who Hires Wells" }
   ],
   "4476885": [
-    {
-      "name": "Хэролд Перрино",
-      "role": "Boyd Stevens"
-    },
-    {
-      "name": "Каталина Сандино Морено",
-      "role": "Tabitha Matthews"
-    },
-    {
-      "name": "Эйон Бэйли",
-      "role": "Jim Matthews"
-    },
-    {
-      "name": "Дэвид Алпей",
-      "role": "Jade"
-    },
-    {
-      "name": "Элизабет Сондерс",
-      "role": "Donna"
-    },
-    {
-      "name": "Скотт Маккорд",
-      "role": "Victor"
-    },
-    {
-      "name": "Рики Хе",
-      "role": "Kenny"
-    },
-    {
-      "name": "Хлоя Ван Ландшут",
-      "role": "Kristi"
-    },
-    {
-      "name": "Пега Гафури",
-      "role": "Fatima"
-    },
-    {
-      "name": "Кортен Мур",
-      "role": "Ellis"
-    }
+    { "name": "Хэролд Перрино", "role": "Boyd Stevens" },
+    { "name": "Каталина Сандино Морено", "role": "Tabitha Matthews" },
+    { "name": "Эйон Бэйли", "role": "Jim Matthews" },
+    { "name": "Дэвид Алпей", "role": "Jade" },
+    { "name": "Элизабет Сондерс", "role": "Donna" },
+    { "name": "Скотт Маккорд", "role": "Victor" },
+    { "name": "Рики Хе", "role": "Kenny" },
+    { "name": "Хлоя Ван Ландшут", "role": "Kristi" },
+    { "name": "Пега Гафури", "role": "Fatima" },
+    { "name": "Кортен Мур", "role": "Ellis" }
   ],
   "5305583": [
-    {
-      "name": "Карина Разумовская",
-      "role": "Светлана Незнамова"
-    },
-    {
-      "name": "Александр Ильин мл.",
-      "role": "Виктор Чужих"
-    },
-    {
-      "name": "Анна Михалкова",
-      "role": "Эльвира Бараева"
-    },
-    {
-      "name": "Елизавета Ищенко",
-      "role": "Кира"
-    },
-    {
-      "name": "Семён Серзин",
-      "role": "Андрей Тиль"
-    },
-    {
-      "name": "Алексей Фатеев",
-      "role": "Владислав Виниченко"
-    },
-    {
-      "name": "Василиса Немцова",
-      "role": "Вита Демченкова"
-    },
-    {
-      "name": "Геннадий Смирнов",
-      "role": "Игорь Друз"
-    },
-    {
-      "name": "Елена Литвинова",
-      "role": "Раиса Незнамова"
-    },
-    {
-      "name": "Сергей Уманов",
-      "role": "Юрий Незнамов"
-    }
+    { "name": "Карина Разумовская", "role": "Светлана Незнамова" },
+    { "name": "Александр Ильин мл.", "role": "Виктор Чужих" },
+    { "name": "Анна Михалкова", "role": "Эльвира Бараева" },
+    { "name": "Елизавета Ищенко", "role": "Кира" },
+    { "name": "Семён Серзин", "role": "Андрей Тиль" },
+    { "name": "Алексей Фатеев", "role": "Владислав Виниченко" },
+    { "name": "Василиса Немцова", "role": "Вита Демченкова" },
+    { "name": "Геннадий Смирнов", "role": "Игорь Друз" },
+    { "name": "Елена Литвинова", "role": "Раиса Незнамова" },
+    { "name": "Сергей Уманов", "role": "Юрий Незнамов" }
   ],
   "681831": [
-    {
-      "name": "Мэттью Макконахи",
-      "role": "Detective Rust Cohle"
-    },
-    {
-      "name": "Вуди Харрельсон",
-      "role": "Detective Marty Hart"
-    },
-    {
-      "name": "Мишель Монахэн",
-      "role": "Maggie Hart"
-    },
-    {
-      "name": "Колин Фаррелл",
-      "role": "Detective Ray Velcoro"
-    },
-    {
-      "name": "Рэйчел Макадамс",
-      "role": "Detective Ani Bezzerides"
-    },
-    {
-      "name": "Тейлор Китч",
-      "role": "Officer Paul Woodrugh"
-    },
-    {
-      "name": "Винс Вон",
-      "role": "Frank Semyon"
-    },
-    {
-      "name": "Махершала Али",
-      "role": "Detective Wayne Hays"
-    },
-    {
-      "name": "Стивен Дорфф",
-      "role": "Detective Roland West"
-    },
-    {
-      "name": "Джоди Фостер",
-      "role": "Liz Danvers"
-    }
+    { "name": "Мэттью Макконахи", "role": "Detective Rust Cohle" },
+    { "name": "Вуди Харрельсон", "role": "Detective Marty Hart" },
+    { "name": "Мишель Монахэн", "role": "Maggie Hart" },
+    { "name": "Колин Фаррелл", "role": "Detective Ray Velcoro" },
+    { "name": "Рэйчел Макадамс", "role": "Detective Ani Bezzerides" },
+    { "name": "Тейлор Китч", "role": "Officer Paul Woodrugh" },
+    { "name": "Винс Вон", "role": "Frank Semyon" },
+    { "name": "Махершала Али", "role": "Detective Wayne Hays" },
+    { "name": "Стивен Дорфф", "role": "Detective Roland West" },
+    { "name": "Джоди Фостер", "role": "Liz Danvers" }
   ],
   "824954": [
-    {
-      "name": "Дэвид Сандберг",
-      "role": "Kung Fury"
-    },
-    {
-      "name": "Йорма Такконе",
-      "role": "Adolf Hitler"
-    },
-    {
-      "name": "Стивен Чю",
-      "role": "Dragon"
-    },
-    {
-      "name": "Леопольд Нильссон",
-      "role": "Hackerman"
-    },
-    {
-      "name": "Андреас Калинг",
-      "role": "Thor"
-    },
-    {
-      "name": "Пер-Хенрик Арвидиус",
-      "role": "Voice of Thor / Chief"
-    },
-    {
-      "name": "Эрик Хёрнквист",
-      "role": "Triceracop"
-    },
-    {
-      "name": "Фрэнк Сэндерсон",
-      "role": "Triceracop / Cobra / Dinomite, озвучка"
-    },
-    {
-      "name": "Элени Янг",
-      "role": "Barbarianna"
-    },
-    {
-      "name": "Хелен Алсон",
-      "role": "Katana"
-    }
+    { "name": "Дэвид Сандберг", "role": "Kung Fury" },
+    { "name": "Йорма Такконе", "role": "Adolf Hitler" },
+    { "name": "Стивен Чю", "role": "Dragon" },
+    { "name": "Леопольд Нильссон", "role": "Hackerman" },
+    { "name": "Андреас Калинг", "role": "Thor" },
+    { "name": "Пер-Хенрик Арвидиус", "role": "Voice of Thor / Chief" },
+    { "name": "Эрик Хёрнквист", "role": "Triceracop" },
+    { "name": "Фрэнк Сэндерсон", "role": "Triceracop / Cobra / Dinomite, озвучка" },
+    { "name": "Элени Янг", "role": "Barbarianna" },
+    { "name": "Хелен Алсон", "role": "Katana" }
   ],
   "5401195": [
-    {
-      "name": "Ацуми Танэдзаки",
-      "role": "Frieren, озвучка"
-    },
-    {
-      "name": "Кана Итиносэ",
-      "role": "Fern, озвучка"
-    },
-    {
-      "name": "Ёдзи Уэда",
-      "role": "Eisen, озвучка"
-    },
-    {
-      "name": "Хироки Тоти",
-      "role": "Heiter, озвучка"
-    },
-    {
-      "name": "Нобухико Окамото",
-      "role": "Himmel, озвучка"
-    },
-    {
-      "name": "Тиаки Кобаяси",
-      "role": "Stark, озвучка"
-    },
-    {
-      "name": "Масафуми Кобатакэ",
-      "role": "Guard, озвучка"
-    },
-    {
-      "name": "Кэнто Сираиси",
-      "role": "Attendee, озвучка"
-    },
-    {
-      "name": "Ацуко Танака",
-      "role": "Flamme, озвучка"
-    },
-    {
-      "name": "Дзюнъити Сувабэ",
-      "role": "Lügner, озвучка"
-    }
+    { "name": "Ацуми Танэдзаки", "role": "Frieren, озвучка" },
+    { "name": "Кана Итиносэ", "role": "Fern, озвучка" },
+    { "name": "Ёдзи Уэда", "role": "Eisen, озвучка" },
+    { "name": "Хироки Тоти", "role": "Heiter, озвучка" },
+    { "name": "Нобухико Окамото", "role": "Himmel, озвучка" },
+    { "name": "Тиаки Кобаяси", "role": "Stark, озвучка" },
+    { "name": "Масафуми Кобатакэ", "role": "Guard, озвучка" },
+    { "name": "Кэнто Сираиси", "role": "Attendee, озвучка" },
+    { "name": "Ацуко Танака", "role": "Flamme, озвучка" },
+    { "name": "Дзюнъити Сувабэ", "role": "Lügner, озвучка" }
   ],
   "963343": [
-    {
-      "name": "Мию Ирино",
-      "role": "Shôya Ishida, озвучка"
-    },
-    {
-      "name": "Саори Хаями",
-      "role": "Shoko Nishimiya, озвучка"
-    },
-    {
-      "name": "Аои Юки",
-      "role": "Yuzuru Nishimiya, озвучка"
-    },
-    {
-      "name": "Кэнсё Оно",
-      "role": "Tomohiro Nagatsuka, озвучка"
-    },
-    {
-      "name": "Юки Канэко",
-      "role": "Naoka Ueno, озвучка"
-    },
-    {
-      "name": "Юи Исикава",
-      "role": "Miyoko Sahara, озвучка"
-    },
-    {
-      "name": "Мэгуми Хан",
-      "role": "Miki Kawai, озвучка"
-    },
-    {
-      "name": "Тосиюки Тоёнага",
-      "role": "Satoshi Mashiba, озвучка"
-    },
-    {
-      "name": "Маю Мацуока",
-      "role": "Young Shoya Ishida, озвучка"
-    },
-    {
-      "name": "Сатико Кодзима",
-      "role": "Young Kazuki Shimada, озвучка"
-    }
+    { "name": "Мию Ирино", "role": "Shôya Ishida, озвучка" },
+    { "name": "Саори Хаями", "role": "Shoko Nishimiya, озвучка" },
+    { "name": "Аои Юки", "role": "Yuzuru Nishimiya, озвучка" },
+    { "name": "Кэнсё Оно", "role": "Tomohiro Nagatsuka, озвучка" },
+    { "name": "Юки Канэко", "role": "Naoka Ueno, озвучка" },
+    { "name": "Юи Исикава", "role": "Miyoko Sahara, озвучка" },
+    { "name": "Мэгуми Хан", "role": "Miki Kawai, озвучка" },
+    { "name": "Тосиюки Тоёнага", "role": "Satoshi Mashiba, озвучка" },
+    { "name": "Маю Мацуока", "role": "Young Shoya Ishida, озвучка" },
+    { "name": "Сатико Кодзима", "role": "Young Kazuki Shimada, озвучка" }
   ],
   "4374": [
-    {
-      "name": "Джонни Депп",
-      "role": "Jack Sparrow"
-    },
-    {
-      "name": "Джеффри Раш",
-      "role": "Barbossa"
-    },
-    {
-      "name": "Орландо Блум",
-      "role": "Will Turner"
-    },
-    {
-      "name": "Кира Найтли",
-      "role": "Elizabeth Swann"
-    },
-    {
-      "name": "Джек Девенпорт",
-      "role": "Norrington"
-    },
-    {
-      "name": "Кевин Макнэлли",
-      "role": "Joshamee Gibbs (в титрах: Kevin R. McNally)"
-    },
-    {
-      "name": "Джонатан Прайс",
-      "role": "Governor Weatherby Swann"
-    },
-    {
-      "name": "Ли Аренберг",
-      "role": "Pintel"
-    },
-    {
-      "name": "Макензи Крук",
-      "role": "Ragetti"
-    },
-    {
-      "name": "Дэвид Бэйли",
-      "role": "Cotton"
-    }
+    { "name": "Джонни Депп", "role": "Jack Sparrow" },
+    { "name": "Джеффри Раш", "role": "Barbossa" },
+    { "name": "Орландо Блум", "role": "Will Turner" },
+    { "name": "Кира Найтли", "role": "Elizabeth Swann" },
+    { "name": "Джек Девенпорт", "role": "Norrington" },
+    { "name": "Кевин Макнэлли", "role": "Joshamee Gibbs (в титрах: Kevin R. McNally)" },
+    { "name": "Джонатан Прайс", "role": "Governor Weatherby Swann" },
+    { "name": "Ли Аренберг", "role": "Pintel" },
+    { "name": "Макензи Крук", "role": "Ragetti" },
+    { "name": "Дэвид Бэйли", "role": "Cotton" }
   ],
   "63991": [
-    {
-      "name": "Джонни Депп",
-      "role": "Jack Sparrow"
-    },
-    {
-      "name": "Орландо Блум",
-      "role": "Will Turner"
-    },
-    {
-      "name": "Кира Найтли",
-      "role": "Elizabeth Swann"
-    },
-    {
-      "name": "Джек Девенпорт",
-      "role": "Norrington"
-    },
-    {
-      "name": "Билл Найи",
-      "role": "Davy Jones"
-    },
-    {
-      "name": "Стеллан Скарсгард",
-      "role": "Bootstrap Bill"
-    },
-    {
-      "name": "Кевин Макнэлли",
-      "role": "Gibbs (в титрах: Kevin R. McNally)"
-    },
-    {
-      "name": "Ли Аренберг",
-      "role": "Pintel"
-    },
-    {
-      "name": "Макензи Крук",
-      "role": "Ragetti"
-    },
-    {
-      "name": "Том Холландер",
-      "role": "Cutler Beckett"
-    }
+    { "name": "Джонни Депп", "role": "Jack Sparrow" },
+    { "name": "Орландо Блум", "role": "Will Turner" },
+    { "name": "Кира Найтли", "role": "Elizabeth Swann" },
+    { "name": "Джек Девенпорт", "role": "Norrington" },
+    { "name": "Билл Найи", "role": "Davy Jones" },
+    { "name": "Стеллан Скарсгард", "role": "Bootstrap Bill" },
+    { "name": "Кевин Макнэлли", "role": "Gibbs (в титрах: Kevin R. McNally)" },
+    { "name": "Ли Аренберг", "role": "Pintel" },
+    { "name": "Макензи Крук", "role": "Ragetti" },
+    { "name": "Том Холландер", "role": "Cutler Beckett" }
   ],
   "2053": [
-    {
-      "name": "Деннис Куэйд",
-      "role": "Jack Hall"
-    },
-    {
-      "name": "Джейк Джилленхол",
-      "role": "Sam Hall"
-    },
-    {
-      "name": "Эмми Россам",
-      "role": "Laura Chapman"
-    },
-    {
-      "name": "Дэш Майок",
-      "role": "Jason Evans"
-    },
-    {
-      "name": "Джей О. Сэндерс",
-      "role": "Frank Harris"
-    },
-    {
-      "name": "Села Уорд",
-      "role": "Dr. Lucy Hall"
-    },
-    {
-      "name": "Иэн Холм",
-      "role": "Terry Rapson"
-    },
-    {
-      "name": "Кеннет Уэлш",
-      "role": "Vice President Becker"
-    },
-    {
-      "name": "Гленн Пламмер",
-      "role": "Luther"
-    },
-    {
-      "name": "Эдриан Лестер",
-      "role": "Simon"
-    }
+    { "name": "Деннис Куэйд", "role": "Jack Hall" },
+    { "name": "Джейк Джилленхол", "role": "Sam Hall" },
+    { "name": "Эмми Россам", "role": "Laura Chapman" },
+    { "name": "Дэш Майок", "role": "Jason Evans" },
+    { "name": "Джей О. Сэндерс", "role": "Frank Harris" },
+    { "name": "Села Уорд", "role": "Dr. Lucy Hall" },
+    { "name": "Иэн Холм", "role": "Terry Rapson" },
+    { "name": "Кеннет Уэлш", "role": "Vice President Becker" },
+    { "name": "Гленн Пламмер", "role": "Luther" },
+    { "name": "Эдриан Лестер", "role": "Simon" }
   ],
   "401177": [
-    {
-      "name": "Кристен Стюарт",
-      "role": "Bella Swan"
-    },
-    {
-      "name": "Роберт Паттинсон",
-      "role": "Edward Cullen"
-    },
-    {
-      "name": "Билли Бёрк",
-      "role": "Charlie Swan"
-    },
-    {
-      "name": "Эшли Грин",
-      "role": "Alice Cullen"
-    },
-    {
-      "name": "Анна Кендрик",
-      "role": "Jessica"
-    },
-    {
-      "name": "Тейлор Лотнер",
-      "role": "Jacob Black"
-    },
-    {
-      "name": "Джексон Рэтбоун",
-      "role": "Jasper"
-    },
-    {
-      "name": "Питер Фачинелли",
-      "role": "Dr. Carlisle Cullen"
-    },
-    {
-      "name": "Рашель Лефевр",
-      "role": "Victoria"
-    },
-    {
-      "name": "Кэм Жиганде",
-      "role": "James"
-    }
+    { "name": "Кристен Стюарт", "role": "Bella Swan" },
+    { "name": "Роберт Паттинсон", "role": "Edward Cullen" },
+    { "name": "Билли Бёрк", "role": "Charlie Swan" },
+    { "name": "Эшли Грин", "role": "Alice Cullen" },
+    { "name": "Анна Кендрик", "role": "Jessica" },
+    { "name": "Тейлор Лотнер", "role": "Jacob Black" },
+    { "name": "Джексон Рэтбоун", "role": "Jasper" },
+    { "name": "Питер Фачинелли", "role": "Dr. Carlisle Cullen" },
+    { "name": "Рашель Лефевр", "role": "Victoria" },
+    { "name": "Кэм Жиганде", "role": "James" }
   ],
   "762738": [
-    {
-      "name": "Киану Ривз",
-      "role": "John Wick"
-    },
-    {
-      "name": "Микаэл Нюквист",
-      "role": "Viggo Tarasov"
-    },
-    {
-      "name": "Алфи Аллен",
-      "role": "Iosef Tarasov"
-    },
-    {
-      "name": "Уиллем Дефо",
-      "role": "Marcus"
-    },
-    {
-      "name": "Дин Уинтерс",
-      "role": "Avi"
-    },
-    {
-      "name": "Эдрианн Палики",
-      "role": "Ms. Perkins"
-    },
-    {
-      "name": "Омер Барнеа",
-      "role": "Gregori"
-    },
-    {
-      "name": "Тоби Леонард Мур",
-      "role": "Victor"
-    },
-    {
-      "name": "Дэниэл Бернхард",
-      "role": "Kirill"
-    },
-    {
-      "name": "Бриджет Мойнэхэн",
-      "role": "Helen"
-    }
+    { "name": "Киану Ривз", "role": "John Wick" },
+    { "name": "Микаэл Нюквист", "role": "Viggo Tarasov" },
+    { "name": "Алфи Аллен", "role": "Iosef Tarasov" },
+    { "name": "Уиллем Дефо", "role": "Marcus" },
+    { "name": "Дин Уинтерс", "role": "Avi" },
+    { "name": "Эдрианн Палики", "role": "Ms. Perkins" },
+    { "name": "Омер Барнеа", "role": "Gregori" },
+    { "name": "Тоби Леонард Мур", "role": "Victor" },
+    { "name": "Дэниэл Бернхард", "role": "Kirill" },
+    { "name": "Бриджет Мойнэхэн", "role": "Helen" }
   ],
   "885658": [
-    {
-      "name": "Киану Ривз",
-      "role": "John Wick"
-    },
-    {
-      "name": "Риккардо Скамарчо",
-      "role": "Santino D'Antonio"
-    },
-    {
-      "name": "Иэн Макшейн",
-      "role": "Winston"
-    },
-    {
-      "name": "Руби Роуз",
-      "role": "Ares"
-    },
-    {
-      "name": "Коммон",
-      "role": "Cassian"
-    },
-    {
-      "name": "Клаудия Джерини",
-      "role": "Gianna D'Antonio"
-    },
-    {
-      "name": "Лэнс Реддик",
-      "role": "Charon"
-    },
-    {
-      "name": "Лоренс Фишбёрн",
-      "role": "Bowery King"
-    },
-    {
-      "name": "Тобиаш Сигал",
-      "role": "Earl"
-    },
-    {
-      "name": "Джон Легуизамо",
-      "role": "Aurelio"
-    }
+    { "name": "Киану Ривз", "role": "John Wick" },
+    { "name": "Риккардо Скамарчо", "role": "Santino D'Antonio" },
+    { "name": "Иэн Макшейн", "role": "Winston" },
+    { "name": "Руби Роуз", "role": "Ares" },
+    { "name": "Коммон", "role": "Cassian" },
+    { "name": "Клаудия Джерини", "role": "Gianna D'Antonio" },
+    { "name": "Лэнс Реддик", "role": "Charon" },
+    { "name": "Лоренс Фишбёрн", "role": "Bowery King" },
+    { "name": "Тобиаш Сигал", "role": "Earl" },
+    { "name": "Джон Легуизамо", "role": "Aurelio" }
   ],
   "1009536": [
-    {
-      "name": "Киану Ривз",
-      "role": "John Wick"
-    },
-    {
-      "name": "Холли Берри",
-      "role": "Sofia"
-    },
-    {
-      "name": "Иэн Макшейн",
-      "role": "Winston"
-    },
-    {
-      "name": "Лоренс Фишбёрн",
-      "role": "Bowery King"
-    },
-    {
-      "name": "Марк Дакаскос",
-      "role": "Zero"
-    },
-    {
-      "name": "Азия Кейт Диллон",
-      "role": "The Adjudicator"
-    },
-    {
-      "name": "Лэнс Реддик",
-      "role": "Charon"
-    },
-    {
-      "name": "Тобиаш Сигал",
-      "role": "Earl"
-    },
-    {
-      "name": "Анжелика Хьюстон",
-      "role": "The Director"
-    },
-    {
-      "name": "Саид Тагмауи",
-      "role": "The Elder"
-    }
+    { "name": "Киану Ривз", "role": "John Wick" },
+    { "name": "Холли Берри", "role": "Sofia" },
+    { "name": "Иэн Макшейн", "role": "Winston" },
+    { "name": "Лоренс Фишбёрн", "role": "Bowery King" },
+    { "name": "Марк Дакаскос", "role": "Zero" },
+    { "name": "Азия Кейт Диллон", "role": "The Adjudicator" },
+    { "name": "Лэнс Реддик", "role": "Charon" },
+    { "name": "Тобиаш Сигал", "role": "Earl" },
+    { "name": "Анжелика Хьюстон", "role": "The Director" },
+    { "name": "Саид Тагмауи", "role": "The Elder" }
   ],
   "1267348": [
-    {
-      "name": "Киану Ривз",
-      "role": "John Wick"
-    },
-    {
-      "name": "Донни Йен",
-      "role": "Caine"
-    },
-    {
-      "name": "Билл Скарсгард",
-      "role": "Marquis"
-    },
-    {
-      "name": "Шамир Андерсон",
-      "role": "Tracker"
-    },
-    {
-      "name": "Иэн Макшейн",
-      "role": "Winston"
-    },
-    {
-      "name": "Хироюки Санада",
-      "role": "Shimazu"
-    },
-    {
-      "name": "Рина Саваяма",
-      "role": "Akira"
-    },
-    {
-      "name": "Ryan Castle",
-      "role": "Agent"
-    },
-    {
-      "name": "Скотт Эдкинс",
-      "role": "Killa"
-    },
-    {
-      "name": "Марко Сарор",
-      "role": "Chidi"
-    }
+    { "name": "Киану Ривз", "role": "John Wick" },
+    { "name": "Донни Йен", "role": "Caine" },
+    { "name": "Билл Скарсгард", "role": "Marquis" },
+    { "name": "Шамир Андерсон", "role": "Tracker" },
+    { "name": "Иэн Макшейн", "role": "Winston" },
+    { "name": "Хироюки Санада", "role": "Shimazu" },
+    { "name": "Рина Саваяма", "role": "Akira" },
+    { "name": "Ryan Castle", "role": "Agent" },
+    { "name": "Скотт Эдкинс", "role": "Killa" },
+    { "name": "Марко Сарор", "role": "Chidi" }
   ],
   "5002282": [
-    {
-      "name": "Сунита Мани",
-      "role": "Ursula, озвучка"
-    },
-    {
-      "name": "Вунми Мосаку",
-      "role": "Azi, озвучка"
-    },
-    {
-      "name": "Боб Стивенсон",
-      "role": "Sam, озвучка"
-    },
-    {
-      "name": "Алиа Шокат",
-      "role": "Levi / Fiona, озвучка"
-    },
-    {
-      "name": "Поллианна Макинтош",
-      "role": "Kris, озвучка"
-    },
-    {
-      "name": "Тед Тревелстид",
-      "role": "Kamen, озвучка"
-    },
-    {
-      "name": "Дэш Уильямс",
-      "role": "Barry, озвучка"
-    },
-    {
-      "name": "Сепиде Моафи",
-      "role": "Mia, озвучка"
-    },
-    {
-      "name": "Фредди Родригес",
-      "role": "Terrence, озвучка"
-    },
-    {
-      "name": "Маша Кинг",
-      "role": "Mascha, озвучка"
-    }
+    { "name": "Сунита Мани", "role": "Ursula, озвучка" },
+    { "name": "Вунми Мосаку", "role": "Azi, озвучка" },
+    { "name": "Боб Стивенсон", "role": "Sam, озвучка" },
+    { "name": "Алиа Шокат", "role": "Levi / Fiona, озвучка" },
+    { "name": "Поллианна Макинтош", "role": "Kris, озвучка" },
+    { "name": "Тед Тревелстид", "role": "Kamen, озвучка" },
+    { "name": "Дэш Уильямс", "role": "Barry, озвучка" },
+    { "name": "Сепиде Моафи", "role": "Mia, озвучка" },
+    { "name": "Фредди Родригес", "role": "Terrence, озвучка" },
+    { "name": "Маша Кинг", "role": "Mascha, озвучка" }
   ],
   "61237": [
-    {
-      "name": "Роберт Дауни мл.",
-      "role": "Tony Stark"
-    },
-    {
-      "name": "Джефф Бриджес",
-      "role": "Obadiah Stane"
-    },
-    {
-      "name": "Гвинет Пэлтроу",
-      "role": "Pepper Potts"
-    },
-    {
-      "name": "Терренс Ховард",
-      "role": "Rhodey"
-    },
-    {
-      "name": "Лесли Бибб",
-      "role": "Christine Everhart"
-    },
-    {
-      "name": "Шон Тоуб",
-      "role": "Yinsen"
-    },
-    {
-      "name": "Фаран Таир",
-      "role": "Raza"
-    },
-    {
-      "name": "Кларк Грегг",
-      "role": "Agent Coulson"
-    },
-    {
-      "name": "Джон Фавро",
-      "role": "Hogan"
-    },
-    {
-      "name": "Саид Бадрия",
-      "role": "Abu Bakaar"
-    }
+    { "name": "Роберт Дауни мл.", "role": "Tony Stark" },
+    { "name": "Джефф Бриджес", "role": "Obadiah Stane" },
+    { "name": "Гвинет Пэлтроу", "role": "Pepper Potts" },
+    { "name": "Терренс Ховард", "role": "Rhodey" },
+    { "name": "Лесли Бибб", "role": "Christine Everhart" },
+    { "name": "Шон Тоуб", "role": "Yinsen" },
+    { "name": "Фаран Таир", "role": "Raza" },
+    { "name": "Кларк Грегг", "role": "Agent Coulson" },
+    { "name": "Джон Фавро", "role": "Hogan" },
+    { "name": "Саид Бадрия", "role": "Abu Bakaar" }
   ],
   "411924": [
-    {
-      "name": "Роберт Дауни мл.",
-      "role": "Tony Stark"
-    },
-    {
-      "name": "Микки Рурк",
-      "role": "Ivan Vanko"
-    },
-    {
-      "name": "Гвинет Пэлтроу",
-      "role": "Pepper Potts"
-    },
-    {
-      "name": "Дон Чидл",
-      "role": "Lt. Col. James «Rhodey» Rhodes"
-    },
-    {
-      "name": "Сэм Рокуэлл",
-      "role": "Justin Hammer"
-    },
-    {
-      "name": "Скарлетт Йоханссон",
-      "role": "Natalie Rushman / Natasha Romanoff"
-    },
-    {
-      "name": "Кларк Грегг",
-      "role": "Agent Coulson"
-    },
-    {
-      "name": "Сэмюэл Л. Джексон",
-      "role": "Nick Fury"
-    },
-    {
-      "name": "Джон Слэттери",
-      "role": "Howard Stark"
-    },
-    {
-      "name": "Гарри Шендлинг",
-      "role": "Senator Stern"
-    }
+    { "name": "Роберт Дауни мл.", "role": "Tony Stark" },
+    { "name": "Микки Рурк", "role": "Ivan Vanko" },
+    { "name": "Гвинет Пэлтроу", "role": "Pepper Potts" },
+    { "name": "Дон Чидл", "role": "Lt. Col. James «Rhodey» Rhodes" },
+    { "name": "Сэм Рокуэлл", "role": "Justin Hammer" },
+    { "name": "Скарлетт Йоханссон", "role": "Natalie Rushman / Natasha Romanoff" },
+    { "name": "Кларк Грегг", "role": "Agent Coulson" },
+    { "name": "Сэмюэл Л. Джексон", "role": "Nick Fury" },
+    { "name": "Джон Слэттери", "role": "Howard Stark" },
+    { "name": "Гарри Шендлинг", "role": "Senator Stern" }
   ],
   "838": [
-    {
-      "name": "Тоби Магуайр",
-      "role": "Spider-Man / Peter Parker"
-    },
-    {
-      "name": "Уиллем Дефо",
-      "role": "Green Goblin / Norman Osborn"
-    },
-    {
-      "name": "Кирстен Данст",
-      "role": "Mary Jane Watson"
-    },
-    {
-      "name": "Джеймс Франко",
-      "role": "Harry Osborn"
-    },
-    {
-      "name": "Клифф Робертсон",
-      "role": "Ben Parker"
-    },
-    {
-      "name": "Розмари Харрис",
-      "role": "May Parker"
-    },
-    {
-      "name": "Дж.К. Симмонс",
-      "role": "J. Jonah Jameson"
-    },
-    {
-      "name": "Джо Манганьелло",
-      "role": "Flash Thompson"
-    },
-    {
-      "name": "Майкл Пападжон",
-      "role": "Carjacker"
-    },
-    {
-      "name": "Билл Нанн",
-      "role": "Joseph «Robbie» Robertson"
-    }
+    { "name": "Тоби Магуайр", "role": "Spider-Man / Peter Parker" },
+    { "name": "Уиллем Дефо", "role": "Green Goblin / Norman Osborn" },
+    { "name": "Кирстен Данст", "role": "Mary Jane Watson" },
+    { "name": "Джеймс Франко", "role": "Harry Osborn" },
+    { "name": "Клифф Робертсон", "role": "Ben Parker" },
+    { "name": "Розмари Харрис", "role": "May Parker" },
+    { "name": "Дж.К. Симмонс", "role": "J. Jonah Jameson" },
+    { "name": "Джо Манганьелло", "role": "Flash Thompson" },
+    { "name": "Майкл Пападжон", "role": "Carjacker" },
+    { "name": "Билл Нанн", "role": "Joseph «Robbie» Robertson" }
   ],
   "2898": [
-    {
-      "name": "Тоби Магуайр",
-      "role": "Spider-Man / Peter Parker"
-    },
-    {
-      "name": "Кирстен Данст",
-      "role": "Mary Jane Watson"
-    },
-    {
-      "name": "Джеймс Франко",
-      "role": "Harry Osborn"
-    },
-    {
-      "name": "Альфред Молина",
-      "role": "Doc Ock / Dr. Otto Octavius"
-    },
-    {
-      "name": "Розмари Харрис",
-      "role": "May Parker"
-    },
-    {
-      "name": "Дж.К. Симмонс",
-      "role": "J. Jonah Jameson"
-    },
-    {
-      "name": "Донна Мерфи",
-      "role": "Rosalie Octavius"
-    },
-    {
-      "name": "Дэниэл Гиллис",
-      "role": "John Jameson"
-    },
-    {
-      "name": "Дилан Бейкер",
-      "role": "Dr. Curt Connors"
-    },
-    {
-      "name": "Билл Нанн",
-      "role": "Joseph «Robbie» Robertson"
-    }
+    { "name": "Тоби Магуайр", "role": "Spider-Man / Peter Parker" },
+    { "name": "Кирстен Данст", "role": "Mary Jane Watson" },
+    { "name": "Джеймс Франко", "role": "Harry Osborn" },
+    { "name": "Альфред Молина", "role": "Doc Ock / Dr. Otto Octavius" },
+    { "name": "Розмари Харрис", "role": "May Parker" },
+    { "name": "Дж.К. Симмонс", "role": "J. Jonah Jameson" },
+    { "name": "Донна Мерфи", "role": "Rosalie Octavius" },
+    { "name": "Дэниэл Гиллис", "role": "John Jameson" },
+    { "name": "Дилан Бейкер", "role": "Dr. Curt Connors" },
+    { "name": "Билл Нанн", "role": "Joseph «Robbie» Robertson" }
   ],
   "1212316": [
-    {
-      "name": "Мириам Тортоза",
-      "role": "Mónica"
-    },
-    {
-      "name": "Мариона Тена",
-      "role": "Eva"
-    },
-    {
-      "name": "Бернат Местре",
-      "role": "Dani"
-    },
-    {
-      "name": "Анна Бертран",
-      "role": "Julia"
-    },
-    {
-      "name": "Виктор Гомес",
-      "role": "Ricardo"
-    },
-    {
-      "name": "Víctor Gómez",
-      "role": "Ricardo (в титрах: Victor Gomez)"
-    },
-    {
-      "name": "Рок Эсквиус",
-      "role": "David"
-    },
-    {
-      "name": "Диана Ройг",
-      "role": "Sara"
-    },
-    {
-      "name": "Рубен Серрано",
-      "role": "Rafa"
-    },
-    {
-      "name": "Кристина Райя",
-      "role": "Lucía"
-    }
+    { "name": "Мириам Тортоза", "role": "Mónica" },
+    { "name": "Мариона Тена", "role": "Eva" },
+    { "name": "Бернат Местре", "role": "Dani" },
+    { "name": "Анна Бертран", "role": "Julia" },
+    { "name": "Виктор Гомес", "role": "Ricardo" },
+    { "name": "Víctor Gómez", "role": "Ricardo (в титрах: Victor Gomez)" },
+    { "name": "Рок Эсквиус", "role": "David" },
+    { "name": "Диана Ройг", "role": "Sara" },
+    { "name": "Рубен Серрано", "role": "Rafa" },
+    { "name": "Кристина Райя", "role": "Lucía" }
   ],
   "889091": [
-    {
-      "name": "Эмма Робертс",
-      "role": "Vee"
-    },
-    {
-      "name": "Дэйв Франко",
-      "role": "Ian"
-    },
-    {
-      "name": "Эмили Мид",
-      "role": "Sydney"
-    },
-    {
-      "name": "Майлс Хейзер",
-      "role": "Tommy"
-    },
-    {
-      "name": "Джульетт Льюис",
-      "role": "Nancy"
-    },
-    {
-      "name": "Кимико Гленн",
-      "role": "Liv"
-    },
-    {
-      "name": "Марк Джон Джеффрис",
-      "role": "Wes"
-    },
-    {
-      "name": "Колсон Бэйкер",
-      "role": "Ty"
-    },
-    {
-      "name": "Брайан «Сене» Марк",
-      "role": "J.P."
-    },
-    {
-      "name": "Эд Сквайр",
-      "role": "Chuck"
-    }
+    { "name": "Эмма Робертс", "role": "Vee" },
+    { "name": "Дэйв Франко", "role": "Ian" },
+    { "name": "Эмили Мид", "role": "Sydney" },
+    { "name": "Майлс Хейзер", "role": "Tommy" },
+    { "name": "Джульетт Льюис", "role": "Nancy" },
+    { "name": "Кимико Гленн", "role": "Liv" },
+    { "name": "Марк Джон Джеффрис", "role": "Wes" },
+    { "name": "Колсон Бэйкер", "role": "Ty" },
+    { "name": "Брайан «Сене» Марк", "role": "J.P." },
+    { "name": "Эд Сквайр", "role": "Chuck" }
   ],
   "395": [
-    {
-      "name": "Брюс Уиллис",
-      "role": "Malcolm Crowe"
-    },
-    {
-      "name": "Хейли Джоэл Осмент",
-      "role": "Cole Sear"
-    },
-    {
-      "name": "Тони Коллетт",
-      "role": "Lynn Sear"
-    },
-    {
-      "name": "Оливия Уильямс",
-      "role": "Anna Crowe"
-    },
-    {
-      "name": "Тревор Морган",
-      "role": "Tommy Tammisimo"
-    },
-    {
-      "name": "Донни Уолберг",
-      "role": "Vincent Gray"
-    },
-    {
-      "name": "Питер Энтони Тамбакис",
-      "role": "Darren (в титрах: Peter Tambakis)"
-    },
-    {
-      "name": "Джеффри Зубернис",
-      "role": "Bobby"
-    },
-    {
-      "name": "Брюс Норрис",
-      "role": "Stanley Cunningham"
-    },
-    {
-      "name": "Гленн Фицджералд",
-      "role": "Sean"
-    }
+    { "name": "Брюс Уиллис", "role": "Malcolm Crowe" },
+    { "name": "Хейли Джоэл Осмент", "role": "Cole Sear" },
+    { "name": "Тони Коллетт", "role": "Lynn Sear" },
+    { "name": "Оливия Уильямс", "role": "Anna Crowe" },
+    { "name": "Тревор Морган", "role": "Tommy Tammisimo" },
+    { "name": "Донни Уолберг", "role": "Vincent Gray" },
+    { "name": "Питер Энтони Тамбакис", "role": "Darren (в титрах: Peter Tambakis)" },
+    { "name": "Джеффри Зубернис", "role": "Bobby" },
+    { "name": "Брюс Норрис", "role": "Stanley Cunningham" },
+    { "name": "Гленн Фицджералд", "role": "Sean" }
   ],
   "323": [
-    {
-      "name": "Пол Уокер",
-      "role": "Brian O'Conner"
-    },
-    {
-      "name": "Тайриз Гибсон",
-      "role": "Roman Pearce (в титрах: Tyrese)"
-    },
-    {
-      "name": "Ева Мендес",
-      "role": "Monica Fuentes"
-    },
-    {
-      "name": "Коул Хаузер",
-      "role": "Carter Verone"
-    },
-    {
-      "name": "Лудакрис",
-      "role": "Tej (в титрах: Chris «Ludacris» Bridges)"
-    },
-    {
-      "name": "Том Бэрри",
-      "role": "Agent Bilkins"
-    },
-    {
-      "name": "Джеймс Римар",
-      "role": "Agent Markham"
-    },
-    {
-      "name": "Девон Аоки",
-      "role": "Suki"
-    },
-    {
-      "name": "Мэтт Галлини",
-      "role": "Enrique (в титрах: Matt Gallini)"
-    },
-    {
-      "name": "Роберто «Санс» Санчес",
-      "role": "Roberto (в титрах: Roberto «Sanz» Sanchez)"
-    }
+    { "name": "Пол Уокер", "role": "Brian O'Conner" },
+    { "name": "Тайриз Гибсон", "role": "Roman Pearce (в титрах: Tyrese)" },
+    { "name": "Ева Мендес", "role": "Monica Fuentes" },
+    { "name": "Коул Хаузер", "role": "Carter Verone" },
+    { "name": "Лудакрис", "role": "Tej (в титрах: Chris «Ludacris» Bridges)" },
+    { "name": "Том Бэрри", "role": "Agent Bilkins" },
+    { "name": "Джеймс Римар", "role": "Agent Markham" },
+    { "name": "Девон Аоки", "role": "Suki" },
+    { "name": "Мэтт Галлини", "role": "Enrique (в титрах: Matt Gallini)" },
+    { "name": "Роберто «Санс» Санчес", "role": "Roberto (в титрах: Roberto «Sanz» Sanchez)" }
   ],
   "102510": [
-    {
-      "name": "Николас Кейдж",
-      "role": "John Koestler"
-    },
-    {
-      "name": "Роуз Бирн",
-      "role": "Diana"
-    },
-    {
-      "name": "Чандлер Кентербери",
-      "role": "Caleb Koestler"
-    },
-    {
-      "name": "Лара Робинсон",
-      "role": "Abby / Lucinda"
-    },
-    {
-      "name": "Бен Мендельсон",
-      "role": "Phil Beckman"
-    },
-    {
-      "name": "Д.Г. Малоуни",
-      "role": "The Stranger"
-    },
-    {
-      "name": "Надя Таунсенд",
-      "role": "Grace"
-    },
-    {
-      "name": "Алан Хопгуд",
-      "role": "Reverend Koestler"
-    },
-    {
-      "name": "Эдриэнн Пикеринг",
-      "role": "Allison"
-    },
-    {
-      "name": "Джошуа Лонг",
-      "role": "Younger Caleb"
-    }
+    { "name": "Николас Кейдж", "role": "John Koestler" },
+    { "name": "Роуз Бирн", "role": "Diana" },
+    { "name": "Чандлер Кентербери", "role": "Caleb Koestler" },
+    { "name": "Лара Робинсон", "role": "Abby / Lucinda" },
+    { "name": "Бен Мендельсон", "role": "Phil Beckman" },
+    { "name": "Д.Г. Малоуни", "role": "The Stranger" },
+    { "name": "Надя Таунсенд", "role": "Grace" },
+    { "name": "Алан Хопгуд", "role": "Reverend Koestler" },
+    { "name": "Эдриэнн Пикеринг", "role": "Allison" },
+    { "name": "Джошуа Лонг", "role": "Younger Caleb" }
   ],
   "280826": [
-    {
-      "name": "Адам Сэндлер",
-      "role": "Zohan"
-    },
-    {
-      "name": "Джон Туртурро",
-      "role": "Phantom"
-    },
-    {
-      "name": "Эммануэль Шрики",
-      "role": "Dalia"
-    },
-    {
-      "name": "Ник Свардсон",
-      "role": "Michael"
-    },
-    {
-      "name": "Лэйни Казан",
-      "role": "Gail"
-    },
-    {
-      "name": "Идо Моссери",
-      "role": "Oori"
-    },
-    {
-      "name": "Роб Шнайдер",
-      "role": "Salim"
-    },
-    {
-      "name": "Дэйв Мэтьюз",
-      "role": "James"
-    },
-    {
-      "name": "Майкл Баффер",
-      "role": "Walbridge"
-    },
-    {
-      "name": "Шарлотта Рэй",
-      "role": "Mrs. Greenhouse"
-    }
+    { "name": "Адам Сэндлер", "role": "Zohan" },
+    { "name": "Джон Туртурро", "role": "Phantom" },
+    { "name": "Эммануэль Шрики", "role": "Dalia" },
+    { "name": "Ник Свардсон", "role": "Michael" },
+    { "name": "Лэйни Казан", "role": "Gail" },
+    { "name": "Идо Моссери", "role": "Oori" },
+    { "name": "Роб Шнайдер", "role": "Salim" },
+    { "name": "Дэйв Мэтьюз", "role": "James" },
+    { "name": "Майкл Баффер", "role": "Walbridge" },
+    { "name": "Шарлотта Рэй", "role": "Mrs. Greenhouse" }
   ],
   "395066": [
-    {
-      "name": "Зак Эфрон",
-      "role": "Mike O'Donnell"
-    },
-    {
-      "name": "Лесли Манн",
-      "role": "Scarlet"
-    },
-    {
-      "name": "Томас Леннон",
-      "role": "Ned Gold"
-    },
-    {
-      "name": "Мэттью Перри",
-      "role": "Mike O'Donnell (Adult)"
-    },
-    {
-      "name": "Стерлинг Найт",
-      "role": "Alex"
-    },
-    {
-      "name": "Мишель Трахтенберг",
-      "role": "Maggie"
-    },
-    {
-      "name": "Хантер Пэрриш",
-      "role": "Stan"
-    },
-    {
-      "name": "Мелора Хардин",
-      "role": "Principal Jane Masterson"
-    },
-    {
-      "name": "Брайан Дойл-Мюррей",
-      "role": "Janitor"
-    },
-    {
-      "name": "Джим Гэффиган",
-      "role": "Coach Murphy"
-    }
+    { "name": "Зак Эфрон", "role": "Mike O'Donnell" },
+    { "name": "Лесли Манн", "role": "Scarlet" },
+    { "name": "Томас Леннон", "role": "Ned Gold" },
+    { "name": "Мэттью Перри", "role": "Mike O'Donnell (Adult)" },
+    { "name": "Стерлинг Найт", "role": "Alex" },
+    { "name": "Мишель Трахтенберг", "role": "Maggie" },
+    { "name": "Хантер Пэрриш", "role": "Stan" },
+    { "name": "Мелора Хардин", "role": "Principal Jane Masterson" },
+    { "name": "Брайан Дойл-Мюррей", "role": "Janitor" },
+    { "name": "Джим Гэффиган", "role": "Coach Murphy" }
   ],
   "298": [
-    {
-      "name": "Патрик Стюарт",
-      "role": "Professor Charles Xavier"
-    },
-    {
-      "name": "Хью Джекман",
-      "role": "Logan / Wolverine"
-    },
-    {
-      "name": "Иэн Маккеллен",
-      "role": "Eric Lehnsherr / Magneto"
-    },
-    {
-      "name": "Холли Берри",
-      "role": "Ororo Munroe / Storm"
-    },
-    {
-      "name": "Фамке Янссен",
-      "role": "Jean Grey"
-    },
-    {
-      "name": "Джеймс Марсден",
-      "role": "Scott Summers / Cyclops"
-    },
-    {
-      "name": "Анна Пэкуин",
-      "role": "Rogue"
-    },
-    {
-      "name": "Ребекка Ромейн",
-      "role": "Raven Darkholme / Mystique / Grace (в титрах: Rebecca Romijn-Stamos)"
-    },
-    {
-      "name": "Брайан Кокс",
-      "role": "William Stryker"
-    },
-    {
-      "name": "Алан Камминг",
-      "role": "Kurt Wagner / Nightcrawler"
-    }
+    { "name": "Патрик Стюарт", "role": "Professor Charles Xavier" },
+    { "name": "Хью Джекман", "role": "Logan / Wolverine" },
+    { "name": "Иэн Маккеллен", "role": "Eric Lehnsherr / Magneto" },
+    { "name": "Холли Берри", "role": "Ororo Munroe / Storm" },
+    { "name": "Фамке Янссен", "role": "Jean Grey" },
+    { "name": "Джеймс Марсден", "role": "Scott Summers / Cyclops" },
+    { "name": "Анна Пэкуин", "role": "Rogue" },
+    { "name": "Ребекка Ромейн", "role": "Raven Darkholme / Mystique / Grace (в титрах: Rebecca Romijn-Stamos)" },
+    { "name": "Брайан Кокс", "role": "William Stryker" },
+    { "name": "Алан Камминг", "role": "Kurt Wagner / Nightcrawler" }
   ],
   "462358": [
-    {
-      "name": "Джеймс Макэвой",
-      "role": "Charles Xavier (30 Years)"
-    },
-    {
-      "name": "Майкл Фассбендер",
-      "role": "Erik Lensherr"
-    },
-    {
-      "name": "Кевин Бейкон",
-      "role": "Sebastian Shaw"
-    },
-    {
-      "name": "Дженнифер Лоуренс",
-      "role": "Raven / Mystique"
-    },
-    {
-      "name": "Дженьюэри Джонс",
-      "role": "Emma Frost"
-    },
-    {
-      "name": "Роуз Бирн",
-      "role": "Moira MacTaggert"
-    },
-    {
-      "name": "Оливер Платт",
-      "role": "Man in Black Suit"
-    },
-    {
-      "name": "Николас Холт",
-      "role": "Hank / Beast"
-    },
-    {
-      "name": "Зои Кравиц",
-      "role": "Angel Salvadore"
-    },
-    {
-      "name": "Калеб Лэндри Джонс",
-      "role": "Cassidy / Banshee"
-    }
+    { "name": "Джеймс Макэвой", "role": "Charles Xavier (30 Years)" },
+    { "name": "Майкл Фассбендер", "role": "Erik Lensherr" },
+    { "name": "Кевин Бейкон", "role": "Sebastian Shaw" },
+    { "name": "Дженнифер Лоуренс", "role": "Raven / Mystique" },
+    { "name": "Дженьюэри Джонс", "role": "Emma Frost" },
+    { "name": "Роуз Бирн", "role": "Moira MacTaggert" },
+    { "name": "Оливер Платт", "role": "Man in Black Suit" },
+    { "name": "Николас Холт", "role": "Hank / Beast" },
+    { "name": "Зои Кравиц", "role": "Angel Salvadore" },
+    { "name": "Калеб Лэндри Джонс", "role": "Cassidy / Banshee" }
   ],
   "462754": [
-    {
-      "name": "Хью Джекман",
-      "role": "Logan"
-    },
-    {
-      "name": "Тао Окамото",
-      "role": "Mariko"
-    },
-    {
-      "name": "Рила Фукусима",
-      "role": "Yukio"
-    },
-    {
-      "name": "Хироюки Санада",
-      "role": "Shingen"
-    },
-    {
-      "name": "Светлана Ходченкова",
-      "role": "Viper"
-    },
-    {
-      "name": "Брайан Ти",
-      "role": "Noburo"
-    },
-    {
-      "name": "Хал Яманоути",
-      "role": "Yashida (в титрах: Haruhiko Yamanouchi)"
-    },
-    {
-      "name": "Уилл Юн Ли",
-      "role": "Harada"
-    },
-    {
-      "name": "Кэн Ямамура",
-      "role": "Young Yashida"
-    },
-    {
-      "name": "Фамке Янссен",
-      "role": "Jean Grey"
-    }
+    { "name": "Хью Джекман", "role": "Logan" },
+    { "name": "Тао Окамото", "role": "Mariko" },
+    { "name": "Рила Фукусима", "role": "Yukio" },
+    { "name": "Хироюки Санада", "role": "Shingen" },
+    { "name": "Светлана Ходченкова", "role": "Viper" },
+    { "name": "Брайан Ти", "role": "Noburo" },
+    { "name": "Хал Яманоути", "role": "Yashida (в титрах: Haruhiko Yamanouchi)" },
+    { "name": "Уилл Юн Ли", "role": "Harada" },
+    { "name": "Кэн Ямамура", "role": "Young Yashida" },
+    { "name": "Фамке Янссен", "role": "Jean Grey" }
   ],
   "1228069": [
-    {
-      "name": "Марк Руффало",
-      "role": "Rob Bilott"
-    },
-    {
-      "name": "Энн Хэтэуэй",
-      "role": "Sarah Barlage Bilott"
-    },
-    {
-      "name": "Тим Роббинс",
-      "role": "Tom Terp"
-    },
-    {
-      "name": "Билл Пуллман",
-      "role": "Harry Dietzler"
-    },
-    {
-      "name": "Билл Кэмп",
-      "role": "Wilbur Tennant"
-    },
-    {
-      "name": "Виктор Гарбер",
-      "role": "Phil Donnelly"
-    },
-    {
-      "name": "Мэр Уиннингхэм",
-      "role": "Darlene Kiger"
-    },
-    {
-      "name": "Уильям Джексон Харпер",
-      "role": "James Ross"
-    },
-    {
-      "name": "Луиза Краузе",
-      "role": "Carla Pfeiffer"
-    },
-    {
-      "name": "Кевин Краули",
-      "role": "Larry Winter"
-    }
+    { "name": "Марк Руффало", "role": "Rob Bilott" },
+    { "name": "Энн Хэтэуэй", "role": "Sarah Barlage Bilott" },
+    { "name": "Тим Роббинс", "role": "Tom Terp" },
+    { "name": "Билл Пуллман", "role": "Harry Dietzler" },
+    { "name": "Билл Кэмп", "role": "Wilbur Tennant" },
+    { "name": "Виктор Гарбер", "role": "Phil Donnelly" },
+    { "name": "Мэр Уиннингхэм", "role": "Darlene Kiger" },
+    { "name": "Уильям Джексон Харпер", "role": "James Ross" },
+    { "name": "Луиза Краузе", "role": "Carla Pfeiffer" },
+    { "name": "Кевин Краули", "role": "Larry Winter" }
   ],
   "197863": [
-    {
-      "name": "Чарли Кокс",
-      "role": "Tristan Thorn"
-    },
-    {
-      "name": "Клэр Дэйнс",
-      "role": "Yvaine"
-    },
-    {
-      "name": "Мишель Пфайффер",
-      "role": "Lamia"
-    },
-    {
-      "name": "Роберт Де Ниро",
-      "role": "Captain Shakespeare"
-    },
-    {
-      "name": "Марк Стронг",
-      "role": "Septimus"
-    },
-    {
-      "name": "Джейсон Флеминг",
-      "role": "Primus"
-    },
-    {
-      "name": "Руперт Эверетт",
-      "role": "Secundus"
-    },
-    {
-      "name": "Кейт Магоуэн",
-      "role": "Slave Girl / Una"
-    },
-    {
-      "name": "Сиенна Миллер",
-      "role": "Victoria"
-    },
-    {
-      "name": "Натаниель Паркер",
-      "role": "Dunstan Thorn"
-    }
+    { "name": "Чарли Кокс", "role": "Tristan Thorn" },
+    { "name": "Клэр Дэйнс", "role": "Yvaine" },
+    { "name": "Мишель Пфайффер", "role": "Lamia" },
+    { "name": "Роберт Де Ниро", "role": "Captain Shakespeare" },
+    { "name": "Марк Стронг", "role": "Septimus" },
+    { "name": "Джейсон Флеминг", "role": "Primus" },
+    { "name": "Руперт Эверетт", "role": "Secundus" },
+    { "name": "Кейт Магоуэн", "role": "Slave Girl / Una" },
+    { "name": "Сиенна Миллер", "role": "Victoria" },
+    { "name": "Натаниель Паркер", "role": "Dunstan Thorn" }
   ],
   "462360": [
-    {
-      "name": "Райан Рейнольдс",
-      "role": "Wade / Deadpool"
-    },
-    {
-      "name": "Морена Баккарин",
-      "role": "Vanessa"
-    },
-    {
-      "name": "Эд Скрейн",
-      "role": "Ajax"
-    },
-    {
-      "name": "ТиДжей Миллер",
-      "role": "Weasel"
-    },
-    {
-      "name": "Джина Карано",
-      "role": "Angel Dust"
-    },
-    {
-      "name": "Брианна Хилдебранд",
-      "role": "Negasonic Teenage Warhead"
-    },
-    {
-      "name": "Стефан Капичич",
-      "role": "Colossus, озвучка"
-    },
-    {
-      "name": "Лесли Аггамс",
-      "role": "Blind Al"
-    },
-    {
-      "name": "Джед Риз",
-      "role": "Recruiter"
-    },
-    {
-      "name": "Каран Сони",
-      "role": "Dopinder"
-    }
+    { "name": "Райан Рейнольдс", "role": "Wade / Deadpool" },
+    { "name": "Морена Баккарин", "role": "Vanessa" },
+    { "name": "Эд Скрейн", "role": "Ajax" },
+    { "name": "ТиДжей Миллер", "role": "Weasel" },
+    { "name": "Джина Карано", "role": "Angel Dust" },
+    { "name": "Брианна Хилдебранд", "role": "Negasonic Teenage Warhead" },
+    { "name": "Стефан Капичич", "role": "Colossus, озвучка" },
+    { "name": "Лесли Аггамс", "role": "Blind Al" },
+    { "name": "Джед Риз", "role": "Recruiter" },
+    { "name": "Каран Сони", "role": "Dopinder" }
   ],
   "961715": [
-    {
-      "name": "Райан Рейнольдс",
-      "role": "Wade Wilson / Deadpool / Voice of Juggernaut"
-    },
-    {
-      "name": "Джош Бролин",
-      "role": "Cable"
-    },
-    {
-      "name": "Морена Баккарин",
-      "role": "Vanessa"
-    },
-    {
-      "name": "Джулиан Деннисон",
-      "role": "Firefist"
-    },
-    {
-      "name": "Зази Битц",
-      "role": "Domino"
-    },
-    {
-      "name": "ТиДжей Миллер",
-      "role": "Weasel"
-    },
-    {
-      "name": "Лесли Аггамс",
-      "role": "Blind Al"
-    },
-    {
-      "name": "Каран Сони",
-      "role": "Dopinder"
-    },
-    {
-      "name": "Брианна Хилдебранд",
-      "role": "Negasonic Teenage Warhead"
-    },
-    {
-      "name": "Джек Кеси",
-      "role": "Black Tom"
-    }
+    { "name": "Райан Рейнольдс", "role": "Wade Wilson / Deadpool / Voice of Juggernaut" },
+    { "name": "Джош Бролин", "role": "Cable" },
+    { "name": "Морена Баккарин", "role": "Vanessa" },
+    { "name": "Джулиан Деннисон", "role": "Firefist" },
+    { "name": "Зази Битц", "role": "Domino" },
+    { "name": "ТиДжей Миллер", "role": "Weasel" },
+    { "name": "Лесли Аггамс", "role": "Blind Al" },
+    { "name": "Каран Сони", "role": "Dopinder" },
+    { "name": "Брианна Хилдебранд", "role": "Negasonic Teenage Warhead" },
+    { "name": "Джек Кеси", "role": "Black Tom" }
   ],
   "1008444": [
-    {
-      "name": "Райан Рейнольдс",
-      "role": "Wade Wilson / Deadpool / Nicepool (в титрах: Gordon Reynolds)"
-    },
-    {
-      "name": "Хью Джекман",
-      "role": "Logan / Wolverine"
-    },
-    {
-      "name": "Эмма Коррин",
-      "role": "Cassandra Nova"
-    },
-    {
-      "name": "ТиДжей Миллер",
-      "role": "Weasel"
-    },
-    {
-      "name": "Морена Баккарин",
-      "role": "Vanessa"
-    },
-    {
-      "name": "Роб Делани",
-      "role": "Peter"
-    },
-    {
-      "name": "Лесли Аггамс",
-      "role": "Blind Al"
-    },
-    {
-      "name": "Дженнифер Гарнер",
-      "role": "Elektra"
-    },
-    {
-      "name": "Мэттью Макфэдиен",
-      "role": "Mr. Paradox"
-    },
-    {
-      "name": "Уэсли Снайпс",
-      "role": "Blade"
-    }
+    { "name": "Райан Рейнольдс", "role": "Wade Wilson / Deadpool / Nicepool (в титрах: Gordon Reynolds)" },
+    { "name": "Хью Джекман", "role": "Logan / Wolverine" },
+    { "name": "Эмма Коррин", "role": "Cassandra Nova" },
+    { "name": "ТиДжей Миллер", "role": "Weasel" },
+    { "name": "Морена Баккарин", "role": "Vanessa" },
+    { "name": "Роб Делани", "role": "Peter" },
+    { "name": "Лесли Аггамс", "role": "Blind Al" },
+    { "name": "Дженнифер Гарнер", "role": "Elektra" },
+    { "name": "Мэттью Макфэдиен", "role": "Mr. Paradox" },
+    { "name": "Уэсли Снайпс", "role": "Blade" }
   ],
   "405608": [
-    {
-      "name": "Уилл Феррелл",
-      "role": "Megamind, озвучка"
-    },
-    {
-      "name": "Брэд Питт",
-      "role": "Metro Man, озвучка"
-    },
-    {
-      "name": "Тина Фей",
-      "role": "Roxanne Ritchi, озвучка"
-    },
-    {
-      "name": "Джона Хилл",
-      "role": "Tighten, озвучка"
-    },
-    {
-      "name": "Дэвид Кросс",
-      "role": "Minion, озвучка"
-    },
-    {
-      "name": "Бен Стиллер",
-      "role": "Bernard, озвучка"
-    },
-    {
-      "name": "Джастин Теру",
-      "role": "Megamind's Father, озвучка"
-    },
-    {
-      "name": "Джессика Шульте",
-      "role": "Megamind's Mother, озвучка"
-    },
-    {
-      "name": "Том МакГрат",
-      "role": "Lord Scott / Prison Guard, озвучка"
-    },
-    {
-      "name": "Эмили Нордвинд",
-      "role": "Lady Scott, озвучка"
-    }
+    { "name": "Уилл Феррелл", "role": "Megamind, озвучка" },
+    { "name": "Брэд Питт", "role": "Metro Man, озвучка" },
+    { "name": "Тина Фей", "role": "Roxanne Ritchi, озвучка" },
+    { "name": "Джона Хилл", "role": "Tighten, озвучка" },
+    { "name": "Дэвид Кросс", "role": "Minion, озвучка" },
+    { "name": "Бен Стиллер", "role": "Bernard, озвучка" },
+    { "name": "Джастин Теру", "role": "Megamind's Father, озвучка" },
+    { "name": "Джессика Шульте", "role": "Megamind's Mother, озвучка" },
+    { "name": "Том МакГрат", "role": "Lord Scott / Prison Guard, озвучка" },
+    { "name": "Эмили Нордвинд", "role": "Lady Scott, озвучка" }
   ],
   "102151": [
-    {
-      "name": "Уилл Смит",
-      "role": "John Hancock"
-    },
-    {
-      "name": "Шарлиз Терон",
-      "role": "Mary"
-    },
-    {
-      "name": "Джейсон Бейтман",
-      "role": "Ray"
-    },
-    {
-      "name": "Джей Хед",
-      "role": "Aaron"
-    },
-    {
-      "name": "Эдди Марсан",
-      "role": "Red"
-    },
-    {
-      "name": "Дэвид Мэтти",
-      "role": "Man Mountain"
-    },
-    {
-      "name": "Метрикс Фиттен",
-      "role": "Matrix"
-    },
-    {
-      "name": "Томас Леннон",
-      "role": "Mike"
-    },
-    {
-      "name": "Джонни Галэки",
-      "role": "Jeremy"
-    },
-    {
-      "name": "Хейли Норман",
-      "role": "Hottie"
-    }
+    { "name": "Уилл Смит", "role": "John Hancock" },
+    { "name": "Шарлиз Терон", "role": "Mary" },
+    { "name": "Джейсон Бейтман", "role": "Ray" },
+    { "name": "Джей Хед", "role": "Aaron" },
+    { "name": "Эдди Марсан", "role": "Red" },
+    { "name": "Дэвид Мэтти", "role": "Man Mountain" },
+    { "name": "Метрикс Фиттен", "role": "Matrix" },
+    { "name": "Томас Леннон", "role": "Mike" },
+    { "name": "Джонни Галэки", "role": "Jeremy" },
+    { "name": "Хейли Норман", "role": "Hottie" }
   ],
   "690593": [
-    {
-      "name": "Том Холланд",
-      "role": "Peter Parker / Spider-Man"
-    },
-    {
-      "name": "Роберт Дауни мл.",
-      "role": "Tony Stark / Iron Man"
-    },
-    {
-      "name": "Майкл Китон",
-      "role": "Adrian Toomes / Vulture"
-    },
-    {
-      "name": "Мариса Томей",
-      "role": "May Parker"
-    },
-    {
-      "name": "Джон Фавро",
-      "role": "Happy Hogan"
-    },
-    {
-      "name": "Джейкоб Баталон",
-      "role": "Ned"
-    },
-    {
-      "name": "Зендея",
-      "role": "Michelle"
-    },
-    {
-      "name": "Лора Хэрриер",
-      "role": "Liz"
-    },
-    {
-      "name": "Тони Револори",
-      "role": "Flash"
-    },
-    {
-      "name": "Дональд Гловер",
-      "role": "Aaron Davis"
-    }
+    { "name": "Том Холланд", "role": "Peter Parker / Spider-Man" },
+    { "name": "Роберт Дауни мл.", "role": "Tony Stark / Iron Man" },
+    { "name": "Майкл Китон", "role": "Adrian Toomes / Vulture" },
+    { "name": "Мариса Томей", "role": "May Parker" },
+    { "name": "Джон Фавро", "role": "Happy Hogan" },
+    { "name": "Джейкоб Баталон", "role": "Ned" },
+    { "name": "Зендея", "role": "Michelle" },
+    { "name": "Лора Хэрриер", "role": "Liz" },
+    { "name": "Тони Револори", "role": "Flash" },
+    { "name": "Дональд Гловер", "role": "Aaron Davis" }
   ],
   "1008445": [
-    {
-      "name": "Том Холланд",
-      "role": "Peter Parker / Spider-Man"
-    },
-    {
-      "name": "Сэмюэл Л. Джексон",
-      "role": "Nick Fury"
-    },
-    {
-      "name": "Джейк Джилленхол",
-      "role": "Quentin Beck / Mysterio"
-    },
-    {
-      "name": "Зендея",
-      "role": "MJ"
-    },
-    {
-      "name": "Коби Смолдерс",
-      "role": "Maria Hill"
-    },
-    {
-      "name": "Мариса Томей",
-      "role": "May Parker"
-    },
-    {
-      "name": "Джон Фавро",
-      "role": "Happy Hogan"
-    },
-    {
-      "name": "Джейкоб Баталон",
-      "role": "Ned Leeds"
-    },
-    {
-      "name": "Тони Револори",
-      "role": "Flash Thompson"
-    },
-    {
-      "name": "Энгаури Райс",
-      "role": "Betty Brant"
-    }
+    { "name": "Том Холланд", "role": "Peter Parker / Spider-Man" },
+    { "name": "Сэмюэл Л. Джексон", "role": "Nick Fury" },
+    { "name": "Джейк Джилленхол", "role": "Quentin Beck / Mysterio" },
+    { "name": "Зендея", "role": "MJ" },
+    { "name": "Коби Смолдерс", "role": "Maria Hill" },
+    { "name": "Мариса Томей", "role": "May Parker" },
+    { "name": "Джон Фавро", "role": "Happy Hogan" },
+    { "name": "Джейкоб Баталон", "role": "Ned Leeds" },
+    { "name": "Тони Револори", "role": "Flash Thompson" },
+    { "name": "Энгаури Райс", "role": "Betty Brant" }
   ],
   "1309570": [
-    {
-      "name": "Том Холланд",
-      "role": "Peter Parker / Spider-Man"
-    },
-    {
-      "name": "Зендея",
-      "role": "MJ"
-    },
-    {
-      "name": "Бенедикт Камбербэтч",
-      "role": "Doctor Strange"
-    },
-    {
-      "name": "Мариса Томей",
-      "role": "May Parker"
-    },
-    {
-      "name": "Уиллем Дефо",
-      "role": "Norman Osborn / Green Goblin"
-    },
-    {
-      "name": "Альфред Молина",
-      "role": "Dr. Otto Octavius / Doc Ock"
-    },
-    {
-      "name": "Джейми Фокс",
-      "role": "Max Dillon / Electro"
-    },
-    {
-      "name": "Томас Хейден Чёрч",
-      "role": "Flint Marko / Sandman, озвучка"
-    },
-    {
-      "name": "Рис Иванс",
-      "role": "Dr. Curt Connors / The Lizard, озвучка"
-    },
-    {
-      "name": "Джейкоб Баталон",
-      "role": "Ned Leeds"
-    }
+    { "name": "Том Холланд", "role": "Peter Parker / Spider-Man" },
+    { "name": "Зендея", "role": "MJ" },
+    { "name": "Бенедикт Камбербэтч", "role": "Doctor Strange" },
+    { "name": "Мариса Томей", "role": "May Parker" },
+    { "name": "Уиллем Дефо", "role": "Norman Osborn / Green Goblin" },
+    { "name": "Альфред Молина", "role": "Dr. Otto Octavius / Doc Ock" },
+    { "name": "Джейми Фокс", "role": "Max Dillon / Electro" },
+    { "name": "Томас Хейден Чёрч", "role": "Flint Marko / Sandman, озвучка" },
+    { "name": "Рис Иванс", "role": "Dr. Curt Connors / The Lizard, озвучка" },
+    { "name": "Джейкоб Баталон", "role": "Ned Leeds" }
   ],
   "11637": [
-    {
-      "name": "Джонни Депп",
-      "role": "Dean Corso"
-    },
-    {
-      "name": "Фрэнк Ланджелла",
-      "role": "Boris Balkan"
-    },
-    {
-      "name": "Лена Олин",
-      "role": "Liana Telfer"
-    },
-    {
-      "name": "Эмманюэль Сенье",
-      "role": "The Girl"
-    },
-    {
-      "name": "Барбара Джеффорд",
-      "role": "Baroness Kessler"
-    },
-    {
-      "name": "Джек Тейлор",
-      "role": "Victor Fargas"
-    },
-    {
-      "name": "Джеймс Руссо",
-      "role": "Bernie"
-    },
-    {
-      "name": "Хосе Лопес Родеро",
-      "role": "Pablo & Pedro Ceniza / 1st & 2nd Workmen (в титрах: Jose Lopez Rodero)"
-    },
-    {
-      "name": "Тони Амони",
-      "role": "Liana's Bodyguard"
-    },
-    {
-      "name": "Уилли Холт",
-      "role": "Andrew Telfer"
-    }
+    { "name": "Джонни Депп", "role": "Dean Corso" },
+    { "name": "Фрэнк Ланджелла", "role": "Boris Balkan" },
+    { "name": "Лена Олин", "role": "Liana Telfer" },
+    { "name": "Эмманюэль Сенье", "role": "The Girl" },
+    { "name": "Барбара Джеффорд", "role": "Baroness Kessler" },
+    { "name": "Джек Тейлор", "role": "Victor Fargas" },
+    { "name": "Джеймс Руссо", "role": "Bernie" },
+    { "name": "Хосе Лопес Родеро", "role": "Pablo & Pedro Ceniza / 1st & 2nd Workmen (в титрах: Jose Lopez Rodero)" },
+    { "name": "Тони Амони", "role": "Liana's Bodyguard" },
+    { "name": "Уилли Холт", "role": "Andrew Telfer" }
   ],
   "801": [
-    {
-      "name": "Милла Йовович",
-      "role": "Alice"
-    },
-    {
-      "name": "Мишель Родригес",
-      "role": "Rain"
-    },
-    {
-      "name": "Эрик Мэбиас",
-      "role": "Matt"
-    },
-    {
-      "name": "Джеймс Пьюрфой",
-      "role": "Spence"
-    },
-    {
-      "name": "Мартин Крюз",
-      "role": "Kaplan"
-    },
-    {
-      "name": "Колин Сэлмон",
-      "role": "One"
-    },
-    {
-      "name": "Райан МакКласки",
-      "role": "Mr. Grey"
-    },
-    {
-      "name": "Оскар Пирс",
-      "role": "Mr. Red"
-    },
-    {
-      "name": "Индра Ове",
-      "role": "Ms. Black"
-    },
-    {
-      "name": "Анна Болт",
-      "role": "Dr. Green"
-    }
+    { "name": "Милла Йовович", "role": "Alice" },
+    { "name": "Мишель Родригес", "role": "Rain" },
+    { "name": "Эрик Мэбиас", "role": "Matt" },
+    { "name": "Джеймс Пьюрфой", "role": "Spence" },
+    { "name": "Мартин Крюз", "role": "Kaplan" },
+    { "name": "Колин Сэлмон", "role": "One" },
+    { "name": "Райан МакКласки", "role": "Mr. Grey" },
+    { "name": "Оскар Пирс", "role": "Mr. Red" },
+    { "name": "Индра Ове", "role": "Ms. Black" },
+    { "name": "Анна Болт", "role": "Dr. Green" }
   ],
   "81288": [
-    {
-      "name": "Шайа ЛаБаф",
-      "role": "Sam Witwicky"
-    },
-    {
-      "name": "Меган Фокс",
-      "role": "Mikaela Banes"
-    },
-    {
-      "name": "Джош Дюамель",
-      "role": "Captain Lennox"
-    },
-    {
-      "name": "Тайриз Гибсон",
-      "role": "USAF Tech Sergeant Epps"
-    },
-    {
-      "name": "Джон Туртурро",
-      "role": "Agent Simmons"
-    },
-    {
-      "name": "Рэйчел Тейлор",
-      "role": "Maggie Madsen"
-    },
-    {
-      "name": "Энтони Андерсон",
-      "role": "Glen Whitmann"
-    },
-    {
-      "name": "Джон Войт",
-      "role": "Defense Secretary John Keller"
-    },
-    {
-      "name": "Кевин Данн",
-      "role": "Ron Witwicky"
-    },
-    {
-      "name": "Джули Уайт",
-      "role": "Judy Witwicky"
-    }
+    { "name": "Шайа ЛаБаф", "role": "Sam Witwicky" },
+    { "name": "Меган Фокс", "role": "Mikaela Banes" },
+    { "name": "Джош Дюамель", "role": "Captain Lennox" },
+    { "name": "Тайриз Гибсон", "role": "USAF Tech Sergeant Epps" },
+    { "name": "Джон Туртурро", "role": "Agent Simmons" },
+    { "name": "Рэйчел Тейлор", "role": "Maggie Madsen" },
+    { "name": "Энтони Андерсон", "role": "Glen Whitmann" },
+    { "name": "Джон Войт", "role": "Defense Secretary John Keller" },
+    { "name": "Кевин Данн", "role": "Ron Witwicky" },
+    { "name": "Джули Уайт", "role": "Judy Witwicky" }
   ],
   "395787": [
-    {
-      "name": "Уилл Смит",
-      "role": "Ben"
-    },
-    {
-      "name": "Розарио Доусон",
-      "role": "Emily"
-    },
-    {
-      "name": "Вуди Харрельсон",
-      "role": "Ezra"
-    },
-    {
-      "name": "Майкл Или",
-      "role": "Ben's Brother"
-    },
-    {
-      "name": "Барри Пеппер",
-      "role": "Dan"
-    },
-    {
-      "name": "Эльпидия Каррильо",
-      "role": "Connie"
-    },
-    {
-      "name": "Робин Ли",
-      "role": "Sarah"
-    },
-    {
-      "name": "Джо Нуньес",
-      "role": "Larry / Hotel Owner (в титрах: Joseph A. Nuñez)"
-    },
-    {
-      "name": "Билл Смитрович",
-      "role": "George Ristuccia"
-    },
-    {
-      "name": "Тим Келлехер",
-      "role": "Stewart Goodman"
-    }
+    { "name": "Уилл Смит", "role": "Ben" },
+    { "name": "Розарио Доусон", "role": "Emily" },
+    { "name": "Вуди Харрельсон", "role": "Ezra" },
+    { "name": "Майкл Или", "role": "Ben's Brother" },
+    { "name": "Барри Пеппер", "role": "Dan" },
+    { "name": "Эльпидия Каррильо", "role": "Connie" },
+    { "name": "Робин Ли", "role": "Sarah" },
+    { "name": "Джо Нуньес", "role": "Larry / Hotel Owner (в титрах: Joseph A. Nuñez)" },
+    { "name": "Билл Смитрович", "role": "George Ristuccia" },
+    { "name": "Тим Келлехер", "role": "Stewart Goodman" }
   ],
   "1388894": [
-    {
-      "name": "Оскар Айзек",
-      "role": "—"
-    },
-    {
-      "name": "Энн Хэтэуэй",
-      "role": "Esther Graff"
-    },
-    {
-      "name": "Джереми Стронг",
-      "role": "Irving Graff"
-    },
-    {
-      "name": "Майкл Бэнкс Репета",
-      "role": "Paul Graff"
-    },
-    {
-      "name": "Роберт Де Ниро",
-      "role": "—"
-    },
-    {
-      "name": "Кейт Бланшетт",
-      "role": "Maryanne Trump"
-    },
-    {
-      "name": "Джейлин Уэбб",
-      "role": "Johnny Davis"
-    },
-    {
-      "name": "Энтони Хопкинс",
-      "role": "Grandpa Aaron Rabinowitz"
-    },
-    {
-      "name": "Райан Селл",
-      "role": "Ted Graff"
-    },
-    {
-      "name": "Эндрю Полк",
-      "role": "Mr. Turkeltaub"
-    }
+    { "name": "Оскар Айзек", "role": "—" },
+    { "name": "Энн Хэтэуэй", "role": "Esther Graff" },
+    { "name": "Джереми Стронг", "role": "Irving Graff" },
+    { "name": "Майкл Бэнкс Репета", "role": "Paul Graff" },
+    { "name": "Роберт Де Ниро", "role": "—" },
+    { "name": "Кейт Бланшетт", "role": "Maryanne Trump" },
+    { "name": "Джейлин Уэбб", "role": "Johnny Davis" },
+    { "name": "Энтони Хопкинс", "role": "Grandpa Aaron Rabinowitz" },
+    { "name": "Райан Селл", "role": "Ted Graff" },
+    { "name": "Эндрю Полк", "role": "Mr. Turkeltaub" }
   ],
   "3908": [
-    {
-      "name": "Уилл Смит",
-      "role": "Mike Lowrey"
-    },
-    {
-      "name": "Мартин Лоуренс",
-      "role": "Marcus Burnett"
-    },
-    {
-      "name": "Теа Леони",
-      "role": "Julie Mott"
-    },
-    {
-      "name": "Чеки Карио",
-      "role": "Fouchet (в титрах: Tcheky Karyo)"
-    },
-    {
-      "name": "Джо Пантольяно",
-      "role": "Captain Howard"
-    },
-    {
-      "name": "Марг Хельгенбергер",
-      "role": "Alison Sinclair"
-    },
-    {
-      "name": "Нестор Серрано",
-      "role": "Detective Sanchez"
-    },
-    {
-      "name": "Хулио Оскар Мечосо",
-      "role": "Detective Ruiz"
-    },
-    {
-      "name": "Тереза Рэндл",
-      "role": "Theresa Burnett"
-    },
-    {
-      "name": "Саверио Гуэрра",
-      "role": "Chet the Doorman"
-    }
+    { "name": "Уилл Смит", "role": "Mike Lowrey" },
+    { "name": "Мартин Лоуренс", "role": "Marcus Burnett" },
+    { "name": "Теа Леони", "role": "Julie Mott" },
+    { "name": "Чеки Карио", "role": "Fouchet (в титрах: Tcheky Karyo)" },
+    { "name": "Джо Пантольяно", "role": "Captain Howard" },
+    { "name": "Марг Хельгенбергер", "role": "Alison Sinclair" },
+    { "name": "Нестор Серрано", "role": "Detective Sanchez" },
+    { "name": "Хулио Оскар Мечосо", "role": "Detective Ruiz" },
+    { "name": "Тереза Рэндл", "role": "Theresa Burnett" },
+    { "name": "Саверио Гуэрра", "role": "Chet the Doorman" }
   ],
   "2928": [
-    {
-      "name": "Уилл Смит",
-      "role": "Detective Mike Lowrey"
-    },
-    {
-      "name": "Мартин Лоуренс",
-      "role": "Detective Marcus Burnett"
-    },
-    {
-      "name": "Гэбриэл Юнион",
-      "role": "Syd"
-    },
-    {
-      "name": "Хорди Молья",
-      "role": "Hector Juan Carlos «Johnny» Tapia"
-    },
-    {
-      "name": "Петер Стормаре",
-      "role": "Alexei"
-    },
-    {
-      "name": "Тереза Рэндл",
-      "role": "Theresa"
-    },
-    {
-      "name": "Джо Пантольяно",
-      "role": "Captain Howard"
-    },
-    {
-      "name": "Майкл Шеннон",
-      "role": "Floyd Poteet"
-    },
-    {
-      "name": "Джон Седа",
-      "role": "Roberto"
-    },
-    {
-      "name": "Юл Васкес",
-      "role": "Detective Mateo Reyes (в титрах: Yul Vázquez)"
-    }
+    { "name": "Уилл Смит", "role": "Detective Mike Lowrey" },
+    { "name": "Мартин Лоуренс", "role": "Detective Marcus Burnett" },
+    { "name": "Гэбриэл Юнион", "role": "Syd" },
+    { "name": "Хорди Молья", "role": "Hector Juan Carlos «Johnny» Tapia" },
+    { "name": "Петер Стормаре", "role": "Alexei" },
+    { "name": "Тереза Рэндл", "role": "Theresa" },
+    { "name": "Джо Пантольяно", "role": "Captain Howard" },
+    { "name": "Майкл Шеннон", "role": "Floyd Poteet" },
+    { "name": "Джон Седа", "role": "Roberto" },
+    { "name": "Юл Васкес", "role": "Detective Mateo Reyes (в титрах: Yul Vázquez)" }
   ],
   "472386": [
-    {
-      "name": "Уилл Смит",
-      "role": "Lt. Mike Lowrey"
-    },
-    {
-      "name": "Мартин Лоуренс",
-      "role": "Lt. Marcus Burnett"
-    },
-    {
-      "name": "Ванесса Энн Хадженс",
-      "role": "Kelly"
-    },
-    {
-      "name": "Александр Людвиг",
-      "role": "Dorn"
-    },
-    {
-      "name": "Чарльз Мелтон",
-      "role": "Rafe"
-    },
-    {
-      "name": "Паола Нуньес",
-      "role": "Lt. Rita Secada (в титрах: Paola Nunez)"
-    },
-    {
-      "name": "Кейт дель Кастильо",
-      "role": "Isabel Aretas"
-    },
-    {
-      "name": "Ники Джем",
-      "role": "Lorenzo «Zway-Lo» Rodriguez"
-    },
-    {
-      "name": "Джо Пантольяно",
-      "role": "Capt. Conrad Howard"
-    },
-    {
-      "name": "Джейкоб Скипио",
-      "role": "Armando Aretas"
-    }
+    { "name": "Уилл Смит", "role": "Lt. Mike Lowrey" },
+    { "name": "Мартин Лоуренс", "role": "Lt. Marcus Burnett" },
+    { "name": "Ванесса Энн Хадженс", "role": "Kelly" },
+    { "name": "Александр Людвиг", "role": "Dorn" },
+    { "name": "Чарльз Мелтон", "role": "Rafe" },
+    { "name": "Паола Нуньес", "role": "Lt. Rita Secada (в титрах: Paola Nunez)" },
+    { "name": "Кейт дель Кастильо", "role": "Isabel Aretas" },
+    { "name": "Ники Джем", "role": "Lorenzo «Zway-Lo» Rodriguez" },
+    { "name": "Джо Пантольяно", "role": "Capt. Conrad Howard" },
+    { "name": "Джейкоб Скипио", "role": "Armando Aretas" }
   ],
   "584405": [
-    {
-      "name": "Джейк Джилленхол",
-      "role": "Brian Taylor"
-    },
-    {
-      "name": "Майкл Пенья",
-      "role": "Mike Zavala"
-    },
-    {
-      "name": "Анна Кендрик",
-      "role": "Janet"
-    },
-    {
-      "name": "Натали Мартинес",
-      "role": "Gabby"
-    },
-    {
-      "name": "Фрэнк Грилло",
-      "role": "Sarge"
-    },
-    {
-      "name": "Дэвид Харбор",
-      "role": "Van Hauser"
-    },
-    {
-      "name": "Америка Феррера",
-      "role": "Orozco"
-    },
-    {
-      "name": "Коуди Хорн",
-      "role": "Davis"
-    },
-    {
-      "name": "Шондрелла Эйвери",
-      "role": "Bonita"
-    },
-    {
-      "name": "Кле Слоун",
-      "role": "Mr. Tre"
-    }
+    { "name": "Джейк Джилленхол", "role": "Brian Taylor" },
+    { "name": "Майкл Пенья", "role": "Mike Zavala" },
+    { "name": "Анна Кендрик", "role": "Janet" },
+    { "name": "Натали Мартинес", "role": "Gabby" },
+    { "name": "Фрэнк Грилло", "role": "Sarge" },
+    { "name": "Дэвид Харбор", "role": "Van Hauser" },
+    { "name": "Америка Феррера", "role": "Orozco" },
+    { "name": "Коуди Хорн", "role": "Davis" },
+    { "name": "Шондрелла Эйвери", "role": "Bonita" },
+    { "name": "Кле Слоун", "role": "Mr. Tre" }
   ],
   "4852097": [
-    {
-      "name": "Джейк Джилленхол",
-      "role": "Rusty Sabich"
-    },
-    {
-      "name": "Рут Негга",
-      "role": "Barbara Sabich"
-    },
-    {
-      "name": "Билл Кэмп",
-      "role": "Raymond Horgan"
-    },
-    {
-      "name": "О. Т. Фагбенли",
-      "role": "Nico Della Guardia"
-    },
-    {
-      "name": "Чейз Инфинити",
-      "role": "Jaden Sabich"
-    },
-    {
-      "name": "Ренате Реинсве",
-      "role": "Carolyn Polhemus"
-    },
-    {
-      "name": "Питер Сарсгаард",
-      "role": "Tommy Molto"
-    },
-    {
-      "name": "Кингстон Руми Сауфвик",
-      "role": "Kyle Sabich"
-    },
-    {
-      "name": "Тейт Бёрчмор",
-      "role": "Michael Caldwell"
-    },
-    {
-      "name": "Элизабет Марвел",
-      "role": "Lorraine Horgan"
-    }
+    { "name": "Джейк Джилленхол", "role": "Rusty Sabich" },
+    { "name": "Рут Негга", "role": "Barbara Sabich" },
+    { "name": "Билл Кэмп", "role": "Raymond Horgan" },
+    { "name": "О. Т. Фагбенли", "role": "Nico Della Guardia" },
+    { "name": "Чейз Инфинити", "role": "Jaden Sabich" },
+    { "name": "Ренате Реинсве", "role": "Carolyn Polhemus" },
+    { "name": "Питер Сарсгаард", "role": "Tommy Molto" },
+    { "name": "Кингстон Руми Сауфвик", "role": "Kyle Sabich" },
+    { "name": "Тейт Бёрчмор", "role": "Michael Caldwell" },
+    { "name": "Элизабет Марвел", "role": "Lorraine Horgan" }
   ],
   "925669": [
-    {
-      "name": "Джузеппе Баттистон",
-      "role": "Peppe"
-    },
-    {
-      "name": "Анна Фольетта",
-      "role": "Carlotta"
-    },
-    {
-      "name": "Марко Джаллини",
-      "role": "Rocco"
-    },
-    {
-      "name": "Эдоардо Лео",
-      "role": "Cosimo"
-    },
-    {
-      "name": "Валерио Мастандреа",
-      "role": "Lele"
-    },
-    {
-      "name": "Альба Рорвахер",
-      "role": "Bianca"
-    },
-    {
-      "name": "Кася Смутняк",
-      "role": "Eva"
-    },
-    {
-      "name": "Бенедетта Поркароли",
-      "role": "Sofia"
-    },
-    {
-      "name": "Элизабетта Де Пало",
-      "role": "Nonna"
-    },
-    {
-      "name": "Томмазо Татафьоре",
-      "role": "Bruno"
-    }
+    { "name": "Джузеппе Баттистон", "role": "Peppe" },
+    { "name": "Анна Фольетта", "role": "Carlotta" },
+    { "name": "Марко Джаллини", "role": "Rocco" },
+    { "name": "Эдоардо Лео", "role": "Cosimo" },
+    { "name": "Валерио Мастандреа", "role": "Lele" },
+    { "name": "Альба Рорвахер", "role": "Bianca" },
+    { "name": "Кася Смутняк", "role": "Eva" },
+    { "name": "Бенедетта Поркароли", "role": "Sofia" },
+    { "name": "Элизабетта Де Пало", "role": "Nonna" },
+    { "name": "Томмазо Татафьоре", "role": "Bruno" }
   ],
   "258941": [
-    {
-      "name": "Крис Хемсворт",
-      "role": "Thor"
-    },
-    {
-      "name": "Натали Портман",
-      "role": "Jane Foster"
-    },
-    {
-      "name": "Том Хиддлстон",
-      "role": "Loki"
-    },
-    {
-      "name": "Энтони Хопкинс",
-      "role": "Odin"
-    },
-    {
-      "name": "Стеллан Скарсгард",
-      "role": "Erik Selvig"
-    },
-    {
-      "name": "Кэт Деннингс",
-      "role": "Darcy Lewis"
-    },
-    {
-      "name": "Кларк Грегг",
-      "role": "Agent Coulson"
-    },
-    {
-      "name": "Колм Фиор",
-      "role": "King Laufey"
-    },
-    {
-      "name": "Идрис Эльба",
-      "role": "Heimdall"
-    },
-    {
-      "name": "Рэй Стивенсон",
-      "role": "Volstagg"
-    }
+    { "name": "Крис Хемсворт", "role": "Thor" },
+    { "name": "Натали Портман", "role": "Jane Foster" },
+    { "name": "Том Хиддлстон", "role": "Loki" },
+    { "name": "Энтони Хопкинс", "role": "Odin" },
+    { "name": "Стеллан Скарсгард", "role": "Erik Selvig" },
+    { "name": "Кэт Деннингс", "role": "Darcy Lewis" },
+    { "name": "Кларк Грегг", "role": "Agent Coulson" },
+    { "name": "Колм Фиор", "role": "King Laufey" },
+    { "name": "Идрис Эльба", "role": "Heimdall" },
+    { "name": "Рэй Стивенсон", "role": "Volstagg" }
   ],
   "160946": [
-    {
-      "name": "Крис Эванс",
-      "role": "Captain America / Steve Rogers"
-    },
-    {
-      "name": "Хейли Этвелл",
-      "role": "Peggy Carter"
-    },
-    {
-      "name": "Томми Ли Джонс",
-      "role": "Colonel Chester Phillips"
-    },
-    {
-      "name": "Хьюго Уивинг",
-      "role": "Johann Schmidt / Red Skull"
-    },
-    {
-      "name": "Себастиан Стэн",
-      "role": "James Buchanan «Bucky» Barnes"
-    },
-    {
-      "name": "Доминик Купер",
-      "role": "Howard Stark"
-    },
-    {
-      "name": "Тоби Джонс",
-      "role": "Dr. Arnim Zola"
-    },
-    {
-      "name": "Стэнли Туччи",
-      "role": "Dr. Abraham Erskine"
-    },
-    {
-      "name": "Нил Макдона",
-      "role": "Timothy «Dum Dum» Dugan"
-    },
-    {
-      "name": "Дерек Люк",
-      "role": "Gabe Jones"
-    }
+    { "name": "Крис Эванс", "role": "Captain America / Steve Rogers" },
+    { "name": "Хейли Этвелл", "role": "Peggy Carter" },
+    { "name": "Томми Ли Джонс", "role": "Colonel Chester Phillips" },
+    { "name": "Хьюго Уивинг", "role": "Johann Schmidt / Red Skull" },
+    { "name": "Себастиан Стэн", "role": "James Buchanan «Bucky» Barnes" },
+    { "name": "Доминик Купер", "role": "Howard Stark" },
+    { "name": "Тоби Джонс", "role": "Dr. Arnim Zola" },
+    { "name": "Стэнли Туччи", "role": "Dr. Abraham Erskine" },
+    { "name": "Нил Макдона", "role": "Timothy «Dum Dum» Dugan" },
+    { "name": "Дерек Люк", "role": "Gabe Jones" }
   ],
   "843859": [
-    {
-      "name": "Бри Ларсон",
-      "role": "Carol Danvers / Vers / Captain Marvel"
-    },
-    {
-      "name": "Сэмюэл Л. Джексон",
-      "role": "Nick Fury"
-    },
-    {
-      "name": "Бен Мендельсон",
-      "role": "Talos / Keller"
-    },
-    {
-      "name": "Джуд Лоу",
-      "role": "Yon-Rogg"
-    },
-    {
-      "name": "Аннетт Бенинг",
-      "role": "Supreme Intelligence / Dr. Wendy Lawson"
-    },
-    {
-      "name": "Джимон Хонсу",
-      "role": "Korath"
-    },
-    {
-      "name": "Ли Пейс",
-      "role": "Ronan"
-    },
-    {
-      "name": "Лашана Линч",
-      "role": "Maria Rambeau"
-    },
-    {
-      "name": "Джемма Чан",
-      "role": "Minn-Erva"
-    },
-    {
-      "name": "Кларк Грегг",
-      "role": "Agent Coulson"
-    }
+    { "name": "Бри Ларсон", "role": "Carol Danvers / Vers / Captain Marvel" },
+    { "name": "Сэмюэл Л. Джексон", "role": "Nick Fury" },
+    { "name": "Бен Мендельсон", "role": "Talos / Keller" },
+    { "name": "Джуд Лоу", "role": "Yon-Rogg" },
+    { "name": "Аннетт Бенинг", "role": "Supreme Intelligence / Dr. Wendy Lawson" },
+    { "name": "Джимон Хонсу", "role": "Korath" },
+    { "name": "Ли Пейс", "role": "Ronan" },
+    { "name": "Лашана Линч", "role": "Maria Rambeau" },
+    { "name": "Джемма Чан", "role": "Minn-Erva" },
+    { "name": "Кларк Грегг", "role": "Agent Coulson" }
   ],
   "263531": [
-    {
-      "name": "Роберт Дауни мл.",
-      "role": "Tony Stark / Iron Man"
-    },
-    {
-      "name": "Крис Эванс",
-      "role": "Steve Rogers / Captain America"
-    },
-    {
-      "name": "Марк Руффало",
-      "role": "Bruce Banner / The Hulk"
-    },
-    {
-      "name": "Крис Хемсворт",
-      "role": "Thor"
-    },
-    {
-      "name": "Скарлетт Йоханссон",
-      "role": "Natasha Romanoff / Black Widow"
-    },
-    {
-      "name": "Джереми Реннер",
-      "role": "Clint Barton / Hawkeye"
-    },
-    {
-      "name": "Том Хиддлстон",
-      "role": "Loki"
-    },
-    {
-      "name": "Сэмюэл Л. Джексон",
-      "role": "Nick Fury"
-    },
-    {
-      "name": "Кларк Грегг",
-      "role": "Agent Phil Coulson"
-    },
-    {
-      "name": "Коби Смолдерс",
-      "role": "Agent Maria Hill"
-    }
+    { "name": "Роберт Дауни мл.", "role": "Tony Stark / Iron Man" },
+    { "name": "Крис Эванс", "role": "Steve Rogers / Captain America" },
+    { "name": "Марк Руффало", "role": "Bruce Banner / The Hulk" },
+    { "name": "Крис Хемсворт", "role": "Thor" },
+    { "name": "Скарлетт Йоханссон", "role": "Natasha Romanoff / Black Widow" },
+    { "name": "Джереми Реннер", "role": "Clint Barton / Hawkeye" },
+    { "name": "Том Хиддлстон", "role": "Loki" },
+    { "name": "Сэмюэл Л. Джексон", "role": "Nick Fury" },
+    { "name": "Кларк Грегг", "role": "Agent Phil Coulson" },
+    { "name": "Коби Смолдерс", "role": "Agent Maria Hill" }
   ],
   "462762": [
-    {
-      "name": "Роберт Дауни мл.",
-      "role": "Tony Stark"
-    },
-    {
-      "name": "Гвинет Пэлтроу",
-      "role": "Pepper Potts"
-    },
-    {
-      "name": "Дон Чидл",
-      "role": "Colonel James Rhodes"
-    },
-    {
-      "name": "Гай Пирс",
-      "role": "Aldrich Killian"
-    },
-    {
-      "name": "Ребекка Холл",
-      "role": "Maya Hansen"
-    },
-    {
-      "name": "Джон Фавро",
-      "role": "Happy Hogan"
-    },
-    {
-      "name": "Бен Кингсли",
-      "role": "Trevor Slattery"
-    },
-    {
-      "name": "Джеймс Бэдж Дейл",
-      "role": "Savin"
-    },
-    {
-      "name": "Стефани Шостак",
-      "role": "Brandt"
-    },
-    {
-      "name": "Пол Беттани",
-      "role": "Jarvis, озвучка"
-    }
+    { "name": "Роберт Дауни мл.", "role": "Tony Stark" },
+    { "name": "Гвинет Пэлтроу", "role": "Pepper Potts" },
+    { "name": "Дон Чидл", "role": "Colonel James Rhodes" },
+    { "name": "Гай Пирс", "role": "Aldrich Killian" },
+    { "name": "Ребекка Холл", "role": "Maya Hansen" },
+    { "name": "Джон Фавро", "role": "Happy Hogan" },
+    { "name": "Бен Кингсли", "role": "Trevor Slattery" },
+    { "name": "Джеймс Бэдж Дейл", "role": "Savin" },
+    { "name": "Стефани Шостак", "role": "Brandt" },
+    { "name": "Пол Беттани", "role": "Jarvis, озвучка" }
   ],
   "595938": [
-    {
-      "name": "Крис Хемсворт",
-      "role": "Thor"
-    },
-    {
-      "name": "Натали Портман",
-      "role": "Jane Foster"
-    },
-    {
-      "name": "Том Хиддлстон",
-      "role": "Loki"
-    },
-    {
-      "name": "Энтони Хопкинс",
-      "role": "Odin"
-    },
-    {
-      "name": "Кристофер Экклстон",
-      "role": "Malekith"
-    },
-    {
-      "name": "Джейми Александер",
-      "role": "Sif"
-    },
-    {
-      "name": "Закари Ливай",
-      "role": "Fandral"
-    },
-    {
-      "name": "Рэй Стивенсон",
-      "role": "Volstagg"
-    },
-    {
-      "name": "Таданобу Асано",
-      "role": "Hogun"
-    },
-    {
-      "name": "Идрис Эльба",
-      "role": "Heimdall"
-    }
+    { "name": "Крис Хемсворт", "role": "Thor" },
+    { "name": "Натали Портман", "role": "Jane Foster" },
+    { "name": "Том Хиддлстон", "role": "Loki" },
+    { "name": "Энтони Хопкинс", "role": "Odin" },
+    { "name": "Кристофер Экклстон", "role": "Malekith" },
+    { "name": "Джейми Александер", "role": "Sif" },
+    { "name": "Закари Ливай", "role": "Fandral" },
+    { "name": "Рэй Стивенсон", "role": "Volstagg" },
+    { "name": "Таданобу Асано", "role": "Hogun" },
+    { "name": "Идрис Эльба", "role": "Heimdall" }
   ],
   "676266": [
-    {
-      "name": "Крис Эванс",
-      "role": "Steve Rogers / Captain America"
-    },
-    {
-      "name": "Скарлетт Йоханссон",
-      "role": "Natasha Romanoff / Black Widow"
-    },
-    {
-      "name": "Энтони Маки",
-      "role": "Sam Wilson / Falcon"
-    },
-    {
-      "name": "Себастиан Стэн",
-      "role": "Bucky Barnes / Winter Soldier"
-    },
-    {
-      "name": "Сэмюэл Л. Джексон",
-      "role": "Nick Fury"
-    },
-    {
-      "name": "Роберт Редфорд",
-      "role": "Alexander Pierce"
-    },
-    {
-      "name": "Фрэнк Грилло",
-      "role": "Brock Rumlow"
-    },
-    {
-      "name": "Коби Смолдерс",
-      "role": "Maria Hill"
-    },
-    {
-      "name": "Эмили ВанКэмп",
-      "role": "Kate / Agent 13"
-    },
-    {
-      "name": "Максимилиано Эрнандес",
-      "role": "Jasper Sitwell (в титрах: Maximiliano Hernandez)"
-    }
+    { "name": "Крис Эванс", "role": "Steve Rogers / Captain America" },
+    { "name": "Скарлетт Йоханссон", "role": "Natasha Romanoff / Black Widow" },
+    { "name": "Энтони Маки", "role": "Sam Wilson / Falcon" },
+    { "name": "Себастиан Стэн", "role": "Bucky Barnes / Winter Soldier" },
+    { "name": "Сэмюэл Л. Джексон", "role": "Nick Fury" },
+    { "name": "Роберт Редфорд", "role": "Alexander Pierce" },
+    { "name": "Фрэнк Грилло", "role": "Brock Rumlow" },
+    { "name": "Коби Смолдерс", "role": "Maria Hill" },
+    { "name": "Эмили ВанКэмп", "role": "Kate / Agent 13" },
+    { "name": "Максимилиано Эрнандес", "role": "Jasper Sitwell (в титрах: Maximiliano Hernandez)" }
   ],
   "689066": [
-    {
-      "name": "Крис Пратт",
-      "role": "Peter Quill"
-    },
-    {
-      "name": "Зои Салдана",
-      "role": "Gamora"
-    },
-    {
-      "name": "Дэйв Батиста",
-      "role": "Drax"
-    },
-    {
-      "name": "Брэдли Купер",
-      "role": "Rocket, озвучка"
-    },
-    {
-      "name": "Вин Дизель",
-      "role": "Groot, озвучка"
-    },
-    {
-      "name": "Ли Пейс",
-      "role": "Ronan"
-    },
-    {
-      "name": "Майкл Рукер",
-      "role": "Yondu Udonta"
-    },
-    {
-      "name": "Карен Гиллан",
-      "role": "Nebula"
-    },
-    {
-      "name": "Гленн Клоуз",
-      "role": "Nova Prime"
-    },
-    {
-      "name": "Джимон Хонсу",
-      "role": "Korath"
-    }
+    { "name": "Крис Пратт", "role": "Peter Quill" },
+    { "name": "Зои Салдана", "role": "Gamora" },
+    { "name": "Дэйв Батиста", "role": "Drax" },
+    { "name": "Брэдли Купер", "role": "Rocket, озвучка" },
+    { "name": "Вин Дизель", "role": "Groot, озвучка" },
+    { "name": "Ли Пейс", "role": "Ronan" },
+    { "name": "Майкл Рукер", "role": "Yondu Udonta" },
+    { "name": "Карен Гиллан", "role": "Nebula" },
+    { "name": "Гленн Клоуз", "role": "Nova Prime" },
+    { "name": "Джимон Хонсу", "role": "Korath" }
   ],
   "841263": [
-    {
-      "name": "Крис Пратт",
-      "role": "Peter Quill / Star-Lord"
-    },
-    {
-      "name": "Зои Салдана",
-      "role": "Gamora"
-    },
-    {
-      "name": "Дэйв Батиста",
-      "role": "Drax"
-    },
-    {
-      "name": "Вин Дизель",
-      "role": "Baby Groot, озвучка"
-    },
-    {
-      "name": "Брэдли Купер",
-      "role": "Rocket, озвучка"
-    },
-    {
-      "name": "Майкл Рукер",
-      "role": "Yondu"
-    },
-    {
-      "name": "Карен Гиллан",
-      "role": "Nebula"
-    },
-    {
-      "name": "Пом Клементьефф",
-      "role": "Mantis"
-    },
-    {
-      "name": "Элизабет Дебики",
-      "role": "Ayesha"
-    },
-    {
-      "name": "Курт Рассел",
-      "role": "Ego"
-    }
+    { "name": "Крис Пратт", "role": "Peter Quill / Star-Lord" },
+    { "name": "Зои Салдана", "role": "Gamora" },
+    { "name": "Дэйв Батиста", "role": "Drax" },
+    { "name": "Вин Дизель", "role": "Baby Groot, озвучка" },
+    { "name": "Брэдли Купер", "role": "Rocket, озвучка" },
+    { "name": "Майкл Рукер", "role": "Yondu" },
+    { "name": "Карен Гиллан", "role": "Nebula" },
+    { "name": "Пом Клементьефф", "role": "Mantis" },
+    { "name": "Элизабет Дебики", "role": "Ayesha" },
+    { "name": "Курт Рассел", "role": "Ego" }
   ],
   "679830": [
-    {
-      "name": "Роберт Дауни мл.",
-      "role": "Tony Stark / Iron Man"
-    },
-    {
-      "name": "Крис Хемсворт",
-      "role": "Thor"
-    },
-    {
-      "name": "Крис Эванс",
-      "role": "Steve Rogers / Captain America"
-    },
-    {
-      "name": "Скарлетт Йоханссон",
-      "role": "Natasha Romanoff / Black Widow"
-    },
-    {
-      "name": "Марк Руффало",
-      "role": "Bruce Banner / Hulk"
-    },
-    {
-      "name": "Джереми Реннер",
-      "role": "Clint Barton / Hawkeye"
-    },
-    {
-      "name": "Аарон Тейлор-Джонсон",
-      "role": "Pietro Maximoff / Quicksilver"
-    },
-    {
-      "name": "Элизабет Олсен",
-      "role": "Wanda Maximoff / Scarlet Witch"
-    },
-    {
-      "name": "Джеймс Спэйдер",
-      "role": "Ultron"
-    },
-    {
-      "name": "Сэмюэл Л. Джексон",
-      "role": "Nick Fury"
-    }
+    { "name": "Роберт Дауни мл.", "role": "Tony Stark / Iron Man" },
+    { "name": "Крис Хемсворт", "role": "Thor" },
+    { "name": "Крис Эванс", "role": "Steve Rogers / Captain America" },
+    { "name": "Скарлетт Йоханссон", "role": "Natasha Romanoff / Black Widow" },
+    { "name": "Марк Руффало", "role": "Bruce Banner / Hulk" },
+    { "name": "Джереми Реннер", "role": "Clint Barton / Hawkeye" },
+    { "name": "Аарон Тейлор-Джонсон", "role": "Pietro Maximoff / Quicksilver" },
+    { "name": "Элизабет Олсен", "role": "Wanda Maximoff / Scarlet Witch" },
+    { "name": "Джеймс Спэйдер", "role": "Ultron" },
+    { "name": "Сэмюэл Л. Джексон", "role": "Nick Fury" }
   ],
   "195496": [
-    {
-      "name": "Пол Радд",
-      "role": "Scott Lang / Ant-Man"
-    },
-    {
-      "name": "Майкл Дуглас",
-      "role": "Dr. Hank Pym"
-    },
-    {
-      "name": "Эванджелин Лилли",
-      "role": "Hope van Dyne"
-    },
-    {
-      "name": "Кори Столл",
-      "role": "Darren Cross / Yellowjacket"
-    },
-    {
-      "name": "Майкл Пенья",
-      "role": "Luis"
-    },
-    {
-      "name": "Бобби Каннавале",
-      "role": "Paxton"
-    },
-    {
-      "name": "Ти-Ай",
-      "role": "Dave"
-    },
-    {
-      "name": "Давид Дастмалчян",
-      "role": "Kurt"
-    },
-    {
-      "name": "Эбби Райдер Фортсон",
-      "role": "Cassie Lang"
-    },
-    {
-      "name": "Джуди Грир",
-      "role": "Maggie Lang"
-    }
+    { "name": "Пол Радд", "role": "Scott Lang / Ant-Man" },
+    { "name": "Майкл Дуглас", "role": "Dr. Hank Pym" },
+    { "name": "Эванджелин Лилли", "role": "Hope van Dyne" },
+    { "name": "Кори Столл", "role": "Darren Cross / Yellowjacket" },
+    { "name": "Майкл Пенья", "role": "Luis" },
+    { "name": "Бобби Каннавале", "role": "Paxton" },
+    { "name": "Ти-Ай", "role": "Dave" },
+    { "name": "Давид Дастмалчян", "role": "Kurt" },
+    { "name": "Эбби Райдер Фортсон", "role": "Cassie Lang" },
+    { "name": "Джуди Грир", "role": "Maggie Lang" }
   ],
   "822708": [
-    {
-      "name": "Крис Эванс",
-      "role": "Steve Rogers / Captain America"
-    },
-    {
-      "name": "Роберт Дауни мл.",
-      "role": "Tony Stark / Iron Man"
-    },
-    {
-      "name": "Скарлетт Йоханссон",
-      "role": "Natasha Romanoff / Black Widow"
-    },
-    {
-      "name": "Себастиан Стэн",
-      "role": "Bucky Barnes / Winter Soldier"
-    },
-    {
-      "name": "Энтони Маки",
-      "role": "Sam Wilson / Falcon"
-    },
-    {
-      "name": "Дон Чидл",
-      "role": "Lieutenant James Rhodes / War Machine"
-    },
-    {
-      "name": "Джереми Реннер",
-      "role": "Clint Barton / Hawkeye"
-    },
-    {
-      "name": "Чедвик Боузман",
-      "role": "T'Challa / Black Panther"
-    },
-    {
-      "name": "Пол Беттани",
-      "role": "Vision"
-    },
-    {
-      "name": "Элизабет Олсен",
-      "role": "Wanda Maximoff / Scarlet Witch"
-    }
+    { "name": "Крис Эванс", "role": "Steve Rogers / Captain America" },
+    { "name": "Роберт Дауни мл.", "role": "Tony Stark / Iron Man" },
+    { "name": "Скарлетт Йоханссон", "role": "Natasha Romanoff / Black Widow" },
+    { "name": "Себастиан Стэн", "role": "Bucky Barnes / Winter Soldier" },
+    { "name": "Энтони Маки", "role": "Sam Wilson / Falcon" },
+    { "name": "Дон Чидл", "role": "Lieutenant James Rhodes / War Machine" },
+    { "name": "Джереми Реннер", "role": "Clint Barton / Hawkeye" },
+    { "name": "Чедвик Боузман", "role": "T'Challa / Black Panther" },
+    { "name": "Пол Беттани", "role": "Vision" },
+    { "name": "Элизабет Олсен", "role": "Wanda Maximoff / Scarlet Witch" }
   ],
   "623250": [
-    {
-      "name": "Чедвик Боузман",
-      "role": "T'Challa / Black Panther"
-    },
-    {
-      "name": "Майкл Б. Джордан",
-      "role": "Erik Killmonger"
-    },
-    {
-      "name": "Лупита Нионго",
-      "role": "Nakia"
-    },
-    {
-      "name": "Данай Гурира",
-      "role": "Okoye"
-    },
-    {
-      "name": "Мартин Фриман",
-      "role": "Everett K. Ross"
-    },
-    {
-      "name": "Дэниэл Калуя",
-      "role": "W'Kabi"
-    },
-    {
-      "name": "Летиша Райт",
-      "role": "Shuri"
-    },
-    {
-      "name": "Уинстон Дьюк",
-      "role": "M'Baku"
-    },
-    {
-      "name": "Стерлинг К. Браун",
-      "role": "N'Jobu"
-    },
-    {
-      "name": "Анджела Бассетт",
-      "role": "Ramonda"
-    }
+    { "name": "Чедвик Боузман", "role": "T'Challa / Black Panther" },
+    { "name": "Майкл Б. Джордан", "role": "Erik Killmonger" },
+    { "name": "Лупита Нионго", "role": "Nakia" },
+    { "name": "Данай Гурира", "role": "Okoye" },
+    { "name": "Мартин Фриман", "role": "Everett K. Ross" },
+    { "name": "Дэниэл Калуя", "role": "W'Kabi" },
+    { "name": "Летиша Райт", "role": "Shuri" },
+    { "name": "Уинстон Дьюк", "role": "M'Baku" },
+    { "name": "Стерлинг К. Браун", "role": "N'Jobu" },
+    { "name": "Анджела Бассетт", "role": "Ramonda" }
   ],
   "822709": [
-    {
-      "name": "Крис Хемсворт",
-      "role": "Thor"
-    },
-    {
-      "name": "Том Хиддлстон",
-      "role": "Loki"
-    },
-    {
-      "name": "Кейт Бланшетт",
-      "role": "Hela"
-    },
-    {
-      "name": "Идрис Эльба",
-      "role": "Heimdall"
-    },
-    {
-      "name": "Джефф Голдблюм",
-      "role": "Grandmaster"
-    },
-    {
-      "name": "Тесса Томпсон",
-      "role": "Valkyrie"
-    },
-    {
-      "name": "Карл Урбан",
-      "role": "Skurge"
-    },
-    {
-      "name": "Марк Руффало",
-      "role": "Bruce Banner / Hulk"
-    },
-    {
-      "name": "Энтони Хопкинс",
-      "role": "Odin"
-    },
-    {
-      "name": "Бенедикт Камбербэтч",
-      "role": "Doctor Strange"
-    }
+    { "name": "Крис Хемсворт", "role": "Thor" },
+    { "name": "Том Хиддлстон", "role": "Loki" },
+    { "name": "Кейт Бланшетт", "role": "Hela" },
+    { "name": "Идрис Эльба", "role": "Heimdall" },
+    { "name": "Джефф Голдблюм", "role": "Grandmaster" },
+    { "name": "Тесса Томпсон", "role": "Valkyrie" },
+    { "name": "Карл Урбан", "role": "Skurge" },
+    { "name": "Марк Руффало", "role": "Bruce Banner / Hulk" },
+    { "name": "Энтони Хопкинс", "role": "Odin" },
+    { "name": "Бенедикт Камбербэтч", "role": "Doctor Strange" }
   ],
   "843649": [
-    {
-      "name": "Роберт Дауни мл.",
-      "role": "Tony Stark / Iron Man"
-    },
-    {
-      "name": "Крис Хемсворт",
-      "role": "Thor"
-    },
-    {
-      "name": "Марк Руффало",
-      "role": "Bruce Banner / Hulk"
-    },
-    {
-      "name": "Крис Эванс",
-      "role": "Steve Rogers / Captain America"
-    },
-    {
-      "name": "Скарлетт Йоханссон",
-      "role": "Natasha Romanoff / Black Widow"
-    },
-    {
-      "name": "Дон Чидл",
-      "role": "James Rhodes / War Machine"
-    },
-    {
-      "name": "Бенедикт Камбербэтч",
-      "role": "Doctor Strange"
-    },
-    {
-      "name": "Том Холланд",
-      "role": "Peter Parker / Spider-Man"
-    },
-    {
-      "name": "Чедвик Боузман",
-      "role": "T'Challa / Black Panther"
-    },
-    {
-      "name": "Зои Салдана",
-      "role": "Gamora"
-    }
+    { "name": "Роберт Дауни мл.", "role": "Tony Stark / Iron Man" },
+    { "name": "Крис Хемсворт", "role": "Thor" },
+    { "name": "Марк Руффало", "role": "Bruce Banner / Hulk" },
+    { "name": "Крис Эванс", "role": "Steve Rogers / Captain America" },
+    { "name": "Скарлетт Йоханссон", "role": "Natasha Romanoff / Black Widow" },
+    { "name": "Дон Чидл", "role": "James Rhodes / War Machine" },
+    { "name": "Бенедикт Камбербэтч", "role": "Doctor Strange" },
+    { "name": "Том Холланд", "role": "Peter Parker / Spider-Man" },
+    { "name": "Чедвик Боузман", "role": "T'Challa / Black Panther" },
+    { "name": "Зои Салдана", "role": "Gamora" }
   ],
   "843650": [
-    {
-      "name": "Роберт Дауни мл.",
-      "role": "Tony Stark / Iron Man"
-    },
-    {
-      "name": "Крис Эванс",
-      "role": "Steve Rogers / Captain America"
-    },
-    {
-      "name": "Марк Руффало",
-      "role": "Bruce Banner / Hulk"
-    },
-    {
-      "name": "Крис Хемсворт",
-      "role": "Thor"
-    },
-    {
-      "name": "Скарлетт Йоханссон",
-      "role": "Natasha Romanoff / Black Widow"
-    },
-    {
-      "name": "Джереми Реннер",
-      "role": "Clint Barton / Hawkeye"
-    },
-    {
-      "name": "Дон Чидл",
-      "role": "James Rhodes / War Machine"
-    },
-    {
-      "name": "Пол Радд",
-      "role": "Scott Lang / Ant-Man"
-    },
-    {
-      "name": "Бри Ларсон",
-      "role": "Carol Danvers / Captain Marvel"
-    },
-    {
-      "name": "Карен Гиллан",
-      "role": "Nebula"
-    }
+    { "name": "Роберт Дауни мл.", "role": "Tony Stark / Iron Man" },
+    { "name": "Крис Эванс", "role": "Steve Rogers / Captain America" },
+    { "name": "Марк Руффало", "role": "Bruce Banner / Hulk" },
+    { "name": "Крис Хемсворт", "role": "Thor" },
+    { "name": "Скарлетт Йоханссон", "role": "Natasha Romanoff / Black Widow" },
+    { "name": "Джереми Реннер", "role": "Clint Barton / Hawkeye" },
+    { "name": "Дон Чидл", "role": "James Rhodes / War Machine" },
+    { "name": "Пол Радд", "role": "Scott Lang / Ant-Man" },
+    { "name": "Бри Ларсон", "role": "Carol Danvers / Captain Marvel" },
+    { "name": "Карен Гиллан", "role": "Nebula" }
   ],
   "1044280": [
-    {
-      "name": "Крис Пратт",
-      "role": "Peter Quill / Star-Lord"
-    },
-    {
-      "name": "Карен Гиллан",
-      "role": "Nebula"
-    },
-    {
-      "name": "Пом Клементьефф",
-      "role": "Mantis"
-    },
-    {
-      "name": "Дэйв Батиста",
-      "role": "Drax"
-    },
-    {
-      "name": "Зои Салдана",
-      "role": "Gamora (в титрах: Zoe Saldaña)"
-    },
-    {
-      "name": "Чукуди Ивуджи",
-      "role": "The High Evolutionary"
-    },
-    {
-      "name": "Брэдли Купер",
-      "role": "Rocket, озвучка"
-    },
-    {
-      "name": "Уилл Поултер",
-      "role": "Adam Warlock"
-    },
-    {
-      "name": "Вин Дизель",
-      "role": "Groot, озвучка"
-    },
-    {
-      "name": "Шон Ганн",
-      "role": "Kraglin / Young Rocket"
-    }
+    { "name": "Крис Пратт", "role": "Peter Quill / Star-Lord" },
+    { "name": "Карен Гиллан", "role": "Nebula" },
+    { "name": "Пом Клементьефф", "role": "Mantis" },
+    { "name": "Дэйв Батиста", "role": "Drax" },
+    { "name": "Зои Салдана", "role": "Gamora (в титрах: Zoe Saldaña)" },
+    { "name": "Чукуди Ивуджи", "role": "The High Evolutionary" },
+    { "name": "Брэдли Купер", "role": "Rocket, озвучка" },
+    { "name": "Уилл Поултер", "role": "Adam Warlock" },
+    { "name": "Вин Дизель", "role": "Groot, озвучка" },
+    { "name": "Шон Ганн", "role": "Kraglin / Young Rocket" }
   ],
   "935940": [
-    {
-      "name": "Пол Радд",
-      "role": "Scott Lang / Ant-Man"
-    },
-    {
-      "name": "Эванджелин Лилли",
-      "role": "Hope Van Dyne / Wasp"
-    },
-    {
-      "name": "Майкл Дуглас",
-      "role": "Dr. Hank Pym"
-    },
-    {
-      "name": "Ханна Джон-Кэймен",
-      "role": "Ava / Ghost"
-    },
-    {
-      "name": "Майкл Пенья",
-      "role": "Luis"
-    },
-    {
-      "name": "Лоренс Фишбёрн",
-      "role": "Dr. Bill Foster"
-    },
-    {
-      "name": "Уолтон Гоггинс",
-      "role": "Sonny Burch"
-    },
-    {
-      "name": "Ти-Ай",
-      "role": "Dave (в титрах: Tip «T.I.» Harris)"
-    },
-    {
-      "name": "Давид Дастмалчян",
-      "role": "Kurt"
-    },
-    {
-      "name": "Мишель Пфайффер",
-      "role": "Janet Van Dyne / Wasp"
-    }
+    { "name": "Пол Радд", "role": "Scott Lang / Ant-Man" },
+    { "name": "Эванджелин Лилли", "role": "Hope Van Dyne / Wasp" },
+    { "name": "Майкл Дуглас", "role": "Dr. Hank Pym" },
+    { "name": "Ханна Джон-Кэймен", "role": "Ava / Ghost" },
+    { "name": "Майкл Пенья", "role": "Luis" },
+    { "name": "Лоренс Фишбёрн", "role": "Dr. Bill Foster" },
+    { "name": "Уолтон Гоггинс", "role": "Sonny Burch" },
+    { "name": "Ти-Ай", "role": "Dave (в титрах: Tip «T.I.» Harris)" },
+    { "name": "Давид Дастмалчян", "role": "Kurt" },
+    { "name": "Мишель Пфайффер", "role": "Janet Van Dyne / Wasp" }
   ],
   "1203039": [
-    {
-      "name": "Том Хиддлстон",
-      "role": "Loki"
-    },
-    {
-      "name": "Гугу Эмбата-Ро",
-      "role": "Ravonna Renslayer"
-    },
-    {
-      "name": "Вунми Мосаку",
-      "role": "Hunter B-15"
-    },
-    {
-      "name": "Юджин Кордеро",
-      "role": "Casey"
-    },
-    {
-      "name": "Тара Стронг",
-      "role": "Miss Minutes"
-    },
-    {
-      "name": "Оуэн Уилсон",
-      "role": "Mobius"
-    },
-    {
-      "name": "Софи Ди Мартино",
-      "role": "Sylvie"
-    },
-    {
-      "name": "Саша Лэйн",
-      "role": "Hunter C-20"
-    },
-    {
-      "name": "Деобиа Опарей",
-      "role": "Boastful Loki"
-    },
-    {
-      "name": "Ричард Э. Грант",
-      "role": "Classic Loki"
-    }
+    { "name": "Том Хиддлстон", "role": "Loki" },
+    { "name": "Гугу Эмбата-Ро", "role": "Ravonna Renslayer" },
+    { "name": "Вунми Мосаку", "role": "Hunter B-15" },
+    { "name": "Юджин Кордеро", "role": "Casey" },
+    { "name": "Тара Стронг", "role": "Miss Minutes" },
+    { "name": "Оуэн Уилсон", "role": "Mobius" },
+    { "name": "Софи Ди Мартино", "role": "Sylvie" },
+    { "name": "Саша Лэйн", "role": "Hunter C-20" },
+    { "name": "Деобиа Опарей", "role": "Boastful Loki" },
+    { "name": "Ричард Э. Грант", "role": "Classic Loki" }
   ],
   "835877": [
-    {
-      "name": "Райан Рейнольдс",
-      "role": "Michael Bryce"
-    },
-    {
-      "name": "Сэмюэл Л. Джексон",
-      "role": "Darius Kincaid"
-    },
-    {
-      "name": "Элоди Юнг",
-      "role": "Amelia Roussel"
-    },
-    {
-      "name": "Сальма Хайек",
-      "role": "Sonia Kincaid"
-    },
-    {
-      "name": "Гари Олдман",
-      "role": "Vladislav Dukhovich"
-    },
-    {
-      "name": "Жоакин де Алмейда",
-      "role": "Jean Foucher"
-    },
-    {
-      "name": "Юрий Колокольников",
-      "role": "Ivan"
-    },
-    {
-      "name": "Тине Жустра",
-      "role": "Renata Casoria"
-    },
-    {
-      "name": "Сэм Хэзелдайн",
-      "role": "Garrett"
-    },
-    {
-      "name": "Ричард Э. Грант",
-      "role": "Seifert"
-    }
+    { "name": "Райан Рейнольдс", "role": "Michael Bryce" },
+    { "name": "Сэмюэл Л. Джексон", "role": "Darius Kincaid" },
+    { "name": "Элоди Юнг", "role": "Amelia Roussel" },
+    { "name": "Сальма Хайек", "role": "Sonia Kincaid" },
+    { "name": "Гари Олдман", "role": "Vladislav Dukhovich" },
+    { "name": "Жоакин де Алмейда", "role": "Jean Foucher" },
+    { "name": "Юрий Колокольников", "role": "Ivan" },
+    { "name": "Тине Жустра", "role": "Renata Casoria" },
+    { "name": "Сэм Хэзелдайн", "role": "Garrett" },
+    { "name": "Ричард Э. Грант", "role": "Seifert" }
   ],
   "184432": [
-    {
-      "name": "Зак Эфрон",
-      "role": "Troy Bolton"
-    },
-    {
-      "name": "Ванесса Энн Хадженс",
-      "role": "Gabriella Montez (в титрах: Vanessa Anne Hudgens)"
-    },
-    {
-      "name": "Эшли Тисдейл",
-      "role": "Sharpay Evans"
-    },
-    {
-      "name": "Лукас Грабил",
-      "role": "Ryan Evans"
-    },
-    {
-      "name": "Корбин Блю",
-      "role": "Chad Danforth"
-    },
-    {
-      "name": "Моника Коулмэн",
-      "role": "Taylor McKessie"
-    },
-    {
-      "name": "Барт Джонсон",
-      "role": "Coach Jack Bolton"
-    },
-    {
-      "name": "Элисон Рид",
-      "role": "Ms. Darbus"
-    },
-    {
-      "name": "Крис Уоррен",
-      "role": "Zeke Baylor (в титрах: Chris Warren Jr.)"
-    },
-    {
-      "name": "Олеся Рулин",
-      "role": "Kelsi Nielsen"
-    }
+    { "name": "Зак Эфрон", "role": "Troy Bolton" },
+    { "name": "Ванесса Энн Хадженс", "role": "Gabriella Montez (в титрах: Vanessa Anne Hudgens)" },
+    { "name": "Эшли Тисдейл", "role": "Sharpay Evans" },
+    { "name": "Лукас Грабил", "role": "Ryan Evans" },
+    { "name": "Корбин Блю", "role": "Chad Danforth" },
+    { "name": "Моника Коулмэн", "role": "Taylor McKessie" },
+    { "name": "Барт Джонсон", "role": "Coach Jack Bolton" },
+    { "name": "Элисон Рид", "role": "Ms. Darbus" },
+    { "name": "Крис Уоррен", "role": "Zeke Baylor (в титрах: Chris Warren Jr.)" },
+    { "name": "Олеся Рулин", "role": "Kelsi Nielsen" }
   ],
   "342": [
-    {
-      "name": "Джон Траволта",
-      "role": "Vincent Vega"
-    },
-    {
-      "name": "Сэмюэл Л. Джексон",
-      "role": "Jules Winnfield"
-    },
-    {
-      "name": "Брюс Уиллис",
-      "role": "Butch Coolidge"
-    },
-    {
-      "name": "Ума Турман",
-      "role": "Mia Wallace"
-    },
-    {
-      "name": "Винг Реймз",
-      "role": "Marsellus Wallace"
-    },
-    {
-      "name": "Тим Рот",
-      "role": "Pumpkin"
-    },
-    {
-      "name": "Харви Кейтель",
-      "role": "The Wolf"
-    },
-    {
-      "name": "Квентин Тарантино",
-      "role": "Jimmie"
-    },
-    {
-      "name": "Питер Грин",
-      "role": "Zed"
-    },
-    {
-      "name": "Аманда Пламмер",
-      "role": "Honey Bunny"
-    }
+    { "name": "Джон Траволта", "role": "Vincent Vega" },
+    { "name": "Сэмюэл Л. Джексон", "role": "Jules Winnfield" },
+    { "name": "Брюс Уиллис", "role": "Butch Coolidge" },
+    { "name": "Ума Турман", "role": "Mia Wallace" },
+    { "name": "Винг Реймз", "role": "Marsellus Wallace" },
+    { "name": "Тим Рот", "role": "Pumpkin" },
+    { "name": "Харви Кейтель", "role": "The Wolf" },
+    { "name": "Квентин Тарантино", "role": "Jimmie" },
+    { "name": "Питер Грин", "role": "Zed" },
+    { "name": "Аманда Пламмер", "role": "Honey Bunny" }
   ],
   "462649": [
-    {
-      "name": "Том Хиддлстон",
-      "role": "Jonathan Pine"
-    },
-    {
-      "name": "Хью Лори",
-      "role": "Richard Roper"
-    },
-    {
-      "name": "Элизабет Дебики",
-      "role": "Jed Marshall"
-    },
-    {
-      "name": "Оливия Колман",
-      "role": "Angela Burr"
-    },
-    {
-      "name": "Алистэр Петри",
-      "role": "Sandy Langbourne"
-    },
-    {
-      "name": "Ховик Кеучкерян",
-      "role": "Tabby"
-    },
-    {
-      "name": "Майкл Нардон",
-      "role": "Frisky"
-    },
-    {
-      "name": "Дуглас Ходж",
-      "role": "Rex Mayhew"
-    },
-    {
-      "name": "Тобайас Мензис",
-      "role": "Geoffrey Dromgoole"
-    },
-    {
-      "name": "Том Холландер",
-      "role": "Lance Corkoran"
-    }
+    { "name": "Том Хиддлстон", "role": "Jonathan Pine" },
+    { "name": "Хью Лори", "role": "Richard Roper" },
+    { "name": "Элизабет Дебики", "role": "Jed Marshall" },
+    { "name": "Оливия Колман", "role": "Angela Burr" },
+    { "name": "Алистэр Петри", "role": "Sandy Langbourne" },
+    { "name": "Ховик Кеучкерян", "role": "Tabby" },
+    { "name": "Майкл Нардон", "role": "Frisky" },
+    { "name": "Дуглас Ходж", "role": "Rex Mayhew" },
+    { "name": "Тобайас Мензис", "role": "Geoffrey Dromgoole" },
+    { "name": "Том Холландер", "role": "Lance Corkoran" }
   ],
   "976636": [
-    {
-      "name": "Джессика Честейн",
-      "role": "Molly Bloom"
-    },
-    {
-      "name": "Идрис Эльба",
-      "role": "Charlie Jaffey"
-    },
-    {
-      "name": "Кевин Костнер",
-      "role": "Larry Bloom"
-    },
-    {
-      "name": "Майкл Сера",
-      "role": "Player X"
-    },
-    {
-      "name": "Джереми Стронг",
-      "role": "Dean Keith"
-    },
-    {
-      "name": "Крис О’Дауд",
-      "role": "Douglas Downey"
-    },
-    {
-      "name": "Дж.С. Маккензи",
-      "role": "Harrison Wellstone"
-    },
-    {
-      "name": "Брайан Д’Арси Джеймс",
-      "role": "Brad"
-    },
-    {
-      "name": "Билл Кэмп",
-      "role": "Harlan Eustice"
-    },
-    {
-      "name": "Грэм Грин",
-      "role": "Judge Foxman"
-    }
+    { "name": "Джессика Честейн", "role": "Molly Bloom" },
+    { "name": "Идрис Эльба", "role": "Charlie Jaffey" },
+    { "name": "Кевин Костнер", "role": "Larry Bloom" },
+    { "name": "Майкл Сера", "role": "Player X" },
+    { "name": "Джереми Стронг", "role": "Dean Keith" },
+    { "name": "Крис О’Дауд", "role": "Douglas Downey" },
+    { "name": "Дж.С. Маккензи", "role": "Harrison Wellstone" },
+    { "name": "Брайан Д’Арси Джеймс", "role": "Brad" },
+    { "name": "Билл Кэмп", "role": "Harlan Eustice" },
+    { "name": "Грэм Грин", "role": "Judge Foxman" }
   ],
   "1228236": [
-    {
-      "name": "Адам Дивайн",
-      "role": "Phil"
-    },
-    {
-      "name": "Александра Шипп",
-      "role": "Cate"
-    },
-    {
-      "name": "Роуз Бирн",
-      "role": "Jexi, озвучка"
-    },
-    {
-      "name": "Рон Фанчес",
-      "role": "Craig"
-    },
-    {
-      "name": "Шарлин Йи",
-      "role": "Elaine"
-    },
-    {
-      "name": "Майкл Пенья",
-      "role": "Kai"
-    },
-    {
-      "name": "Ванда Сайкс",
-      "role": "Denice"
-    },
-    {
-      "name": "Кид Кади",
-      "role": "Kid Cudi"
-    },
-    {
-      "name": "Джастин Хартли",
-      "role": "Brody"
-    },
-    {
-      "name": "Гэвин Рут",
-      "role": "Phil (10 Years)"
-    }
+    { "name": "Адам Дивайн", "role": "Phil" },
+    { "name": "Александра Шипп", "role": "Cate" },
+    { "name": "Роуз Бирн", "role": "Jexi, озвучка" },
+    { "name": "Рон Фанчес", "role": "Craig" },
+    { "name": "Шарлин Йи", "role": "Elaine" },
+    { "name": "Майкл Пенья", "role": "Kai" },
+    { "name": "Ванда Сайкс", "role": "Denice" },
+    { "name": "Кид Кади", "role": "Kid Cudi" },
+    { "name": "Джастин Хартли", "role": "Brody" },
+    { "name": "Гэвин Рут", "role": "Phil (10 Years)" }
   ],
   "47237": [
-    {
-      "name": "Кристиан Бэйл",
-      "role": "Bruce Wayne / Batman"
-    },
-    {
-      "name": "Кэти Холмс",
-      "role": "Rachel Dawes"
-    },
-    {
-      "name": "Майкл Кейн",
-      "role": "Alfred"
-    },
-    {
-      "name": "Киллиан Мерфи",
-      "role": "Dr. Jonathan Crane"
-    },
-    {
-      "name": "Том Уилкинсон",
-      "role": "Carmine Falcone"
-    },
-    {
-      "name": "Лиам Нисон",
-      "role": "Ducard"
-    },
-    {
-      "name": "Кэн Ватанабэ",
-      "role": "Ra's Al Ghul"
-    },
-    {
-      "name": "Гари Олдман",
-      "role": "Jim Gordon"
-    },
-    {
-      "name": "Морган Фриман",
-      "role": "Lucius Fox"
-    },
-    {
-      "name": "Рутгер Хауэр",
-      "role": "Earle"
-    }
+    { "name": "Кристиан Бэйл", "role": "Bruce Wayne / Batman" },
+    { "name": "Кэти Холмс", "role": "Rachel Dawes" },
+    { "name": "Майкл Кейн", "role": "Alfred" },
+    { "name": "Киллиан Мерфи", "role": "Dr. Jonathan Crane" },
+    { "name": "Том Уилкинсон", "role": "Carmine Falcone" },
+    { "name": "Лиам Нисон", "role": "Ducard" },
+    { "name": "Кэн Ватанабэ", "role": "Ra's Al Ghul" },
+    { "name": "Гари Олдман", "role": "Jim Gordon" },
+    { "name": "Морган Фриман", "role": "Lucius Fox" },
+    { "name": "Рутгер Хауэр", "role": "Earle" }
   ],
   "111543": [
-    {
-      "name": "Кристиан Бэйл",
-      "role": "Bruce Wayne"
-    },
-    {
-      "name": "Хит Леджер",
-      "role": "Joker"
-    },
-    {
-      "name": "Аарон Экхарт",
-      "role": "Harvey Dent"
-    },
-    {
-      "name": "Мэгги Джилленхол",
-      "role": "Rachel"
-    },
-    {
-      "name": "Гари Олдман",
-      "role": "Gordon"
-    },
-    {
-      "name": "Майкл Кейн",
-      "role": "Alfred"
-    },
-    {
-      "name": "Морган Фриман",
-      "role": "Lucius Fox"
-    },
-    {
-      "name": "Чинь Хань",
-      "role": "Lau"
-    },
-    {
-      "name": "Нестор Карбонелл",
-      "role": "Mayor"
-    },
-    {
-      "name": "Эрик Робертс",
-      "role": "Maroni"
-    }
+    { "name": "Кристиан Бэйл", "role": "Bruce Wayne" },
+    { "name": "Хит Леджер", "role": "Joker" },
+    { "name": "Аарон Экхарт", "role": "Harvey Dent" },
+    { "name": "Мэгги Джилленхол", "role": "Rachel" },
+    { "name": "Гари Олдман", "role": "Gordon" },
+    { "name": "Майкл Кейн", "role": "Alfred" },
+    { "name": "Морган Фриман", "role": "Lucius Fox" },
+    { "name": "Чинь Хань", "role": "Lau" },
+    { "name": "Нестор Карбонелл", "role": "Mayor" },
+    { "name": "Эрик Робертс", "role": "Maroni" }
   ],
   "437410": [
-    {
-      "name": "Кристиан Бэйл",
-      "role": "Bruce Wayne"
-    },
-    {
-      "name": "Том Харди",
-      "role": "Bane"
-    },
-    {
-      "name": "Энн Хэтэуэй",
-      "role": "Selina"
-    },
-    {
-      "name": "Джозеф Гордон-Левитт",
-      "role": "Blake"
-    },
-    {
-      "name": "Марион Котийяр",
-      "role": "Miranda"
-    },
-    {
-      "name": "Гари Олдман",
-      "role": "Commissioner Gordon"
-    },
-    {
-      "name": "Морган Фриман",
-      "role": "Fox"
-    },
-    {
-      "name": "Майкл Кейн",
-      "role": "Alfred"
-    },
-    {
-      "name": "Мэттью Модайн",
-      "role": "Foley"
-    },
-    {
-      "name": "Бен Мендельсон",
-      "role": "Daggett"
-    }
+    { "name": "Кристиан Бэйл", "role": "Bruce Wayne" },
+    { "name": "Том Харди", "role": "Bane" },
+    { "name": "Энн Хэтэуэй", "role": "Selina" },
+    { "name": "Джозеф Гордон-Левитт", "role": "Blake" },
+    { "name": "Марион Котийяр", "role": "Miranda" },
+    { "name": "Гари Олдман", "role": "Commissioner Gordon" },
+    { "name": "Морган Фриман", "role": "Fox" },
+    { "name": "Майкл Кейн", "role": "Alfred" },
+    { "name": "Мэттью Модайн", "role": "Foley" },
+    { "name": "Бен Мендельсон", "role": "Daggett" }
   ],
   "252667": [
-    {
-      "name": "Генри Кавилл",
-      "role": "Clark Kent / Kal-El"
-    },
-    {
-      "name": "Эми Адамс",
-      "role": "Lois Lane"
-    },
-    {
-      "name": "Майкл Шеннон",
-      "role": "General Zod"
-    },
-    {
-      "name": "Рассел Кроу",
-      "role": "Jor-El"
-    },
-    {
-      "name": "Дайан Лэйн",
-      "role": "Martha Kent"
-    },
-    {
-      "name": "Кевин Костнер",
-      "role": "Jonathan Kent"
-    },
-    {
-      "name": "Антье Трауэ",
-      "role": "Faora-Ul"
-    },
-    {
-      "name": "Лоренс Фишбёрн",
-      "role": "Perry White"
-    },
-    {
-      "name": "Кристофер Мелони",
-      "role": "Colonel Nathan Hardy"
-    },
-    {
-      "name": "Гарри Дж. Ленникс",
-      "role": "General Swanwick"
-    }
+    { "name": "Генри Кавилл", "role": "Clark Kent / Kal-El" },
+    { "name": "Эми Адамс", "role": "Lois Lane" },
+    { "name": "Майкл Шеннон", "role": "General Zod" },
+    { "name": "Рассел Кроу", "role": "Jor-El" },
+    { "name": "Дайан Лэйн", "role": "Martha Kent" },
+    { "name": "Кевин Костнер", "role": "Jonathan Kent" },
+    { "name": "Антье Трауэ", "role": "Faora-Ul" },
+    { "name": "Лоренс Фишбёрн", "role": "Perry White" },
+    { "name": "Кристофер Мелони", "role": "Colonel Nathan Hardy" },
+    { "name": "Гарри Дж. Ленникс", "role": "General Swanwick" }
   ],
   "770631": [
-    {
-      "name": "Генри Кавилл",
-      "role": "Clark Kent / Superman"
-    },
-    {
-      "name": "Бен Аффлек",
-      "role": "Bruce Wayne / Batman"
-    },
-    {
-      "name": "Галь Гадот",
-      "role": "Diana Prince / Wonder Woman"
-    },
-    {
-      "name": "Эми Адамс",
-      "role": "Lois"
-    },
-    {
-      "name": "Джесси Айзенберг",
-      "role": "Lex Luthor"
-    },
-    {
-      "name": "Джереми Айронс",
-      "role": "Alfred"
-    },
-    {
-      "name": "Дайан Лэйн",
-      "role": "Martha Kent"
-    },
-    {
-      "name": "Лоренс Фишбёрн",
-      "role": "Perry White"
-    },
-    {
-      "name": "Холли Хантер",
-      "role": "Senator Finch"
-    },
-    {
-      "name": "Скут Макнэри",
-      "role": "Wallace Keefe"
-    }
+    { "name": "Генри Кавилл", "role": "Clark Kent / Superman" },
+    { "name": "Бен Аффлек", "role": "Bruce Wayne / Batman" },
+    { "name": "Галь Гадот", "role": "Diana Prince / Wonder Woman" },
+    { "name": "Эми Адамс", "role": "Lois" },
+    { "name": "Джесси Айзенберг", "role": "Lex Luthor" },
+    { "name": "Джереми Айронс", "role": "Alfred" },
+    { "name": "Дайан Лэйн", "role": "Martha Kent" },
+    { "name": "Лоренс Фишбёрн", "role": "Perry White" },
+    { "name": "Холли Хантер", "role": "Senator Finch" },
+    { "name": "Скут Макнэри", "role": "Wallace Keefe" }
   ],
   "1721": [
-    {
-      "name": "Джим Керри",
-      "role": "Fletcher Reede"
-    },
-    {
-      "name": "Мора Тирни",
-      "role": "Audrey Reede"
-    },
-    {
-      "name": "Джастин Купер",
-      "role": "Max Reede"
-    },
-    {
-      "name": "Кэри Элвес",
-      "role": "Jerry"
-    },
-    {
-      "name": "Энн Хейни",
-      "role": "Greta"
-    },
-    {
-      "name": "Дженнифер Тилли",
-      "role": "Samantha Cole"
-    },
-    {
-      "name": "Аманда Донохью",
-      "role": "Miranda"
-    },
-    {
-      "name": "Джейсон Бернард",
-      "role": "Judge Marshall Stevens"
-    },
-    {
-      "name": "Свузи Кёрц",
-      "role": "Dana Appleton"
-    },
-    {
-      "name": "Митчелл Райан",
-      "role": "Mr. Allan"
-    }
+    { "name": "Джим Керри", "role": "Fletcher Reede" },
+    { "name": "Мора Тирни", "role": "Audrey Reede" },
+    { "name": "Джастин Купер", "role": "Max Reede" },
+    { "name": "Кэри Элвес", "role": "Jerry" },
+    { "name": "Энн Хейни", "role": "Greta" },
+    { "name": "Дженнифер Тилли", "role": "Samantha Cole" },
+    { "name": "Аманда Донохью", "role": "Miranda" },
+    { "name": "Джейсон Бернард", "role": "Judge Marshall Stevens" },
+    { "name": "Свузи Кёрц", "role": "Dana Appleton" },
+    { "name": "Митчелл Райан", "role": "Mr. Allan" }
   ],
   "833": [
-    {
-      "name": "Стивен Чоу",
-      "role": "Mighty Steel Leg Sing"
-    },
-    {
-      "name": "Нг Ман-Тат",
-      "role": "Golden Leg Fung (в титрах: Ng Mang Tat) (в титрах: Mang Tat Ng)"
-    },
-    {
-      "name": "Вики Чжао",
-      "role": "Mui (в титрах: Vicki Zhao)"
-    },
-    {
-      "name": "Патрик Це",
-      "role": "Team Evil Coach Hung (в титрах: Patrick Tse Yin)"
-    },
-    {
-      "name": "Ли Хуэй",
-      "role": "Banana Peel Girl"
-    },
-    {
-      "name": "Сесилия Чун",
-      "role": "Team Moustache Player 1"
-    },
-    {
-      "name": "Карен Мок",
-      "role": "Team Moustache Player 2"
-    },
-    {
-      "name": "Винсент Кок",
-      "role": "Team Puma Leader"
-    },
-    {
-      "name": "Тинь Кай-Мань",
-      "role": "Iron Shirt Tin (Third Brother)"
-    },
-    {
-      "name": "Вон Ят-Фэй",
-      "role": "Iron Head (First Brother) (в титрах: Wong Kai Yue)"
-    }
+    { "name": "Стивен Чоу", "role": "Mighty Steel Leg Sing" },
+    { "name": "Нг Ман-Тат", "role": "Golden Leg Fung (в титрах: Ng Mang Tat) (в титрах: Mang Tat Ng)" },
+    { "name": "Вики Чжао", "role": "Mui (в титрах: Vicki Zhao)" },
+    { "name": "Патрик Це", "role": "Team Evil Coach Hung (в титрах: Patrick Tse Yin)" },
+    { "name": "Ли Хуэй", "role": "Banana Peel Girl" },
+    { "name": "Сесилия Чун", "role": "Team Moustache Player 1" },
+    { "name": "Карен Мок", "role": "Team Moustache Player 2" },
+    { "name": "Винсент Кок", "role": "Team Puma Leader" },
+    { "name": "Тинь Кай-Мань", "role": "Iron Shirt Tin (Third Brother)" },
+    { "name": "Вон Ят-Фэй", "role": "Iron Head (First Brother) (в титрах: Wong Kai Yue)" }
   ],
   "1387021": [
-    {
-      "name": "Бен Аффлек",
-      "role": "Batman / Bruce Wayne"
-    },
-    {
-      "name": "Галь Гадот",
-      "role": "Wonder Woman / Diana Prince"
-    },
-    {
-      "name": "Генри Кавилл",
-      "role": "Superman / Clark Kent"
-    },
-    {
-      "name": "Джейсон Момоа",
-      "role": "Aquaman / Arthur Curry"
-    },
-    {
-      "name": "Эзра Миллер",
-      "role": "The Flash / Barry Allen"
-    },
-    {
-      "name": "Рэй Фишер",
-      "role": "Cyborg / Victor Stone"
-    },
-    {
-      "name": "Эми Адамс",
-      "role": "Lois Lane"
-    },
-    {
-      "name": "Джереми Айронс",
-      "role": "Alfred"
-    },
-    {
-      "name": "Дайан Лэйн",
-      "role": "Martha Kent"
-    },
-    {
-      "name": "Джаред Лето",
-      "role": "The Joker"
-    }
+    { "name": "Бен Аффлек", "role": "Batman / Bruce Wayne" },
+    { "name": "Галь Гадот", "role": "Wonder Woman / Diana Prince" },
+    { "name": "Генри Кавилл", "role": "Superman / Clark Kent" },
+    { "name": "Джейсон Момоа", "role": "Aquaman / Arthur Curry" },
+    { "name": "Эзра Миллер", "role": "The Flash / Barry Allen" },
+    { "name": "Рэй Фишер", "role": "Cyborg / Victor Stone" },
+    { "name": "Эми Адамс", "role": "Lois Lane" },
+    { "name": "Джереми Айронс", "role": "Alfred" },
+    { "name": "Дайан Лэйн", "role": "Martha Kent" },
+    { "name": "Джаред Лето", "role": "The Joker" }
   ],
   "590286": [
-    {
-      "name": "Роберт Паттинсон",
-      "role": "Bruce Wayne / The Batman"
-    },
-    {
-      "name": "Зои Кравиц",
-      "role": "Selina Kyle"
-    },
-    {
-      "name": "Пол Дано",
-      "role": "The Riddler"
-    },
-    {
-      "name": "Джеффри Райт",
-      "role": "Lt. James Gordon"
-    },
-    {
-      "name": "Джон Туртурро",
-      "role": "Carmine Falcone"
-    },
-    {
-      "name": "Питер Сарсгаард",
-      "role": "District Attorney Gil Colson"
-    },
-    {
-      "name": "Барри Кеоган",
-      "role": "Unseen Arkham Prisoner"
-    },
-    {
-      "name": "Джейми Лоусон",
-      "role": "Bella Reál"
-    },
-    {
-      "name": "Энди Серкис",
-      "role": "Alfred"
-    },
-    {
-      "name": "Колин Фаррелл",
-      "role": "Oz / The Penguin"
-    }
+    { "name": "Роберт Паттинсон", "role": "Bruce Wayne / The Batman" },
+    { "name": "Зои Кравиц", "role": "Selina Kyle" },
+    { "name": "Пол Дано", "role": "The Riddler" },
+    { "name": "Джеффри Райт", "role": "Lt. James Gordon" },
+    { "name": "Джон Туртурро", "role": "Carmine Falcone" },
+    { "name": "Питер Сарсгаард", "role": "District Attorney Gil Colson" },
+    { "name": "Барри Кеоган", "role": "Unseen Arkham Prisoner" },
+    { "name": "Джейми Лоусон", "role": "Bella Reál" },
+    { "name": "Энди Серкис", "role": "Alfred" },
+    { "name": "Колин Фаррелл", "role": "Oz / The Penguin" }
   ],
   "4368595": [
-    {
-      "name": "Мэйсон Темз",
-      "role": "Finney"
-    },
-    {
-      "name": "Мадлен Макгроу",
-      "role": "Gwen"
-    },
-    {
-      "name": "Итан Хоук",
-      "role": "The Grabber"
-    },
-    {
-      "name": "Джереми Дэвис",
-      "role": "Terrence"
-    },
-    {
-      "name": "Скотт Менвиль",
-      "role": "—"
-    },
-    {
-      "name": "И. Роджер Митчелл",
-      "role": "Detective Wright"
-    },
-    {
-      "name": "Трой Радсил",
-      "role": "Detective Miller"
-    },
-    {
-      "name": "Джеймс Рэнсон",
-      "role": "Max"
-    },
-    {
-      "name": "Мигель Касарес Мора",
-      "role": "Robin (в титрах: Miguel Cazarez Mora)"
-    },
-    {
-      "name": "Ребекка Кларк",
-      "role": "Donna"
-    }
+    { "name": "Мэйсон Темз", "role": "Finney" },
+    { "name": "Мадлен Макгроу", "role": "Gwen" },
+    { "name": "Итан Хоук", "role": "The Grabber" },
+    { "name": "Джереми Дэвис", "role": "Terrence" },
+    { "name": "Скотт Менвиль", "role": "—" },
+    { "name": "И. Роджер Митчелл", "role": "Detective Wright" },
+    { "name": "Трой Радсил", "role": "Detective Miller" },
+    { "name": "Джеймс Рэнсон", "role": "Max" },
+    { "name": "Мигель Касарес Мора", "role": "Robin (в титрах: Miguel Cazarez Mora)" },
+    { "name": "Ребекка Кларк", "role": "Donna" }
   ],
   "1381125": [
-    {
-      "name": "Юити Накамура",
-      "role": "Satoru Gojou, озвучка"
-    },
-    {
-      "name": "Дзюнъя Эноки",
-      "role": "Yuuji Itadori, озвучка"
-    },
-    {
-      "name": "Юма Утида",
-      "role": "Megumi Fushiguro, озвучка"
-    },
-    {
-      "name": "Асами Сэто",
-      "role": "Nobara Kugisaki, озвучка"
-    },
-    {
-      "name": "Мицуо Ивата",
-      "role": "Kiyotaka Ijichi, озвучка"
-    },
-    {
-      "name": "Нобунага Симадзаки",
-      "role": "Mahito, озвучка"
-    },
-    {
-      "name": "Томокадзу Сэки",
-      "role": "Panda, озвучка"
-    },
-    {
-      "name": "Микако Комацу",
-      "role": "Maki Zenin, озвучка"
-    },
-    {
-      "name": "Коки Утияма",
-      "role": "Toge Inumaki, озвучка"
-    },
-    {
-      "name": "Дзюнъити Сувабэ",
-      "role": "Ryoumen Sukuna, озвучка"
-    }
+    { "name": "Юити Накамура", "role": "Satoru Gojou, озвучка" },
+    { "name": "Дзюнъя Эноки", "role": "Yuuji Itadori, озвучка" },
+    { "name": "Юма Утида", "role": "Megumi Fushiguro, озвучка" },
+    { "name": "Асами Сэто", "role": "Nobara Kugisaki, озвучка" },
+    { "name": "Мицуо Ивата", "role": "Kiyotaka Ijichi, озвучка" },
+    { "name": "Нобунага Симадзаки", "role": "Mahito, озвучка" },
+    { "name": "Томокадзу Сэки", "role": "Panda, озвучка" },
+    { "name": "Микако Комацу", "role": "Maki Zenin, озвучка" },
+    { "name": "Коки Утияма", "role": "Toge Inumaki, озвучка" },
+    { "name": "Дзюнъити Сувабэ", "role": "Ryoumen Sukuna, озвучка" }
   ],
   "1402067": [
-    {
-      "name": "Эндрю Ридделл",
-      "role": "Patrick"
-    },
-    {
-      "name": "Нова Гейвер",
-      "role": "Daphne"
-    },
-    {
-      "name": "Филлип Андре Ботельо",
-      "role": "Alex"
-    },
-    {
-      "name": "Дебора Эрошас",
-      "role": "Angela"
-    },
-    {
-      "name": "Эрик Донован",
-      "role": "Barber"
-    },
-    {
-      "name": "Энди Аллен",
-      "role": "Don"
-    },
-    {
-      "name": "Дэйв Бин",
-      "role": "Car Salesman"
-    },
-    {
-      "name": "Стивен Уильям Менаш",
-      "role": "Group host (в титрах: Steven Menasche)"
-    },
-    {
-      "name": "Рей Торрес",
-      "role": "Marshall"
-    }
+    { "name": "Эндрю Ридделл", "role": "Patrick" },
+    { "name": "Нова Гейвер", "role": "Daphne" },
+    { "name": "Филлип Андре Ботельо", "role": "Alex" },
+    { "name": "Дебора Эрошас", "role": "Angela" },
+    { "name": "Эрик Донован", "role": "Barber" },
+    { "name": "Энди Аллен", "role": "Don" },
+    { "name": "Дэйв Бин", "role": "Car Salesman" },
+    { "name": "Стивен Уильям Менаш", "role": "Group host (в титрах: Steven Menasche)" },
+    { "name": "Рей Торрес", "role": "Marshall" }
   ],
   "575613": [
-    {
-      "name": "Дилан О’Брайен",
-      "role": "Thomas"
-    },
-    {
-      "name": "Томас Сэнгстер",
-      "role": "Newt"
-    },
-    {
-      "name": "Кая Скоделарио",
-      "role": "Teresa"
-    },
-    {
-      "name": "Уилл Поултер",
-      "role": "Gally"
-    },
-    {
-      "name": "Ки Хон Ли",
-      "role": "Minho"
-    },
-    {
-      "name": "Блейк Купер",
-      "role": "Chuck"
-    },
-    {
-      "name": "Амл Амин",
-      "role": "Alby"
-    },
-    {
-      "name": "Алекс Дж. Флорес",
-      "role": "Winston"
-    },
-    {
-      "name": "Джейкоб Латимор",
-      "role": "Jeff"
-    },
-    {
-      "name": "Патриша Кларксон",
-      "role": "Ava Paige"
-    }
+    { "name": "Дилан О’Брайен", "role": "Thomas" },
+    { "name": "Томас Сэнгстер", "role": "Newt" },
+    { "name": "Кая Скоделарио", "role": "Teresa" },
+    { "name": "Уилл Поултер", "role": "Gally" },
+    { "name": "Ки Хон Ли", "role": "Minho" },
+    { "name": "Блейк Купер", "role": "Chuck" },
+    { "name": "Амл Амин", "role": "Alby" },
+    { "name": "Алекс Дж. Флорес", "role": "Winston" },
+    { "name": "Джейкоб Латимор", "role": "Jeff" },
+    { "name": "Патриша Кларксон", "role": "Ava Paige" }
   ],
   "842673": [
-    {
-      "name": "Дилан О’Брайен",
-      "role": "Thomas"
-    },
-    {
-      "name": "Кая Скоделарио",
-      "role": "Teresa"
-    },
-    {
-      "name": "Ки Хон Ли",
-      "role": "Minho"
-    },
-    {
-      "name": "Томас Сэнгстер",
-      "role": "Newt"
-    },
-    {
-      "name": "Декстер Дарден",
-      "role": "Frypan"
-    },
-    {
-      "name": "Алекс Дж. Флорес",
-      "role": "Winston"
-    },
-    {
-      "name": "Джейкоб Лофленд",
-      "role": "Aris"
-    },
-    {
-      "name": "Роза Салазар",
-      "role": "Brenda"
-    },
-    {
-      "name": "Джанкарло Эспозито",
-      "role": "Jorge"
-    },
-    {
-      "name": "Патриша Кларксон",
-      "role": "Ava Paige"
-    }
+    { "name": "Дилан О’Брайен", "role": "Thomas" },
+    { "name": "Кая Скоделарио", "role": "Teresa" },
+    { "name": "Ки Хон Ли", "role": "Minho" },
+    { "name": "Томас Сэнгстер", "role": "Newt" },
+    { "name": "Декстер Дарден", "role": "Frypan" },
+    { "name": "Алекс Дж. Флорес", "role": "Winston" },
+    { "name": "Джейкоб Лофленд", "role": "Aris" },
+    { "name": "Роза Салазар", "role": "Brenda" },
+    { "name": "Джанкарло Эспозито", "role": "Jorge" },
+    { "name": "Патриша Кларксон", "role": "Ava Paige" }
   ],
   "727913": [
-    {
-      "name": "Тиликум",
-      "role": "играет самого себя - Killer Whale, хроника"
-    },
-    {
-      "name": "Джон Харгров",
-      "role": "играет самого себя - Former SeaWorld Trainer"
-    },
-    {
-      "name": "Саманта Берг",
-      "role": "играет саму себя - Former SeaWorld Trainer"
-    },
-    {
-      "name": "Марк Симмонс",
-      "role": "играет самого себя - Former SeaWorld Trainer"
-    },
-    {
-      "name": "Ким Эндаун",
-      "role": "играет саму себя - Former SeaWorld Trainer"
-    },
-    {
-      "name": "Дин Гомерсэлл",
-      "role": "играет самого себя - Former SeaWorld Trainer"
-    },
-    {
-      "name": "Джеймс Эрл Джонс",
-      "role": "играет самого себя - SeaWorld Commercial Actor, хроника"
-    },
-    {
-      "name": "Шаму",
-      "role": "играет самого себя - Killer Whale, хроника"
-    },
-    {
-      "name": "Кэрол Рэй",
-      "role": "играет саму себя - Former SeaWorld Trainer"
-    },
-    {
-      "name": "Джон Джетт",
-      "role": "играет самого себя - Tilikum Former SeaWorld Trainer"
-    }
+    { "name": "Тиликум", "role": "играет самого себя - Killer Whale, хроника" },
+    { "name": "Джон Харгров", "role": "играет самого себя - Former SeaWorld Trainer" },
+    { "name": "Саманта Берг", "role": "играет саму себя - Former SeaWorld Trainer" },
+    { "name": "Марк Симмонс", "role": "играет самого себя - Former SeaWorld Trainer" },
+    { "name": "Ким Эндаун", "role": "играет саму себя - Former SeaWorld Trainer" },
+    { "name": "Дин Гомерсэлл", "role": "играет самого себя - Former SeaWorld Trainer" },
+    { "name": "Джеймс Эрл Джонс", "role": "играет самого себя - SeaWorld Commercial Actor, хроника" },
+    { "name": "Шаму", "role": "играет самого себя - Killer Whale, хроника" },
+    { "name": "Кэрол Рэй", "role": "играет саму себя - Former SeaWorld Trainer" },
+    { "name": "Джон Джетт", "role": "играет самого себя - Tilikum Former SeaWorld Trainer" }
   ],
   "15527": [
-    {
-      "name": "Кэмерон Диас",
-      "role": "Christina"
-    },
-    {
-      "name": "Кристина Эпплгейт",
-      "role": "Courtney"
-    },
-    {
-      "name": "Сэльма Блэр",
-      "role": "Jane"
-    },
-    {
-      "name": "Томас Джейн",
-      "role": "Peter"
-    },
-    {
-      "name": "Джейсон Бейтман",
-      "role": "Roger"
-    },
-    {
-      "name": "Паркер Поузи",
-      "role": "Judy"
-    },
-    {
-      "name": "Лиллиэн Адамс",
-      "role": "Aunt Frida"
-    },
-    {
-      "name": "Херберт В. Анкром",
-      "role": "Wedding Guest #3 (в титрах: Herbert Ankrom)"
-    },
-    {
-      "name": "Брайан Энтони",
-      "role": "Geeky Guy"
-    },
-    {
-      "name": "Линда Асума",
-      "role": "Brawling Bridesmaid"
-    }
+    { "name": "Кэмерон Диас", "role": "Christina" },
+    { "name": "Кристина Эпплгейт", "role": "Courtney" },
+    { "name": "Сэльма Блэр", "role": "Jane" },
+    { "name": "Томас Джейн", "role": "Peter" },
+    { "name": "Джейсон Бейтман", "role": "Roger" },
+    { "name": "Паркер Поузи", "role": "Judy" },
+    { "name": "Лиллиэн Адамс", "role": "Aunt Frida" },
+    { "name": "Херберт В. Анкром", "role": "Wedding Guest #3 (в титрах: Herbert Ankrom)" },
+    { "name": "Брайан Энтони", "role": "Geeky Guy" },
+    { "name": "Линда Асума", "role": "Brawling Bridesmaid" }
   ],
   "309": [
-    {
-      "name": "Кристиан Бэйл",
-      "role": "John Preston"
-    },
-    {
-      "name": "Тэй Диггз",
-      "role": "Brandt"
-    },
-    {
-      "name": "Энгус Макфадьен",
-      "role": "Dupont (в титрах: Angus MacFadyen)"
-    },
-    {
-      "name": "Шон Бин",
-      "role": "Partridge"
-    },
-    {
-      "name": "Эмили Уотсон",
-      "role": "Mary O'Brien"
-    },
-    {
-      "name": "Уильям Фихтнер",
-      "role": "Jurgen"
-    },
-    {
-      "name": "Мэттью Харбор",
-      "role": "Robbie Preston"
-    },
-    {
-      "name": "Эмили Сьеверт",
-      "role": "Lisa Preston"
-    },
-    {
-      "name": "Шон Пертуи",
-      "role": "Father"
-    },
-    {
-      "name": "Доминик Пёрселл",
-      "role": "Seamus"
-    }
+    { "name": "Кристиан Бэйл", "role": "John Preston" },
+    { "name": "Тэй Диггз", "role": "Brandt" },
+    { "name": "Энгус Макфадьен", "role": "Dupont (в титрах: Angus MacFadyen)" },
+    { "name": "Шон Бин", "role": "Partridge" },
+    { "name": "Эмили Уотсон", "role": "Mary O'Brien" },
+    { "name": "Уильям Фихтнер", "role": "Jurgen" },
+    { "name": "Мэттью Харбор", "role": "Robbie Preston" },
+    { "name": "Эмили Сьеверт", "role": "Lisa Preston" },
+    { "name": "Шон Пертуи", "role": "Father" },
+    { "name": "Доминик Пёрселл", "role": "Seamus" }
   ],
   "507": [
-    {
-      "name": "Арнольд Шварценеггер",
-      "role": "Terminator"
-    },
-    {
-      "name": "Майкл Бин",
-      "role": "Kyle Reese"
-    },
-    {
-      "name": "Линда Хэмилтон",
-      "role": "Sarah Connor"
-    },
-    {
-      "name": "Пол Уинфилд",
-      "role": "Traxler"
-    },
-    {
-      "name": "Лэнс Хенриксен",
-      "role": "Vukovich"
-    },
-    {
-      "name": "Бесс Мотта",
-      "role": "Ginger"
-    },
-    {
-      "name": "Рик Россович",
-      "role": "Matt"
-    },
-    {
-      "name": "Эрл Боэн",
-      "role": "Silberman"
-    },
-    {
-      "name": "Дик Миллер",
-      "role": "Pawn Shop Clerk"
-    },
-    {
-      "name": "Шон Шеппс",
-      "role": "Nancy"
-    }
+    { "name": "Арнольд Шварценеггер", "role": "Terminator" },
+    { "name": "Майкл Бин", "role": "Kyle Reese" },
+    { "name": "Линда Хэмилтон", "role": "Sarah Connor" },
+    { "name": "Пол Уинфилд", "role": "Traxler" },
+    { "name": "Лэнс Хенриксен", "role": "Vukovich" },
+    { "name": "Бесс Мотта", "role": "Ginger" },
+    { "name": "Рик Россович", "role": "Matt" },
+    { "name": "Эрл Боэн", "role": "Silberman" },
+    { "name": "Дик Миллер", "role": "Pawn Shop Clerk" },
+    { "name": "Шон Шеппс", "role": "Nancy" }
   ],
   "102474": [
-    {
-      "name": "Саша Барон Коэн",
-      "role": "Borat"
-    },
-    {
-      "name": "Памела Андерсон",
-      "role": "играет саму себя - Autograph Signing, в титрах не указан"
-    },
-    {
-      "name": "Кен Давитян",
-      "role": "Azamat"
-    },
-    {
-      "name": "Луэнелль",
-      "role": "Luenell"
-    },
-    {
-      "name": "Честер",
-      "role": "Bear"
-    },
-    {
-      "name": "Чарли",
-      "role": "Bear"
-    },
-    {
-      "name": "Ильхам Алиев",
-      "role": "играет самого себя, хроника, в титрах не указан"
-    },
-    {
-      "name": "Боб Барр",
-      "role": "играет самого себя - Former Georgia Congressman, в титрах не указан"
-    },
-    {
-      "name": "Кэрол Де Сарам",
-      "role": "играет саму себя - Feminist, в титрах не указан"
-    },
-    {
-      "name": "Митчелл Фальк",
-      "role": "Prime Minister of Kazakhstan, в титрах не указан"
-    }
+    { "name": "Саша Барон Коэн", "role": "Borat" },
+    { "name": "Памела Андерсон", "role": "играет саму себя - Autograph Signing, в титрах не указан" },
+    { "name": "Кен Давитян", "role": "Azamat" },
+    { "name": "Луэнелль", "role": "Luenell" },
+    { "name": "Честер", "role": "Bear" },
+    { "name": "Чарли", "role": "Bear" },
+    { "name": "Ильхам Алиев", "role": "играет самого себя, хроника, в титрах не указан" },
+    { "name": "Боб Барр", "role": "играет самого себя - Former Georgia Congressman, в титрах не указан" },
+    { "name": "Кэрол Де Сарам", "role": "играет саму себя - Feminist, в титрах не указан" },
+    { "name": "Митчелл Фальк", "role": "Prime Minister of Kazakhstan, в титрах не указан" }
   ],
   "444": [
-    {
-      "name": "Арнольд Шварценеггер",
-      "role": "The Terminator"
-    },
-    {
-      "name": "Линда Хэмилтон",
-      "role": "Sarah Connor"
-    },
-    {
-      "name": "Эдвард Ферлонг",
-      "role": "John Connor"
-    },
-    {
-      "name": "Роберт Патрик",
-      "role": "T-1000"
-    },
-    {
-      "name": "Эрл Боэн",
-      "role": "Dr. Silberman"
-    },
-    {
-      "name": "Джо Мортон",
-      "role": "Miles Dyson"
-    },
-    {
-      "name": "С. Ипейта Меркерсон",
-      "role": "Tarissa Dyson"
-    },
-    {
-      "name": "Кастуло Герра",
-      "role": "Enrique Salceda"
-    },
-    {
-      "name": "Дэнни Кукси",
-      "role": "Tim"
-    },
-    {
-      "name": "Дженетт Голдстин",
-      "role": "Janelle Voight"
-    }
+    { "name": "Арнольд Шварценеггер", "role": "The Terminator" },
+    { "name": "Линда Хэмилтон", "role": "Sarah Connor" },
+    { "name": "Эдвард Ферлонг", "role": "John Connor" },
+    { "name": "Роберт Патрик", "role": "T-1000" },
+    { "name": "Эрл Боэн", "role": "Dr. Silberman" },
+    { "name": "Джо Мортон", "role": "Miles Dyson" },
+    { "name": "С. Ипейта Меркерсон", "role": "Tarissa Dyson" },
+    { "name": "Кастуло Герра", "role": "Enrique Salceda" },
+    { "name": "Дэнни Кукси", "role": "Tim" },
+    { "name": "Дженетт Голдстин", "role": "Janelle Voight" }
   ],
   "933307": [
-    {
-      "name": "Джессика Честейн",
-      "role": "Madeline Elizabeth Sloane"
-    },
-    {
-      "name": "Марк Стронг",
-      "role": "Rodolfo Schmidt"
-    },
-    {
-      "name": "Гугу Эмбата-Ро",
-      "role": "Esme Manucharian"
-    },
-    {
-      "name": "Элисон Пилл",
-      "role": "Jane Molloy"
-    },
-    {
-      "name": "Майкл Стулбарг",
-      "role": "Pat Connors"
-    },
-    {
-      "name": "Сэм Уотерстон",
-      "role": "George Dupont"
-    },
-    {
-      "name": "Джон Литгоу",
-      "role": "Senator Ronald Sperling"
-    },
-    {
-      "name": "Дэвид Уилсон Барнс",
-      "role": "Daniel Posner"
-    },
-    {
-      "name": "Джейк Лэси",
-      "role": "Forde"
-    },
-    {
-      "name": "Чак Шамата",
-      "role": "Bill Sanford"
-    }
+    { "name": "Джессика Честейн", "role": "Madeline Elizabeth Sloane" },
+    { "name": "Марк Стронг", "role": "Rodolfo Schmidt" },
+    { "name": "Гугу Эмбата-Ро", "role": "Esme Manucharian" },
+    { "name": "Элисон Пилл", "role": "Jane Molloy" },
+    { "name": "Майкл Стулбарг", "role": "Pat Connors" },
+    { "name": "Сэм Уотерстон", "role": "George Dupont" },
+    { "name": "Джон Литгоу", "role": "Senator Ronald Sperling" },
+    { "name": "Дэвид Уилсон Барнс", "role": "Daniel Posner" },
+    { "name": "Джейк Лэси", "role": "Forde" },
+    { "name": "Чак Шамата", "role": "Bill Sanford" }
   ],
   "1245501": [
-    {
-      "name": "Том Холланд",
-      "role": "Cherry"
-    },
-    {
-      "name": "Сиэра Браво",
-      "role": "Emily"
-    },
-    {
-      "name": "Джек Рейнор",
-      "role": "Pills & Coke"
-    },
-    {
-      "name": "Майкл Рисполи",
-      "role": "Tommy"
-    },
-    {
-      "name": "Джеффри Уолберг",
-      "role": "Jimenez"
-    },
-    {
-      "name": "Форрест Гудлак",
-      "role": "James Lightfoot"
-    },
-    {
-      "name": "Майкл Гандольфини",
-      "role": "Cousin Joe"
-    },
-    {
-      "name": "Сухейл Алдаббач",
-      "role": "Old Man Fatook"
-    },
-    {
-      "name": "Дэниэл Р. Хилл",
-      "role": "Black"
-    },
-    {
-      "name": "Фионн О’Ши",
-      "role": "Arnold"
-    }
+    { "name": "Том Холланд", "role": "Cherry" },
+    { "name": "Сиэра Браво", "role": "Emily" },
+    { "name": "Джек Рейнор", "role": "Pills & Coke" },
+    { "name": "Майкл Рисполи", "role": "Tommy" },
+    { "name": "Джеффри Уолберг", "role": "Jimenez" },
+    { "name": "Форрест Гудлак", "role": "James Lightfoot" },
+    { "name": "Майкл Гандольфини", "role": "Cousin Joe" },
+    { "name": "Сухейл Алдаббач", "role": "Old Man Fatook" },
+    { "name": "Дэниэл Р. Хилл", "role": "Black" },
+    { "name": "Фионн О’Ши", "role": "Arnold" }
   ],
   "843463": [
-    {
-      "name": "Джон Гудман",
-      "role": "Howard"
-    },
-    {
-      "name": "Мэри Элизабет Уинстэд",
-      "role": "Michelle"
-    },
-    {
-      "name": "Джон Галлахер мл.",
-      "role": "Emmett"
-    },
-    {
-      "name": "Дуглас М. Гриффин",
-      "role": "Driver"
-    },
-    {
-      "name": "Сюзанн Крайер",
-      "role": "Woman"
-    },
-    {
-      "name": "Брэдли Купер",
-      "role": "Ben, озвучка"
-    },
-    {
-      "name": "Сумали Монтано",
-      "role": "Voice on Radio, озвучка"
-    },
-    {
-      "name": "Фрэнк Моттек",
-      "role": "Radio Broadcaster, озвучка"
-    },
-    {
-      "name": "Kayla Bechor",
-      "role": "Paper girl, в титрах не указан"
-    }
+    { "name": "Джон Гудман", "role": "Howard" },
+    { "name": "Мэри Элизабет Уинстэд", "role": "Michelle" },
+    { "name": "Джон Галлахер мл.", "role": "Emmett" },
+    { "name": "Дуглас М. Гриффин", "role": "Driver" },
+    { "name": "Сюзанн Крайер", "role": "Woman" },
+    { "name": "Брэдли Купер", "role": "Ben, озвучка" },
+    { "name": "Сумали Монтано", "role": "Voice on Radio, озвучка" },
+    { "name": "Фрэнк Моттек", "role": "Radio Broadcaster, озвучка" },
+    { "name": "Kayla Bechor", "role": "Paper girl, в титрах не указан" }
   ],
   "5429853": [
-    {
-      "name": "Джеймс Макэвой",
-      "role": "Paddy"
-    },
-    {
-      "name": "Маккензи Дэвис",
-      "role": "Louise Dalton"
-    },
-    {
-      "name": "Скут Макнэри",
-      "role": "Ben Dalton"
-    },
-    {
-      "name": "Эшлинг Франчози",
-      "role": "Ciara"
-    },
-    {
-      "name": "Аликс Уэст Лефлер",
-      "role": "Agnes Dalton"
-    },
-    {
-      "name": "Дэн Хаф",
-      "role": "Ant"
-    },
-    {
-      "name": "Крис Хитчен",
-      "role": "Mike"
-    },
-    {
-      "name": "Мотаз Малхиз",
-      "role": "Muhjid"
-    },
-    {
-      "name": "Якоб Хёйлев Ёргенсон",
-      "role": "Torsten"
-    }
+    { "name": "Джеймс Макэвой", "role": "Paddy" },
+    { "name": "Маккензи Дэвис", "role": "Louise Dalton" },
+    { "name": "Скут Макнэри", "role": "Ben Dalton" },
+    { "name": "Эшлинг Франчози", "role": "Ciara" },
+    { "name": "Аликс Уэст Лефлер", "role": "Agnes Dalton" },
+    { "name": "Дэн Хаф", "role": "Ant" },
+    { "name": "Крис Хитчен", "role": "Mike" },
+    { "name": "Мотаз Малхиз", "role": "Muhjid" },
+    { "name": "Якоб Хёйлев Ёргенсон", "role": "Torsten" }
   ],
   "104938": [
-    {
-      "name": "Уилл Смит",
-      "role": "Chris Gardner"
-    },
-    {
-      "name": "Джейден Смит",
-      "role": "Christopher (в титрах: Jaden Christopher Syre Smith)"
-    },
-    {
-      "name": "Тандиве Ньютон",
-      "role": "Linda (в титрах: Thandie Newton)"
-    },
-    {
-      "name": "Брайан Хау",
-      "role": "Jay Twistle"
-    },
-    {
-      "name": "Джеймс Карен",
-      "role": "Martin Frohm"
-    },
-    {
-      "name": "Дэн Кастелланета",
-      "role": "Alan Frakesh"
-    },
-    {
-      "name": "Курт Фуллер",
-      "role": "Walter Ribbon"
-    },
-    {
-      "name": "Такайо Фишер",
-      "role": "Mrs. Chu"
-    },
-    {
-      "name": "Кевин Уэст",
-      "role": "World's Greatest Dad"
-    },
-    {
-      "name": "Джордж Чунг",
-      "role": "Chinese Maintenance Worker (в титрах: George K. Cheung)"
-    }
+    { "name": "Уилл Смит", "role": "Chris Gardner" },
+    { "name": "Джейден Смит", "role": "Christopher (в титрах: Jaden Christopher Syre Smith)" },
+    { "name": "Тандиве Ньютон", "role": "Linda (в титрах: Thandie Newton)" },
+    { "name": "Брайан Хау", "role": "Jay Twistle" },
+    { "name": "Джеймс Карен", "role": "Martin Frohm" },
+    { "name": "Дэн Кастелланета", "role": "Alan Frakesh" },
+    { "name": "Курт Фуллер", "role": "Walter Ribbon" },
+    { "name": "Такайо Фишер", "role": "Mrs. Chu" },
+    { "name": "Кевин Уэст", "role": "World's Greatest Dad" },
+    { "name": "Джордж Чунг", "role": "Chinese Maintenance Worker (в титрах: George K. Cheung)" }
   ],
   "517988": [
-    {
-      "name": "Джастин Тимберлейк",
-      "role": "Will Salas"
-    },
-    {
-      "name": "Аманда Сайфред",
-      "role": "Sylvia Weis"
-    },
-    {
-      "name": "Киллиан Мерфи",
-      "role": "Raymond Leon"
-    },
-    {
-      "name": "Алекс Петтифер",
-      "role": "Fortis"
-    },
-    {
-      "name": "Винсент Картайзер",
-      "role": "Philippe Weis"
-    },
-    {
-      "name": "Оливия Уайлд",
-      "role": "Rachel Salas"
-    },
-    {
-      "name": "Мэтт Бомер",
-      "role": "Henry Hamilton"
-    },
-    {
-      "name": "Джонни Галэки",
-      "role": "Borel"
-    },
-    {
-      "name": "Коллинз Пенни",
-      "role": "Timekeeper Jaeger"
-    },
-    {
-      "name": "Итан Пек",
-      "role": "Constantin"
-    }
+    { "name": "Джастин Тимберлейк", "role": "Will Salas" },
+    { "name": "Аманда Сайфред", "role": "Sylvia Weis" },
+    { "name": "Киллиан Мерфи", "role": "Raymond Leon" },
+    { "name": "Алекс Петтифер", "role": "Fortis" },
+    { "name": "Винсент Картайзер", "role": "Philippe Weis" },
+    { "name": "Оливия Уайлд", "role": "Rachel Salas" },
+    { "name": "Мэтт Бомер", "role": "Henry Hamilton" },
+    { "name": "Джонни Галэки", "role": "Borel" },
+    { "name": "Коллинз Пенни", "role": "Timekeeper Jaeger" },
+    { "name": "Итан Пек", "role": "Constantin" }
   ],
   "930534": [
-    {
-      "name": "Джеймс Макэвой",
-      "role": "Dennis / Patricia / Hedwig / The Beast / Kevin Wendell Crumb / Barry / Orwell / Jade"
-    },
-    {
-      "name": "Аня Тейлор-Джой",
-      "role": "Casey Cooke"
-    },
-    {
-      "name": "Бетти Бакли",
-      "role": "Dr. Karen Fletcher"
-    },
-    {
-      "name": "Хейли Лу Ричардсон",
-      "role": "Claire Benoit"
-    },
-    {
-      "name": "Джессика Сула",
-      "role": "Marcia"
-    },
-    {
-      "name": "Иззи Коффи",
-      "role": "Five-Year-Old Casey (в титрах: Izzie Leigh Coffey)"
-    },
-    {
-      "name": "Брэд Уильям Хенке",
-      "role": "Uncle John"
-    },
-    {
-      "name": "Себастьян Арселус",
-      "role": "Casey's Father"
-    },
-    {
-      "name": "Нил Хафф",
-      "role": "Mr. Benoit"
-    },
-    {
-      "name": "Уки Вашингтон",
-      "role": "News Anchor"
-    }
+    { "name": "Джеймс Макэвой", "role": "Dennis / Patricia / Hedwig / The Beast / Kevin Wendell Crumb / Barry / Orwell / Jade" },
+    { "name": "Аня Тейлор-Джой", "role": "Casey Cooke" },
+    { "name": "Бетти Бакли", "role": "Dr. Karen Fletcher" },
+    { "name": "Хейли Лу Ричардсон", "role": "Claire Benoit" },
+    { "name": "Джессика Сула", "role": "Marcia" },
+    { "name": "Иззи Коффи", "role": "Five-Year-Old Casey (в титрах: Izzie Leigh Coffey)" },
+    { "name": "Брэд Уильям Хенке", "role": "Uncle John" },
+    { "name": "Себастьян Арселус", "role": "Casey's Father" },
+    { "name": "Нил Хафф", "role": "Mr. Benoit" },
+    { "name": "Уки Вашингтон", "role": "News Anchor" }
   ],
   "817969": [
-    {
-      "name": "Кеннет Брана",
-      "role": "Hercule Poirot"
-    },
-    {
-      "name": "Пенелопа Крус",
-      "role": "Pilar Estravados"
-    },
-    {
-      "name": "Уиллем Дефо",
-      "role": "Gerhard Hardman"
-    },
-    {
-      "name": "Джуди Денч",
-      "role": "Princess Dragomiroff"
-    },
-    {
-      "name": "Джонни Депп",
-      "role": "Edward Ratchett"
-    },
-    {
-      "name": "Джош Гэд",
-      "role": "Hector MacQueen"
-    },
-    {
-      "name": "Дерек Джекоби",
-      "role": "Edward Henry Masterman"
-    },
-    {
-      "name": "Лесли Одом мл.",
-      "role": "Dr. Arbuthnot"
-    },
-    {
-      "name": "Мишель Пфайффер",
-      "role": "Caroline Hubbard"
-    },
-    {
-      "name": "Дейзи Ридли",
-      "role": "Miss Mary Debenham"
-    }
+    { "name": "Кеннет Брана", "role": "Hercule Poirot" },
+    { "name": "Пенелопа Крус", "role": "Pilar Estravados" },
+    { "name": "Уиллем Дефо", "role": "Gerhard Hardman" },
+    { "name": "Джуди Денч", "role": "Princess Dragomiroff" },
+    { "name": "Джонни Депп", "role": "Edward Ratchett" },
+    { "name": "Джош Гэд", "role": "Hector MacQueen" },
+    { "name": "Дерек Джекоби", "role": "Edward Henry Masterman" },
+    { "name": "Лесли Одом мл.", "role": "Dr. Arbuthnot" },
+    { "name": "Мишель Пфайффер", "role": "Caroline Hubbard" },
+    { "name": "Дейзи Ридли", "role": "Miss Mary Debenham" }
   ],
   "507440": [
-    {
-      "name": "Томас Манн",
-      "role": "Thomas"
-    },
-    {
-      "name": "Оливер Купер",
-      "role": "Costa"
-    },
-    {
-      "name": "Джонатан Даниэль Браун",
-      "role": "JB"
-    },
-    {
-      "name": "Дакс Флэйм",
-      "role": "Dax"
-    },
-    {
-      "name": "Кирби Блисс Блэнтон",
-      "role": "Kirby"
-    },
-    {
-      "name": "Брэйди Эндер",
-      "role": "Everett"
-    },
-    {
-      "name": "Ник Нервис",
-      "role": "Tyler"
-    },
-    {
-      "name": "Алексис Нэп",
-      "role": "Alexis"
-    },
-    {
-      "name": "Майлз Теллер",
-      "role": "Miles"
-    },
-    {
-      "name": "Питер Маккензи",
-      "role": "Dad"
-    }
+    { "name": "Томас Манн", "role": "Thomas" },
+    { "name": "Оливер Купер", "role": "Costa" },
+    { "name": "Джонатан Даниэль Браун", "role": "JB" },
+    { "name": "Дакс Флэйм", "role": "Dax" },
+    { "name": "Кирби Блисс Блэнтон", "role": "Kirby" },
+    { "name": "Брэйди Эндер", "role": "Everett" },
+    { "name": "Ник Нервис", "role": "Tyler" },
+    { "name": "Алексис Нэп", "role": "Alexis" },
+    { "name": "Майлз Теллер", "role": "Miles" },
+    { "name": "Питер Маккензи", "role": "Dad" }
   ],
   "464484": [
-    {
-      "name": "Том Хэнкс",
-      "role": "Dr. Henry Goose / Hotel Manager / Isaac Sachs / Dermot Hoggins / Cavendish Look-a-Like Actor / Zachry"
-    },
-    {
-      "name": "Холли Берри",
-      "role": "Native Woman / Jocasta Ayrs / Luisa Rey / Indian Party Guest / Ovid / Meronym"
-    },
-    {
-      "name": "Джим Бродбент",
-      "role": "Captain Molyneux / Vyvyan Ayrs / Timothy Cavendish / Korean Musician / Prescient 2"
-    },
-    {
-      "name": "Джим Стёрджесс",
-      "role": "Adam Ewing / Poor Hotel Guest / Megan's Dad / Highlander / Hae-Joo Chang / Adam (Zachry's Brother-in-Law)"
-    },
-    {
-      "name": "Бен Уишоу",
-      "role": "Cabin Boy / Robert Frobisher / Store Clerk / Georgette / Tribesman"
-    },
-    {
-      "name": "Хьюго Уивинг",
-      "role": "Haskell Moore / Tadeusz Kesselring / Bill Smoke / Nurse Noakes / Boardman Mephi / Old Georgie"
-    },
-    {
-      "name": "Пэ Ду-на",
-      "role": "Tilda / Megan's Mom / Mexican Woman / Sonmi-451 / Sonmi-351 / Sonmi Prostitute"
-    },
-    {
-      "name": "Хью Грант",
-      "role": "Rev. Giles Horrox / Hotel Heavy / Lloyd Hooks / Denholme Cavendish / Seer Rhee / Kona Chief"
-    },
-    {
-      "name": "Сьюзен Сарандон",
-      "role": "Madame Horrox / Older Ursula / Yusouf Suleiman / Abbess"
-    },
-    {
-      "name": "Джеймс Д’Арси",
-      "role": "Young Rufus Sixsmith / Old Rufus Sixsmith / Nurse James / Archivist"
-    }
+    { "name": "Том Хэнкс", "role": "Dr. Henry Goose / Hotel Manager / Isaac Sachs / Dermot Hoggins / Cavendish Look-a-Like Actor / Zachry" },
+    { "name": "Холли Берри", "role": "Native Woman / Jocasta Ayrs / Luisa Rey / Indian Party Guest / Ovid / Meronym" },
+    { "name": "Джим Бродбент", "role": "Captain Molyneux / Vyvyan Ayrs / Timothy Cavendish / Korean Musician / Prescient 2" },
+    { "name": "Джим Стёрджесс", "role": "Adam Ewing / Poor Hotel Guest / Megan's Dad / Highlander / Hae-Joo Chang / Adam (Zachry's Brother-in-Law)" },
+    { "name": "Бен Уишоу", "role": "Cabin Boy / Robert Frobisher / Store Clerk / Georgette / Tribesman" },
+    { "name": "Хьюго Уивинг", "role": "Haskell Moore / Tadeusz Kesselring / Bill Smoke / Nurse Noakes / Boardman Mephi / Old Georgie" },
+    { "name": "Пэ Ду-на", "role": "Tilda / Megan's Mom / Mexican Woman / Sonmi-451 / Sonmi-351 / Sonmi Prostitute" },
+    { "name": "Хью Грант", "role": "Rev. Giles Horrox / Hotel Heavy / Lloyd Hooks / Denholme Cavendish / Seer Rhee / Kona Chief" },
+    { "name": "Сьюзен Сарандон", "role": "Madame Horrox / Older Ursula / Yusouf Suleiman / Abbess" },
+    { "name": "Джеймс Д’Арси", "role": "Young Rufus Sixsmith / Old Rufus Sixsmith / Nurse James / Archivist" }
   ],
   "63732": [
-    {
-      "name": "Райан Рейнольдс",
-      "role": "George Lutz"
-    },
-    {
-      "name": "Мелисса Джордж",
-      "role": "Kathy Lutz"
-    },
-    {
-      "name": "Джесси Джеймс",
-      "role": "Billy Lutz"
-    },
-    {
-      "name": "Джимми Беннетт",
-      "role": "Michael Lutz"
-    },
-    {
-      "name": "Хлоя Грейс Морец",
-      "role": "Chelsea Lutz"
-    },
-    {
-      "name": "Рэйчел Николс",
-      "role": "Lisa"
-    },
-    {
-      "name": "Филип Бейкер Холл",
-      "role": "Father Callaway"
-    },
-    {
-      "name": "Изабель Коннер",
-      "role": "Jodie Defeo"
-    },
-    {
-      "name": "Брендан Дональдсон",
-      "role": "Ronald Defeo"
-    },
-    {
-      "name": "Аннабел Армор",
-      "role": "Realtor"
-    }
+    { "name": "Райан Рейнольдс", "role": "George Lutz" },
+    { "name": "Мелисса Джордж", "role": "Kathy Lutz" },
+    { "name": "Джесси Джеймс", "role": "Billy Lutz" },
+    { "name": "Джимми Беннетт", "role": "Michael Lutz" },
+    { "name": "Хлоя Грейс Морец", "role": "Chelsea Lutz" },
+    { "name": "Рэйчел Николс", "role": "Lisa" },
+    { "name": "Филип Бейкер Холл", "role": "Father Callaway" },
+    { "name": "Изабель Коннер", "role": "Jodie Defeo" },
+    { "name": "Брендан Дональдсон", "role": "Ronald Defeo" },
+    { "name": "Аннабел Армор", "role": "Realtor" }
   ],
   "992500": [
-    {
-      "name": "Джордж Маккэй",
-      "role": "Jack"
-    },
-    {
-      "name": "Аня Тейлор-Джой",
-      "role": "Allie"
-    },
-    {
-      "name": "Чарли Хитон",
-      "role": "Billy"
-    },
-    {
-      "name": "Миа Гот",
-      "role": "Jane"
-    },
-    {
-      "name": "Мэттью Стэгг",
-      "role": "Sam"
-    },
-    {
-      "name": "Никола Харрисон",
-      "role": "Mother"
-    },
-    {
-      "name": "Кайл Соллер",
-      "role": "Porter"
-    },
-    {
-      "name": "Том Фишер",
-      "role": "Father"
-    },
-    {
-      "name": "Мира Кэтрин Пирс",
-      "role": "Molly"
-    },
-    {
-      "name": "Пол Джессон",
-      "role": "Doctor"
-    }
+    { "name": "Джордж Маккэй", "role": "Jack" },
+    { "name": "Аня Тейлор-Джой", "role": "Allie" },
+    { "name": "Чарли Хитон", "role": "Billy" },
+    { "name": "Миа Гот", "role": "Jane" },
+    { "name": "Мэттью Стэгг", "role": "Sam" },
+    { "name": "Никола Харрисон", "role": "Mother" },
+    { "name": "Кайл Соллер", "role": "Porter" },
+    { "name": "Том Фишер", "role": "Father" },
+    { "name": "Мира Кэтрин Пирс", "role": "Molly" },
+    { "name": "Пол Джессон", "role": "Doctor" }
   ],
   "468581": [
-    {
-      "name": "Дженнифер Лоуренс",
-      "role": "Katniss Everdeen"
-    },
-    {
-      "name": "Джош Хатчерсон",
-      "role": "Peeta Mellark"
-    },
-    {
-      "name": "Лиам Хемсворт",
-      "role": "Gale Hawthorne"
-    },
-    {
-      "name": "Вуди Харрельсон",
-      "role": "Haymitch Abernathy"
-    },
-    {
-      "name": "Элизабет Бэнкс",
-      "role": "Effie Trinket"
-    },
-    {
-      "name": "Уэс Бентли",
-      "role": "Seneca Crane"
-    },
-    {
-      "name": "Дональд Сазерленд",
-      "role": "President Snow"
-    },
-    {
-      "name": "Стэнли Туччи",
-      "role": "Caesar Flickerman"
-    },
-    {
-      "name": "Ленни Кравиц",
-      "role": "Cinna"
-    },
-    {
-      "name": "Амандла Стенберг",
-      "role": "Rue"
-    }
+    { "name": "Дженнифер Лоуренс", "role": "Katniss Everdeen" },
+    { "name": "Джош Хатчерсон", "role": "Peeta Mellark" },
+    { "name": "Лиам Хемсворт", "role": "Gale Hawthorne" },
+    { "name": "Вуди Харрельсон", "role": "Haymitch Abernathy" },
+    { "name": "Элизабет Бэнкс", "role": "Effie Trinket" },
+    { "name": "Уэс Бентли", "role": "Seneca Crane" },
+    { "name": "Дональд Сазерленд", "role": "President Snow" },
+    { "name": "Стэнли Туччи", "role": "Caesar Flickerman" },
+    { "name": "Ленни Кравиц", "role": "Cinna" },
+    { "name": "Амандла Стенберг", "role": "Rue" }
   ],
   "602373": [
-    {
-      "name": "Дженнифер Лоуренс",
-      "role": "Katniss Everdeen"
-    },
-    {
-      "name": "Джош Хатчерсон",
-      "role": "Peeta Mellark"
-    },
-    {
-      "name": "Лиам Хемсворт",
-      "role": "Gale Hawthorne"
-    },
-    {
-      "name": "Вуди Харрельсон",
-      "role": "Haymitch Abernathy"
-    },
-    {
-      "name": "Сэм Клафлин",
-      "role": "Finnick Odair"
-    },
-    {
-      "name": "Джеффри Райт",
-      "role": "Beetee"
-    },
-    {
-      "name": "Джена Мэлоун",
-      "role": "Johanna Mason"
-    },
-    {
-      "name": "Элизабет Бэнкс",
-      "role": "Effie Trinket"
-    },
-    {
-      "name": "Дональд Сазерленд",
-      "role": "President Snow"
-    },
-    {
-      "name": "Филип Сеймур Хоффман",
-      "role": "Plutarch Heavensbee"
-    }
+    { "name": "Дженнифер Лоуренс", "role": "Katniss Everdeen" },
+    { "name": "Джош Хатчерсон", "role": "Peeta Mellark" },
+    { "name": "Лиам Хемсворт", "role": "Gale Hawthorne" },
+    { "name": "Вуди Харрельсон", "role": "Haymitch Abernathy" },
+    { "name": "Сэм Клафлин", "role": "Finnick Odair" },
+    { "name": "Джеффри Райт", "role": "Beetee" },
+    { "name": "Джена Мэлоун", "role": "Johanna Mason" },
+    { "name": "Элизабет Бэнкс", "role": "Effie Trinket" },
+    { "name": "Дональд Сазерленд", "role": "President Snow" },
+    { "name": "Филип Сеймур Хоффман", "role": "Plutarch Heavensbee" }
   ],
   "6174": [
-    {
-      "name": "Марк Уолберг",
-      "role": "David McCall"
-    },
-    {
-      "name": "Риз Уизерспун",
-      "role": "Nicole Walker"
-    },
-    {
-      "name": "Уильям Петерсен",
-      "role": "Steve Walker"
-    },
-    {
-      "name": "Эми Бреннеман",
-      "role": "Laura Walker"
-    },
-    {
-      "name": "Алисса Милано",
-      "role": "Margo Masse"
-    },
-    {
-      "name": "Кристофер Грэй",
-      "role": "Toby"
-    },
-    {
-      "name": "Трэйси Фрэйм",
-      "role": "Logan"
-    },
-    {
-      "name": "Гари Райли",
-      "role": "Hacker"
-    },
-    {
-      "name": "Джейсон Кристофер",
-      "role": "Terry"
-    },
-    {
-      "name": "Джед Риз",
-      "role": "Knobby"
-    }
+    { "name": "Марк Уолберг", "role": "David McCall" },
+    { "name": "Риз Уизерспун", "role": "Nicole Walker" },
+    { "name": "Уильям Петерсен", "role": "Steve Walker" },
+    { "name": "Эми Бреннеман", "role": "Laura Walker" },
+    { "name": "Алисса Милано", "role": "Margo Masse" },
+    { "name": "Кристофер Грэй", "role": "Toby" },
+    { "name": "Трэйси Фрэйм", "role": "Logan" },
+    { "name": "Гари Райли", "role": "Hacker" },
+    { "name": "Джейсон Кристофер", "role": "Terry" },
+    { "name": "Джед Риз", "role": "Knobby" }
   ],
   "5437609": [
-    {
-      "name": "Джейк Джилленхол",
-      "role": "Bronco"
-    },
-    {
-      "name": "Генри Кавилл",
-      "role": "Sid"
-    },
-    {
-      "name": "Эйса Гонсалес",
-      "role": "Rachel"
-    },
-    {
-      "name": "Розамунд Пайк",
-      "role": "Bobby Sheen"
-    },
-    {
-      "name": "Фишер Стивенс",
-      "role": "William Horowitz"
-    },
-    {
-      "name": "Карлос Бардем",
-      "role": "Manny Salazar"
-    },
-    {
-      "name": "Джейсон Вон",
-      "role": "Gucci Reyes"
-    },
-    {
-      "name": "Майкл Ву",
-      "role": "Ed Glover"
-    },
-    {
-      "name": "Мохаммед Аль Турки",
-      "role": "Wolfgang Klose"
-    },
-    {
-      "name": "Койо Атта",
-      "role": "Andre Baker"
-    }
+    { "name": "Джейк Джилленхол", "role": "Bronco" },
+    { "name": "Генри Кавилл", "role": "Sid" },
+    { "name": "Эйса Гонсалес", "role": "Rachel" },
+    { "name": "Розамунд Пайк", "role": "Bobby Sheen" },
+    { "name": "Фишер Стивенс", "role": "William Horowitz" },
+    { "name": "Карлос Бардем", "role": "Manny Salazar" },
+    { "name": "Джейсон Вон", "role": "Gucci Reyes" },
+    { "name": "Майкл Ву", "role": "Ed Glover" },
+    { "name": "Мохаммед Аль Турки", "role": "Wolfgang Klose" },
+    { "name": "Койо Атта", "role": "Andre Baker" }
   ],
   "94225": [
-    {
-      "name": "Джессика Альба",
-      "role": "Max Guevera / X5-452 / X5-453"
-    },
-    {
-      "name": "Майкл Уэтерли",
-      "role": "Logan Cale"
-    },
-    {
-      "name": "Алими Баллард",
-      "role": "Herbal Thought"
-    },
-    {
-      "name": "Дженнифер Бланк",
-      "role": "Kendra Maibaum"
-    },
-    {
-      "name": "Ричард Ганн",
-      "role": "Calvin «Sketchy» Theodore / Calvin Theodore"
-    },
-    {
-      "name": "Дж.С. Маккензи",
-      "role": "Reagan «Normal» Ronald"
-    },
-    {
-      "name": "Валери Рэй Миллер",
-      "role": "Cynthia «Original Cindy» McEachin / Cynthia McEachin"
-    },
-    {
-      "name": "Джон Сэвэдж",
-      "role": "Donald Lydecker"
-    },
-    {
-      "name": "Дженсен Эклс",
-      "role": "Alec / X5-494 / Ben / X5-493"
-    },
-    {
-      "name": "Мартин Камминс",
-      "role": "Ames White"
-    }
+    { "name": "Джессика Альба", "role": "Max Guevera / X5-452 / X5-453" },
+    { "name": "Майкл Уэтерли", "role": "Logan Cale" },
+    { "name": "Алими Баллард", "role": "Herbal Thought" },
+    { "name": "Дженнифер Бланк", "role": "Kendra Maibaum" },
+    { "name": "Ричард Ганн", "role": "Calvin «Sketchy» Theodore / Calvin Theodore" },
+    { "name": "Дж.С. Маккензи", "role": "Reagan «Normal» Ronald" },
+    { "name": "Валери Рэй Миллер", "role": "Cynthia «Original Cindy» McEachin / Cynthia McEachin" },
+    { "name": "Джон Сэвэдж", "role": "Donald Lydecker" },
+    { "name": "Дженсен Эклс", "role": "Alec / X5-494 / Ben / X5-493" },
+    { "name": "Мартин Камминс", "role": "Ames White" }
   ],
   "462240": [
-    {
-      "name": "Кристиан Бэйл",
-      "role": "Russell Baze"
-    },
-    {
-      "name": "Вуди Харрельсон",
-      "role": "Harlan DeGroat"
-    },
-    {
-      "name": "Кейси Аффлек",
-      "role": "Rodney Baze Jr."
-    },
-    {
-      "name": "Форест Уитакер",
-      "role": "Chief Wesley Barnes"
-    },
-    {
-      "name": "Уиллем Дефо",
-      "role": "John Petty"
-    },
-    {
-      "name": "Зои Салдана",
-      "role": "Lena Taylor (в титрах: Zoë Saldana)"
-    },
-    {
-      "name": "Сэм Шепард",
-      "role": "Gerald «Red» Baze"
-    },
-    {
-      "name": "Дендри Тейлор",
-      "role": "DeGroat's Date"
-    },
-    {
-      "name": "Карл Киарфалио",
-      "role": "Man at Drive In"
-    },
-    {
-      "name": "Нэнси Моссер",
-      "role": "Woman at Drive In (в титрах: Nancy Mosser Bailey)"
-    }
+    { "name": "Кристиан Бэйл", "role": "Russell Baze" },
+    { "name": "Вуди Харрельсон", "role": "Harlan DeGroat" },
+    { "name": "Кейси Аффлек", "role": "Rodney Baze Jr." },
+    { "name": "Форест Уитакер", "role": "Chief Wesley Barnes" },
+    { "name": "Уиллем Дефо", "role": "John Petty" },
+    { "name": "Зои Салдана", "role": "Lena Taylor (в титрах: Zoë Saldana)" },
+    { "name": "Сэм Шепард", "role": "Gerald «Red» Baze" },
+    { "name": "Дендри Тейлор", "role": "DeGroat's Date" },
+    { "name": "Карл Киарфалио", "role": "Man at Drive In" },
+    { "name": "Нэнси Моссер", "role": "Woman at Drive In (в титрах: Nancy Mosser Bailey)" }
   ],
   "655435": [
-    {
-      "name": "Райан Рейнольдс",
-      "role": "Young Damian"
-    },
-    {
-      "name": "Бен Кингсли",
-      "role": "Damian"
-    },
-    {
-      "name": "Натали Мартинес",
-      "role": "Madeline"
-    },
-    {
-      "name": "Мэттью Гуд",
-      "role": "Albright"
-    },
-    {
-      "name": "Виктор Гарбер",
-      "role": "Martin"
-    },
-    {
-      "name": "Дерек Люк",
-      "role": "Anton"
-    },
-    {
-      "name": "Джейни-Линн Кинчен",
-      "role": "Anna"
-    },
-    {
-      "name": "Мелора Хардин",
-      "role": "Judy"
-    },
-    {
-      "name": "Мишель Докери",
-      "role": "Claire"
-    },
-    {
-      "name": "Сэмюэл Пейдж",
-      "role": "Carl"
-    }
+    { "name": "Райан Рейнольдс", "role": "Young Damian" },
+    { "name": "Бен Кингсли", "role": "Damian" },
+    { "name": "Натали Мартинес", "role": "Madeline" },
+    { "name": "Мэттью Гуд", "role": "Albright" },
+    { "name": "Виктор Гарбер", "role": "Martin" },
+    { "name": "Дерек Люк", "role": "Anton" },
+    { "name": "Джейни-Линн Кинчен", "role": "Anna" },
+    { "name": "Мелора Хардин", "role": "Judy" },
+    { "name": "Мишель Докери", "role": "Claire" },
+    { "name": "Сэмюэл Пейдж", "role": "Carl" }
   ],
   "467972": [
-    {
-      "name": "Эдриан Броуди",
-      "role": "Travis"
-    },
-    {
-      "name": "Форест Уитакер",
-      "role": "Barris"
-    },
-    {
-      "name": "Кэм Жиганде",
-      "role": "Chase"
-    },
-    {
-      "name": "Клифтон Коллинз мл.",
-      "role": "Nix"
-    },
-    {
-      "name": "Этан Кон",
-      "role": "Benjy"
-    },
-    {
-      "name": "Фишер Стивенс",
-      "role": "Archaleta"
-    },
-    {
-      "name": "Трэвис Фиммел",
-      "role": "Helweg"
-    },
-    {
-      "name": "Дэвид Бэннер",
-      "role": "Bosch (в титрах: Lavell «David Banner» Crump)"
-    },
-    {
-      "name": "Джейсон Лью",
-      "role": "Oscar"
-    },
-    {
-      "name": "Дэмиен Лик",
-      "role": "Govenor"
-    }
+    { "name": "Эдриан Броуди", "role": "Travis" },
+    { "name": "Форест Уитакер", "role": "Barris" },
+    { "name": "Кэм Жиганде", "role": "Chase" },
+    { "name": "Клифтон Коллинз мл.", "role": "Nix" },
+    { "name": "Этан Кон", "role": "Benjy" },
+    { "name": "Фишер Стивенс", "role": "Archaleta" },
+    { "name": "Трэвис Фиммел", "role": "Helweg" },
+    { "name": "Дэвид Бэннер", "role": "Bosch (в титрах: Lavell «David Banner» Crump)" },
+    { "name": "Джейсон Лью", "role": "Oscar" },
+    { "name": "Дэмиен Лик", "role": "Govenor" }
   ],
   "607737": [
-    {
-      "name": "Марк Уолберг",
-      "role": "Mike Williams"
-    },
-    {
-      "name": "Курт Рассел",
-      "role": "Jimmy Harrell"
-    },
-    {
-      "name": "Джон Малкович",
-      "role": "Don Vidrine"
-    },
-    {
-      "name": "Джина Родригес",
-      "role": "Andrea Fleytas"
-    },
-    {
-      "name": "Дилан О’Брайен",
-      "role": "Caleb Holloway"
-    },
-    {
-      "name": "Кейт Хадсон",
-      "role": "Felicia"
-    },
-    {
-      "name": "Итан Сапли",
-      "role": "Jason Anderson"
-    },
-    {
-      "name": "Генри Фрост",
-      "role": "Shane M. Roshto"
-    },
-    {
-      "name": "Джереми Сэнд",
-      "role": "Adam Weise"
-    },
-    {
-      "name": "Дуглас М. Гриффин",
-      "role": "Captain Landry"
-    }
+    { "name": "Марк Уолберг", "role": "Mike Williams" },
+    { "name": "Курт Рассел", "role": "Jimmy Harrell" },
+    { "name": "Джон Малкович", "role": "Don Vidrine" },
+    { "name": "Джина Родригес", "role": "Andrea Fleytas" },
+    { "name": "Дилан О’Брайен", "role": "Caleb Holloway" },
+    { "name": "Кейт Хадсон", "role": "Felicia" },
+    { "name": "Итан Сапли", "role": "Jason Anderson" },
+    { "name": "Генри Фрост", "role": "Shane M. Roshto" },
+    { "name": "Джереми Сэнд", "role": "Adam Weise" },
+    { "name": "Дуглас М. Гриффин", "role": "Captain Landry" }
   ],
   "484878": [
-    {
-      "name": "Джеймс Франко",
-      "role": "Aron Ralston"
-    },
-    {
-      "name": "Кейт Мара",
-      "role": "Kristi"
-    },
-    {
-      "name": "Эмбер Тэмблин",
-      "role": "Megan"
-    },
-    {
-      "name": "Клеманс Поэзи",
-      "role": "Rana"
-    },
-    {
-      "name": "Лиззи Каплан",
-      "role": "Sonja"
-    },
-    {
-      "name": "Трит Уильямс",
-      "role": "Aron's Dad"
-    },
-    {
-      "name": "Кейт Бёртон",
-      "role": "Aron's Mom"
-    },
-    {
-      "name": "Шон Ботт",
-      "role": "Aron's Friend (в титрах: Sean A. Bott)"
-    },
-    {
-      "name": "Джон Лоуренс",
-      "role": "Brian"
-    },
-    {
-      "name": "Колман Стингер",
-      "role": "Aron Age 5"
-    }
+    { "name": "Джеймс Франко", "role": "Aron Ralston" },
+    { "name": "Кейт Мара", "role": "Kristi" },
+    { "name": "Эмбер Тэмблин", "role": "Megan" },
+    { "name": "Клеманс Поэзи", "role": "Rana" },
+    { "name": "Лиззи Каплан", "role": "Sonja" },
+    { "name": "Трит Уильямс", "role": "Aron's Dad" },
+    { "name": "Кейт Бёртон", "role": "Aron's Mom" },
+    { "name": "Шон Ботт", "role": "Aron's Friend (в титрах: Sean A. Bott)" },
+    { "name": "Джон Лоуренс", "role": "Brian" },
+    { "name": "Колман Стингер", "role": "Aron Age 5" }
   ],
   "6303": [
-    {
-      "name": "Арнольд Шварценеггер",
-      "role": "Dutch"
-    },
-    {
-      "name": "Карл Уэзерс",
-      "role": "Dillon"
-    },
-    {
-      "name": "Эльпидия Каррильо",
-      "role": "Anna"
-    },
-    {
-      "name": "Билл Дьюк",
-      "role": "Mac"
-    },
-    {
-      "name": "Джесси Вентура",
-      "role": "Blain"
-    },
-    {
-      "name": "Сонни Лэндэм",
-      "role": "Billy"
-    },
-    {
-      "name": "Ричард Чавес",
-      "role": "Poncho"
-    },
-    {
-      "name": "Р.Г. Армстронг",
-      "role": "General Phillips"
-    },
-    {
-      "name": "Шейн Блэк",
-      "role": "Hawkins"
-    },
-    {
-      "name": "Кевин Питер Холл",
-      "role": "The Predator / Helicopter Pilot"
-    }
+    { "name": "Арнольд Шварценеггер", "role": "Dutch" },
+    { "name": "Карл Уэзерс", "role": "Dillon" },
+    { "name": "Эльпидия Каррильо", "role": "Anna" },
+    { "name": "Билл Дьюк", "role": "Mac" },
+    { "name": "Джесси Вентура", "role": "Blain" },
+    { "name": "Сонни Лэндэм", "role": "Billy" },
+    { "name": "Ричард Чавес", "role": "Poncho" },
+    { "name": "Р.Г. Армстронг", "role": "General Phillips" },
+    { "name": "Шейн Блэк", "role": "Hawkins" },
+    { "name": "Кевин Питер Холл", "role": "The Predator / Helicopter Pilot" }
   ],
   "839823": [
-    {
-      "name": "Ли Сон-гюн",
-      "role": "Ko Geon-soo"
-    },
-    {
-      "name": "Чо Джин-ун",
-      "role": "Park Chang-min"
-    },
-    {
-      "name": "Чан Ин-соп",
-      "role": "Policeman"
-    },
-    {
-      "name": "Чон Ман-щик",
-      "role": "Detective Choi"
-    },
-    {
-      "name": "Ким Дон-ён",
-      "role": "Detective Do"
-    },
-    {
-      "name": "Пак По-гом",
-      "role": "Police Officer Lee"
-    },
-    {
-      "name": "Щин Дон-ми",
-      "role": "Younger sister"
-    },
-    {
-      "name": "Щин Джон-гын",
-      "role": "Chief"
-    },
-    {
-      "name": "Чо Ха-сок",
-      "role": "Lee Gwang-min"
-    },
-    {
-      "name": "Ли Джи-хун",
-      "role": "Weapons & chemical storage constable"
-    }
+    { "name": "Ли Сон-гюн", "role": "Ko Geon-soo" },
+    { "name": "Чо Джин-ун", "role": "Park Chang-min" },
+    { "name": "Чан Ин-соп", "role": "Policeman" },
+    { "name": "Чон Ман-щик", "role": "Detective Choi" },
+    { "name": "Ким Дон-ён", "role": "Detective Do" },
+    { "name": "Пак По-гом", "role": "Police Officer Lee" },
+    { "name": "Щин Дон-ми", "role": "Younger sister" },
+    { "name": "Щин Джон-гын", "role": "Chief" },
+    { "name": "Чо Ха-сок", "role": "Lee Gwang-min" },
+    { "name": "Ли Джи-хун", "role": "Weapons & chemical storage constable" }
   ],
   "1379512": [
-    {
-      "name": "Флоренс Пью",
-      "role": "Alice"
-    },
-    {
-      "name": "Гарри Стайлс",
-      "role": "Jack"
-    },
-    {
-      "name": "Крис Пайн",
-      "role": "Frank"
-    },
-    {
-      "name": "Дакота Джонсон",
-      "role": "—"
-    },
-    {
-      "name": "Оливия Уайлд",
-      "role": "Bunny"
-    },
-    {
-      "name": "Кики Лэйн",
-      "role": "Margaret"
-    },
-    {
-      "name": "Джемма Чан",
-      "role": "Shelley"
-    },
-    {
-      "name": "Ник Кролл",
-      "role": "Dean"
-    },
-    {
-      "name": "Сидни Чендлер",
-      "role": "Violet"
-    },
-    {
-      "name": "Кейт Берлант",
-      "role": "Peg"
-    }
+    { "name": "Флоренс Пью", "role": "Alice" },
+    { "name": "Гарри Стайлс", "role": "Jack" },
+    { "name": "Крис Пайн", "role": "Frank" },
+    { "name": "Дакота Джонсон", "role": "—" },
+    { "name": "Оливия Уайлд", "role": "Bunny" },
+    { "name": "Кики Лэйн", "role": "Margaret" },
+    { "name": "Джемма Чан", "role": "Shelley" },
+    { "name": "Ник Кролл", "role": "Dean" },
+    { "name": "Сидни Чендлер", "role": "Violet" },
+    { "name": "Кейт Берлант", "role": "Peg" }
   ],
   "10355286": [
-    {
-      "name": "Майкл Джонстон",
-      "role": "Bear"
-    },
-    {
-      "name": "Инди Наварретти",
-      "role": "Nikki"
-    },
-    {
-      "name": "Купер Томлинсон",
-      "role": "Ian"
-    },
-    {
-      "name": "Меган Лоулесс",
-      "role": "Sarah"
-    },
-    {
-      "name": "Энди Рихтер",
-      "role": "Carter"
-    },
-    {
-      "name": "Хейли Фицджеральд",
-      "role": "Viola"
-    },
-    {
-      "name": "Дэрин Тондер",
-      "role": "Harry"
-    },
-    {
-      "name": "Энтони Павоне",
-      "role": "Reggie"
-    },
-    {
-      "name": "Джастис",
-      "role": "Joe"
-    },
-    {
-      "name": "Энтони Касабьянка",
-      "role": "Chris"
-    }
+    { "name": "Майкл Джонстон", "role": "Bear" },
+    { "name": "Инди Наварретти", "role": "Nikki" },
+    { "name": "Купер Томлинсон", "role": "Ian" },
+    { "name": "Меган Лоулесс", "role": "Sarah" },
+    { "name": "Энди Рихтер", "role": "Carter" },
+    { "name": "Хейли Фицджеральд", "role": "Viola" },
+    { "name": "Дэрин Тондер", "role": "Harry" },
+    { "name": "Энтони Павоне", "role": "Reggie" },
+    { "name": "Джастис", "role": "Joe" },
+    { "name": "Энтони Касабьянка", "role": "Chris" }
   ],
   "4541542": [
-    {
-      "name": "Уилл Феррелл",
-      "role": "Reggie, озвучка"
-    },
-    {
-      "name": "Джейми Фокс",
-      "role": "Bug, озвучка"
-    },
-    {
-      "name": "Айла Фишер",
-      "role": "Maggie, озвучка"
-    },
-    {
-      "name": "Рэндалл Пак",
-      "role": "Hunter, озвучка"
-    },
-    {
-      "name": "Уилл Форте",
-      "role": "Doug"
-    },
-    {
-      "name": "Бретт Гельман",
-      "role": "Willy"
-    },
-    {
-      "name": "Роб Риггл",
-      "role": "Rolf, озвучка"
-    },
-    {
-      "name": "Tyler Antonius",
-      "role": "Jason, озвучка"
-    },
-    {
-      "name": "Джош Гэд",
-      "role": "Gus, озвучка"
-    },
-    {
-      "name": "София Вергара",
-      "role": "Dolores the Couch, озвучка"
-    }
+    { "name": "Уилл Феррелл", "role": "Reggie, озвучка" },
+    { "name": "Джейми Фокс", "role": "Bug, озвучка" },
+    { "name": "Айла Фишер", "role": "Maggie, озвучка" },
+    { "name": "Рэндалл Пак", "role": "Hunter, озвучка" },
+    { "name": "Уилл Форте", "role": "Doug" },
+    { "name": "Бретт Гельман", "role": "Willy" },
+    { "name": "Роб Риггл", "role": "Rolf, озвучка" },
+    { "name": "Tyler Antonius", "role": "Jason, озвучка" },
+    { "name": "Джош Гэд", "role": "Gus, озвучка" },
+    { "name": "София Вергара", "role": "Dolores the Couch, озвучка" }
   ],
   "5599850": [
-    {
-      "name": "Хана Маласан",
-      "role": "Purnama"
-    },
-    {
-      "name": "Зара Леола",
-      "role": "Kembang"
-    },
-    {
-      "name": "Фадли Файсал",
-      "role": "Tekun"
-    },
-    {
-      "name": "Кики Нарендра",
-      "role": "Bara"
-    },
-    {
-      "name": "Путри Аюдья",
-      "role": "Ramla"
-    },
-    {
-      "name": "Яма Карлос",
-      "role": "Santoso"
-    },
-    {
-      "name": "Рут Марини",
-      "role": "Ratu Jin"
-    },
-    {
-      "name": "Сахира Анджани",
-      "role": "Indah"
-    },
-    {
-      "name": "Тотос Расити",
-      "role": "Sidik"
-    },
-    {
-      "name": "Агнес Наоми",
-      "role": "Martha"
-    }
+    { "name": "Хана Маласан", "role": "Purnama" },
+    { "name": "Зара Леола", "role": "Kembang" },
+    { "name": "Фадли Файсал", "role": "Tekun" },
+    { "name": "Кики Нарендра", "role": "Bara" },
+    { "name": "Путри Аюдья", "role": "Ramla" },
+    { "name": "Яма Карлос", "role": "Santoso" },
+    { "name": "Рут Марини", "role": "Ratu Jin" },
+    { "name": "Сахира Анджани", "role": "Indah" },
+    { "name": "Тотос Расити", "role": "Sidik" },
+    { "name": "Агнес Наоми", "role": "Martha" }
   ],
   "5001443": [
-    {
-      "name": "Флоренс Пью",
-      "role": "Yelena Belova"
-    },
-    {
-      "name": "Харрисон Форд",
-      "role": "Thaddeus «Thunderbolt» Ross"
-    },
-    {
-      "name": "Себастиан Стэн",
-      "role": "Bucky Barnes"
-    },
-    {
-      "name": "Айо Эдебири",
-      "role": "—"
-    },
-    {
-      "name": "Рэйчел Вайс",
-      "role": "Melina Vostokoff"
-    },
-    {
-      "name": "Даниэль Брюль",
-      "role": "Baron Zemo, слухи"
-    },
-    {
-      "name": "Уайатт Рассел",
-      "role": "John Walker"
-    },
-    {
-      "name": "Ольга Куриленко",
-      "role": "Antonia Dreykov"
-    },
-    {
-      "name": "Льюис Пуллман",
-      "role": "Robert Reynolds"
-    },
-    {
-      "name": "Джеральдин Висванатан",
-      "role": "Mel"
-    }
+    { "name": "Флоренс Пью", "role": "Yelena Belova" },
+    { "name": "Харрисон Форд", "role": "Thaddeus «Thunderbolt» Ross" },
+    { "name": "Себастиан Стэн", "role": "Bucky Barnes" },
+    { "name": "Айо Эдебири", "role": "—" },
+    { "name": "Рэйчел Вайс", "role": "Melina Vostokoff" },
+    { "name": "Даниэль Брюль", "role": "Baron Zemo, слухи" },
+    { "name": "Уайатт Рассел", "role": "John Walker" },
+    { "name": "Ольга Куриленко", "role": "Antonia Dreykov" },
+    { "name": "Льюис Пуллман", "role": "Robert Reynolds" },
+    { "name": "Джеральдин Висванатан", "role": "Mel" }
   ],
   "930000": [
-    {
-      "name": "Брайан Крэнстон",
-      "role": "Ned Fleming"
-    },
-    {
-      "name": "Джеймс Франко",
-      "role": "Laird Mayhew"
-    },
-    {
-      "name": "Зои Дойч",
-      "role": "Stephanie Fleming"
-    },
-    {
-      "name": "Меган Маллалли",
-      "role": "Barb Fleming"
-    },
-    {
-      "name": "Гриффин Глюк",
-      "role": "Scotty Fleming"
-    },
-    {
-      "name": "Кигэн-Майкл Ки",
-      "role": "Gustav"
-    },
-    {
-      "name": "Седрик «Развлекатель»",
-      "role": "Lou Dunne (в титрах: Cedric the Entertainer)"
-    },
-    {
-      "name": "Зак Перлман",
-      "role": "Kevin Dingle"
-    },
-    {
-      "name": "Адам Дивайн",
-      "role": "Tyson Modell"
-    },
-    {
-      "name": "Боб Стивенсон",
-      "role": "Jerry in Graphics"
-    }
+    { "name": "Брайан Крэнстон", "role": "Ned Fleming" },
+    { "name": "Джеймс Франко", "role": "Laird Mayhew" },
+    { "name": "Зои Дойч", "role": "Stephanie Fleming" },
+    { "name": "Меган Маллалли", "role": "Barb Fleming" },
+    { "name": "Гриффин Глюк", "role": "Scotty Fleming" },
+    { "name": "Кигэн-Майкл Ки", "role": "Gustav" },
+    { "name": "Седрик «Развлекатель»", "role": "Lou Dunne (в титрах: Cedric the Entertainer)" },
+    { "name": "Зак Перлман", "role": "Kevin Dingle" },
+    { "name": "Адам Дивайн", "role": "Tyson Modell" },
+    { "name": "Боб Стивенсон", "role": "Jerry in Graphics" }
   ],
   "999563": [
-    {
-      "name": "Тарек Будали",
-      "role": "Yassine"
-    },
-    {
-      "name": "Филипп Лашо",
-      "role": "Fred"
-    },
-    {
-      "name": "Шарлотта Габрис",
-      "role": "Lisa"
-    },
-    {
-      "name": "Надеж Дабровски",
-      "role": "Claire (в титрах: Andy)"
-    },
-    {
-      "name": "Давид Марсе",
-      "role": "Stan"
-    },
-    {
-      "name": "Жюльен Аррути",
-      "role": "L'aveugle"
-    },
-    {
-      "name": "Байа Белаль",
-      "role": "Ima"
-    },
-    {
-      "name": "Филипп Дюкен",
-      "role": "Dussart"
-    },
-    {
-      "name": "Зинедин Суалем",
-      "role": "Le père de Yassine"
-    },
-    {
-      "name": "Дуду Маста",
-      "role": "Daoud"
-    }
+    { "name": "Тарек Будали", "role": "Yassine" },
+    { "name": "Филипп Лашо", "role": "Fred" },
+    { "name": "Шарлотта Габрис", "role": "Lisa" },
+    { "name": "Надеж Дабровски", "role": "Claire (в титрах: Andy)" },
+    { "name": "Давид Марсе", "role": "Stan" },
+    { "name": "Жюльен Аррути", "role": "L'aveugle" },
+    { "name": "Байа Белаль", "role": "Ima" },
+    { "name": "Филипп Дюкен", "role": "Dussart" },
+    { "name": "Зинедин Суалем", "role": "Le père de Yassine" },
+    { "name": "Дуду Маста", "role": "Daoud" }
   ],
   "893245": [
-    {
-      "name": "Майкл Китон",
-      "role": "Ray Kroc"
-    },
-    {
-      "name": "Ник Офферман",
-      "role": "Dick McDonald"
-    },
-    {
-      "name": "Джон Кэрролл Линч",
-      "role": "Mac McDonald"
-    },
-    {
-      "name": "Линда Карделлини",
-      "role": "Joan Smith"
-    },
-    {
-      "name": "Б.Дж. Новак",
-      "role": "Harry J. Sonneborn"
-    },
-    {
-      "name": "Лора Дерн",
-      "role": "Ethel Kroc"
-    },
-    {
-      "name": "Джастин Брук",
-      "role": "Fred Turner"
-    },
-    {
-      "name": "Кэти Нилэнд",
-      "role": "June Martino"
-    },
-    {
-      "name": "Патрик Уилсон",
-      "role": "Rollie Smith"
-    },
-    {
-      "name": "Грифф Ферст",
-      "role": "Jim Zien"
-    }
+    { "name": "Майкл Китон", "role": "Ray Kroc" },
+    { "name": "Ник Офферман", "role": "Dick McDonald" },
+    { "name": "Джон Кэрролл Линч", "role": "Mac McDonald" },
+    { "name": "Линда Карделлини", "role": "Joan Smith" },
+    { "name": "Б.Дж. Новак", "role": "Harry J. Sonneborn" },
+    { "name": "Лора Дерн", "role": "Ethel Kroc" },
+    { "name": "Джастин Брук", "role": "Fred Turner" },
+    { "name": "Кэти Нилэнд", "role": "June Martino" },
+    { "name": "Патрик Уилсон", "role": "Rollie Smith" },
+    { "name": "Грифф Ферст", "role": "Jim Zien" }
   ],
   "503853": [
-    {
-      "name": "Лиам Нисон",
-      "role": "Ottway"
-    },
-    {
-      "name": "Фрэнк Грилло",
-      "role": "Diaz"
-    },
-    {
-      "name": "Дермот Малруни",
-      "role": "Talget"
-    },
-    {
-      "name": "Даллас Робертс",
-      "role": "Henrick"
-    },
-    {
-      "name": "Джо Андерсон",
-      "role": "Flannery"
-    },
-    {
-      "name": "Нонсо Анози",
-      "role": "Burke"
-    },
-    {
-      "name": "Джеймс Бэдж Дейл",
-      "role": "Lewenden"
-    },
-    {
-      "name": "Бен Эрнандес Брей",
-      "role": "Hernandez (в титрах: Ben Hernandez)"
-    },
-    {
-      "name": "Энн Опеншоу",
-      "role": "Ottway's Wife"
-    },
-    {
-      "name": "Питер Гиргес",
-      "role": "Company Clerk"
-    }
+    { "name": "Лиам Нисон", "role": "Ottway" },
+    { "name": "Фрэнк Грилло", "role": "Diaz" },
+    { "name": "Дермот Малруни", "role": "Talget" },
+    { "name": "Даллас Робертс", "role": "Henrick" },
+    { "name": "Джо Андерсон", "role": "Flannery" },
+    { "name": "Нонсо Анози", "role": "Burke" },
+    { "name": "Джеймс Бэдж Дейл", "role": "Lewenden" },
+    { "name": "Бен Эрнандес Брей", "role": "Hernandez (в титрах: Ben Hernandez)" },
+    { "name": "Энн Опеншоу", "role": "Ottway's Wife" },
+    { "name": "Питер Гиргес", "role": "Company Clerk" }
   ],
   "725190": [
-    {
-      "name": "Майлз Теллер",
-      "role": "Andrew"
-    },
-    {
-      "name": "Дж.К. Симмонс",
-      "role": "Fletcher"
-    },
-    {
-      "name": "Пол Райзер",
-      "role": "Jim Neimann"
-    },
-    {
-      "name": "Мелисса Бенойст",
-      "role": "Nicole"
-    },
-    {
-      "name": "Остин Стоуэлл",
-      "role": "Ryan"
-    },
-    {
-      "name": "Нат Лэнг",
-      "role": "Carl Tanner"
-    },
-    {
-      "name": "Крис Малки",
-      "role": "Uncle Frank"
-    },
-    {
-      "name": "Дэймон Гаптон",
-      "role": "Mr. Kramer"
-    },
-    {
-      "name": "Сюанн Споук",
-      "role": "Aunt Emma"
-    },
-    {
-      "name": "Макс Кэш",
-      "role": "Dorm Neighbor"
-    }
+    { "name": "Майлз Теллер", "role": "Andrew" },
+    { "name": "Дж.К. Симмонс", "role": "Fletcher" },
+    { "name": "Пол Райзер", "role": "Jim Neimann" },
+    { "name": "Мелисса Бенойст", "role": "Nicole" },
+    { "name": "Остин Стоуэлл", "role": "Ryan" },
+    { "name": "Нат Лэнг", "role": "Carl Tanner" },
+    { "name": "Крис Малки", "role": "Uncle Frank" },
+    { "name": "Дэймон Гаптон", "role": "Mr. Kramer" },
+    { "name": "Сюанн Споук", "role": "Aunt Emma" },
+    { "name": "Макс Кэш", "role": "Dorm Neighbor" }
   ],
   "409372": [
-    {
-      "name": "Джозеф Гордон-Левитт",
-      "role": "Tom"
-    },
-    {
-      "name": "Зои Дешанель",
-      "role": "Summer"
-    },
-    {
-      "name": "Джеффри Аренд",
-      "role": "McKenzie"
-    },
-    {
-      "name": "Хлоя Грейс Морец",
-      "role": "Rachel"
-    },
-    {
-      "name": "Мэттью Грей Гублер",
-      "role": "Paul"
-    },
-    {
-      "name": "Кларк Грегг",
-      "role": "Vance"
-    },
-    {
-      "name": "Патриша Белчер",
-      "role": "Millie"
-    },
-    {
-      "name": "Рейчел Бостон",
-      "role": "Alison"
-    },
-    {
-      "name": "Минка Келли",
-      "role": "Autumn - Girl at Interview"
-    },
-    {
-      "name": "Чарльз Уолкер",
-      "role": "Millie's New Husband"
-    }
+    { "name": "Джозеф Гордон-Левитт", "role": "Tom" },
+    { "name": "Зои Дешанель", "role": "Summer" },
+    { "name": "Джеффри Аренд", "role": "McKenzie" },
+    { "name": "Хлоя Грейс Морец", "role": "Rachel" },
+    { "name": "Мэттью Грей Гублер", "role": "Paul" },
+    { "name": "Кларк Грегг", "role": "Vance" },
+    { "name": "Патриша Белчер", "role": "Millie" },
+    { "name": "Рейчел Бостон", "role": "Alison" },
+    { "name": "Минка Келли", "role": "Autumn - Girl at Interview" },
+    { "name": "Чарльз Уолкер", "role": "Millie's New Husband" }
   ],
   "870": [
-    {
-      "name": "Том Круз",
-      "role": "David Aames"
-    },
-    {
-      "name": "Пенелопа Крус",
-      "role": "Sofia Serrano"
-    },
-    {
-      "name": "Кэмерон Диас",
-      "role": "Julie Gianni"
-    },
-    {
-      "name": "Курт Рассел",
-      "role": "McCabe"
-    },
-    {
-      "name": "Джейсон Ли",
-      "role": "Brian Shelby"
-    },
-    {
-      "name": "Ноа Тейлор",
-      "role": "Edmund Ventura"
-    },
-    {
-      "name": "Тимоти Сполл",
-      "role": "Thomas Tipp"
-    },
-    {
-      "name": "Тильда Суинтон",
-      "role": "Rebecca Dearborn"
-    },
-    {
-      "name": "Майкл Шеннон",
-      "role": "Aaron"
-    },
-    {
-      "name": "Дилэйна Митчелл",
-      "role": "David's Assistant (в титрах: Delaina Mitchell)"
-    }
+    { "name": "Том Круз", "role": "David Aames" },
+    { "name": "Пенелопа Крус", "role": "Sofia Serrano" },
+    { "name": "Кэмерон Диас", "role": "Julie Gianni" },
+    { "name": "Курт Рассел", "role": "McCabe" },
+    { "name": "Джейсон Ли", "role": "Brian Shelby" },
+    { "name": "Ноа Тейлор", "role": "Edmund Ventura" },
+    { "name": "Тимоти Сполл", "role": "Thomas Tipp" },
+    { "name": "Тильда Суинтон", "role": "Rebecca Dearborn" },
+    { "name": "Майкл Шеннон", "role": "Aaron" },
+    { "name": "Дилэйна Митчелл", "role": "David's Assistant (в титрах: Delaina Mitchell)" }
   ],
   "5273": [
-    {
-      "name": "Майк Майерс",
-      "role": "Shrek, озвучка"
-    },
-    {
-      "name": "Эдди Мерфи",
-      "role": "Donkey, озвучка"
-    },
-    {
-      "name": "Кэмерон Диас",
-      "role": "Princess Fiona, озвучка"
-    },
-    {
-      "name": "Джули Эндрюс",
-      "role": "Queen, озвучка"
-    },
-    {
-      "name": "Антонио Бандерас",
-      "role": "Puss In Boots, озвучка"
-    },
-    {
-      "name": "Джон Клиз",
-      "role": "King, озвучка"
-    },
-    {
-      "name": "Руперт Эверетт",
-      "role": "Prince Charming, озвучка"
-    },
-    {
-      "name": "Дженнифер Сондерс",
-      "role": "Fairy Godmother, озвучка"
-    },
-    {
-      "name": "Арон Уорнер",
-      "role": "Wolf, озвучка"
-    },
-    {
-      "name": "Келли Эсбёри",
-      "role": "Page / Elf / Nobleman / Nobleman's Son, озвучка"
-    }
+    { "name": "Майк Майерс", "role": "Shrek, озвучка" },
+    { "name": "Эдди Мерфи", "role": "Donkey, озвучка" },
+    { "name": "Кэмерон Диас", "role": "Princess Fiona, озвучка" },
+    { "name": "Джули Эндрюс", "role": "Queen, озвучка" },
+    { "name": "Антонио Бандерас", "role": "Puss In Boots, озвучка" },
+    { "name": "Джон Клиз", "role": "King, озвучка" },
+    { "name": "Руперт Эверетт", "role": "Prince Charming, озвучка" },
+    { "name": "Дженнифер Сондерс", "role": "Fairy Godmother, озвучка" },
+    { "name": "Арон Уорнер", "role": "Wolf, озвучка" },
+    { "name": "Келли Эсбёри", "role": "Page / Elf / Nobleman / Nobleman's Son, озвучка" }
   ],
   "4484": [
-    {
-      "name": "Брендан Фрейзер",
-      "role": "Rick O'Connell"
-    },
-    {
-      "name": "Рэйчел Вайс",
-      "role": "Evelyn Carnahan"
-    },
-    {
-      "name": "Джон Ханна",
-      "role": "Jonathan Carnahan"
-    },
-    {
-      "name": "Арнольд Вослу",
-      "role": "Imhotep"
-    },
-    {
-      "name": "Кевин Дж. О’Коннор",
-      "role": "Beni Gabor"
-    },
-    {
-      "name": "Джонатан Хайд",
-      "role": "Dr. Allen Chamberlain"
-    },
-    {
-      "name": "Одед Фер",
-      "role": "Ardeth Bay"
-    },
-    {
-      "name": "Эрик Авари",
-      "role": "Dr. Terrence Bey"
-    },
-    {
-      "name": "Стивен Данэм",
-      "role": "Mr. Henderson"
-    },
-    {
-      "name": "Кори Джонсон",
-      "role": "Mr. Daniels"
-    }
+    { "name": "Брендан Фрейзер", "role": "Rick O'Connell" },
+    { "name": "Рэйчел Вайс", "role": "Evelyn Carnahan" },
+    { "name": "Джон Ханна", "role": "Jonathan Carnahan" },
+    { "name": "Арнольд Вослу", "role": "Imhotep" },
+    { "name": "Кевин Дж. О’Коннор", "role": "Beni Gabor" },
+    { "name": "Джонатан Хайд", "role": "Dr. Allen Chamberlain" },
+    { "name": "Одед Фер", "role": "Ardeth Bay" },
+    { "name": "Эрик Авари", "role": "Dr. Terrence Bey" },
+    { "name": "Стивен Данэм", "role": "Mr. Henderson" },
+    { "name": "Кори Джонсон", "role": "Mr. Daniels" }
   ],
   "6589797": [
-    {
-      "name": "Кайл Марвин",
-      "role": "Carey"
-    },
-    {
-      "name": "Дакота Джонсон",
-      "role": "Julie"
-    },
-    {
-      "name": "Майкл Анджело Ковино",
-      "role": "Paul"
-    },
-    {
-      "name": "Адриа Архона",
-      "role": "Ashley"
-    },
-    {
-      "name": "Николас Браун",
-      "role": "Matt"
-    },
-    {
-      "name": "Дэвид Кастанеда",
-      "role": "Fede"
-    },
-    {
-      "name": "О. Т. Фагбенли",
-      "role": "Brent"
-    },
-    {
-      "name": "Саймон Уэбстер",
-      "role": "Russ"
-    },
-    {
-      "name": "Чарльз Гиллеспи",
-      "role": "Jackson"
-    },
-    {
-      "name": "Нахема Риччи",
-      "role": "Antoneta (в титрах: Nahema Ricci)"
-    }
+    { "name": "Кайл Марвин", "role": "Carey" },
+    { "name": "Дакота Джонсон", "role": "Julie" },
+    { "name": "Майкл Анджело Ковино", "role": "Paul" },
+    { "name": "Адриа Архона", "role": "Ashley" },
+    { "name": "Николас Браун", "role": "Matt" },
+    { "name": "Дэвид Кастанеда", "role": "Fede" },
+    { "name": "О. Т. Фагбенли", "role": "Brent" },
+    { "name": "Саймон Уэбстер", "role": "Russ" },
+    { "name": "Чарльз Гиллеспи", "role": "Jackson" },
+    { "name": "Нахема Риччи", "role": "Antoneta (в титрах: Nahema Ricci)" }
   ],
   "14346": [
-    {
-      "name": "Чау Бель Дин",
-      "role": "Les Yamakasi - Baseball (Oliver Chen) (в титрах: Chau Belle)"
-    },
-    {
-      "name": "Уильямс Белль",
-      "role": "Les Yamakasi - L'Araignée (Bruno Duris)"
-    },
-    {
-      "name": "Малик Диуф",
-      "role": "Les Yamakasi - La Belette (Malik N'Diaye)"
-    },
-    {
-      "name": "Ян Нутра",
-      "role": "Les Yamakasi - Zicmu (Ousmane Dadjacan)"
-    },
-    {
-      "name": "Гилен Н’Губа-Бойеке",
-      "role": "Les Yamakasi - Rocket (Abdou N'Goto)"
-    },
-    {
-      "name": "Шарль Перьер",
-      "role": "Les Yamakasi - Sitting Bull (Ousmane Bana)"
-    },
-    {
-      "name": "Лоран Пьемонтези",
-      "role": "Les Yamakasi - Tango (Michel Lucas)"
-    },
-    {
-      "name": "Махер Камун",
-      "role": "Vincent"
-    },
-    {
-      "name": "Бруно Флендер",
-      "role": "Michelin"
-    },
-    {
-      "name": "Амель Джемель",
-      "role": "Aila"
-    }
+    { "name": "Чау Бель Дин", "role": "Les Yamakasi - Baseball (Oliver Chen) (в титрах: Chau Belle)" },
+    { "name": "Уильямс Белль", "role": "Les Yamakasi - L'Araignée (Bruno Duris)" },
+    { "name": "Малик Диуф", "role": "Les Yamakasi - La Belette (Malik N'Diaye)" },
+    { "name": "Ян Нутра", "role": "Les Yamakasi - Zicmu (Ousmane Dadjacan)" },
+    { "name": "Гилен Н’Губа-Бойеке", "role": "Les Yamakasi - Rocket (Abdou N'Goto)" },
+    { "name": "Шарль Перьер", "role": "Les Yamakasi - Sitting Bull (Ousmane Bana)" },
+    { "name": "Лоран Пьемонтези", "role": "Les Yamakasi - Tango (Michel Lucas)" },
+    { "name": "Махер Камун", "role": "Vincent" },
+    { "name": "Бруно Флендер", "role": "Michelin" },
+    { "name": "Амель Джемель", "role": "Aila" }
   ],
   "81522": [
-    {
-      "name": "Сирил Раффаэлли",
-      "role": "Capt. Damien Tomaso"
-    },
-    {
-      "name": "Давид Белль",
-      "role": "Leïto"
-    },
-    {
-      "name": "Тони Д’Амарио",
-      "role": "K2"
-    },
-    {
-      "name": "Биби Насери",
-      "role": "Taha Bemamud (в титрах: Larbi Naceri)"
-    },
-    {
-      "name": "Дани Вериссимо",
-      "role": "Lola (в титрах: Dany Verissimo)"
-    },
-    {
-      "name": "Франсуа Шатто",
-      "role": "Krüger"
-    },
-    {
-      "name": "Николас Войрион",
-      "role": "Corsini"
-    },
-    {
-      "name": "Патрик Оливье",
-      "role": "Le colonel"
-    },
-    {
-      "name": "Самир Гесми",
-      "role": "Jamel"
-    },
-    {
-      "name": "Жером Гаднер",
-      "role": "K2 boy 1"
-    }
+    { "name": "Сирил Раффаэлли", "role": "Capt. Damien Tomaso" },
+    { "name": "Давид Белль", "role": "Leïto" },
+    { "name": "Тони Д’Амарио", "role": "K2" },
+    { "name": "Биби Насери", "role": "Taha Bemamud (в титрах: Larbi Naceri)" },
+    { "name": "Дани Вериссимо", "role": "Lola (в титрах: Dany Verissimo)" },
+    { "name": "Франсуа Шатто", "role": "Krüger" },
+    { "name": "Николас Войрион", "role": "Corsini" },
+    { "name": "Патрик Оливье", "role": "Le colonel" },
+    { "name": "Самир Гесми", "role": "Jamel" },
+    { "name": "Жером Гаднер", "role": "K2 boy 1" }
   ]
 }
 	

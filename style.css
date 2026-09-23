@@ -63,7 +63,6 @@ body {
     height: 100%;
     width: 70%;
     object-fit: cover;
-    /* Маска: левый край прозрачный, к 30% ширины становится полностью непрозрачным */
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%);
     mask-image: linear-gradient(to right, transparent 0%, black 30%);
 }
@@ -74,40 +73,27 @@ body {
     transition: box-shadow 0.3s ease;
 }
 
-/* Цвета свечения — интенсивность уменьшена вдвое */
 .btn-twitch {
     --glow-color: rgba(145, 70, 255, 0.18);
     --glow-bright: rgba(145, 70, 255, 0.45);
     box-shadow: 0 0 4px var(--glow-color);
+    animation-delay: 3s;
 }
 
 .btn-telegram {
     --glow-color: rgba(34, 158, 217, 0.18);
     --glow-bright: rgba(34, 158, 217, 0.45);
     box-shadow: 0 0 4px var(--glow-color);
+    animation-delay: 6s;
 }
 
-.btn-order {
-    --glow-color: rgba(229, 185, 92, 0.18);
-    --glow-bright: rgba(229, 185, 92, 0.48);
-    box-shadow: 0 0 4px var(--glow-color);
-}
-
-/* Сдвиг: Twitch в 3с, Telegram в 6с, Заказать в 9с. Цикл = 12с */
-.btn-twitch    { animation-delay: 3s; }
-.btn-telegram  { animation-delay: 6s; }
-.btn-order     { animation-delay: 9s; }
-
-/* Усиление при наведении — тоже вдвое слабее */
 .btn-twitch:hover,
-.btn-telegram:hover,
-.btn-order:hover {
+.btn-telegram:hover {
     box-shadow:
         0 0 8px var(--glow-bright),
         0 0 12px var(--glow-color);
 }
 
-/* Вспышка в начале цикла, затем длинное затухание */
 @keyframes pulse-glow {
     0% {
         box-shadow:
@@ -149,14 +135,12 @@ body {
 
 /* ===== МОБИЛЬНАЯ И ДЕСКТОПНАЯ АДАПТАЦИЯ ===== */
 
-/* Плавный скролл глючит на мобилке — отключаем только там */
 @media (max-width: 1023px) {
     html {
         scroll-behavior: auto;
     }
 }
 
-/* На больших мониторах (QHD и выше) немного расширяем контент */
 @media (min-width: 2000px) {
     .max-w-\[1400px\] {
         max-width: 1600px;
