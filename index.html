@@ -82,7 +82,7 @@
 
         <!-- Слайд 1 -->
         <div class="banner-slide absolute inset-0" data-slide="0">
-            <img src="last/1.jpg" alt="" class="banner-img">
+            <img src="" alt="" class="banner-img" onerror="this.style.opacity=0">
             <div class="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 via-30% to-transparent to-60%"></div>
             <div class="relative h-full flex flex-col pt-14 sm:pt-20 pb-12 px-5 sm:px-12 max-w-[620px]">
                 <div>
@@ -97,7 +97,7 @@
 
         <!-- Слайды 2–5 — те же классы, что и в слайде 1 -->
         <div class="banner-slide absolute inset-0 opacity-0 pointer-events-none" data-slide="1">
-            <img src="last/2.jpg" alt="" class="banner-img">
+            <img src="" alt="" class="banner-img" onerror="this.style.opacity=0">
             <div class="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 via-30% to-transparent to-60%"></div>
             <div class="relative h-full flex flex-col pt-14 sm:pt-20 pb-12 px-5 sm:px-12 max-w-[620px]">
                 <div>
@@ -111,7 +111,7 @@
         </div>
 
         <div class="banner-slide absolute inset-0 opacity-0 pointer-events-none" data-slide="2">
-            <img src="last/3.jpg" alt="" class="banner-img">
+            <img src="" alt="" class="banner-img" onerror="this.style.opacity=0">
             <div class="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 via-30% to-transparent to-60%"></div>
             <div class="relative h-full flex flex-col pt-14 sm:pt-20 pb-12 px-5 sm:px-12 max-w-[620px]">
                 <div>
@@ -125,7 +125,7 @@
         </div>
 
         <div class="banner-slide absolute inset-0 opacity-0 pointer-events-none" data-slide="3">
-            <img src="last/4.jpg" alt="" class="banner-img">
+            <img src="" alt="" class="banner-img" onerror="this.style.opacity=0">
             <div class="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 via-30% to-transparent to-60%"></div>
             <div class="relative h-full flex flex-col pt-14 sm:pt-20 pb-12 px-5 sm:px-12 max-w-[620px]">
                 <div>
@@ -139,7 +139,7 @@
         </div>
 
         <div class="banner-slide absolute inset-0 opacity-0 pointer-events-none" data-slide="4">
-            <img src="last/5.jpg" alt="" class="banner-img">
+            <img src="" alt="" class="banner-img" onerror="this.style.opacity=0">
             <div class="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 via-30% to-transparent to-60%"></div>
             <div class="relative h-full flex flex-col pt-14 sm:pt-20 pb-12 px-5 sm:px-12 max-w-[620px]">
                 <div>
@@ -405,7 +405,9 @@
         </svg>
     </a>
 
-    <script src="script.js"></script>
+    <script src="movies.js" defer></script>	
+    <script src="data.js" defer></script>
+    <script src="script.js" defer></script>
 	<script data-goatcounter="https://myhahawk.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 </body>
