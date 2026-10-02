@@ -1,1 +1,13 @@
 input.css
+publish.bat
+publish.py
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.log
+.vscode/
+.idea/
+*.bak
+*.tmp
+*~
+node_modules/

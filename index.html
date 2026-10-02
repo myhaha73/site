@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="robots" content="noindex, nofollow">
 	<title>Enrris stream — список фильмов</title>
-	<link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="tailwind.css">
-    <link rel="stylesheet" href="style.css">
+	<link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="css/tailwind.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body id="top" class="bg-[#0a0a0a] text-gray-200 min-h-screen">
 
@@ -22,7 +22,7 @@
             <a href="#top" title="Наверх"
                onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
                class="inline-flex items-center gap-2 sm:gap-3 shrink-0 cursor-pointer">
-                <img src="avatar.png" alt=""
+                <img src="images/avatar.png" alt=""
                      class="w-14 h-14 sm:w-16 sm:h-16 xl:w-20 xl:h-20 rounded-full border-[3px] border-[#e5b95c] object-cover shadow-[0_0_20px_rgba(229,185,92,0.3)] hover:opacity-90 transition-all duration-300 hover:scale-110 shrink-0">
                 <span class="font-bold text-base sm:text-lg xl:text-2xl tracking-wide whitespace-nowrap">
                     <span class="text-[#e5b95c]">Enrris</span>
@@ -43,14 +43,14 @@
                 <!-- Twitch -->
                 <a href="https://www.twitch.tv/enrris" target="_blank"
                    class="social-glow-btn btn-twitch w-10 h-10 xl:w-[130px] xl:h-12 rounded-xl bg-[#1a1a1a] border border-[#2a2a2a] text-xs text-gray-300 hover:border-[#9146FF] hover:text-white transition-all flex items-center justify-center gap-2">
-                    <img src="icons2/twitch.png" alt="" class="w-6 h-6 object-contain shrink-0">
+                    <img src="images/icons//twitch.png" alt="" class="w-6 h-6 object-contain shrink-0">
                     <span class="hidden xl:inline whitespace-nowrap">Twitch</span>
                 </a>
 
                 <!-- Telegram -->
                 <a href="https://t.me/ennonline" target="_blank"
                    class="social-glow-btn btn-telegram w-10 h-10 xl:w-[130px] xl:h-12 rounded-xl bg-[#1a1a1a] border border-[#2a2a2a] text-xs text-gray-300 hover:border-[#229ED9] hover:text-white transition-all flex items-center justify-center gap-2">
-                    <img src="icons2/telegram.png" alt="" class="w-6 h-6 object-contain shrink-0">
+                    <img src="images/icons//telegram.png" alt="" class="w-6 h-6 object-contain shrink-0">
                     <span class="hidden xl:inline whitespace-nowrap">Telegram</span>
                 </a>
 
@@ -193,7 +193,7 @@
             <tr>
     <th class="sticky sticky-th bg-[#161616] text-[#e5b95c] px-2 py-3 text-center border-b border-r border-[#222] font-semibold text-xs md:text-sm w-[36px] md:w-[40px] lg:w-[50px]">#</th>
     <th class="sticky sticky-th bg-[#161616] text-[#e5b95c] px-2 md:px-3 py-3 text-center border-b border-r border-[#222] font-semibold text-xs md:text-sm">Название</th>
-    <th class="sticky sticky-th bg-[#161616] text-[#e5b95c] px-1 md:px-2 py-3 text-center border-b border-r border-[#222] font-semibold text-xs md:text-sm w-[100px] lg:w-[130px]">Зритель</th>
+    <th class="sticky sticky-th bg-[#161616] text-[#e5b95c] px-1 md:px-2 py-3 text-center border-b border-r border-[#222] font-semibold text-xs md:text-sm w-[100px] lg:w-[130px]">Чаттерс</th>
     <th class="sticky sticky-th bg-[#161616] text-[#e5b95c] px-1 py-3 text-center border-b border-r border-[#222] font-semibold text-xs md:text-sm w-[92px] lg:w-[110px] whitespace-nowrap">Дата</th>
     <th class="sticky sticky-th bg-[#161616] text-[#e5b95c] px-1 md:px-2 py-3 text-center border-b border-r border-[#222] font-semibold text-xs md:text-sm w-[92px] lg:w-[110px]">Оценка</th>
     <th class="hidden lg:table-cell sticky sticky-th bg-[#161616] text-[#e5b95c] px-2 py-3 text-center border-b border-[#222] font-semibold text-sm lg:w-[180px] xl:w-[240px]">Комментарий</th>
@@ -225,7 +225,7 @@
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 mb-6">
 
             <div class="bg-[#141414] border border-[#222] rounded-xl px-3 sm:px-4 relative flex items-center justify-center hover:border-[#e5b95c]/40 transition-colors h-[72px] sm:h-[80px]">
-                <img src="icons2/film.png" alt="" class="absolute left-3 sm:left-10 w-8 sm:w-10 h-8 sm:h-10 object-contain">
+                <img src="images/icons//film.png" alt="" class="absolute left-3 sm:left-10 w-8 sm:w-10 h-8 sm:h-10 object-contain">
                 <div class="flex flex-col items-center min-w-0 pl-10 sm:pl-12">
                     <span class="text-[11px] sm:text-[13px] uppercase tracking-wider text-gray-500 font-bold">Фильмы</span>
                     <b id="count-films" class="text-xl sm:text-2xl text-[#e5b95c]">0</b>
@@ -233,7 +233,7 @@
             </div>
 
             <div class="bg-[#141414] border border-[#222] rounded-xl px-3 sm:px-4 relative flex items-center justify-center hover:border-[#e5b95c]/40 transition-colors h-[72px] sm:h-[80px]">
-                <img src="icons2/serial.png" alt="" class="absolute left-3 sm:left-10 w-9 sm:w-12 h-9 sm:h-12 object-contain">
+                <img src="images/icons//serial.png" alt="" class="absolute left-3 sm:left-10 w-9 sm:w-12 h-9 sm:h-12 object-contain">
                 <div class="flex flex-col items-center min-w-0 pl-10 sm:pl-12">
                     <span class="text-[11px] sm:text-[13px] uppercase tracking-wider text-gray-500 font-bold">Сериалы</span>
                     <b id="count-series" class="text-xl sm:text-2xl text-[#e5b95c]">0</b>
@@ -241,7 +241,7 @@
             </div>
 
             <div class="bg-[#141414] border border-[#222] rounded-xl px-3 sm:px-4 relative flex items-center justify-center hover:border-[#e5b95c]/40 transition-colors h-[72px] sm:h-[80px]">
-                <img src="icons2/anime.png" alt="" class="absolute left-3 sm:left-10 w-8 sm:w-10 h-8 sm:h-10 object-contain">
+                <img src="images/icons//anime.png" alt="" class="absolute left-3 sm:left-10 w-8 sm:w-10 h-8 sm:h-10 object-contain">
                 <div class="flex flex-col items-center min-w-0 pl-10 sm:pl-12">
                     <span class="text-[11px] sm:text-[13px] uppercase tracking-wider text-gray-500 font-bold">Аниме</span>
                     <b id="count-anime" class="text-xl sm:text-2xl text-[#e5b95c]">0</b>
@@ -249,7 +249,7 @@
             </div>
 
             <div class="bg-[#141414] border border-[#222] rounded-xl px-3 sm:px-4 relative flex items-center justify-center hover:border-[#e5b95c]/40 transition-colors h-[72px] sm:h-[80px]">
-                <img src="icons2/mult.png" alt="" class="absolute left-3 sm:left-10 w-8 sm:w-10 h-8 sm:h-10 object-contain">
+                <img src="images/icons//mult.png" alt="" class="absolute left-3 sm:left-10 w-8 sm:w-10 h-8 sm:h-10 object-contain">
                 <div class="flex flex-col items-center min-w-0 pl-10 sm:pl-12">
                     <span class="text-[11px] sm:text-[13px] uppercase tracking-wider text-gray-500 font-bold">Мультфильмы</span>
                     <b id="count-mult" class="text-xl sm:text-2xl text-[#e5b95c]">0</b>
@@ -257,7 +257,7 @@
             </div>
 
             <div class="bg-[#141414] border-2 border-[#e5b95c] rounded-xl px-3 sm:px-4 relative flex items-center justify-center h-[72px] sm:h-[80px] col-span-2 md:col-span-1">
-                <img src="icons2/zakaz.png" alt="" class="absolute left-3 sm:left-10 w-8 sm:w-10 h-8 sm:h-10 object-contain">
+                <img src="images/icons//zakaz.png" alt="" class="absolute left-3 sm:left-10 w-8 sm:w-10 h-8 sm:h-10 object-contain">
                 <div class="flex flex-col items-center min-w-0 pl-10 sm:pl-12">
                     <span class="text-[11px] sm:text-[13px] uppercase tracking-wider text-gray-500 font-bold">Заказные</span>
                     <b id="count-ordered" class="text-xl sm:text-2xl text-[#e5b95c]">0</b>
@@ -269,22 +269,21 @@
         <!-- Нижние 3 плашки -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 
-            <div class="bg-[#121212] border border-gray-800 rounded-xl p-5 flex flex-col items-center justify-center gap-2 text-center h-auto md:h-[200px]">
-                <img src="icons2/top.png" alt="" class="w-16 sm:w-20 h-16 sm:h-20 object-contain">
+             <div class="bg-[#121212] border border-gray-800 rounded-xl px-5 pb-5 pt-2 flex flex-col items-center gap-2 text-center h-auto md:h-[200px]">
+                <img src="images/icons//top.png" alt="" class="h-18 w-auto object-contain">
                 <h4 class="text-[16px] sm:text-[18px] uppercase tracking-wider text-gray-500 font-bold">Топ заказчик</h4>
-                <span id="top-ordered-name" class="text-base sm:text-lg font-bold text-[#e5b95c] leading-tight break-words">—</span>
-                <span class="text-xs text-gray-500">заказов: <b id="top-ordered-count" class="text-amber-500">0</b></span>
+                <div id="top-ordered-list" class="flex flex-wrap justify-center gap-x-6 gap-y-1 w-full text-center text-lg"></div>
             </div>
 
-            <div class="bg-[#121212] border border-gray-800 rounded-xl p-5 flex flex-col items-center justify-center gap-2 text-center h-auto md:h-[200px]">
-                <img src="icons2/shans.png" alt="" class="w-14 sm:w-16 h-14 sm:h-16 object-contain">
+            <div class="bg-[#121212] border border-gray-800 rounded-xl px-5 pb-5 pt-2 flex flex-col items-center gap-2 text-center h-auto md:h-[200px]">
+                <img src="images/icons//shans.png" alt="" class="h-18 w-auto object-contain">
                 <h4 class="text-[16px] sm:text-[18px] uppercase tracking-wider text-gray-500 font-bold">Везунчик</h4>
-                <span id="top-lucky-name" class="text-base sm:text-lg font-bold text-[#e5b95c] leading-tight break-words">—</span>
+                <span id="top-lucky-name" class="text-lg sm:text-xl font-bold text-[#e5b95c] leading-tight break-words">—</span>
                 <span class="text-xs text-gray-500">рулеток: <b id="top-lucky-count" class="text-amber-500">0</b></span>
             </div>
 
-            <div class="bg-[#121212] border border-gray-800 rounded-xl p-5 flex flex-col items-center justify-center gap-2 text-center h-auto md:h-[200px]">
-                <img src="icons2/genre.png" alt="" class="w-16 sm:w-20 h-16 sm:h-20 object-contain">
+            <div class="bg-[#121212] border border-gray-800 rounded-xl px-5 pb-5 pt-2 flex flex-col items-center gap-2 text-center h-auto md:h-[200px]">
+                <img src="images/icons//genre.png" alt="" class="h-18 w-auto object-contain">
                 <h4 class="text-[16px] sm:text-[18px] uppercase tracking-wider text-gray-500 font-bold">Топ 3 жанра</h4>
                 <div id="top-genres-list" class="flex flex-col gap-0.5 text-sm w-full"></div>
             </div>
@@ -297,14 +296,17 @@
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 lg:gap-4 max-w-[1200px] mx-auto">
 
         <!-- Фильм 1 -->
-        <a href="https://www.kinopoisk.ru/film/4541746/" target="_blank"
+        <a href="https://www.kinopoisk.ru/film/454079/" target="_blank"
            class="group bg-[#121212] border border-gray-800 rounded-xl overflow-hidden hover:border-[#e5b95c]/50 transition-all duration-300 hover:-translate-y-1">
             <div class="aspect-[2/3] bg-[#0d0d0d] overflow-hidden">
-                <span class="text-gray-700 text-3xl">🎬</span>
+                <img src="images/posters/454079.jpg"
+                     alt="Средь бела дня"
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                     onerror="this.style.display='none'">
             </div>
             <div class="p-2 text-center">
                 <p class="text-gray-200 text-sm font-semibold leading-tight group-hover:text-[#e5b95c] transition-colors">
-                    Название фильма
+                    Средь бела дня
                 </p>
             </div>
         </a>
@@ -405,9 +407,9 @@
         </svg>
     </a>
 
-    <script src="movies.js" defer></script>	
-    <script src="data.js" defer></script>
-    <script src="script.js" defer></script>
+    <script src="js/movies.js" defer></script>	
+    <script src="js/data.js" defer></script>
+    <script src="js/script.js" defer></script>
 	<script data-goatcounter="https://myhahawk.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 </body>
