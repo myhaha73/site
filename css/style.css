@@ -11,7 +11,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ===== БАННЕР: плавное перетекание слайдов ===== */
 .banner-slide {
     opacity: 0;
     pointer-events: none;
@@ -23,7 +22,6 @@ body {
     pointer-events: auto;
 }
 
-/* Медленный зум постеров (эффект "кен-бёрнс") */
 .banner-slide img:first-child {
     transform: scale(1);
     transition: transform 6s ease-out;
@@ -33,7 +31,6 @@ body {
     transform: scale(1.08);
 }
 
-/* Текст внутри слайда плавно выезжает */
 .banner-slide > div:last-child {
     opacity: 0;
     transform: translateY(15px);
@@ -45,7 +42,6 @@ body {
     transform: translateY(0);
 }
 
-/* Точки-индикаторы */
 .banner-dot {
     transition: all 0.4s ease;
 }
@@ -55,7 +51,6 @@ body {
     width: 24px;
 }
 
-/* Картинка в баннере с плавным исчезанием слева */
 .banner-img {
     position: absolute;
     right: 0;
@@ -67,7 +62,6 @@ body {
     mask-image: linear-gradient(to right, transparent 0%, black 30%);
 }
 
-/* ===== СВЕЧЕНИЕ И МЕРЦАНИЕ КНОПОК ===== */
 .social-glow-btn {
     animation: pulse-glow 12s infinite ease-in-out;
     transition: box-shadow 0.3s ease;
@@ -108,7 +102,6 @@ body {
     }
 }
 
-/* ===== ВКЛАДКИ В РАСКРЫТОЙ СТРОКЕ ФИЛЬМА ===== */
 .detail-tab-btn {
     padding: 5px 12px;
     font-size: 12px;
@@ -133,8 +126,6 @@ body {
     border-color: #2a2a2a;
 }
 
-/* ===== МОБИЛЬНАЯ И ДЕСКТОПНАЯ АДАПТАЦИЯ ===== */
-
 @media (max-width: 1023px) {
     html {
         scroll-behavior: auto;
@@ -147,7 +138,6 @@ body {
     }
 }
 
-/* ===== ДИНАМИЧЕСКИЕ ОТСТУПЫ ДЛЯ STICKY ===== */
 :root {
     --nav-height: 100px;
     --search-height: 64px;

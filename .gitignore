@@ -12,3 +12,4 @@ Desktop.ini
 *~
 node_modules/
 tailwind.bat
+obfuscate.bat

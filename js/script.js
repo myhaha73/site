@@ -1,16 +1,12 @@
-// Данные о фильмах (загружаются из movies.js)
 const movies = window.moviesData || [];
 
-// ===== ЖАНРЫ (исключаем дублирующие типы) =====
 const EXCLUDE_GENRES = ['мультфильм', 'аниме', 'фильм', 'сериал'];
 
-// ===== ЯРЛЫКИ ТИПОВ СВЯЗЕЙ =====
 const RELATION_LABELS = {
     SEQUEL:  'Сиквел',
     PREQUEL: 'Приквел'
 };
 
-// ===== ЯРЛЫКИ ТИПОВ КАССОВЫХ СБОРОВ =====
 const BOX_OFFICE_LABELS = {
     BUDGET: 'Бюджет',
     RUS:    'Сборы (Россия)',
@@ -19,13 +15,11 @@ const BOX_OFFICE_LABELS = {
     CIS:    'Сборы (СНГ)'
 };
 
-// ===== ИКОНКИ ДЛЯ ИНФОРМАЦИИ О ФИЛЬМЕ =====
 const INFO_ICONS = {
     "Рейтинг Кинопоиска": "images/icons/kp.png",
     "Рейтинг IMDb":       "images/icons/imdb.png"
 };
 
-// ===== ФОРМАТИРОВАНИЕ СПИСКА НИКОВ =====
 function formatViewer(viewer) {
     if (!viewer || viewer === '—') return '—';
     return viewer
@@ -35,14 +29,12 @@ function formatViewer(viewer) {
         .join('<br>');
 }
 
-// ===== ОГРАНИЧЕНИЕ ЖАНРОВ (максимум 4) =====
 const MAX_GENRES = 4;
 function limitGenres(genres) {
     if (!genres || genres.length <= MAX_GENRES) return genres || [];
     return genres.slice(0, MAX_GENRES);
 }
 
-// ===== ФОРМАТИРОВАНИЕ ДЕНЕГ =====
 function formatMoney(amount, currency, symbol) {
     if (amount == null) return '—';
     const num = new Intl.NumberFormat('ru-RU').format(amount);
@@ -51,10 +43,6 @@ function formatMoney(amount, currency, symbol) {
     return sym ? `${num} ${sym}` : `${num}${cur}`;
 }
 
-// ===== ГЕНЕРАЦИЯ ССЫЛКИ НА СВЯЗАННЫЙ ФИЛЬМ =====
-// Если есть filmId — ведём на страницу фильма.
-// Если нет — ведём на поиск Кинопоиска по названию
-// (у /relations поле filmId часто пустое).
 function getRelationLink(item) {
     const id = item.filmId || item.kinopoiskId || item.id;
     if (id) {
@@ -65,20 +53,17 @@ function getRelationLink(item) {
     return `https://www.kinopoisk.ru/index.php?kp_query=${encodeURIComponent(name)}`;
 }
 
-// Подставляем актёров, жанры, рейтинг и доп. инфу из data.js
 if (window.siteData) {
     movies.forEach(m => {
         const idMatch = m.link.match(/\/(\d+)\//);
         const id = idMatch ? idMatch[1] : '';
 
-        // 1. Актёры
         if (window.siteData.actorsById && window.siteData.actorsById[id]) {
             m.actors = window.siteData.actorsById[id].map(a => ({ name: a.name, role: a.role }));
         } else {
             m.actors = [];
         }
 
-        // 2. Жанры
         if (window.siteData.styleById && window.siteData.styleById[id]) {
             const raw = window.siteData.styleById[id];
             const filtered = raw.filter(g => !EXCLUDE_GENRES.includes(g.toLowerCase()));
@@ -87,17 +72,14 @@ if (window.siteData) {
             m.genres = [];
         }
 
-        // 3. Рейтинг Кинопоиска
         if (window.siteData.ratingsById && window.siteData.ratingsById[id]) {
             m.ratingKinopoisk = window.siteData.ratingsById[id];
         } else {
             m.ratingKinopoisk = null;
         }
 
-        // 4. Информация о фильме
         m.info = buildInfo(id, m);
 
-        // 5. Интересные факты
         if (window.siteData.factsById && window.siteData.factsById[id]) {
             m.facts = window.siteData.factsById[id]
                 .map(f => (typeof f === 'string' ? f : (f && f.text) ? f.text : ''))
@@ -106,8 +88,8 @@ if (window.siteData) {
             m.facts = [];
         }
 
-        // 6. Сиквелы / приквелы / похожие
         if (window.siteData.sequelsById && window.siteData.sequelsById[id]) {
+
             const all = window.siteData.sequelsById[id];
 
             m.related = all
@@ -131,8 +113,6 @@ if (window.siteData) {
                 return oa - ob;
             });				
 
-            // Названия, уже показанные в «Сиквелах и приквелах»,
-            // чтобы не дублировать их в «Похожих».
             const relatedKeys = new Set(
                 m.related.map(r => r.title.trim().toLowerCase())
             );
@@ -155,7 +135,6 @@ if (window.siteData) {
     console.warn("⚠️ data.js не загружен или window.siteData отсутствует!");
 }
 
-// ===== СБОРКА БЛОКА «ИНФОРМАЦИЯ О ФИЛЬМЕ» =====
 function buildInfo(id, movie) {
     const info = {};
     const meta = window.siteData.filmsMetaById && window.siteData.filmsMetaById[id];
@@ -195,7 +174,6 @@ function buildInfo(id, movie) {
     return Object.keys(info).length ? info : null;
 }
 
-// ===== ХЕЛПЕР ДЛЯ РЕНДЕРА ИНФО-СТРОК С ИКОНКАМИ =====
 function renderInfoRow(key, value) {
     const iconPath = INFO_ICONS[key];
     const iconHtml = iconPath
@@ -216,7 +194,6 @@ movies.forEach(m => {
     }
 });
 
-// ===== ПОДСЧЁТ СТАТИСТИКИ =====
 function updateStats() {
     const filmsSet = new Set();
     const seriesSet = new Set();
@@ -243,7 +220,6 @@ function updateStats() {
     document.getElementById('total-count').innerText = movies.length;
 }
 
-// ===== ПОДСЧЁТ ТОПОВ =====
 function updateTopUsers() {
     const orderedCounts = {};
     const luckyCounts = {};
@@ -305,7 +281,6 @@ function updateTopUsers() {
     if (luckyCountEl) luckyCountEl.innerText = topCount;
 }
 
-// ===== ЗАПОЛНЕНИЕ ТАБЛИЦЫ =====
 const tableBody = document.getElementById('table-body');
 
 function renderTable(list) {
@@ -478,7 +453,6 @@ function renderTable(list) {
         tableBody.appendChild(detailRow);
     });
 
-    // ===== МОБИЛЬНЫЕ КАРТОЧКИ =====
     const mobileContainer = document.getElementById('mobile-cards');
     if (mobileContainer) {
         mobileContainer.innerHTML = list.map(movie => {
@@ -584,7 +558,6 @@ function renderTable(list) {
     }
 }
 
-// ===== ОБНОВЛЕНИЕ БАННЕРОВ ПОСЛЕДНИМИ ФИЛЬМАМИ =====
 function updateBannerSlides() {
     const lastMovies = movies.slice(-5).reverse();
     const slides = document.querySelectorAll('.banner-slide');
@@ -624,7 +597,6 @@ function updateBannerSlides() {
     });
 }
 
-// ===== ПОИСК ПО НАЗВАНИЮ =====
 const searchInput = document.getElementById('search-input');
 const totalCountEl = document.getElementById('total-count');
 const catalogEl = document.getElementById('catalog');
@@ -649,7 +621,6 @@ if (searchInput) {
     });
 }
 
-// ===== ИНИЦИАЛИЗАЦИЯ ТАЙМЕРА БАННЕРА =====
 (function initBanner() {
     const slides = document.querySelectorAll('.banner-slide');
     const dots = document.querySelectorAll('.banner-dot');
@@ -674,7 +645,6 @@ if (searchInput) {
     showSlide(0);
 })();
 
-// ===== ТОП 3 ЖАНРА =====
 function updateTopGenres() {
     const counts = {};
 
@@ -700,10 +670,8 @@ function updateTopGenres() {
     }).join('');
 }
 
-// ===== АВТО-ПЕРЕСЧЁТ НОМЕРОВ =====
 movies.forEach((m, i) => { m.num = i + 1; });
 
-// ===== ЗАПУСК =====
 renderTable(movies);
 updateStats();
 updateTopUsers();
@@ -750,7 +718,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// ===== СЛУЧАЙНАЯ ЦИТАТА В ПОДВАЛЕ =====
 const quotes = [
     { text: "Большинство дней в году не запоминаются ничем. Они начинаются. Они кончаются.", author: "", film: "500 дней лета (2009)" },
     { text: "Жизнь — как коробка шоколадных конфет. Никогда не знаешь, что внутри.", author: "Форрест Гамп", film: "Форрест Гамп (1994)" },
@@ -833,7 +800,6 @@ function renderRandomQuote() {
 
 renderRandomQuote();
 
-// ===== ДИНАМИЧЕСКАЯ ВЫСОТА STICKY-ЭЛЕМЕНТОВ =====
 function updateStickyOffsets() {
     const nav = document.querySelector('nav');
     const searchWrap = document.querySelector('.sticky-search');
