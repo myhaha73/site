@@ -11,3 +11,4 @@ Desktop.ini
 *.tmp
 *~
 node_modules/
+tailwind.bat
