@@ -2662,5 +2662,29 @@ window.moviesData = [
     "viewer": "aero",
     "rating": "—",
     "comment": ""
+  },
+  {
+    "num": 223,
+    "title": "Оппенгеймер (2023)",
+    "link": "https://www.kinopoisk.ru/film/4664634/",
+    "type": "фильм",
+    "date": "05.10.2026",
+    "ordered": "Заказ",
+    "chance": "",
+    "viewer": "Dreamwuzker",
+    "rating": "—",
+    "comment": ""
+  },
+  {
+    "num": 224,
+    "title": "По соображениям совести (2016)",
+    "link": "https://www.kinopoisk.ru/film/649917/",
+    "type": "фильм",
+    "date": "07.10.2026",
+    "ordered": "Заказ",
+    "chance": "",
+    "viewer": "CMEX_U3_TEMHOTbI",
+    "rating": "—",
+    "comment": ""
   }
 ];
