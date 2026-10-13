@@ -20,6 +20,14 @@ const INFO_ICONS = {
     "Рейтинг IMDb":       "images/icons/imdb.png"
 };
 
+const ORDERED_LABELS = {
+    'Заказ':           'Донат',
+    'Заказ / Рулетка': 'Донат / Рулетка'
+};
+function formatOrdered(v) {
+    return ORDERED_LABELS[v] || v;
+}
+
 function formatViewer(viewer) {
     if (!viewer || viewer === '—') return '—';
     return viewer
@@ -314,7 +322,7 @@ function renderTable(list) {
             </div>
             <div class="flex items-center gap-2 shrink-0 ml-auto">
                 ${movie.ordered && movie.ordered !== '—'
-                    ? `<span class="text-xs px-2 py-1 rounded bg-[#1f1a0e] border border-[#e5b95c]/30 text-[#e5b95c] whitespace-nowrap">${movie.ordered}</span>`
+                    ? `<span class="text-xs px-2 py-1 rounded bg-[#1f1a0e] border border-[#e5b95c]/30 text-[#e5b95c] whitespace-nowrap">${formatOrdered(movie.ordered)}</span>`
                     : ''}
                 ${movie.chance
                     ? `<span title="Шанс лота в рулетке" class="text-xs px-2 py-1 rounded bg-red-500/10 border border-red-500/30 text-red-400 font-normal whitespace-nowrap">${movie.chance}</span>`
@@ -475,7 +483,7 @@ function renderTable(list) {
                     ${movie.genres && movie.genres.length ? `<div class="text-[9px] text-gray-500 uppercase tracking-wider font-semibold mt-1">${movie.genres.join(' · ')}</div>` : ''}
                     <div class="flex items-center gap-2 mt-2 flex-wrap">${ratingHtml}</div>
                     <div class="flex items-center gap-2 mt-2 flex-wrap">
-                        ${movie.ordered && movie.ordered !== '—' ? `<span class="text-[10px] px-2 py-0.5 rounded bg-[#1f1a0e] border border-[#e5b95c]/30 text-[#e5b95c]">${movie.ordered}</span>` : ''}
+                        ${movie.ordered && movie.ordered !== '—' ? `<span class="text-[10px] px-2 py-0.5 rounded bg-[#1f1a0e] border border-[#e5b95c]/30 text-[#e5b95c]">${formatOrdered(movie.ordered)}</span>` : ''}
                         ${movie.chance ? `<span class="text-[10px] px-2 py-0.5 rounded bg-red-500/10 border border-red-500/30 text-red-400 font-normal">${movie.chance}</span>` : ''}
                     </div>
                     <div class="text-[11px] text-gray-500 mt-2 break-words">
@@ -588,7 +596,7 @@ function updateBannerSlides() {
         if (metaEl) {
             let metaText = '';
             if (movie.ordered && movie.ordered !== '—') {
-                metaText = (movie.viewer && movie.viewer !== '—') ? `${movie.ordered} · ${movie.viewer}` : movie.ordered;
+                metaText = (movie.viewer && movie.viewer !== '—') ? `${formatOrdered(movie.ordered)} · ${movie.viewer}` : formatOrdered(movie.ordered);
             } else if (movie.viewer && movie.viewer !== '—') {
                 metaText = movie.viewer;
             }

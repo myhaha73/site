@@ -2698,5 +2698,17 @@ window.moviesData = [
     "viewer": "CMEX_U3_TEMHOTbI",
     "rating": "—",
     "comment": ""
+  },
+  {
+    "num": 226,
+    "title": "Ночь в раю (2020)",
+    "link": "https://www.kinopoisk.ru/film/1338011/",
+    "type": "фильм",
+    "date": "13.10.2026",
+    "ordered": "Рулетка",
+    "chance": "27%",
+    "viewer": "itsmishakim",
+    "rating": "—",
+    "comment": ""
   }
 ];
