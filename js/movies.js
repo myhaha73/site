@@ -2710,5 +2710,29 @@ window.moviesData = [
     "viewer": "itsmishakim",
     "rating": "—",
     "comment": ""
+  },
+  {
+    "num": 227,
+    "title": "Девять (2009)",
+    "link": "https://www.kinopoisk.ru/film/180577/",
+    "type": "мультфильм",
+    "date": "15.10.2026",
+    "ordered": "Заказ",
+    "chance": "",
+    "viewer": "Barmarjera",
+    "rating": "—",
+    "comment": ""
+  },
+  {
+    "num": 228,
+    "title": "Поток (2024)",
+    "link": "https://www.kinopoisk.ru/film/4502606/",
+    "type": "мультфильм",
+    "date": "16.10.2026",
+    "ordered": "Заказ",
+    "chance": "",
+    "viewer": "aero",
+    "rating": "—",
+    "comment": ""
   }
 ];
