@@ -352,9 +352,6 @@
   .h-18 {
     height: calc(var(--spacing) * 18);
   }
-  .h-\[16px\] {
-    height: 16px;
-  }
   .h-\[18px\] {
     height: 18px;
   }

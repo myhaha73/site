@@ -332,7 +332,7 @@ function renderTable(list) {
     </td>
     <td class="px-2 py-3 text-center text-gray-400 text-sm border-b border-r border-[#1f1f1f] break-all leading-tight">${formatViewer(movie.viewer)}</td>
     <td class="px-1 py-3 text-center text-gray-400 text-sm border-b border-r border-[#1f1f1f] whitespace-nowrap">${movie.date}</td>
-    <td class="px-2 md:px-3 py-3 text-center border-b border-r border-[#1f1f1f]">
+    <td class="hidden px-2 md:px-3 py-3 text-center border-b border-r border-[#1f1f1f]">
         <div class="flex items-center justify-center gap-1.5 flex-wrap">
             ${(movie.rating >= 1 && movie.rating <= 4)
                 ? `<img src="images/icons/${movie.rating}stars.png" alt="${movie.rating}★" class="inline-block h-[18px] w-auto shrink-0 align-middle">`
@@ -346,7 +346,7 @@ function renderTable(list) {
         const detailRow = document.createElement('tr');
         detailRow.className = 'hidden';
         detailRow.innerHTML = `
-    <td colspan="6" class="px-6 pt-2 pb-5 bg-[#0d0d0d] border-b border-[#222]">
+    <td colspan="5" class="px-6 pt-2 pb-5 bg-[#0d0d0d] border-b border-[#222]">
 
         <div class="detail-tabs flex flex-wrap gap-1 mb-4">
             <button type="button" class="detail-tab-btn active" data-dtab="cast">В главных ролях</button>
@@ -467,9 +467,7 @@ function renderTable(list) {
             const match = movie.link.match(/\/(\d+)\//);
             const posterId = match ? match[1] : '';
 
-            const ratingHtml = (movie.rating >= 1 && movie.rating <= 4)
-                ? `<img src="images/icons/${movie.rating}stars.png" alt="" class="inline-block h-[16px] w-auto align-middle">`
-                : `<span class="text-gray-500 text-xs">${movie.rating}</span>`;
+            const ratingHtml = '';
 
             return `
             <div class="p-4 cursor-pointer hover:bg-[#141414] transition-colors" data-mnum="${movie.num}">
