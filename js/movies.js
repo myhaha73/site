@@ -2758,5 +2758,17 @@ window.moviesData = [
     "viewer": "aero",
     "rating": "—",
     "comment": ""
+  },
+  {
+    "num": 231,
+    "title": "Я ругаюсь (2025)",
+    "link": "https://www.kinopoisk.ru/film/8472578/",
+    "type": "фильм",
+    "date": "20.10.2026",
+    "ordered": "Заказ",
+    "chance": "",
+    "viewer": "IncoreTV",
+    "rating": "—",
+    "comment": ""
   }
 ];
