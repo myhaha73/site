@@ -2764,10 +2764,22 @@ window.moviesData = [
     "title": "Я ругаюсь (2025)",
     "link": "https://www.kinopoisk.ru/film/8472578/",
     "type": "фильм",
-    "date": "20.10.2026",
+    "date": "19.10.2026",
     "ordered": "Заказ",
     "chance": "",
     "viewer": "IncoreTV",
+    "rating": "—",
+    "comment": ""
+  },
+  {
+    "num": 232,
+    "title": "Гран туризмо (2023)",
+    "link": "https://www.kinopoisk.ru/film/1044002/",
+    "type": "фильм",
+    "date": "20.10.2026",
+    "ordered": "Заказ",
+    "chance": "",
+    "viewer": "aero",
     "rating": "—",
     "comment": ""
   }
