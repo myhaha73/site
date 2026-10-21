@@ -2782,5 +2782,17 @@ window.moviesData = [
     "viewer": "aero",
     "rating": "—",
     "comment": ""
+  },
+  {
+    "num": 233,
+    "title": "F1 (2025)",
+    "link": "https://www.kinopoisk.ru/film/5003510/",
+    "type": "фильм",
+    "date": "21.10.2026",
+    "ordered": "Заказ",
+    "chance": "",
+    "viewer": "Аноним",
+    "rating": "—",
+    "comment": ""
   }
 ];
