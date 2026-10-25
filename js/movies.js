@@ -2794,5 +2794,17 @@ window.moviesData = [
     "viewer": "Аноним",
     "rating": "—",
     "comment": ""
+  },
+  {
+    "num": 234,
+    "title": "Аватар: Легенда об Аанге (сериал 2004 – 2008)",
+    "link": "https://www.kinopoisk.ru/series/401152/",
+    "type": "мультфильм",
+    "date": "25.10.2026",
+    "ordered": "—",
+    "chance": "",
+    "viewer": "—",
+    "rating": "—",
+    "comment": ""
   }
 ];
