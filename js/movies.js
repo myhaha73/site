@@ -2805,6 +2805,18 @@ window.moviesData = [
     "chance": "",
     "viewer": "—",
     "rating": "—",
+    "comment": "1-8 серии"
+  },
+  {
+    "num": 235,
+    "title": "Персонаж (2006)",
+    "link": "https://www.kinopoisk.ru/film/93547/",
+    "type": "фильм",
+    "date": "29.10.2026",
+    "ordered": "Рулетка",
+    "chance": "",
+    "viewer": "Barmarjera",
+    "rating": "—",
     "comment": ""
   }
 ];
