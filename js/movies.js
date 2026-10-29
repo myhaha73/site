@@ -2827,7 +2827,7 @@ window.moviesData = [
     "date": "29.10.2026",
     "ordered": "Рулетка",
     "chance": "",
-    "viewer": "aero",
+    "viewer": "CMEX_U3_TEMHOTbI",
     "rating": "—",
     "comment": ""
   }
