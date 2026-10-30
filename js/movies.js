@@ -2830,5 +2830,29 @@ window.moviesData = [
     "viewer": "CMEX_U3_TEMHOTbI",
     "rating": "—",
     "comment": ""
+  },
+  {
+    "num": 237,
+    "title": "Экзистенция (1999)",
+    "link": "https://www.kinopoisk.ru/film/7569/",
+    "type": "фильм",
+    "date": "30.10.2026",
+    "ordered": "—",
+    "chance": "",
+    "viewer": "—",
+    "rating": "—",
+    "comment": ""
+  },
+  {
+    "num": 238,
+    "title": "Рокки Бальбоа (2006)",
+    "link": "https://www.kinopoisk.ru/film/195273/",
+    "type": "фильм",
+    "date": "30.10.2026",
+    "ordered": "Заказ",
+    "chance": "",
+    "viewer": "ROZOVII_SOSOCHEK",
+    "rating": "—",
+    "comment": ""
   }
 ];
