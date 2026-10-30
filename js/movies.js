@@ -2826,7 +2826,7 @@ window.moviesData = [
     "type": "фильм",
     "date": "29.10.2026",
     "ordered": "Рулетка",
-    "chance": "",
+    "chance": "70.3%",
     "viewer": "CMEX_U3_TEMHOTbI",
     "rating": "—",
     "comment": ""
