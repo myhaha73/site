@@ -2854,5 +2854,17 @@ window.moviesData = [
     "viewer": "ROZOVII_SOSOCHEK",
     "rating": "—",
     "comment": ""
+  },
+  {
+    "num": 239,
+    "title": "После прочтения сжечь (2008)",
+    "link": "https://www.kinopoisk.ru/film/309423/",
+    "type": "фильм",
+    "date": "31.10.2026",
+    "ordered": "—",
+    "chance": "",
+    "viewer": "—",
+    "rating": "—",
+    "comment": ""
   }
 ];
