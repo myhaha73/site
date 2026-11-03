@@ -2866,5 +2866,53 @@ window.moviesData = [
     "viewer": "—",
     "rating": "—",
     "comment": ""
+  },
+  {
+    "num": 240,
+    "title": "Куб (1997)",
+    "link": "https://www.kinopoisk.ru/film/20590/",
+    "type": "фильм",
+    "date": "03.11.2026",
+    "ordered": "Заказ",
+    "chance": "",
+    "viewer": "misterflup",
+    "rating": "—",
+    "comment": ""
+  },
+  {
+    "num": 241,
+    "title": "Неоспоримый 2 (2005)",
+    "link": "https://www.kinopoisk.ru/film/102428/",
+    "type": "фильм",
+    "date": "скоро",
+    "ordered": "Заказ",
+    "chance": "",
+    "viewer": "aero",
+    "rating": "—",
+    "comment": ""
+  },
+  {
+    "num": 242,
+    "title": "Неоспоримый 3 (2010)",
+    "link": "https://www.kinopoisk.ru/film/402614/",
+    "type": "фильм",
+    "date": "скоро",
+    "ordered": "Заказ",
+    "chance": "",
+    "viewer": "aero",
+    "rating": "—",
+    "comment": ""
+  },
+  {
+    "num": 243,
+    "title": "Неоспоримый 4 (2016)",
+    "link": "https://www.kinopoisk.ru/film/808701/",
+    "type": "фильм",
+    "date": "скоро",
+    "ordered": "Заказ",
+    "chance": "",
+    "viewer": "aero",
+    "rating": "—",
+    "comment": ""
   }
 ];
