@@ -565,7 +565,8 @@ function renderTable(list) {
 }
 
 function updateBannerSlides() {
-    const lastMovies = movies.slice(-5).reverse();
+    const availableMovies = movies.filter(m => !(m.date || '').toLowerCase().includes('скоро'));
+    const lastMovies = availableMovies.slice(-5).reverse();
     const slides = document.querySelectorAll('.banner-slide');
 
     slides.forEach((slide, index) => {
@@ -601,6 +602,67 @@ function updateBannerSlides() {
             metaEl.textContent = metaText;
         }
     });
+}
+
+function renderUpcoming() {
+    const upcomingMovies = movies.filter(m => (m.date || '').toLowerCase().includes('скоро'));
+    const section = document.getElementById('upcoming-section');
+    const container = document.getElementById('upcoming-container');
+
+    if (!section || !container) return;
+
+    // Если нет фильмов со словом "скоро", скрываем блок
+    if (upcomingMovies.length === 0) {
+        section.classList.add('hidden');
+        return;
+    }
+    
+    section.classList.remove('hidden');
+
+    // Настраиваем контейнер
+    if (upcomingMovies.length === 1) {
+        container.className = "flex justify-center pb-4";
+    } else if (upcomingMovies.length === 2) {
+        container.className = "flex justify-center gap-4 pb-4 flex-col sm:flex-row";
+    } else {
+        container.className = "flex gap-4 pb-4 overflow-x-auto snap-x snap-mandatory";
+    }
+
+    container.innerHTML = upcomingMovies.map(movie => {
+        const match = movie.link.match(/\/(\d+)\//);
+        const posterId = match ? match[1] : '';
+
+        // Задаем ширину карточки (горизонтальные картинки можно делать шире)
+        let widthClass = "";
+        if (upcomingMovies.length === 1) {
+            widthClass = "w-full max-w-[800px]"; // Один баннер на всю ширину (но не гигантский на 4K)
+        } else if (upcomingMovies.length === 2) {
+            widthClass = "w-full sm:w-[calc(50%-0.5rem)] max-w-[600px]"; // Два баннера делят место пополам
+        } else {
+            widthClass = "w-[300px] sm:w-[400px] shrink-0 snap-start"; // Для карусели — широкие слайды
+        }
+
+        return `
+            <div class="${widthClass} group relative bg-[#141414] border border-[#222] rounded-xl overflow-hidden hover:border-[#e5b95c]/50 transition-colors">
+                <!-- Заменили aspect-[2/3] на aspect-video (16:9) для горизонтальных картинок -->
+                <div class="aspect-video bg-[#0d0d0d] overflow-hidden relative">
+                    <img src="images/last/${posterId}.jpg" alt="" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
+                         onerror="this.style.display='none'">
+                    
+                    <!-- Бейдж "Скоро" -->
+                    <div class="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-[#e5b95c]/50 text-[#e5b95c] text-xs sm:text-sm font-bold px-3 py-1.5 rounded-lg shadow-xl uppercase tracking-widest">
+                        Скоро
+                    </div>
+                </div>
+                <div class="p-3 text-center bg-[#121212]">
+                    <a href="${movie.link}" target="_blank" class="text-gray-200 text-sm sm:text-base font-semibold hover:text-[#e5b95c] transition-colors line-clamp-2">
+                        ${movie.title}
+                    </a>
+                </div>
+            </div>
+        `;
+    }).join('');
 }
 
 const searchInput = document.getElementById('search-input');
@@ -683,6 +745,7 @@ updateStats();
 updateTopUsers();
 updateBannerSlides();
 updateTopGenres();
+renderUpcoming();
 
 document.addEventListener('DOMContentLoaded', () => {
     const tabBtns = document.querySelectorAll('.tab-btn');

@@ -150,6 +150,14 @@
     </div>
 </section>
 
+<!-- ================= БЛОК СКОРО ================= -->
+<section id="upcoming-section" class="max-w-[1400px] mx-auto px-4 sm:px-6 py-4 hidden">
+    <div id="upcoming-container" class="flex gap-4 pb-4">
+        <!-- Сюда JS будет вставлять карточки -->
+    </div>
+</section>
+<!-- ============================================== -->
+
 <section id="catalog" class="max-w-[1400px] mx-auto px-4 sm:px-6 py-6 sm:py-8">
     <div class="flex items-center justify-between gap-4 mb-6 flex-wrap">
         <h2 class="text-white text-2xl sm:text-3xl font-bold shrink-0">Список</h2>
@@ -368,14 +376,36 @@
         </div>
     </footer>
 	
-    <a href="#top"
-       onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-       aria-label="Наверх"
-       class="fixed bottom-4 right-4 sm:bottom-20 sm:right-50 z-[200] w-10 h-10 rounded-full bg-[#1a1a1a]/80 border border-[#2a2a2a] text-gray-300 hover:text-[#e5b95c] hover:border-[#e5b95c]/40 transition-all duration-300 flex items-center justify-center backdrop-blur-sm opacity-60 hover:opacity-100 cursor-pointer">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
-        </svg>
-    </a>
+    <!-- Блок плавающих кнопок навигации -->
+    <div class="fixed bottom-4 right-4 sm:bottom-20 sm:right-8 z-[200] flex flex-col items-end gap-3">
+        
+        <!-- Кнопка Вниз -->
+        <button onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'})"
+                class="group flex items-center justify-end gap-2 cursor-pointer transition-all duration-300 opacity-60 hover:opacity-100">
+            <span class="text-xs font-semibold text-gray-400 group-hover:text-[#e5b95c] transition-colors bg-[#1a1a1a]/80 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-[#2a2a2a] shadow-lg">
+                Вниз
+            </span>
+            <div class="w-10 h-10 rounded-full bg-[#1a1a1a]/80 border border-[#2a2a2a] text-gray-300 group-hover:text-[#e5b95c] group-hover:border-[#e5b95c]/40 flex items-center justify-center backdrop-blur-sm shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                </svg>
+            </div>
+        </button>
+
+        <!-- Кнопка Наверх -->
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+                class="group flex items-center justify-end gap-2 cursor-pointer transition-all duration-300 opacity-60 hover:opacity-100">
+            <span class="text-xs font-semibold text-gray-400 group-hover:text-[#e5b95c] transition-colors bg-[#1a1a1a]/80 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-[#2a2a2a] shadow-lg">
+                Наверх
+            </span>
+            <div class="w-10 h-10 rounded-full bg-[#1a1a1a]/80 border border-[#2a2a2a] text-gray-300 group-hover:text-[#e5b95c] group-hover:border-[#e5b95c]/40 flex items-center justify-center backdrop-blur-sm shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+                </svg>
+            </div>
+        </button>
+
+    </div>
 	
     <script src="js/movies.js" defer></script>	
     <script src="js/data.js" defer></script>
