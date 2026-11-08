@@ -28,6 +28,27 @@ function formatOrdered(v) {
     return ORDERED_LABELS[v] || v;
 }
 
+function formatFact(text) {
+    // Список слов, которые мы считаем маркерами спойлера
+    const spoilerKeywords = ['в конце', 'финал', 'умирает', 'оказывается', 'на самом деле', 'развязка', 'сюжетный поворот', 'погибает', 'минуте'];
+    const lowerText = text.toLowerCase();
+    
+    // Проверяем, есть ли стоп-слово
+    const isSpoiler = spoilerKeywords.some(keyword => lowerText.includes(keyword));
+
+    if (isSpoiler) {
+        return `
+            <div class="relative group/spoiler cursor-pointer spoiler-wrapper">
+                <span class="spoiler-text transition-all duration-300 filter blur-[4px] select-none opacity-50 group-hover/spoiler:opacity-100">${text}</span>
+                <div class="spoiler-btn absolute inset-0 flex items-center justify-center transition-opacity duration-300">
+                    <span class="bg-[#1a1a1a] border border-[#e5b95c]/50 text-[#e5b95c] px-3 py-1 rounded text-xs font-bold shadow-lg">⚠️ Показать спойлер</span>
+                </div>
+            </div>
+        `;
+    }
+    return text;
+}
+
 function formatViewer(viewer) {
     if (!viewer || viewer === '—') return '—';
     return viewer
@@ -397,7 +418,7 @@ function renderTable(list) {
                     ${movie.facts.map(f => `
                         <li class="flex items-start gap-2">
                             <span class="text-[#e5b95c] shrink-0">•</span>
-                            <span>${f}</span>
+                            <span>${formatFact(f)}</span>
                         </li>
                     `).join('')}
                    </ul>`
@@ -524,7 +545,7 @@ function renderTable(list) {
 
                 <div class="detail-tab-content hidden" data-dcontent="facts">
                     ${movie.facts && movie.facts.length
-                        ? `<ul class="space-y-2 text-sm text-gray-300">${movie.facts.map(f=>`<li>• ${f}</li>`).join('')}</ul>`
+                        ? `<ul class="space-y-2 text-sm text-gray-300">${movie.facts.map(f=>`<li>• ${formatFact(f)}</li>`).join('')}</ul>`
                         : '<p class="text-gray-500 text-sm">Нет данных</p>'}
                 </div>
 
@@ -850,6 +871,19 @@ const quotes = [
     { text: "Время — самый драгоценный ресурс.", author: "Джо Блэк", film: "Знакомьтесь Джо Блэк (1998)" },
     { text: "Голливуд изменился, но магия осталась.", author: "Рик Далтон", film: "Однажды в… Голливуде (2019)" }
 ];
+
+// Обработчик клика по спойлерам (делегирование событий)
+document.addEventListener('click', (e) => {
+    const wrapper = e.target.closest('.spoiler-wrapper');
+    if (wrapper) {
+        const text = wrapper.querySelector('.spoiler-text');
+        const btn = wrapper.querySelector('.spoiler-btn');
+        
+        // Убираем блюр и скрываем кнопку
+        text.classList.remove('blur-[4px]', 'select-none', 'opacity-50');
+        btn.classList.add('hidden');
+    }
+});
 
 function renderRandomQuote() {
     const block = document.getElementById('quote-block');
