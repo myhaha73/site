@@ -2980,10 +2980,34 @@ window.moviesData = [
     "title": "Начало (2010)",
     "link": "https://www.kinopoisk.ru/film/447301/",
     "type": "фильм",
-    "date": "скоро",
+    "date": "09.11.2026",
     "ordered": "Заказ",
     "chance": "",
     "viewer": "interes",
+    "rating": "—",
+    "comment": ""
+  },
+  {
+    "num": 250,
+    "title": "Побег из Шоушенка (1994)",
+    "link": "https://www.kinopoisk.ru/film/326/",
+    "type": "фильм",
+    "date": "10.11.2026",
+    "ordered": "Рулетка",
+    "chance": "Выкуп",
+    "viewer": "NgKortis",
+    "rating": "—",
+    "comment": ""
+  },
+  {
+    "num": 251,
+    "title": "Диктатор (2012)",
+    "link": "https://www.kinopoisk.ru/film/518040/",
+    "type": "фильм",
+    "date": "скоро",
+    "ordered": "Рулетка",
+    "chance": "46%",
+    "viewer": "alexr",
     "rating": "—",
     "comment": ""
   }
