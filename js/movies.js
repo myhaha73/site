@@ -3004,10 +3004,22 @@ window.moviesData = [
     "title": "Диктатор (2012)",
     "link": "https://www.kinopoisk.ru/film/518040/",
     "type": "фильм",
-    "date": "скоро",
+    "date": "11.11.2026",
     "ordered": "Рулетка",
     "chance": "46%",
     "viewer": "alexr",
+    "rating": "—",
+    "comment": ""
+  },
+  {
+    "num": 252,
+    "title": "Невидимая сторона (2009)",
+    "link": "https://www.kinopoisk.ru/film/450213/",
+    "type": "фильм",
+    "date": "11.11.2026",
+    "ordered": "Заказ",
+    "chance": "",
+    "viewer": "song_of_void",
     "rating": "—",
     "comment": ""
   }
