@@ -3022,5 +3022,17 @@ window.moviesData = [
     "viewer": "song_of_void",
     "rating": "—",
     "comment": ""
+  },
+  {
+    "num": 253,
+    "title": "Обитель зла (2002)",
+    "link": "https://www.kinopoisk.ru/film/801/",
+    "type": "фильм",
+    "date": "14.11.2026",
+    "ordered": "Рулетка",
+    "chance": "21.1%",
+    "viewer": "song_of_void",
+    "rating": "—",
+    "comment": ""
   }
 ];
