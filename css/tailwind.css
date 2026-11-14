@@ -312,6 +312,9 @@
   .mr-2 {
     margin-right: calc(var(--spacing) * 2);
   }
+  .mb-1 {
+    margin-bottom: var(--spacing);
+  }
   .mb-2 {
     margin-bottom: calc(var(--spacing) * 2);
   }
@@ -1024,6 +1027,12 @@
   }
   .no-underline {
     text-decoration-line: none;
+  }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .decoration-\[\#222\] {
+    text-decoration-color: #222;
   }
   .placeholder-gray-500::placeholder {
     color: var(--color-gray-500);
