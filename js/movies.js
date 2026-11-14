@@ -3034,5 +3034,41 @@ window.moviesData = [
     "viewer": "song_of_void",
     "rating": "—",
     "comment": ""
+  },
+  {
+    "num": 254,
+    "title": "Обитель зла 2: Апокалипсис (2004)",
+    "link": "https://www.kinopoisk.ru/film/24186/",
+    "type": "фильм",
+    "date": "14.11.2026",
+    "ordered": "Заказ",
+    "chance": "",
+    "viewer": "interes",
+    "rating": "—",
+    "comment": ""
+  },
+  {
+    "num": 255,
+    "title": "Обитель зла 3 (2007)",
+    "link": "https://www.kinopoisk.ru/film/88172/",
+    "type": "фильм",
+    "date": "скоро",
+    "ordered": "Заказ",
+    "chance": "",
+    "viewer": "interes",
+    "rating": "—",
+    "comment": ""
+  },
+  {
+    "num": 256,
+    "title": "Обитель зла 4: Жизнь после смерти (2010)",
+    "link": "https://www.kinopoisk.ru/film/409208/",
+    "type": "фильм",
+    "date": "скоро",
+    "ordered": "Заказ",
+    "chance": "",
+    "viewer": "interes",
+    "rating": "—",
+    "comment": ""
   }
 ];
