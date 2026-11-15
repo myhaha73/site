@@ -3070,5 +3070,17 @@ window.moviesData = [
     "viewer": "interes",
     "rating": "—",
     "comment": ""
+  },
+  {
+    "num": 257,
+    "title": "Обитель зла (2026)",
+    "link": "https://www.kinopoisk.ru/film/7378605/",
+    "type": "фильм",
+    "date": "скоро",
+    "ordered": "Заказ",
+    "chance": "",
+    "viewer": "interes",
+    "rating": "—",
+    "comment": ""
   }
 ];

@@ -626,7 +626,6 @@ function renderUpcoming() {
 
     if (!section || !container) return;
 
-    // Если нет фильмов со словом "скоро", скрываем блок
     if (upcomingMovies.length === 0) {
         section.classList.add('hidden');
         return;
@@ -634,38 +633,42 @@ function renderUpcoming() {
     
     section.classList.remove('hidden');
 
-    // Настраиваем контейнер
+    // Настраиваем контейнер в зависимости от количества фильмов
     if (upcomingMovies.length === 1) {
         container.className = "flex justify-center pb-4";
     } else if (upcomingMovies.length === 2) {
         container.className = "flex justify-center gap-4 pb-4 flex-col sm:flex-row";
+    } else if (upcomingMovies.length === 3) {
+        // Для 3 фильмов используем сетку (идеальное центрирование)
+        container.className = "grid grid-cols-1 sm:grid-cols-3 gap-4 pb-4";
     } else {
-        container.className = "flex gap-4 pb-4 overflow-x-auto snap-x snap-mandatory";
+        // Для 4+ фильмов используем прокрутку (карусель)
+        container.className = "flex justify-center gap-4 pb-4 overflow-x-auto snap-x snap-mandatory";
     }
 
     container.innerHTML = upcomingMovies.map(movie => {
         const match = movie.link.match(/\/(\d+)\//);
         const posterId = match ? match[1] : '';
 
-        // Задаем ширину карточки (горизонтальные картинки можно делать шире)
+        // Задаем ширину карточки
         let widthClass = "";
         if (upcomingMovies.length === 1) {
-            widthClass = "w-full max-w-[800px]"; // Один баннер на всю ширину (но не гигантский на 4K)
+            widthClass = "w-full max-w-[800px]";
         } else if (upcomingMovies.length === 2) {
-            widthClass = "w-full sm:w-[calc(50%-0.5rem)] max-w-[600px]"; // Два баннера делят место пополам
+            widthClass = "w-full sm:w-[calc(50%-0.5rem)] max-w-[600px]";
+        } else if (upcomingMovies.length === 3) {
+            widthClass = "w-full"; // В сетке ширина распределится сама
         } else {
-            widthClass = "w-[300px] sm:w-[400px] shrink-0 snap-start"; // Для карусели — широкие слайды
+            widthClass = "w-[300px] sm:w-[400px] shrink-0 snap-start";
         }
 
         return `
             <div class="${widthClass} group relative bg-[#141414] border border-[#222] rounded-xl overflow-hidden hover:border-[#e5b95c]/50 transition-colors">
-                <!-- Заменили aspect-[2/3] на aspect-video (16:9) для горизонтальных картинок -->
                 <div class="aspect-video bg-[#0d0d0d] overflow-hidden relative">
                     <img src="images/last/${posterId}.jpg" alt="" 
                          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
                          onerror="this.style.display='none'">
                     
-                    <!-- Бейдж "Скоро" -->
                     <div class="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-[#e5b95c]/50 text-[#e5b95c] text-xs sm:text-sm font-bold px-3 py-1.5 rounded-lg shadow-xl uppercase tracking-widest">
                         Скоро
                     </div>
