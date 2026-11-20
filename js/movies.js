@@ -3076,10 +3076,34 @@ window.moviesData = [
     "title": "Обитель зла (2026)",
     "link": "https://www.kinopoisk.ru/film/7378605/",
     "type": "фильм",
-    "date": "17.11.206",
+    "date": "17.11.2026",
     "ordered": "Заказ",
     "chance": "",
     "viewer": "interes",
+    "rating": "—",
+    "comment": ""
+  },
+  {
+    "num": 258,
+    "title": "Один дома (1990)",
+    "link": "https://www.kinopoisk.ru/film/8124/",
+    "type": "фильм",
+    "date": "скоро",
+    "ordered": "Заказ",
+    "chance": "",
+    "viewer": "aero",
+    "rating": "—",
+    "comment": ""
+  },
+  {
+    "num": 259,
+    "title": "Один дома 2: Затерянный в Нью-Йорке (1992)",
+    "link": "https://www.kinopoisk.ru/film/5928/",
+    "type": "фильм",
+    "date": "скоро",
+    "ordered": "Заказ",
+    "chance": "",
+    "viewer": "Аноним",
     "rating": "—",
     "comment": ""
   }
