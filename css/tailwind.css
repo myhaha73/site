@@ -456,9 +456,6 @@
   .w-\[100px\] {
     width: 100px;
   }
-  .w-\[300px\] {
-    width: 300px;
-  }
   .w-auto {
     width: auto;
   }
@@ -467,9 +464,6 @@
   }
   .w-full {
     width: 100%;
-  }
-  .max-w-\[600px\] {
-    max-width: 600px;
   }
   .max-w-\[620px\] {
     max-width: 620px;
@@ -524,15 +518,6 @@
   }
   .resize {
     resize: both;
-  }
-  .snap-x {
-    scroll-snap-type: x var(--tw-scroll-snap-strictness);
-  }
-  .snap-mandatory {
-    --tw-scroll-snap-strictness: mandatory;
-  }
-  .snap-start {
-    scroll-snap-align: start;
   }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -1215,6 +1200,12 @@
     .sm\:left-12 {
       left: calc(var(--spacing) * 12);
     }
+    .sm\:col-span-2 {
+      grid-column: span 2 / span 2;
+    }
+    .sm\:col-span-3 {
+      grid-column: span 3 / span 3;
+    }
     .sm\:mb-4 {
       margin-bottom: calc(var(--spacing) * 4);
     }
@@ -1245,20 +1236,14 @@
     .sm\:w-\[350px\] {
       width: 350px;
     }
-    .sm\:w-\[400px\] {
-      width: 400px;
-    }
-    .sm\:w-\[calc\(50\%-0\.5rem\)\] {
-      width: calc(50% - 0.5rem);
-    }
     .sm\:grid-cols-2 {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     .sm\:grid-cols-3 {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
-    .sm\:flex-row {
-      flex-direction: row;
+    .sm\:grid-cols-6 {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
     }
     .sm\:gap-2 {
       gap: calc(var(--spacing) * 2);
@@ -1397,6 +1382,9 @@
     .lg\:grid-cols-3 {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+    .lg\:grid-cols-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
     .lg\:grid-cols-5 {
       grid-template-columns: repeat(5, minmax(0, 1fr));
     }
@@ -1472,11 +1460,6 @@
   syntax: "*";
   inherits: false;
   initial-value: 0;
-}
-@property --tw-scroll-snap-strictness {
-  syntax: "*";
-  inherits: false;
-  initial-value: proximity;
 }
 @property --tw-space-y-reverse {
   syntax: "*";
@@ -1728,7 +1711,6 @@
       --tw-translate-x: 0;
       --tw-translate-y: 0;
       --tw-translate-z: 0;
-      --tw-scroll-snap-strictness: proximity;
       --tw-space-y-reverse: 0;
       --tw-divide-y-reverse: 0;
       --tw-border-style: solid;

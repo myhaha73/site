@@ -633,33 +633,35 @@ function renderUpcoming() {
     
     section.classList.remove('hidden');
 
-    // Настраиваем контейнер в зависимости от количества фильмов
+    // Настраиваем контейнер
     if (upcomingMovies.length === 1) {
         container.className = "flex justify-center pb-4";
     } else if (upcomingMovies.length === 2) {
-        container.className = "flex justify-center gap-4 pb-4 flex-col sm:flex-row";
+        container.className = "grid grid-cols-1 sm:grid-cols-2 gap-4 pb-4";
     } else if (upcomingMovies.length === 3) {
-        // Для 3 фильмов используем сетку (идеальное центрирование)
         container.className = "grid grid-cols-1 sm:grid-cols-3 gap-4 pb-4";
+    } else if (upcomingMovies.length === 4) {
+        container.className = "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pb-4";
     } else {
-        // Для 4+ фильмов используем прокрутку (карусель)
-        container.className = "flex justify-center gap-4 pb-4 overflow-x-auto snap-x snap-mandatory";
+        // Для 5 и более фильмов используем сетку из 6 колонок
+        container.className = "grid grid-cols-1 sm:grid-cols-6 gap-4 pb-4";
     }
 
-    container.innerHTML = upcomingMovies.map(movie => {
+    container.innerHTML = upcomingMovies.map((movie, index) => {
         const match = movie.link.match(/\/(\d+)\//);
         const posterId = match ? match[1] : '';
 
-        // Задаем ширину карточки
-        let widthClass = "";
+        // Задаем ширину карточки (для мобилок — 100%, для ПК — распределяем по колонкам)
+        let widthClass = "w-full"; 
+        
         if (upcomingMovies.length === 1) {
             widthClass = "w-full max-w-[800px]";
-        } else if (upcomingMovies.length === 2) {
-            widthClass = "w-full sm:w-[calc(50%-0.5rem)] max-w-[600px]";
-        } else if (upcomingMovies.length === 3) {
-            widthClass = "w-full"; // В сетке ширина распределится сама
-        } else {
-            widthClass = "w-[300px] sm:w-[400px] shrink-0 snap-start";
+        } else if (upcomingMovies.length === 5) {
+            // Первые 2 фильма занимают по 3 колонки (50% ширины), остальные 3 — по 2 колонки (33% ширины)
+            widthClass = index < 2 ? "sm:col-span-3" : "sm:col-span-2";
+        } else if (upcomingMovies.length >= 6) {
+            // Для 6+ фильмов все занимают по 2 колонки (33% ширины, по 3 в ряд)
+            widthClass = "sm:col-span-2";
         }
 
         return `
