@@ -766,6 +766,7 @@ updateTopUsers();
 updateBannerSlides();
 updateTopGenres();
 renderUpcoming();
+renderWatchlist();
 
 document.addEventListener('DOMContentLoaded', () => {
     const tabBtns = document.querySelectorAll('.tab-btn');
@@ -957,3 +958,27 @@ if (window.ResizeObserver) {
 
     requestAnimationFrame(tick);
 })();
+
+function renderWatchlist() {
+    const container = document.getElementById('watchlist-container');
+    if (!container || !window.siteData || !window.siteData.watchlist) return;
+
+    container.innerHTML = window.siteData.watchlist.map(movie => {
+        return `
+            <a href="${movie.link}" target="_blank"
+               class="w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.75rem)] lg:w-[calc(16.666%-0.8rem)] group bg-[#121212] border border-gray-800 rounded-xl overflow-hidden hover:border-[#e5b95c]/50 transition-all duration-300 hover:-translate-y-1">
+                <div class="aspect-[2/3] bg-[#0d0d0d] overflow-hidden">
+                    <img src="images/posters/${movie.id}.jpg"
+                         alt="${movie.title}"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                         onerror="this.style.display='none'">
+                </div>
+                <div class="p-2 text-center">
+                    <p class="text-gray-200 text-sm font-semibold leading-tight group-hover:text-[#e5b95c] transition-colors line-clamp-2">
+                        ${movie.title}
+                    </p>
+                </div>
+            </a>
+        `;
+    }).join('');
+}
